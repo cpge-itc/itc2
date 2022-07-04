@@ -1,5 +1,5 @@
 clean:
-	rm -rf book/_build
+	jupyter-book clean book
 
 build: clean
 	jupyter-book build book
