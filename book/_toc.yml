@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
+parts:
+  - caption: Bases de données et SQL
+    chapters:
+    - file: 0_sql/sql_select.md
+      title: SELECT
+    - file: 0_sql/sql_join.md
+      title: JOIN
+    - file: 0_sql/sql_groupby.md
+      title: GROUP BY
+    - file: 0_sql/pokemon.ipynb
