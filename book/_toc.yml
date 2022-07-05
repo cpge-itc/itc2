@@ -6,12 +6,12 @@ root: intro
 options:  # The options key will be applied to all chapters, but not sub-sections
   numbered: True
 parts:
-  - caption: Bases de données et SQL
+  - caption: Bases de données
     chapters:
     - file: 0_sql/sql_select.md
-      title: SELECT
+      title: Requêtes sur une table
     - file: 0_sql/sql_join.md
-      title: JOIN
+      title: Requêtes sur plusieurs tables
     - file: 0_sql/sql_groupby.md
-      title: GROUP BY
+      title: Fonctions d'agrégation
     - file: 0_sql/pokemon.ipynb
