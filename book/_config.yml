@@ -20,6 +20,7 @@ html:
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
+  basthon_url: "https://notebook.basthon.fr"
   thebe: true
 
 html:

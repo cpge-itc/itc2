@@ -1,136 +1,117 @@
-alabaster @ file:///home/code/.cache/pypoetry/artifacts/5d/4b/a4/7a4615b9d1e0a3e824ccf78eb300ea391c851b2ee8941f2230a14ba5ee/alabaster-0.7.12-py2.py3-none-any.whl
-anyio @ file:///home/code/.cache/pypoetry/artifacts/cd/3f/ae/baff749ce6cb4d7985e4142650605d2d30cb92eb418e2d121868e4413d/anyio-3.6.1-py3-none-any.whl
-argon2-cffi @ file:///home/code/.cache/pypoetry/artifacts/05/8e/79/28f2b292b8981d9a051595a12fe5a6200cc8a4b05e4bc39397fdd64218/argon2_cffi-21.3.0-py3-none-any.whl
-argon2-cffi-bindings @ file:///home/code/.cache/pypoetry/artifacts/fa/0d/b1/6ac233edbd3b00cfa31f5766744d66f93d91c075f9feafa0e4c5e7a747/argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-asttokens @ file:///home/code/.cache/pypoetry/artifacts/c4/d4/80/7a38a41f81b4043fafa74edb0ffe4fff85cf0e7e0e58267e9a59c87fe2/asttokens-2.0.5-py2.py3-none-any.whl
-attrs @ file:///home/code/.cache/pypoetry/artifacts/c4/ee/75/fcd6c2f4c5a1d60b1bcd97014702ca01b3f032fd927d88780b38708409/attrs-21.4.0-py2.py3-none-any.whl
-Babel @ file:///home/code/.cache/pypoetry/artifacts/f6/24/80/756dbf261b341377796335dcd049514ad5e1d4542c5f52b74ede92d783/Babel-2.10.3-py3-none-any.whl
-backcall @ file:///home/code/.cache/pypoetry/artifacts/fb/29/4f/82bf4440abab9ac911c9bce7a071841452e2457539cf29aec0cdb32bf1/backcall-0.2.0-py2.py3-none-any.whl
-beautifulsoup4 @ file:///home/code/.cache/pypoetry/artifacts/e0/aa/39/7b168d115afeea9a7de54a24de624233f50f1b5a3f67d2e650da99a476/beautifulsoup4-4.11.1-py3-none-any.whl
-bleach @ file:///home/code/.cache/pypoetry/artifacts/e1/f6/8e/c875d5b69b07f69475cb9d237a0fcb13a1059d0dabb34ac199af1af1a1/bleach-5.0.1-py3-none-any.whl
-certifi @ file:///home/code/.cache/pypoetry/artifacts/b1/9b/6f/cd63ce97294ee9a1fb57e5cebf02f251fbb8f9ac48353a27ceeddc410b/certifi-2022.6.15-py3-none-any.whl
-cffi @ file:///home/code/.cache/pypoetry/artifacts/8f/03/c5/3cf9dd7e8f36733162538ee0346ef86f4ad0f08a663096e18a252718fb/cffi-1.15.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-charset-normalizer @ file:///home/code/.cache/pypoetry/artifacts/86/c8/3e/d878881698fbd2b72f484e4fca340588d633102920a002b66a293f9480/charset_normalizer-2.1.0-py3-none-any.whl
-click @ file:///home/code/.cache/pypoetry/artifacts/63/f3/4c/2270b95f4d37b9ea73cd401abe68b6e9ede30380533cd4e7118a8e3aa3/click-8.1.3-py3-none-any.whl
-colorama @ file:///home/code/.cache/pypoetry/artifacts/c2/16/90/5bd8e7ca5465caa39fb4befd804a6c8a0a281f8f290c3387c173072719/colorama-0.4.5-py2.py3-none-any.whl
-cycler @ file:///home/code/.cache/pypoetry/artifacts/ba/28/11/cf3c90b4ca621519019fffb7d9019a6a62f7219045ac852aeaa6d70eee/cycler-0.11.0-py3-none-any.whl
-debugpy @ file:///home/code/.cache/pypoetry/artifacts/18/de/e4/562c2c4151ba85396beb12d6282716c922f981bdecbd94bdeee25adb81/debugpy-1.6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl
-decorator @ file:///home/code/.cache/pypoetry/artifacts/e7/34/b4/d4da5f5611ea34c830b51a6afe76aa0e51493309a0c0f176f5217b6960/decorator-5.1.1-py3-none-any.whl
-defusedxml @ file:///home/code/.cache/pypoetry/artifacts/63/7f/1e/b8b316188f0f0704ef8f0eaaad0d3c82dff4aa2495e4e3467479e4ce66/defusedxml-0.7.1-py2.py3-none-any.whl
-docutils @ file:///home/code/.cache/pypoetry/artifacts/15/d4/e8/c66d5f65e9efb49142cb509cad12be9483e6ee0e3b3cf3d4c8d6e06aec/docutils-0.17.1-py2.py3-none-any.whl
-entrypoints @ file:///home/code/.cache/pypoetry/artifacts/15/89/41/13ff23013f003f094ddfbd2347d7275f294139b11a6762447ad83ce465/entrypoints-0.4-py3-none-any.whl
-executing @ file:///home/code/.cache/pypoetry/artifacts/28/c3/05/e955af99c75c845243e15e0cbb7611396c798dfff8699c9195e0bbeaa6/executing-0.8.3-py2.py3-none-any.whl
-fastjsonschema @ file:///home/code/.cache/pypoetry/artifacts/eb/3e/24/b861168ccb83916e4cd8c07f7d05267e5d681e9d409b1487f5c737b5be/fastjsonschema-2.15.3-py3-none-any.whl
-flake8 @ file:///home/code/.cache/pypoetry/artifacts/6b/d8/67/6516837c645c57af9cad7b290e1e6cbe92a126641fa84a5dde6495f3c3/flake8-4.0.1-py2.py3-none-any.whl
-fonttools @ file:///home/code/.cache/pypoetry/artifacts/93/bd/e5/fabed7f8e6ea01406a850d28ae9755bff629b22753c44f4e06537cdbeb/fonttools-4.34.1-py3-none-any.whl
-gitdb @ file:///home/code/.cache/pypoetry/artifacts/60/7e/d5/cee7f2eee8ab34d772a60791e592b08b85f32a2644f242af55b7683912/gitdb-4.0.9-py3-none-any.whl
-GitPython @ file:///home/code/.cache/pypoetry/artifacts/31/49/8c/90d6516464b56a3f5141e578f977739bf2f7f89f09d805c03bd6f26ef1/GitPython-3.1.27-py3-none-any.whl
-greenlet @ file:///home/code/.cache/pypoetry/artifacts/34/c1/37/e49d0edb98c16a44953cc207d5e589f3a94eed158e24cb8fcd1047b4ff/greenlet-1.1.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-idna @ file:///home/code/.cache/pypoetry/artifacts/90/36/8c/81eabf6ac88608721ab27f439c9a6b9a8e6a21cc58c59ebb1a42720199/idna-3.3-py3-none-any.whl
-imagesize @ file:///home/code/.cache/pypoetry/artifacts/84/cd/dd/9cee70de750a286abfd3845ed7a16f33f479b114d6d1c3cbbcfe20b105/imagesize-1.4.1-py2.py3-none-any.whl
-importlib-metadata @ file:///home/code/.cache/pypoetry/artifacts/ea/30/f1/122927f5d13e9300164e3b942be74633397d23f24f7ad4ee4311634f0a/importlib_metadata-4.12.0-py3-none-any.whl
-ipykernel @ file:///home/code/.cache/pypoetry/artifacts/bc/8c/f3/2058a9c1e6cb50720a3d280cd4167e40058f6516386e3b46ac0d8f25e9/ipykernel-6.15.0-py3-none-any.whl
-ipython @ file:///home/code/.cache/pypoetry/artifacts/c3/9c/b8/d89859b52e0757d949819e3dc752cbb3323f0b7f462c0e7c7faa7c9f4a/ipython-8.4.0-py3-none-any.whl
-ipython-genutils @ file:///home/code/.cache/pypoetry/artifacts/97/bf/ed/aa7b05b63dff09df96889c84191a871fdd62bb7c058bb77b381344d2bf/ipython_genutils-0.2.0-py2.py3-none-any.whl
-ipywidgets @ file:///home/code/.cache/pypoetry/artifacts/d5/c6/00/2333bfdc9064df7a4da537ab910953be9e31088db26a679b198ce39379/ipywidgets-7.7.1-py2.py3-none-any.whl
-jedi @ file:///home/code/.cache/pypoetry/artifacts/89/0a/c4/538f23985c27b947d71525ea0122d328590341486a672160c2f49614db/jedi-0.18.1-py2.py3-none-any.whl
-Jinja2 @ file:///home/code/.cache/pypoetry/artifacts/49/36/ae/943f6cd852641f7249acddef711eb97d0c9ed91d7f435c798b6d7041ca/Jinja2-3.1.2-py3-none-any.whl
-jsonschema @ file:///home/code/.cache/pypoetry/artifacts/83/98/d5/9e7d4efb65a358235fa3912bce0c9982390b57bcf4a3c4397d792aa910/jsonschema-3.2.0-py2.py3-none-any.whl
-jupyter @ file:///home/code/.cache/pypoetry/artifacts/dd/55/db/5fbb3d49f878a4e0ad87b4666553d6ea698e35b109de2b6beeb0acd16d/jupyter-1.0.0-py2.py3-none-any.whl
-jupyter-book @ file:///home/code/.cache/pypoetry/artifacts/48/76/43/1bc35e1d85fa95876518345ad48b4e6bce75e78da19c9693255be0cb65/jupyter_book-0.13.0-py3-none-any.whl
-jupyter-cache @ file:///home/code/.cache/pypoetry/artifacts/37/0d/60/083f1dc08b22bd860be65c0518329df76a97b8e8c7a183f9426a3f1779/jupyter_cache-0.4.3-py3-none-any.whl
-jupyter-client @ file:///home/code/.cache/pypoetry/artifacts/f3/3a/2e/d9dfcf6bfc3d96389e2aae61c277b24e55fadb0173c75042ca66ca051a/jupyter_client-7.3.4-py3-none-any.whl
-jupyter-console @ file:///home/code/.cache/pypoetry/artifacts/da/8c/53/481ac6485f113a4c13a12711723e5941be67d107714ef321512cffa838/jupyter_console-6.4.4-py3-none-any.whl
-jupyter-core @ file:///home/code/.cache/pypoetry/artifacts/f9/40/6f/eaa549863d427d2a4a19decdc0a0d5472b13df4936a3611c864f96c514/jupyter_core-4.10.0-py3-none-any.whl
-jupyter-server @ file:///home/code/.cache/pypoetry/artifacts/34/b5/46/529030c2cf4cf5ff3fe400258abd5f953e3becb37dd4753bc61de64ecc/jupyter_server-1.18.1-py3-none-any.whl
-jupyter-server-mathjax @ file:///home/code/.cache/pypoetry/artifacts/10/2b/64/96cb1a09763841472b25bd0f83f0e1c5cf52a73fb0471b895f2a7da657/jupyter_server_mathjax-0.2.5-py3-none-any.whl
-jupyter-sphinx @ file:///home/code/.cache/pypoetry/artifacts/cf/1e/86/e67098bf2d3f670d7d7a3e0a84865e2fa92051c52345277564ee52f7a2/jupyter_sphinx-0.3.2-py3-none-any.whl
-jupyterlab-pygments @ file:///home/code/.cache/pypoetry/artifacts/d4/e6/05/8d8982e22f7b7c83e8cff9e69920376387ca4905d10ea9496a406d4182/jupyterlab_pygments-0.2.2-py2.py3-none-any.whl
-jupyterlab-widgets @ file:///home/code/.cache/pypoetry/artifacts/53/e2/29/d2c501390ee1cd34d22f25e7b9b4a19ed15b109e2f00029927204ae97e/jupyterlab_widgets-1.1.1-py3-none-any.whl
-kiwisolver @ file:///home/code/.cache/pypoetry/artifacts/e3/12/49/3fb66d0d336e830ed9087469bc70baa79ad20b4cd89c9ff903fd5b9a54/kiwisolver-1.4.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl
-latexcodec @ file:///home/code/.cache/pypoetry/artifacts/29/a5/6e/c29016ef89b58f8b0d054bad059714f45a300ce92fba9d0f5d633b82c6/latexcodec-2.0.1-py2.py3-none-any.whl
-linkify-it-py @ file:///home/code/.cache/pypoetry/artifacts/7c/8d/20/802cb947b9071e5b1442c728b07d013af803aa72988c266046769b1e21/linkify_it_py-1.0.3-py3-none-any.whl
-markdown-it-py @ file:///home/code/.cache/pypoetry/artifacts/42/0c/f1/c0be0187139601d91f8e0f2cbfca08274c8dd824e2ab67fbabdf6c6515/markdown_it_py-1.1.0-py3-none-any.whl
-MarkupSafe @ file:///home/code/.cache/pypoetry/artifacts/dd/cc/d7/91f68383c04a15a87f0a2b31599de891c89b1d15e309273f759daf132c/MarkupSafe-2.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-matplotlib @ file:///home/code/.cache/pypoetry/artifacts/93/e1/c4/8e770d9caaae00b72f194ac3944b3324928e916d44dcb16a8698124f97/matplotlib-3.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-matplotlib-inline @ file:///home/code/.cache/pypoetry/artifacts/0e/ab/b5/d5995e289985aaaf901345fe978c0346388a5acc77580c12343fd539cf/matplotlib_inline-0.1.3-py3-none-any.whl
-mccabe @ file:///home/code/.cache/pypoetry/artifacts/a3/d3/68/f7f7115194f6fe8c487def3afa3b089a428f90650cf1b7be71afa83d12/mccabe-0.6.1-py2.py3-none-any.whl
-mdit-py-plugins @ file:///home/code/.cache/pypoetry/artifacts/f4/9c/18/7c1d145182947cc29980b11cf36c2b4d248387ed0c5df4615b5e55caea/mdit_py_plugins-0.2.8-py3-none-any.whl
-mistune @ file:///home/code/.cache/pypoetry/artifacts/c6/73/08/45c43967056ae29b64960834e03a806fe6ea28b026ea60356df84a9063/mistune-0.8.4-py2.py3-none-any.whl
-myst-nb @ file:///home/code/.cache/pypoetry/artifacts/a0/98/dd/6859b8518beecf152807ad84da5eeb225691c09ba10cbbe10bc71404ad/myst_nb-0.13.2-py3-none-any.whl
-myst-parser @ file:///home/code/.cache/pypoetry/artifacts/15/d8/59/fdc64632c9b25a50a2d38d67f5d8c24a81115357e7d65aa5f7daa8418f/myst_parser-0.15.2-py3-none-any.whl
-nbclient @ file:///home/code/.cache/pypoetry/artifacts/45/36/9c/286726e37588a16f309521b93f3ea966f7024164d893951ed8487abd58/nbclient-0.5.13-py3-none-any.whl
-nbconvert @ file:///home/code/.cache/pypoetry/artifacts/ce/cb/2f/001ab007301c5d77971b7bb553d047baab32f8043d0eb72e7cbfc946c3/nbconvert-6.5.0-py3-none-any.whl
-nbdime @ file:///home/code/.cache/pypoetry/artifacts/de/ae/5e/599a058fe694e7c7ef57aba5386c89258ddcdeb5a36074ae0519510b41/nbdime-3.1.1-py2.py3-none-any.whl
-nbformat @ file:///home/code/.cache/pypoetry/artifacts/17/fc/a5/f24f65098833c38f9b1c2207b1be664ad8514331535f4fc0d432b06834/nbformat-5.4.0-py3-none-any.whl
-nest-asyncio @ file:///home/code/.cache/pypoetry/artifacts/3c/92/ab/cbb6b5e7279340685a8545e0e5503ec2cd39924158401153b882316fbc/nest_asyncio-1.5.5-py3-none-any.whl
-networkx==2.8.4
-notebook @ file:///home/code/.cache/pypoetry/artifacts/f6/18/3e/8c540f5627eb72606c272a23b2c14ec0ff8b2ed7ce9e1343de1b444c05/notebook-6.4.12-py3-none-any.whl
-numpy @ file:///home/code/.cache/pypoetry/artifacts/98/6e/bd/887e645a4cdd396203a0fb886e19e11dfcae5c7063db7e2573ee15a657/numpy-1.23.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-packaging @ file:///home/code/.cache/pypoetry/artifacts/d3/1f/90/3f2473250ebd055fe7f0856810677783949fc0d2e5f25bbb4dc00ad0a9/packaging-21.3-py3-none-any.whl
-pandocfilters @ file:///home/code/.cache/pypoetry/artifacts/ac/24/b2/c640c5e004e23e19857b8bff9651e954e369092471d58e9bedabeece77/pandocfilters-1.5.0-py2.py3-none-any.whl
-parso @ file:///home/code/.cache/pypoetry/artifacts/04/cf/93/db0ec6dfe01dd708f00c55e2af6f87b1c40a7d6db1cc6277e993e02ce9/parso-0.8.3-py2.py3-none-any.whl
-pexpect @ file:///home/code/.cache/pypoetry/artifacts/bc/0b/e1/fedd0f64915c9de2dd93ed6f45d2a3ac320f3f40f97c4826c98b730101/pexpect-4.8.0-py2.py3-none-any.whl
-pickleshare @ file:///home/code/.cache/pypoetry/artifacts/75/21/72/1a0f0aed0df5b89b08e37fa429335f3a9912304726945b3745e658c6db/pickleshare-0.7.5-py2.py3-none-any.whl
-Pillow @ file:///home/code/.cache/pypoetry/artifacts/95/cd/1a/99053885d95d74defc6d40d0bd7518f83fd74b133dfd762dfb523db565/Pillow-9.2.0-cp310-cp310-manylinux_2_28_x86_64.whl
-prometheus-client @ file:///home/code/.cache/pypoetry/artifacts/09/81/23/73a10bc09cee1ef1ac8675e9cb1286b87536a9f78cfda729c4d9028be8/prometheus_client-0.14.1-py3-none-any.whl
-prompt-toolkit @ file:///home/code/.cache/pypoetry/artifacts/68/7e/da/9de8c45038019d77aab639555a757cfb090d525dba48f099d3fd34b1f5/prompt_toolkit-3.0.30-py3-none-any.whl
-psutil @ file:///home/code/.cache/pypoetry/artifacts/8d/b8/41/0589ac2c16beda642f82e78c06713247ac2cf394fdd89a1486bc09aeff/psutil-5.9.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-ptyprocess @ file:///home/code/.cache/pypoetry/artifacts/aa/3c/ec/7269eb3c6edddfa5e263334c296eb83dca74d9250cfbabc37f7f4ba4be/ptyprocess-0.7.0-py2.py3-none-any.whl
-pure-eval @ file:///home/code/.cache/pypoetry/artifacts/3f/3a/24/0a545171a889b08c24fa379180cac85e1f4e00065002bc19eba65e0b9f/pure_eval-0.2.2-py3-none-any.whl
-pybtex @ file:///home/code/.cache/pypoetry/artifacts/23/e0/3a/8dc87aa82b76b51cc178865f11db5c865a10d7a3fc49b68d68747985e1/pybtex-0.24.0-py2.py3-none-any.whl
-pybtex-docutils @ file:///home/code/.cache/pypoetry/artifacts/25/41/b6/cb899a7d94edfd1a6a7757a111288db0ec08c7162bbb8e1d8ec27bc4a9/pybtex_docutils-1.0.2-py3-none-any.whl
-pycodestyle @ file:///home/code/.cache/pypoetry/artifacts/67/1d/0b/aa6ec86495f3fc57e748e006fb36d7b4e65ddaf6de336617166ccad96d/pycodestyle-2.8.0-py2.py3-none-any.whl
-pycparser @ file:///home/code/.cache/pypoetry/artifacts/08/b1/1b/4618699096207aa9eba9fa35118b2b6544fd1c9c2a79ea3601a3d325a0/pycparser-2.21-py2.py3-none-any.whl
-pydata-sphinx-theme @ file:///home/code/.cache/pypoetry/artifacts/14/98/fc/fe3a38759e78fd06ef7c59420e0b1e42a4dfe3d116d7fc555155382b4f/pydata_sphinx_theme-0.8.1-py3-none-any.whl
-pyflakes @ file:///home/code/.cache/pypoetry/artifacts/ce/06/1e/5fd69e017a941ae783a7e4d3fb29abc5238f0026d7745b4dc26d7e3379/pyflakes-2.4.0-py2.py3-none-any.whl
-Pygments @ file:///home/code/.cache/pypoetry/artifacts/a4/25/5e/e91fc50f64ea2fdfe34dda0c549820b87ebed679822b94b690f8ab80d3/Pygments-2.12.0-py3-none-any.whl
-pyparsing @ file:///home/code/.cache/pypoetry/artifacts/e1/09/c0/6a6df3ef412eb19fcda1b353ea54e3b48f9c518348fadd0967a962cbb6/pyparsing-3.0.9-py3-none-any.whl
-pyrsistent @ file:///home/code/.cache/pypoetry/artifacts/e4/46/e4/d7f34760879df2de5aa77f1c1d8a48e1b6f20656bcf9ab557f35696487/pyrsistent-0.18.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-python-dateutil @ file:///home/code/.cache/pypoetry/artifacts/39/9b/3b/576da7c854551d780528d75132c98882925e44de0aecf8a31a4bea379c/python_dateutil-2.8.2-py2.py3-none-any.whl
-pytz @ file:///home/code/.cache/pypoetry/artifacts/76/c4/54/e82c514018d400ab72bc3cc53469bd3b519f30e674c7d905fd7c872314/pytz-2022.1-py2.py3-none-any.whl
-PyYAML @ file:///home/code/.cache/pypoetry/artifacts/72/40/79/b7f82de66d678bc8de004df69ca112b99a38e71beff3aef6c4e2349303/PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl
-pyzmq @ file:///home/code/.cache/pypoetry/artifacts/2a/e0/a3/c59ccf51c9dd3414975a43a76a61adc17ec31d426dc95e1a7de6c8ed3a/pyzmq-23.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-qtconsole @ file:///home/code/.cache/pypoetry/artifacts/85/dd/c8/9a4cb086d00b4b086587f01673d02b9fd8ab5abd502ca166be127433b3/qtconsole-5.3.1-py3-none-any.whl
-QtPy @ file:///home/code/.cache/pypoetry/artifacts/89/75/ec/6ed9402b8e2776cdcf5addc40d0d1b87c8c19a88dfe95eceb9631f92a7/QtPy-2.1.0-py3-none-any.whl
-requests @ file:///home/code/.cache/pypoetry/artifacts/14/1f/4d/1b93db6513b8ab38db841e4ce62691288ba549a5c1b6f3ca7274a1c9fd/requests-2.28.1-py3-none-any.whl
-Send2Trash @ file:///home/code/.cache/pypoetry/artifacts/8a/c3/f4/94f9ef351ef08b52f584aefd298f81d84b49d0df0032112459d77fb6e4/Send2Trash-1.8.0-py3-none-any.whl
-setuptools-scm @ file:///home/code/.cache/pypoetry/artifacts/0c/d1/67/a85d29f59b1ace9574593b7434ef18bc7010d171e8527356141d51841d/setuptools_scm-7.0.4-py3-none-any.whl
-six @ file:///home/code/.cache/pypoetry/artifacts/89/b2/f8/fd92b6d5daa0f8889429b2fc67ec21eedc5cae5d531ee2853828ced6c7/six-1.16.0-py2.py3-none-any.whl
-smmap @ file:///home/code/.cache/pypoetry/artifacts/c9/39/91/ed6e3da1cbfcb68393f3640f3d84c7afd8574257495adb1fe2615bbeaa/smmap-5.0.0-py3-none-any.whl
-sniffio @ file:///home/code/.cache/pypoetry/artifacts/2b/1b/93/9c34d727e29f7bb11ce5b2ca7f43e77cb4e96a81ee5e07a92763951416/sniffio-1.2.0-py3-none-any.whl
-snowballstemmer @ file:///home/code/.cache/pypoetry/artifacts/c4/88/1b/a9b3e7fb8e193ad3ed607c754eb234b06cbd6f0a43289406a2dc4eddbf/snowballstemmer-2.2.0-py2.py3-none-any.whl
-soupsieve @ file:///home/code/.cache/pypoetry/artifacts/9b/5a/a8/0949b7240493f355f5d574cbe0389102ac50a52583ec465be6d377cac7/soupsieve-2.3.2.post1-py3-none-any.whl
-Sphinx @ file:///home/code/.cache/pypoetry/artifacts/2d/7e/07/3d2b9cf9e1684ccc9da12dc22090f01733d25d4d39ceac1e1472eb4788/Sphinx-4.5.0-py3-none-any.whl
+alabaster==0.7.12
+anyio==3.6.1
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+asttokens==2.0.5
+attrs==21.4.0
+Babel==2.10.3
+backcall==0.2.0
+beautifulsoup4==4.11.1
+bleach==5.0.1
+certifi==2022.6.15
+cffi==1.15.1
+charset-normalizer==2.1.0
+click==8.1.3
+colorama==0.4.5
+debugpy==1.6.0
+decorator==5.1.1
+defusedxml==0.7.1
+docutils==0.17.1
+entrypoints==0.4
+executing==0.8.3
+fastjsonschema==2.15.3
+gitdb==4.0.9
+GitPython==3.1.27
+greenlet==1.1.2
+idna==3.3
+imagesize==1.4.1
+importlib-metadata==4.12.0
+ipykernel==6.15.0
+ipython==8.4.0
+ipython-genutils==0.2.0
+ipywidgets==7.7.1
+jedi==0.18.1
+Jinja2==3.1.2
+jsonschema==3.2.0
+jupyter-book @ git+https://github.com/fortierq/jupyter-book@969d9bc318280261dbdc0e0e646756382596f32c
+jupyter-cache==0.4.3
+jupyter-client==7.3.4
+jupyter-core==4.10.0
+jupyter-server==1.18.1
+jupyter-server-mathjax==0.2.5
+jupyter-sphinx==0.3.2
+jupyterlab-pygments==0.2.2
+jupyterlab-widgets==1.1.1
+latexcodec==2.0.1
+linkify-it-py==1.0.3
+markdown-it-py==1.1.0
+MarkupSafe==2.1.1
+matplotlib-inline==0.1.3
+mdit-py-plugins==0.2.8
+mistune==0.8.4
+myst-nb==0.13.2
+myst-parser==0.15.2
+nbclient==0.5.13
+nbconvert==6.5.0
+nbdime==3.1.1
+nbformat==5.4.0
+nest-asyncio==1.5.5
+notebook==6.4.12
+packaging==21.3
+pandocfilters==1.5.0
+parso==0.8.3
+pexpect==4.8.0
+pickleshare==0.7.5
+prometheus-client==0.14.1
+prompt-toolkit==3.0.30
+psutil==5.9.1
+ptyprocess==0.7.0
+pure-eval==0.2.2
+pybtex==0.24.0
+pybtex-docutils==1.0.2
+pycparser==2.21
+pydata-sphinx-theme==0.8.1
+Pygments==2.12.0
+pyparsing==3.0.9
+pyrsistent==0.18.1
+python-dateutil==2.8.2
+pytz==2022.1
+PyYAML==6.0
+pyzmq==23.2.0
+requests==2.28.1
+Send2Trash==1.8.0
+six==1.16.0
+smmap==5.0.0
+sniffio==1.2.0
+snowballstemmer==2.2.0
+soupsieve==2.3.2.post1
+Sphinx==4.5.0
 sphinx-book-theme @ git+https://github.com/fortierq/sphinx-book-theme@e0e800a2df97a14f096717da72b79f2bbec9dfaa
-sphinx-comments @ file:///home/code/.cache/pypoetry/artifacts/1f/00/42/3dd0992bbeb9f3414078b4ed4724d67d5877ae0bb685cf1e37b1bafd20/sphinx_comments-0.0.3-py3-none-any.whl
-sphinx-copybutton @ file:///home/code/.cache/pypoetry/artifacts/09/95/78/4e93568c405f1245043e64c1ae2bf8726b616f2bec7216e2d096716c75/sphinx_copybutton-0.5.0-py3-none-any.whl
-sphinx-external-toc @ file:///home/code/.cache/pypoetry/artifacts/d5/20/7c/7e3dee817cef0377ccdebce207ff4138b4833d8f6c4fc1e9a913080ca9/sphinx_external_toc-0.2.4-py3-none-any.whl
-sphinx-jupyterbook-latex @ file:///home/code/.cache/pypoetry/artifacts/2e/ba/da/5e70aecb8813078e013b4448dc7637f54bd4f039c845dae00ed23555ad/sphinx_jupyterbook_latex-0.4.6-py3-none-any.whl
-sphinx-multitoc-numbering @ file:///home/code/.cache/pypoetry/artifacts/93/cd/4e/aacb870f4bcdf58bb5be77b3aee211a37f3783f97245ff10c37861c4fc/sphinx_multitoc_numbering-0.1.3-py3-none-any.whl
-sphinx-thebe @ file:///home/code/.cache/pypoetry/artifacts/e8/7a/34/4202e1ebee71e327ad4778b2f7b06be33ad7bf34a7f34d54c0b1d01cfc/sphinx_thebe-0.1.2-py3-none-any.whl
-sphinx-togglebutton @ file:///home/code/.cache/pypoetry/artifacts/a4/3f/ab/55c092f262d92eb945e358fc0d18f77c378b8af208424b019e622bbbfe/sphinx_togglebutton-0.3.1-py3-none-any.whl
-sphinx_design @ file:///home/code/.cache/pypoetry/artifacts/d1/fc/c8/52a6adeb86939b87a635503409a0d9ed89b5efb71115a88588eca0e962/sphinx_design-0.1.0-py3-none-any.whl
-sphinxcontrib-applehelp @ file:///home/code/.cache/pypoetry/artifacts/b2/ce/d7/b18bfeba66d4112209111cd3e6bdbb2bda8acfe09d747af9e8d9bde406/sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl
-sphinxcontrib-bibtex @ file:///home/code/.cache/pypoetry/artifacts/22/66/28/901a97eee393da8f411b5729609a0168d0181b45d85a8cfd5bc1d30033/sphinxcontrib_bibtex-2.4.2-py3-none-any.whl
-sphinxcontrib-devhelp @ file:///home/code/.cache/pypoetry/artifacts/cf/6b/b9/80db262d23dda6378ae554f3b7650b9f298c810c971f182df09f6f42d3/sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl
-sphinxcontrib-htmlhelp @ file:///home/code/.cache/pypoetry/artifacts/23/b3/de/8c534b2474107c7eacee6f4a0a0c388e2ca0dce4b6492de147abb8d4ab/sphinxcontrib_htmlhelp-2.0.0-py2.py3-none-any.whl
-sphinxcontrib-jsmath @ file:///home/code/.cache/pypoetry/artifacts/50/19/6d/1636dee907ecca6c566cdc14bc4c897bd30d5263bbfcec85af20827a67/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
-sphinxcontrib-qthelp @ file:///home/code/.cache/pypoetry/artifacts/31/e6/b0/5fc17384bc3a8ea72d63344e774c30642e55d3e6b13c665889ce9bc291/sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl
-sphinxcontrib-serializinghtml @ file:///home/code/.cache/pypoetry/artifacts/19/9e/ad/0bc5594f60848c613231ce1d1357a1bdfff05d0630d8cc5170b4271fdf/sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl
-SQLAlchemy @ file:///home/code/.cache/pypoetry/artifacts/b9/1b/5d/8c3314b15103e6bf22ea2feb0e9bbf0517c9b07f88ab0fd616c90b8536/SQLAlchemy-1.4.39-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-stack-data @ file:///home/code/.cache/pypoetry/artifacts/dd/3c/e9/2a2372a9fcf6b815f2e2fd4ff77404330254c89e2f1951e270e2b5e340/stack_data-0.3.0-py3-none-any.whl
-terminado @ file:///home/code/.cache/pypoetry/artifacts/53/3d/dd/59ce181180a7d71891eef8095bd78b66637ec47e9ed310cde407b7cbd4/terminado-0.15.0-py3-none-any.whl
-tinycss2 @ file:///home/code/.cache/pypoetry/artifacts/b5/93/7b/8c2c68c7d7452134796296409a265020836c261130d395b79c3b198734/tinycss2-1.1.1-py3-none-any.whl
-tomli @ file:///home/code/.cache/pypoetry/artifacts/62/12/b6/6db9ebb9c8e1a6c5aa8a92ae73098d8119816b5e8507490916621bc305/tomli-2.0.1-py3-none-any.whl
-tornado @ file:///home/code/.cache/pypoetry/artifacts/2b/7a/c0/b2bec61d0b8eff8cc6be6df3e65d6d1fa7e17187c2352a077a64a3d627/tornado-6.2-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-traitlets @ file:///home/code/.cache/pypoetry/artifacts/53/15/93/baa3154d23b1bdf2bc5aa0d1c9dabcad010f3942e6566bf896553521b9/traitlets-5.3.0-py3-none-any.whl
-typing_extensions @ file:///home/code/.cache/pypoetry/artifacts/4a/aa/fe/e4680f3423fbdb5ac89a6fb2f83d9e7ff7fb48173b0fa1604786182558/typing_extensions-4.3.0-py3-none-any.whl
-uc-micro-py @ file:///home/code/.cache/pypoetry/artifacts/c3/b8/3c/72248e4ef3a94b0cafdb4f907e63f98cbe2dca4f7fa194af34f519a624/uc_micro_py-1.0.1-py3-none-any.whl
-urllib3 @ file:///home/code/.cache/pypoetry/artifacts/88/1c/d5/a55ed0245e5d7cd3a9f40dd75733644cbf7b7d94a6c521eb6c027a326c/urllib3-1.26.9-py2.py3-none-any.whl
-wcwidth @ file:///home/code/.cache/pypoetry/artifacts/f1/2c/b7/d07af82a7caf20dd582cb8799baa7afd56c6240109e527ee2a904b43e4/wcwidth-0.2.5-py2.py3-none-any.whl
-webencodings @ file:///home/code/.cache/pypoetry/artifacts/2c/71/d6/0bb3633964388ed16be6b71327528e3acf005b646a54e65547041575ab/webencodings-0.5.1-py2.py3-none-any.whl
-websocket-client @ file:///home/code/.cache/pypoetry/artifacts/8d/ff/47/6f446f441fbd4c71506d8f3ef90f34afcd9ab040db2a41ae1ea5e64f9b/websocket_client-1.3.3-py3-none-any.whl
-widgetsnbextension @ file:///home/code/.cache/pypoetry/artifacts/10/6a/38/3c2a0a1eba8aa1b0fd70ecf1d8f048b4eae3a42038486529138994ff7e/widgetsnbextension-3.6.1-py2.py3-none-any.whl
-yapf @ file:///home/code/.cache/pypoetry/artifacts/43/67/9f/da3c8e46f9596653136ce94a345d24c0ad4f4ae8ed02e15876765e7f81/yapf-0.32.0-py2.py3-none-any.whl
-zipp @ file:///home/code/.cache/pypoetry/artifacts/6b/37/65/df4d17cf6025a943eadb2a9772feb9e4e44554d5f230ebd607600d657c/zipp-3.8.0-py3-none-any.whl
+sphinx-comments==0.0.3
+sphinx-copybutton==0.5.0
+sphinx-external-toc==0.2.4
+sphinx-jupyterbook-latex==0.4.6
+sphinx-multitoc-numbering==0.1.3
+sphinx-thebe==0.1.2
+sphinx-togglebutton==0.3.1
+sphinx_design==0.1.0
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-bibtex==2.4.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.5
+SQLAlchemy==1.4.39
+stack-data==0.3.0
+terminado==0.15.0
+tinycss2==1.1.1
+tornado==6.2
+traitlets==5.3.0
+uc-micro-py==1.0.1
+urllib3==1.26.9
+wcwidth==0.2.5
+webencodings==0.5.1
+websocket-client==1.3.3
+widgetsnbextension==3.6.1
+zipp==3.8.0
