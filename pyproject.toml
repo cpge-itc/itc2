@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.10"
 numpy = "^1.22.4"
 matplotlib = "^3.5.2"
+sphinx-book-theme = {git = "https://github.com/fortierq/sphinx-book-theme"}
 jupyter = "^1.0.0"
 jupyter-book = "^0.13.0"
 

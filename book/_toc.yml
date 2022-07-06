@@ -15,3 +15,7 @@ parts:
     - file: 0_sql/sql_groupby.md
       title: Fonctions d'agrégation
     - file: 0_sql/pokemon.ipynb
+  - caption: Classification
+    chapters:
+    - file: 2_knn/knn.ipynb
+      title: k plus proches voisins
