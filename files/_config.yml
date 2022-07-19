@@ -22,6 +22,7 @@ repository:
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
+  binderhub_url: ""
   colab_url: "https://colab.research.google.com"
   basthon_url: "https://notebook.basthon.fr"
   thebe: true
