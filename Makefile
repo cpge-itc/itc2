@@ -1,8 +1,8 @@
 clean:
-	jupyter-book clean book
+	jupyter-book clean itc2
 
 build: clean
-	jupyter-book build book
+	jupyter-book build itc2
 
 run: build
-	python3 -m http.server --directory book/_build/html 8001
+	python3 -m http.server --directory itc2/_build/html 8000
