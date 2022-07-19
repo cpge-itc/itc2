@@ -8,74 +8,74 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Inhalt"
-
-msgid "Toggle navigation"
-msgstr "Navigation umschalten"
-
-msgid "Source repository"
-msgstr "Quell-Repository"
-
-msgid "By"
-msgstr "Durch"
-
-msgid "Fullscreen mode"
-msgstr "Vollbildmodus"
-
-msgid "By the"
-msgstr "Bis zum"
-
-msgid "Search the docs ..."
-msgstr "Durchsuchen Sie die Dokumente ..."
-
-msgid "repository"
-msgstr "Repository"
-
-msgid "Last updated on"
-msgstr "Zuletzt aktualisiert am"
-
-msgid "Download this page"
-msgstr "Laden Sie diese Seite herunter"
+msgid "open issue"
+msgstr "offenes Thema"
 
 msgid "Search this book..."
 msgstr "Dieses Buch durchsuchen ..."
 
-msgid "Download notebook file"
-msgstr "Notebook-Datei herunterladen"
-
-msgid "Edit this page"
-msgstr "Bearbeite diese Seite"
-
-msgid "next page"
-msgstr "Nächste Seite"
-
-msgid "suggest edit"
-msgstr "vorschlagen zu bearbeiten"
-
-msgid "open issue"
-msgstr "offenes Thema"
-
-msgid "Theme by the"
-msgstr "Thema von der"
+msgid "Sphinx Book Theme"
+msgstr "Sphinx-Buch-Thema"
 
 msgid "Print to PDF"
 msgstr "In PDF drucken"
 
-msgid "Copyright"
-msgstr "Urheberrechte ©"
+msgid "By"
+msgstr "Durch"
 
-msgid "Download source file"
-msgstr "Quelldatei herunterladen"
+msgid "next page"
+msgstr "Nächste Seite"
 
 msgid "Launch"
 msgstr "Starten"
 
+msgid "Fullscreen mode"
+msgstr "Vollbildmodus"
+
+msgid "Download this page"
+msgstr "Laden Sie diese Seite herunter"
+
+msgid "repository"
+msgstr "Repository"
+
+msgid "Contents"
+msgstr "Inhalt"
+
+msgid "Edit this page"
+msgstr "Bearbeite diese Seite"
+
+msgid "suggest edit"
+msgstr "vorschlagen zu bearbeiten"
+
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
+
+msgid "By the"
+msgstr "Bis zum"
+
 msgid "previous page"
 msgstr "vorherige Seite"
 
-msgid "Sphinx Book Theme"
-msgstr "Sphinx-Buch-Thema"
+msgid "Source repository"
+msgstr "Quell-Repository"
+
+msgid "Download source file"
+msgstr "Quelldatei herunterladen"
 
 msgid "Open an issue"
 msgstr "Öffnen Sie ein Problem"
+
+msgid "Theme by the"
+msgstr "Thema von der"
+
+msgid "Search the docs ..."
+msgstr "Durchsuchen Sie die Dokumente ..."
+
+msgid "Last updated on"
+msgstr "Zuletzt aktualisiert am"
+
+msgid "Copyright"
+msgstr "Urheberrechte ©"
+
+msgid "Download notebook file"
+msgstr "Notebook-Datei herunterladen"

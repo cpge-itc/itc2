@@ -8,74 +8,74 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Съдържание"
-
-msgid "Toggle navigation"
-msgstr "Превключване на навигацията"
-
-msgid "Source repository"
-msgstr "Хранилище на източника"
-
-msgid "By"
-msgstr "От"
-
-msgid "Fullscreen mode"
-msgstr "Режим на цял екран"
-
-msgid "By the"
-msgstr "По"
-
-msgid "Search the docs ..."
-msgstr "Търсене в документите ..."
-
-msgid "repository"
-msgstr "хранилище"
-
-msgid "Last updated on"
-msgstr "Последна актуализация на"
-
-msgid "Download this page"
-msgstr "Изтеглете тази страница"
+msgid "open issue"
+msgstr "отворен брой"
 
 msgid "Search this book..."
 msgstr "Търсене в тази книга ..."
 
-msgid "Download notebook file"
-msgstr "Изтеглете файла на бележника"
-
-msgid "Edit this page"
-msgstr "Редактирайте тази страница"
-
-msgid "next page"
-msgstr "Следваща страница"
-
-msgid "suggest edit"
-msgstr "предложи редактиране"
-
-msgid "open issue"
-msgstr "отворен брой"
-
-msgid "Theme by the"
-msgstr "Тема от"
+msgid "Sphinx Book Theme"
+msgstr "Тема на книгата Sphinx"
 
 msgid "Print to PDF"
 msgstr "Печат в PDF"
 
-msgid "Copyright"
-msgstr "Авторско право"
+msgid "By"
+msgstr "От"
 
-msgid "Download source file"
-msgstr "Изтеглете изходния файл"
+msgid "next page"
+msgstr "Следваща страница"
 
 msgid "Launch"
 msgstr "Стартиране"
 
+msgid "Fullscreen mode"
+msgstr "Режим на цял екран"
+
+msgid "Download this page"
+msgstr "Изтеглете тази страница"
+
+msgid "repository"
+msgstr "хранилище"
+
+msgid "Contents"
+msgstr "Съдържание"
+
+msgid "Edit this page"
+msgstr "Редактирайте тази страница"
+
+msgid "suggest edit"
+msgstr "предложи редактиране"
+
+msgid "Toggle navigation"
+msgstr "Превключване на навигацията"
+
+msgid "By the"
+msgstr "По"
+
 msgid "previous page"
 msgstr "предишна страница"
 
-msgid "Sphinx Book Theme"
-msgstr "Тема на книгата Sphinx"
+msgid "Source repository"
+msgstr "Хранилище на източника"
+
+msgid "Download source file"
+msgstr "Изтеглете изходния файл"
 
 msgid "Open an issue"
 msgstr "Отворете проблем"
+
+msgid "Theme by the"
+msgstr "Тема от"
+
+msgid "Search the docs ..."
+msgstr "Търсене в документите ..."
+
+msgid "Last updated on"
+msgstr "Последна актуализация на"
+
+msgid "Copyright"
+msgstr "Авторско право"
+
+msgid "Download notebook file"
+msgstr "Изтеглете файла на бележника"

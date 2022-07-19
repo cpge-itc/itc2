@@ -8,74 +8,74 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Contenuti"
-
-msgid "Toggle navigation"
-msgstr "Attiva / disattiva la navigazione"
-
-msgid "Source repository"
-msgstr "Repository di origine"
-
-msgid "By"
-msgstr "Di"
-
-msgid "Fullscreen mode"
-msgstr "Modalità schermo intero"
-
-msgid "By the"
-msgstr "Dal"
-
-msgid "Search the docs ..."
-msgstr "Cerca nei documenti ..."
-
-msgid "repository"
-msgstr "repository"
-
-msgid "Last updated on"
-msgstr "Ultimo aggiornamento il"
-
-msgid "Download this page"
-msgstr "Scarica questa pagina"
+msgid "open issue"
+msgstr "questione aperta"
 
 msgid "Search this book..."
 msgstr "Cerca in questo libro ..."
 
-msgid "Download notebook file"
-msgstr "Scarica il file del taccuino"
-
-msgid "Edit this page"
-msgstr "Modifica questa pagina"
-
-msgid "next page"
-msgstr "pagina successiva"
-
-msgid "suggest edit"
-msgstr "suggerisci modifica"
-
-msgid "open issue"
-msgstr "questione aperta"
-
-msgid "Theme by the"
-msgstr "Tema di"
+msgid "Sphinx Book Theme"
+msgstr "Tema del libro della Sfinge"
 
 msgid "Print to PDF"
 msgstr "Stampa in PDF"
 
-msgid "Copyright"
-msgstr "Diritto d'autore"
+msgid "By"
+msgstr "Di"
 
-msgid "Download source file"
-msgstr "Scarica il file sorgente"
+msgid "next page"
+msgstr "pagina successiva"
 
 msgid "Launch"
 msgstr "Lanciare"
 
+msgid "Fullscreen mode"
+msgstr "Modalità schermo intero"
+
+msgid "Download this page"
+msgstr "Scarica questa pagina"
+
+msgid "repository"
+msgstr "repository"
+
+msgid "Contents"
+msgstr "Contenuti"
+
+msgid "Edit this page"
+msgstr "Modifica questa pagina"
+
+msgid "suggest edit"
+msgstr "suggerisci modifica"
+
+msgid "Toggle navigation"
+msgstr "Attiva / disattiva la navigazione"
+
+msgid "By the"
+msgstr "Dal"
+
 msgid "previous page"
 msgstr "pagina precedente"
 
-msgid "Sphinx Book Theme"
-msgstr "Tema del libro della Sfinge"
+msgid "Source repository"
+msgstr "Repository di origine"
+
+msgid "Download source file"
+msgstr "Scarica il file sorgente"
 
 msgid "Open an issue"
 msgstr "Apri un problema"
+
+msgid "Theme by the"
+msgstr "Tema di"
+
+msgid "Search the docs ..."
+msgstr "Cerca nei documenti ..."
+
+msgid "Last updated on"
+msgstr "Ultimo aggiornamento il"
+
+msgid "Copyright"
+msgstr "Diritto d'autore"
+
+msgid "Download notebook file"
+msgstr "Scarica il file del taccuino"

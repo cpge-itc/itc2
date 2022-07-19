@@ -8,74 +8,74 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Obsah"
-
-msgid "Toggle navigation"
-msgstr "Přepnout navigaci"
-
-msgid "Source repository"
-msgstr "Zdrojové úložiště"
-
-msgid "By"
-msgstr "Podle"
-
-msgid "Fullscreen mode"
-msgstr "Režim celé obrazovky"
-
-msgid "By the"
-msgstr "Podle"
-
-msgid "Search the docs ..."
-msgstr "Hledat v dokumentech ..."
-
-msgid "repository"
-msgstr "úložiště"
-
-msgid "Last updated on"
-msgstr "Naposledy aktualizováno"
-
-msgid "Download this page"
-msgstr "Stáhněte si tuto stránku"
+msgid "open issue"
+msgstr "otevřené číslo"
 
 msgid "Search this book..."
 msgstr "Hledat v této knize ..."
 
-msgid "Download notebook file"
-msgstr "Stáhnout soubor poznámkového bloku"
-
-msgid "Edit this page"
-msgstr "Upravit tuto stránku"
-
-msgid "next page"
-msgstr "další strana"
-
-msgid "suggest edit"
-msgstr "navrhnout úpravy"
-
-msgid "open issue"
-msgstr "otevřené číslo"
-
-msgid "Theme by the"
-msgstr "Téma od"
+msgid "Sphinx Book Theme"
+msgstr "Téma knihy Sfinga"
 
 msgid "Print to PDF"
 msgstr "Tisk do PDF"
 
-msgid "Copyright"
-msgstr "autorská práva"
+msgid "By"
+msgstr "Podle"
 
-msgid "Download source file"
-msgstr "Stáhněte si zdrojový soubor"
+msgid "next page"
+msgstr "další strana"
 
 msgid "Launch"
 msgstr "Zahájení"
 
+msgid "Fullscreen mode"
+msgstr "Režim celé obrazovky"
+
+msgid "Download this page"
+msgstr "Stáhněte si tuto stránku"
+
+msgid "repository"
+msgstr "úložiště"
+
+msgid "Contents"
+msgstr "Obsah"
+
+msgid "Edit this page"
+msgstr "Upravit tuto stránku"
+
+msgid "suggest edit"
+msgstr "navrhnout úpravy"
+
+msgid "Toggle navigation"
+msgstr "Přepnout navigaci"
+
+msgid "By the"
+msgstr "Podle"
+
 msgid "previous page"
 msgstr "předchozí stránka"
 
-msgid "Sphinx Book Theme"
-msgstr "Téma knihy Sfinga"
+msgid "Source repository"
+msgstr "Zdrojové úložiště"
+
+msgid "Download source file"
+msgstr "Stáhněte si zdrojový soubor"
 
 msgid "Open an issue"
 msgstr "Otevřete problém"
+
+msgid "Theme by the"
+msgstr "Téma od"
+
+msgid "Search the docs ..."
+msgstr "Hledat v dokumentech ..."
+
+msgid "Last updated on"
+msgstr "Naposledy aktualizováno"
+
+msgid "Copyright"
+msgstr "autorská práva"
+
+msgid "Download notebook file"
+msgstr "Stáhnout soubor poznámkového bloku"

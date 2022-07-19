@@ -8,74 +8,74 @@ msgstr ""
 "Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Sisu"
-
-msgid "Toggle navigation"
-msgstr "Lülita navigeerimine sisse"
-
-msgid "Source repository"
-msgstr "Allikahoidla"
-
-msgid "By"
-msgstr "Kõrval"
-
-msgid "Fullscreen mode"
-msgstr "Täisekraanirežiim"
-
-msgid "By the"
-msgstr "Autor"
-
-msgid "Search the docs ..."
-msgstr "Dokumentidest otsimine ..."
-
-msgid "repository"
-msgstr "hoidla"
-
-msgid "Last updated on"
-msgstr "Viimati uuendatud"
-
-msgid "Download this page"
-msgstr "Laadige see leht alla"
+msgid "open issue"
+msgstr "avatud küsimus"
 
 msgid "Search this book..."
 msgstr "Otsige sellest raamatust ..."
 
-msgid "Download notebook file"
-msgstr "Laadige sülearvuti fail alla"
-
-msgid "Edit this page"
-msgstr "Muutke seda lehte"
-
-msgid "next page"
-msgstr "järgmine leht"
-
-msgid "suggest edit"
-msgstr "soovita muuta"
-
-msgid "open issue"
-msgstr "avatud küsimus"
-
-msgid "Theme by the"
-msgstr "Teema"
+msgid "Sphinx Book Theme"
+msgstr "Sfinksiraamatu teema"
 
 msgid "Print to PDF"
 msgstr "Prindi PDF-i"
 
-msgid "Copyright"
-msgstr "Autoriõigus"
+msgid "By"
+msgstr "Kõrval"
 
-msgid "Download source file"
-msgstr "Laadige alla lähtefail"
+msgid "next page"
+msgstr "järgmine leht"
 
 msgid "Launch"
 msgstr "Käivitage"
 
+msgid "Fullscreen mode"
+msgstr "Täisekraanirežiim"
+
+msgid "Download this page"
+msgstr "Laadige see leht alla"
+
+msgid "repository"
+msgstr "hoidla"
+
+msgid "Contents"
+msgstr "Sisu"
+
+msgid "Edit this page"
+msgstr "Muutke seda lehte"
+
+msgid "suggest edit"
+msgstr "soovita muuta"
+
+msgid "Toggle navigation"
+msgstr "Lülita navigeerimine sisse"
+
+msgid "By the"
+msgstr "Autor"
+
 msgid "previous page"
 msgstr "eelmine leht"
 
-msgid "Sphinx Book Theme"
-msgstr "Sfinksiraamatu teema"
+msgid "Source repository"
+msgstr "Allikahoidla"
+
+msgid "Download source file"
+msgstr "Laadige alla lähtefail"
 
 msgid "Open an issue"
 msgstr "Avage probleem"
+
+msgid "Theme by the"
+msgstr "Teema"
+
+msgid "Search the docs ..."
+msgstr "Dokumentidest otsimine ..."
+
+msgid "Last updated on"
+msgstr "Viimati uuendatud"
+
+msgid "Copyright"
+msgstr "Autoriõigus"
+
+msgid "Download notebook file"
+msgstr "Laadige sülearvuti fail alla"

@@ -8,74 +8,74 @@ msgstr ""
 "Language: ro\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Cuprins"
-
-msgid "Toggle navigation"
-msgstr "Comutare navigare"
-
-msgid "Source repository"
-msgstr "Depozit sursă"
-
-msgid "By"
-msgstr "De"
-
-msgid "Fullscreen mode"
-msgstr "Modul ecran întreg"
-
-msgid "By the"
-msgstr "Langa"
-
-msgid "Search the docs ..."
-msgstr "Căutați documente ..."
-
-msgid "repository"
-msgstr "repertoriu"
-
-msgid "Last updated on"
-msgstr "Ultima actualizare la"
-
-msgid "Download this page"
-msgstr "Descarcă această pagină"
+msgid "open issue"
+msgstr "problema deschisă"
 
 msgid "Search this book..."
 msgstr "Căutați în această carte ..."
 
-msgid "Download notebook file"
-msgstr "Descărcați fișierul notebook"
-
-msgid "Edit this page"
-msgstr "Editați această pagină"
-
-msgid "next page"
-msgstr "pagina următoare"
-
-msgid "suggest edit"
-msgstr "sugerează editare"
-
-msgid "open issue"
-msgstr "problema deschisă"
-
-msgid "Theme by the"
-msgstr "Tema de"
+msgid "Sphinx Book Theme"
+msgstr "Tema Sphinx Book"
 
 msgid "Print to PDF"
 msgstr "Imprimați în PDF"
 
-msgid "Copyright"
-msgstr "Drepturi de autor"
+msgid "By"
+msgstr "De"
 
-msgid "Download source file"
-msgstr "Descărcați fișierul sursă"
+msgid "next page"
+msgstr "pagina următoare"
 
 msgid "Launch"
 msgstr "Lansa"
 
+msgid "Fullscreen mode"
+msgstr "Modul ecran întreg"
+
+msgid "Download this page"
+msgstr "Descarcă această pagină"
+
+msgid "repository"
+msgstr "repertoriu"
+
+msgid "Contents"
+msgstr "Cuprins"
+
+msgid "Edit this page"
+msgstr "Editați această pagină"
+
+msgid "suggest edit"
+msgstr "sugerează editare"
+
+msgid "Toggle navigation"
+msgstr "Comutare navigare"
+
+msgid "By the"
+msgstr "Langa"
+
 msgid "previous page"
 msgstr "pagina anterioară"
 
-msgid "Sphinx Book Theme"
-msgstr "Tema Sphinx Book"
+msgid "Source repository"
+msgstr "Depozit sursă"
+
+msgid "Download source file"
+msgstr "Descărcați fișierul sursă"
 
 msgid "Open an issue"
 msgstr "Deschideți o problemă"
+
+msgid "Theme by the"
+msgstr "Tema de"
+
+msgid "Search the docs ..."
+msgstr "Căutați documente ..."
+
+msgid "Last updated on"
+msgstr "Ultima actualizare la"
+
+msgid "Copyright"
+msgstr "Drepturi de autor"
+
+msgid "Download notebook file"
+msgstr "Descărcați fișierul notebook"

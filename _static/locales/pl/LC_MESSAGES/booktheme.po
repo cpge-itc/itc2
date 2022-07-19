@@ -8,74 +8,74 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Zawartość"
-
-msgid "Toggle navigation"
-msgstr "Przełącz nawigację"
-
-msgid "Source repository"
-msgstr "Repozytorium źródłowe"
-
-msgid "By"
-msgstr "Przez"
-
-msgid "Fullscreen mode"
-msgstr "Pełny ekran"
-
-msgid "By the"
-msgstr "Przez"
-
-msgid "Search the docs ..."
-msgstr "Przeszukaj dokumenty ..."
-
-msgid "repository"
-msgstr "magazyn"
-
-msgid "Last updated on"
-msgstr "Ostatnia aktualizacja"
-
-msgid "Download this page"
-msgstr "Pobierz tę stronę"
+msgid "open issue"
+msgstr "otwarty problem"
 
 msgid "Search this book..."
 msgstr "Przeszukaj tę książkę ..."
 
-msgid "Download notebook file"
-msgstr "Pobierz plik notatnika"
-
-msgid "Edit this page"
-msgstr "Edytuj tę strone"
-
-msgid "next page"
-msgstr "Następna strona"
-
-msgid "suggest edit"
-msgstr "zaproponuj edycję"
-
-msgid "open issue"
-msgstr "otwarty problem"
-
-msgid "Theme by the"
-msgstr "Motyw autorstwa"
+msgid "Sphinx Book Theme"
+msgstr "Motyw książki Sphinx"
 
 msgid "Print to PDF"
 msgstr "Drukuj do PDF"
 
-msgid "Copyright"
-msgstr "prawa autorskie"
+msgid "By"
+msgstr "Przez"
 
-msgid "Download source file"
-msgstr "Pobierz plik źródłowy"
+msgid "next page"
+msgstr "Następna strona"
 
 msgid "Launch"
 msgstr "Uruchomić"
 
+msgid "Fullscreen mode"
+msgstr "Pełny ekran"
+
+msgid "Download this page"
+msgstr "Pobierz tę stronę"
+
+msgid "repository"
+msgstr "magazyn"
+
+msgid "Contents"
+msgstr "Zawartość"
+
+msgid "Edit this page"
+msgstr "Edytuj tę strone"
+
+msgid "suggest edit"
+msgstr "zaproponuj edycję"
+
+msgid "Toggle navigation"
+msgstr "Przełącz nawigację"
+
+msgid "By the"
+msgstr "Przez"
+
 msgid "previous page"
 msgstr "Poprzednia strona"
 
-msgid "Sphinx Book Theme"
-msgstr "Motyw książki Sphinx"
+msgid "Source repository"
+msgstr "Repozytorium źródłowe"
+
+msgid "Download source file"
+msgstr "Pobierz plik źródłowy"
 
 msgid "Open an issue"
 msgstr "Otwórz problem"
+
+msgid "Theme by the"
+msgstr "Motyw autorstwa"
+
+msgid "Search the docs ..."
+msgstr "Przeszukaj dokumenty ..."
+
+msgid "Last updated on"
+msgstr "Ostatnia aktualizacja"
+
+msgid "Copyright"
+msgstr "prawa autorskie"
+
+msgid "Download notebook file"
+msgstr "Pobierz plik notatnika"

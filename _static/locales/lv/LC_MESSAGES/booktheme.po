@@ -8,74 +8,74 @@ msgstr ""
 "Language: lv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Saturs"
-
-msgid "Toggle navigation"
-msgstr "Pārslēgt navigāciju"
-
-msgid "Source repository"
-msgstr "Avota krātuve"
-
-msgid "By"
-msgstr "Autors"
-
-msgid "Fullscreen mode"
-msgstr "Pilnekrāna režīms"
-
-msgid "By the"
-msgstr "Ar"
-
-msgid "Search the docs ..."
-msgstr "Meklēt dokumentos ..."
-
-msgid "repository"
-msgstr "krātuve"
-
-msgid "Last updated on"
-msgstr "Pēdējoreiz atjaunināts"
-
-msgid "Download this page"
-msgstr "Lejupielādējiet šo lapu"
+msgid "open issue"
+msgstr "atklāts jautājums"
 
 msgid "Search this book..."
 msgstr "Meklēt šajā grāmatā ..."
 
-msgid "Download notebook file"
-msgstr "Lejupielādēt piezīmju grāmatiņu"
-
-msgid "Edit this page"
-msgstr "Rediģēt šo lapu"
-
-msgid "next page"
-msgstr "nākamā lapaspuse"
-
-msgid "suggest edit"
-msgstr "ieteikt rediģēt"
-
-msgid "open issue"
-msgstr "atklāts jautājums"
-
-msgid "Theme by the"
-msgstr "Autora tēma"
+msgid "Sphinx Book Theme"
+msgstr "Sfinksa grāmatas tēma"
 
 msgid "Print to PDF"
 msgstr "Drukāt PDF formātā"
 
-msgid "Copyright"
-msgstr "Autortiesības"
+msgid "By"
+msgstr "Autors"
 
-msgid "Download source file"
-msgstr "Lejupielādēt avota failu"
+msgid "next page"
+msgstr "nākamā lapaspuse"
 
 msgid "Launch"
 msgstr "Uzsākt"
 
+msgid "Fullscreen mode"
+msgstr "Pilnekrāna režīms"
+
+msgid "Download this page"
+msgstr "Lejupielādējiet šo lapu"
+
+msgid "repository"
+msgstr "krātuve"
+
+msgid "Contents"
+msgstr "Saturs"
+
+msgid "Edit this page"
+msgstr "Rediģēt šo lapu"
+
+msgid "suggest edit"
+msgstr "ieteikt rediģēt"
+
+msgid "Toggle navigation"
+msgstr "Pārslēgt navigāciju"
+
+msgid "By the"
+msgstr "Ar"
+
 msgid "previous page"
 msgstr "iepriekšējā lapa"
 
-msgid "Sphinx Book Theme"
-msgstr "Sfinksa grāmatas tēma"
+msgid "Source repository"
+msgstr "Avota krātuve"
+
+msgid "Download source file"
+msgstr "Lejupielādēt avota failu"
 
 msgid "Open an issue"
 msgstr "Atveriet problēmu"
+
+msgid "Theme by the"
+msgstr "Autora tēma"
+
+msgid "Search the docs ..."
+msgstr "Meklēt dokumentos ..."
+
+msgid "Last updated on"
+msgstr "Pēdējoreiz atjaunināts"
+
+msgid "Copyright"
+msgstr "Autortiesības"
+
+msgid "Download notebook file"
+msgstr "Lejupielādēt piezīmju grāmatiņu"

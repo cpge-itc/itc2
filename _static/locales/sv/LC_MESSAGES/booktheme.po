@@ -8,74 +8,74 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Contents"
-msgstr "Innehåll"
-
-msgid "Toggle navigation"
-msgstr "Växla navigering"
-
-msgid "Source repository"
-msgstr "Källförvar"
-
-msgid "By"
-msgstr "Förbi"
-
-msgid "Fullscreen mode"
-msgstr "Fullskärmsläge"
-
-msgid "By the"
-msgstr "Vid"
-
-msgid "Search the docs ..."
-msgstr "Sök i dokumenten ..."
-
-msgid "repository"
-msgstr "förvar"
-
-msgid "Last updated on"
-msgstr "Senast uppdaterad den"
-
-msgid "Download this page"
-msgstr "Ladda ner den här sidan"
+msgid "open issue"
+msgstr "öppet problem"
 
 msgid "Search this book..."
 msgstr "Sök i den här boken ..."
 
-msgid "Download notebook file"
-msgstr "Ladda ner anteckningsbokfilen"
-
-msgid "Edit this page"
-msgstr "Redigera den här sidan"
-
-msgid "next page"
-msgstr "nästa sida"
-
-msgid "suggest edit"
-msgstr "föreslå redigering"
-
-msgid "open issue"
-msgstr "öppet problem"
-
-msgid "Theme by the"
-msgstr "Tema av"
+msgid "Sphinx Book Theme"
+msgstr "Sphinx boktema"
 
 msgid "Print to PDF"
 msgstr "Skriv ut till PDF"
 
-msgid "Copyright"
-msgstr "upphovsrätt"
+msgid "By"
+msgstr "Förbi"
 
-msgid "Download source file"
-msgstr "Ladda ner källfil"
+msgid "next page"
+msgstr "nästa sida"
 
 msgid "Launch"
 msgstr "Lansera"
 
+msgid "Fullscreen mode"
+msgstr "Fullskärmsläge"
+
+msgid "Download this page"
+msgstr "Ladda ner den här sidan"
+
+msgid "repository"
+msgstr "förvar"
+
+msgid "Contents"
+msgstr "Innehåll"
+
+msgid "Edit this page"
+msgstr "Redigera den här sidan"
+
+msgid "suggest edit"
+msgstr "föreslå redigering"
+
+msgid "Toggle navigation"
+msgstr "Växla navigering"
+
+msgid "By the"
+msgstr "Vid"
+
 msgid "previous page"
 msgstr "föregående sida"
 
-msgid "Sphinx Book Theme"
-msgstr "Sphinx boktema"
+msgid "Source repository"
+msgstr "Källförvar"
+
+msgid "Download source file"
+msgstr "Ladda ner källfil"
 
 msgid "Open an issue"
 msgstr "Öppna ett problem"
+
+msgid "Theme by the"
+msgstr "Tema av"
+
+msgid "Search the docs ..."
+msgstr "Sök i dokumenten ..."
+
+msgid "Last updated on"
+msgstr "Senast uppdaterad den"
+
+msgid "Copyright"
+msgstr "upphovsrätt"
+
+msgid "Download notebook file"
+msgstr "Ladda ner anteckningsbokfilen"
