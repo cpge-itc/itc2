@@ -1,0 +1,28 @@
+title: Informatique commune en 2ème année de CPGE
+author: Quentin Fortier
+
+execute:
+  execute_notebooks: 'off'
+
+latex:
+  latex_documents:
+    targetname: itc2.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/cpge-itc/itc2  # Online location of your book
+  path_to_book: files  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  basthon_url: "https://notebook.basthon.fr"
+  thebe: true
+
+html:
+  extra_navbar: ""
