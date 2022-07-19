@@ -8,74 +8,74 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "open issue"
-msgstr "öppet problem"
-
-msgid "Search this book..."
-msgstr "Sök i den här boken ..."
-
-msgid "Sphinx Book Theme"
-msgstr "Sphinx boktema"
+msgid "repository"
+msgstr "förvar"
 
 msgid "Print to PDF"
 msgstr "Skriv ut till PDF"
 
-msgid "By"
-msgstr "Förbi"
-
-msgid "next page"
-msgstr "nästa sida"
-
-msgid "Launch"
-msgstr "Lansera"
-
-msgid "Fullscreen mode"
-msgstr "Fullskärmsläge"
-
-msgid "Download this page"
-msgstr "Ladda ner den här sidan"
-
-msgid "repository"
-msgstr "förvar"
-
-msgid "Contents"
-msgstr "Innehåll"
-
-msgid "Edit this page"
-msgstr "Redigera den här sidan"
-
-msgid "suggest edit"
-msgstr "föreslå redigering"
-
-msgid "Toggle navigation"
-msgstr "Växla navigering"
-
 msgid "By the"
 msgstr "Vid"
 
-msgid "previous page"
-msgstr "föregående sida"
+msgid "By"
+msgstr "Förbi"
 
 msgid "Source repository"
 msgstr "Källförvar"
 
+msgid "Copyright"
+msgstr "upphovsrätt"
+
+msgid "Search this book..."
+msgstr "Sök i den här boken ..."
+
+msgid "Fullscreen mode"
+msgstr "Fullskärmsläge"
+
 msgid "Download source file"
 msgstr "Ladda ner källfil"
 
-msgid "Open an issue"
-msgstr "Öppna ett problem"
+msgid "Edit this page"
+msgstr "Redigera den här sidan"
+
+msgid "Toggle navigation"
+msgstr "Växla navigering"
 
 msgid "Theme by the"
 msgstr "Tema av"
 
+msgid "previous page"
+msgstr "föregående sida"
+
 msgid "Search the docs ..."
 msgstr "Sök i dokumenten ..."
+
+msgid "Download this page"
+msgstr "Ladda ner den här sidan"
+
+msgid "Contents"
+msgstr "Innehåll"
+
+msgid "Sphinx Book Theme"
+msgstr "Sphinx boktema"
+
+msgid "Download notebook file"
+msgstr "Ladda ner anteckningsbokfilen"
+
+msgid "Launch"
+msgstr "Lansera"
+
+msgid "open issue"
+msgstr "öppet problem"
+
+msgid "Open an issue"
+msgstr "Öppna ett problem"
+
+msgid "suggest edit"
+msgstr "föreslå redigering"
 
 msgid "Last updated on"
 msgstr "Senast uppdaterad den"
 
-msgid "Copyright"
-msgstr "upphovsrätt"
-
-msgid "Download notebook file"
-msgstr "Ladda ner anteckningsbokfilen"
+msgid "next page"
+msgstr "nästa sida"

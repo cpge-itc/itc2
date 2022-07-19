@@ -8,62 +8,62 @@ msgstr ""
 "Language: ur\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "open issue"
-msgstr "کھلا مسئلہ"
-
-msgid "Search this book..."
-msgstr "اس کتاب کو تلاش کریں…"
-
-msgid "Sphinx Book Theme"
-msgstr "سپنکس بک تھیم"
-
 msgid "Print to PDF"
 msgstr "پی ڈی ایف پرنٹ کریں"
-
-msgid "By"
-msgstr "بذریعہ"
-
-msgid "next page"
-msgstr "اگلا صفحہ"
-
-msgid "Launch"
-msgstr "لانچ کریں"
-
-msgid "Download this page"
-msgstr "اس صفحے کو ڈاؤن لوڈ کریں"
-
-msgid "Edit this page"
-msgstr "اس صفحے میں ترمیم کریں"
-
-msgid "suggest edit"
-msgstr "ترمیم کی تجویز کریں"
-
-msgid "Toggle navigation"
-msgstr "نیویگیشن ٹوگل کریں"
 
 msgid "By the"
 msgstr "کی طرف"
 
-msgid "previous page"
-msgstr "سابقہ ​​صفحہ"
+msgid "By"
+msgstr "بذریعہ"
 
 msgid "Source repository"
 msgstr "ماخذ ذخیرہ"
 
+msgid "Copyright"
+msgstr "کاپی رائٹ"
+
+msgid "Search this book..."
+msgstr "اس کتاب کو تلاش کریں…"
+
 msgid "Download source file"
 msgstr "سورس فائل ڈاؤن لوڈ کریں"
 
-msgid "Open an issue"
-msgstr "ایک مسئلہ کھولیں"
+msgid "Edit this page"
+msgstr "اس صفحے میں ترمیم کریں"
+
+msgid "Toggle navigation"
+msgstr "نیویگیشن ٹوگل کریں"
 
 msgid "Theme by the"
 msgstr "کے ذریعہ تھیم"
 
-msgid "Last updated on"
-msgstr "آخری بار تازہ کاری ہوئی"
+msgid "previous page"
+msgstr "سابقہ ​​صفحہ"
 
-msgid "Copyright"
-msgstr "کاپی رائٹ"
+msgid "Download this page"
+msgstr "اس صفحے کو ڈاؤن لوڈ کریں"
+
+msgid "Sphinx Book Theme"
+msgstr "سپنکس بک تھیم"
 
 msgid "Download notebook file"
 msgstr "نوٹ بک فائل ڈاؤن لوڈ کریں"
+
+msgid "Launch"
+msgstr "لانچ کریں"
+
+msgid "open issue"
+msgstr "کھلا مسئلہ"
+
+msgid "Open an issue"
+msgstr "ایک مسئلہ کھولیں"
+
+msgid "suggest edit"
+msgstr "ترمیم کی تجویز کریں"
+
+msgid "Last updated on"
+msgstr "آخری بار تازہ کاری ہوئی"
+
+msgid "next page"
+msgstr "اگلا صفحہ"

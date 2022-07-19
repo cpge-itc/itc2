@@ -8,74 +8,74 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "open issue"
-msgstr "odprto vprašanje"
-
-msgid "Search this book..."
-msgstr "Poiščite to knjigo ..."
-
-msgid "Sphinx Book Theme"
-msgstr "Tema knjige Sphinx"
+msgid "repository"
+msgstr "odlagališče"
 
 msgid "Print to PDF"
 msgstr "Natisni v PDF"
 
-msgid "By"
-msgstr "Avtor"
-
-msgid "next page"
-msgstr "Naslednja stran"
-
-msgid "Launch"
-msgstr "Kosilo"
-
-msgid "Fullscreen mode"
-msgstr "Celozaslonski način"
-
-msgid "Download this page"
-msgstr "Prenesite to stran"
-
-msgid "repository"
-msgstr "odlagališče"
-
-msgid "Contents"
-msgstr "Vsebina"
-
-msgid "Edit this page"
-msgstr "Uredite to stran"
-
-msgid "suggest edit"
-msgstr "predlagajte urejanje"
-
-msgid "Toggle navigation"
-msgstr "Preklopi navigacijo"
-
 msgid "By the"
 msgstr "Avtor"
 
-msgid "previous page"
-msgstr "Prejšnja stran"
+msgid "By"
+msgstr "Avtor"
 
 msgid "Source repository"
 msgstr "Izvorno skladišče"
 
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "Search this book..."
+msgstr "Poiščite to knjigo ..."
+
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
 msgid "Download source file"
 msgstr "Prenesite izvorno datoteko"
 
-msgid "Open an issue"
-msgstr "Odprite številko"
+msgid "Edit this page"
+msgstr "Uredite to stran"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
 
 msgid "Theme by the"
 msgstr "Tema avtorja"
 
+msgid "previous page"
+msgstr "Prejšnja stran"
+
 msgid "Search the docs ..."
 msgstr "Poiščite dokumente ..."
+
+msgid "Download this page"
+msgstr "Prenesite to stran"
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Sphinx Book Theme"
+msgstr "Tema knjige Sphinx"
+
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
+
+msgid "Open an issue"
+msgstr "Odprite številko"
+
+msgid "suggest edit"
+msgstr "predlagajte urejanje"
 
 msgid "Last updated on"
 msgstr "Nazadnje posodobljeno dne"
 
-msgid "Copyright"
-msgstr "avtorske pravice"
-
-msgid "Download notebook file"
-msgstr "Prenesite datoteko zvezka"
+msgid "next page"
+msgstr "Naslednja stran"
