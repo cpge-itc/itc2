@@ -440,11 +440,6 @@ title="Print to PDF"
    GROUP BY
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-multiples">
-   GROUP BY multiples
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -524,11 +519,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#group-by">
    GROUP BY
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-multiples">
-   GROUP BY multiples
   </a>
  </li>
 </ul>
@@ -623,14 +613,9 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 </section>
 <section id="jointure-simple">
 <h2>Jointure simple<a class="headerlink" href="#jointure-simple" title="Permalink to this headline">#</a></h2>
-<p><strong>Exercice</strong> : Écrire une requête SQL pour afficher le nom de chaque pokémon avec son niveau d’évolution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">niveau</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">evolue_en</span><span class="w"> </span><span class="k">right</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">pokemons</span><span class="w"></span>
-<span class="k">on</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pokemon_base_id</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une requête SQL pour afficher le nom de chaque pokémon avec son niveau d’évolution.</p>
 </div>
 </section>
 <section id="renommage">
@@ -662,14 +647,9 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 </div>
 </div>
 </div>
-<p><strong>Exercice</strong> : Écrire une requête SQL pour afficher le nom de chaque attaque avec son type.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">types</span><span class="p">.</span><span class="n">libelle</span><span class="p">,</span><span class="w"> </span><span class="n">attaques</span><span class="p">.</span><span class="n">libelle</span><span class="w"> </span>
-<span class="k">from</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">attaques</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">types</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type_id</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une requête SQL pour afficher le nom de chaque attaque avec son type.</p>
 </div>
 </section>
 <section id="jointures-multiples">
@@ -680,89 +660,40 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <span class="k">JOIN</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
 </pre></div>
 </div>
-<p><strong>Exercice</strong> : Afficher chaque dresseur avec chacun de ses pokémons.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">dresseurs</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">nom</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">detient_pokemons</span><span class="w"> </span>
-<span class="k">on</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pokemon_id</span><span class="w"></span>
-<span class="k">join</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">dresseurs</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dresseur_id</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Afficher chaque dresseur avec chacun de ses pokémons.</p>
 </div>
 </section>
 <section id="auto-jointure">
 <h2>Auto-jointure<a class="headerlink" href="#auto-jointure" title="Permalink to this headline">#</a></h2>
 <p>Parfois, il est nécessaire d’utiliser plusieurs fois la même table, donc de joindre une table avec elle-même.</p>
-<p><strong>Exercice</strong> : Afficher chaque pokémon avec son évolution et son niveau d’évolution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">pokemons_evol</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">niveau</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">evolue_en</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span>
-<span class="k">on</span><span class="w"> </span><span class="n">pokemon_base_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">join</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">pokemons_evol</span><span class="w"> </span>
-<span class="k">on</span><span class="w"> </span><span class="n">pokemon_evol_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pokemons_evol</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Afficher chaque pokémon avec son évolution et son niveau d’évolution.</p>
 </div>
 </section>
 <section id="left-join">
 <h2>LEFT JOIN<a class="headerlink" href="#left-join" title="Permalink to this headline">#</a></h2>
-<p><strong>Exercice</strong> : Écrire une requête SQL pour afficher chaque pokémon avec son évolution. S’il n’a pas d’évolution, on affichera <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une requête SQL pour afficher chaque pokémon avec son évolution. S’il n’a pas d’évolution, on affichera <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+</div>
 </section>
 <section id="group-by">
 <h2>GROUP BY<a class="headerlink" href="#group-by" title="Permalink to this headline">#</a></h2>
-<p><strong>Exercice</strong> : Afficher chaque dresseurs avec son nombre de pokémons et leur niveau moyen</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nombre_pokemons</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">niveau</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">niveau_moyen</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">detient_pokemons</span><span class="w"></span>
-<span class="k">on</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dresseur_id</span><span class="w"></span>
-<span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">nom</span><span class="w"></span>
-</pre></div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Afficher chaque dresseurs avec son nombre de pokémons et leur niveau moyen</p>
 </div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Afficher chaque pokémon avec son dresseur et le nombre de pokémons de ce dresseur</p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">niveau</span><span class="p">,</span><span class="w"> </span><span class="n">pokemon_base_id</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">evolue_en</span><span class="w"></span>
-<span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">niveau</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Exercice</strong> : Afficher chaque pokémon avec son dresseur et le nombre de pokémons de ce dresseur</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">dresseur</span><span class="p">,</span><span class="w"> </span><span class="n">nb</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">detient_pokemons</span><span class="w"></span>
-<span class="k">join</span><span class="w"></span>
-<span class="n">b</span><span class="w"></span>
-<span class="k">on</span><span class="w"> </span><span class="n">id_dresseur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dresseur_id</span><span class="w"></span>
-<span class="k">join</span><span class="w"> </span><span class="n">pokemons</span><span class="w"></span>
-<span class="k">on</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pokemon_id</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
 <p>Afficher les dresseurs qui possèdent au moins 4 pokémons de niveau au moins 30</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">detient_pokemons</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dresseur_id</span><span class="w"></span>
-<span class="k">where</span><span class="w"> </span><span class="n">niveau</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"></span>
-<span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">nom</span><span class="w"></span>
-<span class="k">having</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
-</pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="group-by-multiples">
-<h2>GROUP BY multiples<a class="headerlink" href="#group-by-multiples" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
