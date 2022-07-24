@@ -9,23 +9,15 @@ jobs:
   deploy-book:
     runs-on: ubuntu-latest
     container:
-      image: qfortier/jupyter-book
+      image: qfortier/jb-addnote
     steps:
     - uses: actions/checkout@v2
 
-    - name: Make mk
-      run: |
-        for file in $(find . -type f -name "*.pdf"); do
-            fit=Fit
-            name=$(basename $file)
-            if [[ $name == td* ]] || [[ $name == tp* ]] || [[ $name == ds* ]];
-            then 
-              fit=FitW
-            fi
-            echo "<iframe src=../${name}#view=$fit&navpanes=0&statusbar=0 height=700 width=100%></iframe>" > ${file%.*}.md
-        done
+    - name: Add notes
+      run: python /addnote.py $(pwd)/files
+    
     - name: Build the book
-      run: make build
+      run: jupyter-book build files
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3
