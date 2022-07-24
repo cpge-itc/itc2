@@ -1,1 +1,0 @@
-FROM continuumio/miniconda3
