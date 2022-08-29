@@ -1,8 +1,10 @@
-# Exercices : SQL Zoo
+# Exercices SQL en ligne
+
+## [cpge-exercices](https://cpge-exercices.github.io/sql)
+
+## SQL Zoo
 
 [SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial) est un site proposant des exercices de SQL en ligne.
-
-## Une table
 
 - [World](https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial) (SELECT, WHERE) : jusqu'à la question 8 incluse
 - [Prix Nobel](https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial) : jusqu'à question 10 incluse
