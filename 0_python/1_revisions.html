@@ -484,7 +484,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tp-1-revisions-de-1ere-annee">
 <h1>TP 1 : Révisions de 1ère année<a class="headerlink" href="#tp-1-revisions-de-1ere-annee" title="Permalink to this headline">#</a></h1>
-<p>L’objectif de ce TP est de réviser les notions vues en première année. Vous pouvez programmer sur Pyzo ou sur Jupyter, en suivant <a class="reference internal" href="programmer.html"><span class="doc std std-doc">ces instructions</span></a>.</p>
+<blockquote>
+<div><p>L’objectif de ce TP est de réviser les notions vues en première année. Vous pouvez programmer sur Pyzo ou sur Jupyter, en suivant <a class="reference internal" href="programmer.html"><span class="doc std std-doc">ces instructions</span></a>.</p>
+</div></blockquote>
 <section id="bases-de-python">
 <h2>Bases de Python<a class="headerlink" href="#bases-de-python" title="Permalink to this headline">#</a></h2>
 <div class="admonition-exercice admonition">
@@ -508,19 +510,37 @@ title="Print to PDF"
 <p>La méthode par dichotomie consiste à divise à chaque étape la taille du problème par 2.<br />
 L’exemple le plus classique est la recherche par dichotomie dans une liste <strong>triée</strong> : on souhaite savoir si un élément <span class="math notranslate nohighlight">\(e\)</span> appartient à une liste <strong>triée</strong> <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 <p>Considérons par exemple <code class="docutils literal notranslate"><span class="pre">L</span></code> = <span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, 9, 11, 12, 14, 15, 18, 22, 54]\)</span> et <span class="math notranslate nohighlight">\(e\)</span> = <span class="math notranslate nohighlight">\(14\)</span>.</p>
-<p>Au lieu de commencer par regarder le 1er élément de <code class="docutils literal notranslate"><span class="pre">L</span></code>, on va regarder l’élément du milieu (ici <span class="math notranslate nohighlight">\(9\)</span>):
-$<span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, \underline{\mathbf{9}}, 11, 12, 14, 15, 18, 22, 54]\)</span><span class="math notranslate nohighlight">\(
-Comme \)</span>9 &lt; 14<span class="math notranslate nohighlight">\( et que la liste est triée par ordre croissant, on en déduit que \)</span>e<span class="math notranslate nohighlight">\(, s'il est dans `L`, est forcément dans la partie droite :
-\)</span><span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, {15}, 18, 22, 54}]\)</span><span class="math notranslate nohighlight">\(
-On se restreint donc par la suite à la partie de `L` qui est encadrée. On compare \)</span>e<span class="math notranslate nohighlight">\( au milieu de cette partie, c'est-à-dire \)</span>15<span class="math notranslate nohighlight">\( :
-\)</span><span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, \underline{\textbf{15}}, 18, 22, 54}]\)</span><span class="math notranslate nohighlight">\(
-Comme \)</span>e &lt; 15<span class="math notranslate nohighlight">\(, on peut cette fois se restreinte à la partie gauche. On cherche donc maintenant \)</span>e<span class="math notranslate nohighlight">\( dans la zone suivante :
-\)</span><span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, {12}, 14}, {15}, 18, 22, 54]\)</span><span class="math notranslate nohighlight">\(
-On compare encore une fois \)</span>e<span class="math notranslate nohighlight">\( au milieu :
-\)</span><span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, \underline{\textbf{12}}, 14}, {15}, 18, 22, 54]\)</span><span class="math notranslate nohighlight">\(
-Comme \)</span>e &gt; 12<span class="math notranslate nohighlight">\(, on regarde à droite :
-\)</span><span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, {9}, 11, {12}, \boxed{\underline{\textbf{14}}}, {15}, 18, 22, 54]\)</span><span class="math notranslate nohighlight">\(
-On a trouvé \)</span>e$ !</p>
+<p>Au lieu de commencer par regarder le 1er élément de <code class="docutils literal notranslate"><span class="pre">L</span></code>, on va regarder l’élément du milieu (ici <span class="math notranslate nohighlight">\(9\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, \underline{\mathbf{9}}, 11, 12, 14, 15, 18, 22, 54]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(9 &lt; 14\)</span> et que la liste est triée par ordre croissant, on en déduit que <span class="math notranslate nohighlight">\(e\)</span>, s’il est dans <code class="docutils literal notranslate"><span class="pre">L</span></code>, est forcément dans la partie droite :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, {15}, 18, 22, 54}]
+\]</div>
+<p>On se restreint donc par la suite à la partie de <code class="docutils literal notranslate"><span class="pre">L</span></code> qui est encadrée. On compare <span class="math notranslate nohighlight">\(e\)</span> au milieu de cette partie, c’est-à-dire <span class="math notranslate nohighlight">\(15\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, \underline{\textbf{15}}, 18, 22, 54}]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(e &lt; 15\)</span>, on peut cette fois se restreinte à la partie gauche. On cherche donc maintenant <span class="math notranslate nohighlight">\(e\)</span> dans la zone suivante :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, {12}, 14}, {15}, 18, 22, 54]
+\]</div>
+<p>On compare encore une fois <span class="math notranslate nohighlight">\(e\)</span> au milieu :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, \underline{\textbf{12}}, 14}, {15}, 18, 22, 54]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(e &gt; 12\)</span>, on regarde à droite :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, 11, {12}, \boxed{\underline{\textbf{14}}}, {15}, 18, 22, 54]
+\]</div>
+<p>On a trouvé <span class="math notranslate nohighlight">\(e\)</span> !</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Compléter le code suivant permettant de rechercher un élément dans une liste triée, par dichotomie.</p>
@@ -548,7 +568,7 @@ On a trouvé \)</span>e$ !</p>
 </section>
 <section id="graphes">
 <h2>Graphes<a class="headerlink" href="#graphes" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://cpge-itc.github.io/itc1">Si besoin, vous pouvez revoir ce cours (sur les graphes)</a>.</p>
+<p><a class="reference external" href="https://cpge-itc.github.io/itc1">Si besoin, vous pouvez revoir ce cours (Graphe : Définitions et Parcours de graphe)</a>.</p>
 <section id="representation-par-matrice-d-adjacence">
 <h3>Représentation par matrice d’adjacence<a class="headerlink" href="#representation-par-matrice-d-adjacence" title="Permalink to this headline">#</a></h3>
 <div class="admonition-exercice admonition">
