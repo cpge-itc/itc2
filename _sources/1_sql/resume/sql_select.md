@@ -4,6 +4,8 @@
     src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/files/1_sql/resume/sql_resume.pdf#zoom=page-width&pagemode=none"
     height=950 width=100% allowfullscreen></iframe>
 
+**Exercices d'entraînement** : métro et valeur foncière foncière sur [https://cpge-exercices.github.io/sql](https://cpge-exercices.github.io/sql)
+
 ```{raw} html
 <script
    type="text/javascript"
