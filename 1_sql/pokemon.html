@@ -230,7 +230,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://notebook.basthon.fr/sql/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/pokemon.ipynb&module=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/pokemon/pokemon.sql"
+        <a href="https://notebook.basthon.fr//?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/pokemon.ipynb&module=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/pokemon/pokemon.sql"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -553,7 +553,7 @@ title="Print to PDF"
 <center><img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/pokemon.png width="90%"></center><p>Voici une commande pour afficher le schéma de chaque table :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="k">schema</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">schema</span>
 </pre></div>
 </div>
 </div>
@@ -567,7 +567,7 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Pour obtenir une table contenant les pokémons et les dresseurs :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pokemons</span> <span class="n">UNION</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">dresseurs</span>
 </pre></div>
 </div>
 </div>
@@ -578,7 +578,7 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Il n’y a aucun pokémon qui est aussi un dresseur :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span><span class="k">INTERSECT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pokemons</span> <span class="n">INTERSECT</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">dresseurs</span>
 </pre></div>
 </div>
 </div>
@@ -589,7 +589,7 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Comme aucun pokémon n’est un dresseur, prendre la différence renvoie la même table que <code class="docutils literal notranslate"><span class="pre">pokemons</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pokemons</span><span class="w"> </span><span class="k">EXCEPT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pokemons</span> <span class="n">EXCEPT</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">dresseurs</span>
 </pre></div>
 </div>
 </div>
@@ -601,7 +601,7 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Un produit cartésien de deux tables R1 et R2 donne toutes les façons de combiner un enregistrement de R1 et un enregistrement de R2 :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">types</span><span class="p">,</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">types</span><span class="p">,</span> <span class="n">dresseurs</span>
 </pre></div>
 </div>
 </div>
@@ -613,14 +613,14 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Si la même colonne est présente dans plusieurs tables, il faut lever l’ambigüité en préfixant par le nom de la table :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pokemons</span><span class="p">,</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"> </span><span class="c1">-- nom est un attribut des 2 tables</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">nom</span> <span class="n">FROM</span> <span class="n">pokemons</span><span class="p">,</span> <span class="n">dresseurs</span> <span class="o">--</span> <span class="n">nom</span> <span class="n">est</span> <span class="n">un</span> <span class="n">attribut</span> <span class="n">des</span> <span class="mi">2</span> <span class="n">tables</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">pokemons</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pokemons</span><span class="p">,</span><span class="w"> </span><span class="n">dresseurs</span><span class="w"> </span><span class="c1">-- ok</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">pokemons</span><span class="o">.</span><span class="n">nom</span> <span class="n">FROM</span> <span class="n">pokemons</span><span class="p">,</span> <span class="n">dresseurs</span> <span class="o">--</span> <span class="n">ok</span>
 </pre></div>
 </div>
 </div>
@@ -638,8 +638,8 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Il est possible de renommer un attribut avec <code class="docutils literal notranslate"><span class="pre">AS</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">libelle</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">point_de_pouvoir</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">attaques</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">libelle</span> <span class="k">as</span> <span class="n">nom</span><span class="p">,</span> <span class="n">pp</span> <span class="k">as</span> <span class="n">point_de_pouvoir</span>
+<span class="n">FROM</span> <span class="n">attaques</span>
 </pre></div>
 </div>
 </div>
@@ -648,9 +648,9 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>Si on renomme une colonne, il faut ensuite y faire référence avec le nouveau nom :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">libelle</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="n">point_de_pouvoir</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">attaques</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">pp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">35</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">libelle</span> <span class="n">nom</span><span class="p">,</span> <span class="n">pp</span> <span class="n">point_de_pouvoir</span>
+<span class="n">FROM</span> <span class="n">attaques</span>
+<span class="n">WHERE</span> <span class="n">pp</span> <span class="o">&gt;</span> <span class="mi">35</span>
 </pre></div>
 </div>
 </div>
@@ -658,7 +658,7 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
 <p>On peut aussi renommer une table :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">niveau</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">detient_pokemons</span><span class="w"> </span><span class="n">d</span><span class="w"></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">d</span><span class="o">.</span><span class="n">niveau</span> <span class="n">FROM</span> <span class="n">detient_pokemons</span> <span class="n">d</span>
 </pre></div>
 </div>
 </div>
@@ -722,16 +722,16 @@ Dans la table <code class="docutils literal notranslate"><span class="pre">evolu
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "xsqlite"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "xsqlite",
+            kernelName: "python3",
             path: "./1_sql"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'xsqlite'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
