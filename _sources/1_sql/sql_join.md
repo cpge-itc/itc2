@@ -7,6 +7,7 @@
 [Exercices en ligne](https://cpge-exercices.github.io/sql)
 
 ```{raw} html
+<br>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"

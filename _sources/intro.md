@@ -25,6 +25,7 @@ Groupe 1 : Jusqu'à FRELY inclus <br>
 </details>
 
 ```{raw} html
+<br>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"
