@@ -6,6 +6,7 @@
 
 - [World](https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial) (SELECT, WHERE) : jusqu'à la question 8 incluse
 - [Prix Nobel](https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial) : jusqu'à question 10 incluse
+- [SUM and COUNT](https://sqlzoo.net/wiki/SUM_and_COUNT) : jusqu'à la question 5 incluse
 
 ## Plusieurs tables (JOIN)
 
