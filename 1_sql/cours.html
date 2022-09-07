@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programmer en Python &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Cours &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -85,9 +85,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/0_python/programmer.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/1_sql/cours.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SQL : Requêtes sur une table" href="sql_select.html" />
+    <link rel="prev" title="Cours d’informatique commune en 2ème année de CPGE" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -144,36 +146,36 @@ const thebe_selector_output = ".output, .cell_output"
   Bases de données
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_sql/cours.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Cours
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_select.html">
+    <a class="reference internal" href="sql_select.html">
      Requêtes sur une table
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_join.html">
+    <a class="reference internal" href="sql_join.html">
      Requêtes sur plusieurs tables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/pokemon.html">
+    <a class="reference internal" href="pokemon.html">
      Exemple : Pokémon
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../1_sql/sqlzoo.html">
+  <a class="reference internal" href="sqlzoo.html">
    TP 1 : SQLZoo
   </a>
  </li>
@@ -268,7 +270,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F0_python/programmer.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F1_sql/cours.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -285,7 +287,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/0_python/programmer.md"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/1_sql/cours.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,7 +315,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/0_python/programmer.md"
+        <a href="../_sources/1_sql/cours.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -362,7 +364,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programmer en Python</h1>
+                <h1>Cours</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -374,23 +376,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programmer-en-python">
-<h1>Programmer en Python<a class="headerlink" href="#programmer-en-python" title="Permalink to this headline">#</a></h1>
-<br>
-<p>Pour programmer, vous pouvez soit utiliser le même logiciel qu’en première année (par exemple <a class="reference external" href="https://pyzo.org/">Pyzo</a>), soit <a class="reference external" href="https://notebook.basthon.fr">Basthon</a> (Jupyter) en cliquant sur la “fusée” en haut à droite de chaque TP.</p>
-<p>Commandes Jupyter :</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cours">
+<h1>Cours<a class="headerlink" href="#cours" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>Ctrl + Entrée : exécuter la cellule</p></li>
-<li><p>Shift + Entrée : exécuter la cellule puis passer à la suivante</p></li>
-<li><p>Entrée : passer en mode édition</p></li>
-<li><p>Échap : sortir du mode édition</p></li>
+<li><p><a class="reference internal" href="sql_select.html"><span class="doc std std-doc">SQL : une table</span></a> : SELECT, WHERE, SUM, COUNT, ORDER BY…</p></li>
+<li><p><a class="reference internal" href="sql_select.html"><span class="doc std std-doc">SQL : plusieurs tables</span></a> : UNION, INTERSECTION, JOIN…</p></li>
 </ul>
-<p>Les commandes suivantes sont valables uniquement hors du mode édition :</p>
-<ul class="simple">
-<li><p>A : créer une nouvelle cellule (en haut)</p></li>
-<li><p>B : créer une nouvelle cellule (en bas)</p></li>
-<li><p>D D : supprimer la cellule</p></li>
-</ul>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -406,7 +399,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./0_python"
+            path: "./1_sql"
         },
         predefinedOutput: true
     }
@@ -420,6 +413,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Cours d’informatique commune en 2ème année de CPGE</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sql_select.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SQL : Requêtes sur une table</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
