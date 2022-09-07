@@ -25,7 +25,7 @@ Cours d'informatique commune au lycée La Martinière Monplaisir à Lyon.
    type="text/javascript"
    src="https://utteranc.es/client.js"
    async="async"
-   repo="mp-info/mp-info.github.io"
+   repo="cpge-itc/itc2"
    issue-term="pathname"
    theme="github-light"
    label="💬 comment"
