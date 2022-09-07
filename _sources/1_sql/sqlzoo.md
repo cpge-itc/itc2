@@ -1,8 +1,8 @@
 # TP 1 : SQLZoo
 
-## Une seule table
-
 [SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial) est un site proposant des exercices de SQL en ligne.
+
+## Une seule table
 
 - [World](https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial) (SELECT, WHERE) : jusqu'à la question 8 incluse
 - [Prix Nobel](https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial) : jusqu'à question 10 incluse
