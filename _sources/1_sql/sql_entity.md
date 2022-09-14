@@ -1,4 +1,4 @@
-# Fonctions d'agrégation et modèle entité-relation
+# Modèle entité-relation
 
 <iframe
     src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/5_er/er.pdf#zoom=page-fit&pagemode=none"
