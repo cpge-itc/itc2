@@ -4,13 +4,13 @@
 
 <iframe
     src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/concours/mines16.pdf#zoom=page-width&pagemode=none"
-    height=500 width=100% allowfullscreen></iframe>
+    height=900 width=100% allowfullscreen></iframe>
 
 ## Centrale 2015
 
 <iframe
     src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/concours/cs15.pdf#zoom=page-width&pagemode=none"
-    height=500 width=100% allowfullscreen></iframe>
+    height=900 width=100% allowfullscreen></iframe>
 
 ```{raw} html
 <script
