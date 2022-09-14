@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Résumé Python &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Fonctions d’agrégation et modèle entité-relation &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -85,9 +85,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/0_python/aide_memoire.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/1_sql/sql_entity.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exemple : Pokémon" href="pokemon.html" />
+    <link rel="prev" title="Fonctions d’agrégation et GROUP BY" href="sql_groupby.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -144,51 +146,51 @@ const thebe_selector_output = ".output, .cell_output"
   Bases de données
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../1_sql/cours.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="cours.html">
    Cours
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_select.html">
+    <a class="reference internal" href="sql_select.html">
      Requêtes sur une table avec SELECT, WHERE
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_join.html">
+    <a class="reference internal" href="sql_join.html">
      Requêtes sur plusieurs tables avec JOIN
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_groupby.html">
+    <a class="reference internal" href="sql_groupby.html">
      Fonctions d’agrégation et GROUP BY
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/sql_entity.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Fonctions d’agrégation et modèle entité-relation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/pokemon.html">
+    <a class="reference internal" href="pokemon.html">
      Exemple : Pokémon
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../1_sql/resume/sql_resume.html">
+    <a class="reference internal" href="resume/sql_resume.html">
      Résumé SQL
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../1_sql/sqlzoo.html">
+  <a class="reference internal" href="sqlzoo.html">
    TP 1 : SQLZoo
   </a>
  </li>
@@ -244,53 +246,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/0_python/aide_memoire.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://notebook.basthon.fr//?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/0_python/aide_memoire.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Basthon"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_basthon.svg">
-  </span>
-<span class="headerbtn__text-container">Basthon</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -330,7 +285,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F0_python/aide_memoire.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F1_sql/sql_entity.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -347,7 +302,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/0_python/aide_memoire.ipynb"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/1_sql/sql_entity.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -375,7 +330,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/0_python/aide_memoire.ipynb"
+        <a href="../_sources/1_sql/sql_entity.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -386,7 +341,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -412,60 +367,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extrait-du-programme-officiel">
-   Extrait du programme officiel
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Résumé Python</h1>
+                <h1>Fonctions d’agrégation et modèle entité-relation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extrait-du-programme-officiel">
-   Extrait du programme officiel
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -473,11 +391,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="resume-python">
-<h1>Résumé Python<a class="headerlink" href="#resume-python" title="Permalink to this headline">#</a></h1>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc1/main/files/1_Python/cours/resume_python.pdf#zoom=page-width&pagemode=none height=1000 width=100% allowfullscreen></iframe><section id="extrait-du-programme-officiel">
-<h2>Extrait du programme officiel<a class="headerlink" href="#extrait-du-programme-officiel" title="Permalink to this headline">#</a></h2>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/0_python/python.pdf?token=GHSAT0AAAAAABX6XFRWYXFHKWW5O7OTWZXYYYJED7Q#zoom=page-width&pagemode=none height=1000 width=100% allowfullscreen></iframe></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="fonctions-d-agregation-et-modele-entite-relation">
+<h1>Fonctions d’agrégation et modèle entité-relation<a class="headerlink" href="#fonctions-d-agregation-et-modele-entite-relation" title="Permalink to this headline">#</a></h1>
+<iframe
+    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/5_er/er.pdf#zoom=page-fit&pagemode=none"
+    height=500 width=100% allowfullscreen></iframe>
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="mp-info/mp-info.github.io"
+   issue-term="pathname"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/><p><a class="reference external" href="https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/5_er/er.pdf">https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/5_er/er.pdf</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,7 +421,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./0_python"
+            path: "./1_sql"
         },
         predefinedOutput: true
     }
@@ -507,6 +435,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="sql_groupby.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fonctions d’agrégation et GROUP BY</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pokemon.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exemple : Pokémon</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
