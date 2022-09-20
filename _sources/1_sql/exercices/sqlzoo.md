@@ -1,6 +1,6 @@
 # TP 1 : SQLZoo
 
-[SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial) est un site proposant des exercices de SQL en ligne.
+SQL Zoo est un site proposant des exercices de SQL en ligne.
 
 ## Une seule table
 
