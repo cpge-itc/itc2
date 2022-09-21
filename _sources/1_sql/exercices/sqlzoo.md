@@ -26,4 +26,7 @@ Pour la suite, vous pouvez regarder le cours correspondant (GROUP BY).
 
 - [World](https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial)
 
+
+## SQL-practice
+
 Une fois les exercices SQLZoo finis, faire toutes les questions sur [https://www.sql-practice.com](https://www.sql-practice.com)
