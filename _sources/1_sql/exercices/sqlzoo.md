@@ -1,6 +1,6 @@
-# TP 1 : SQLZoo
+# TP 1 et 2 : SQLZoo et sql-practice
 
-SQL Zoo est un site proposant des exercices de SQL en ligne.
+[SQL Zoo](https://sqlzoo.net/wiki/SQL_Tutorial) est un site proposant des exercices de SQL en ligne.
 
 ## Une seule table
 
@@ -25,3 +25,5 @@ Pour la suite, vous pouvez regarder le cours correspondant (GROUP BY).
 ## SELECT imbriqués
 
 - [World](https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial)
+
+Une fois les exercices SQLZoo finis, faire toutes les questions sur [https://www.sql-practice.com](https://www.sql-practice.com)
