@@ -1,4 +1,4 @@
-# Fonctions d'agrégation et modèle entité-relation
+# SELECT imbriqués
 
 <iframe
     src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/4_imbrique/sql_imbrique.pdf#zoom=page-fit&pagemode=none"
