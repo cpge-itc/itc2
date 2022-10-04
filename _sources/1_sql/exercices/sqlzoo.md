@@ -30,3 +30,7 @@ Pour la suite, vous pouvez regarder le cours correspondant (GROUP BY).
 ## SQL-practice
 
 Une fois les exercices SQLZoo finis, faire toutes les questions sur [https://www.sql-practice.com](https://www.sql-practice.com)
+
+## Exercices de concours
+
+Quand vous avez fini : [https://cpge-itc.github.io/itc2/1_sql/exercices/concours/concours.html](https://cpge-itc.github.io/itc2/1_sql/exercices/concours/concours.html)
