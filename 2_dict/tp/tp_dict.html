@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>TP : dictionnaire &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>TP : Dictionnaire &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   TP : dictionnaire
+   TP : Dictionnaire
   </a>
  </li>
 </ul>
@@ -512,7 +512,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>TP : dictionnaire</h1>
+                <h1>TP : Dictionnaire</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -565,14 +565,14 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tp-dictionnaire">
-<h1>TP : dictionnaire<a class="headerlink" href="#tp-dictionnaire" title="Permalink to this headline">#</a></h1>
+<h1>TP : Dictionnaire<a class="headerlink" href="#tp-dictionnaire" title="Permalink to this headline">#</a></h1>
 <section id="internationalisation">
 <h2>Internationalisation<a class="headerlink" href="#internationalisation" title="Permalink to this headline">#</a></h2>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <ol class="simple">
 <li><p>Définir un dictionnaire <code class="docutils literal notranslate"><span class="pre">fr_to_en</span></code> contenant chaque jour de la semaine (en français) avec sa traduction en anglais.</p></li>
-<li><p>Vérifier que <code class="docutils literal notranslate"><span class="pre">fr_to_en[&quot;lundi&quot;]</span></code> contient “monday”.</p></li>
+<li><p>Vérifier que <code class="docutils literal notranslate"><span class="pre">fr_to_en[&quot;lundi&quot;]</span></code> contient <code class="docutils literal notranslate"><span class="pre">&quot;monday&quot;</span></code>.</p></li>
 <li><p>Ajouter les mois avec leurs traductions.</p></li>
 </ol>
 </div>
@@ -582,7 +582,8 @@ title="Print to PDF"
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">anagramme(m1,</span> <span class="pre">m2)</span></code> qui teste si deux mots (des chaînes de caractères) sont des anagrammes, c’est-à-dire s’ils contiennent les mêmes lettres (avec le même nombre d’occurence de chaque lettre). Par exemple, <code class="docutils literal notranslate"><span class="pre">anagramme(&quot;ordre&quot;,</span> <span class="pre">&quot;dorer&quot;)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code>.<br />
-Cette fonction doit être en O(<span class="math notranslate nohighlight">\(n_1 + n_2\)</span>), où <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> sont les tailles de <code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>.</p>
+Cette fonction doit être en O(<span class="math notranslate nohighlight">\(n_1 + n_2\)</span>), où <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> sont les tailles de <code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>.<br />
+<strong>Indice</strong> : On pourra utiliser deux dictionnaires pour compter le nombre d’apparitions de chaque lettre dans <code class="docutils literal notranslate"><span class="pre">m1</span></code> et <code class="docutils literal notranslate"><span class="pre">m2</span></code>, puis vérifier que ces deux dictionnaires contiennent les mêmes associations (clé, valeur).</p>
 </div>
 </section>
 <section id="trie-arbre-prefixe">
