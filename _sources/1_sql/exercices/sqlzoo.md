@@ -12,7 +12,6 @@ SQL Zoo est un site proposant des exercices de SQL en ligne.
 
 - [Football](https://sqlzoo.net/wiki/The_JOIN_operation)
 - [Movie](https://sqlzoo.net/wiki/More_JOIN_operations)
-- [Music](https://sqlzoo.net/wiki/Music_Tutorial)
 - [Self Join](https://sqlzoo.net/wiki/Self_join)
 
 Pour la suite, vous pouvez regarder le cours correspondant (GROUP BY).
