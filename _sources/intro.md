@@ -7,9 +7,9 @@ Cours d'informatique commune au lycée La Martinière Monplaisir à Lyon.
 - [Ajout d'une épreuve d'informatique en PC à CCINP](https://www.concours-commun-inp.fr/fr/actus/evolutions-du-concours-commun-inp-en-2023.html)
 
 **DS 1** :  
-- SQL : SELECT, WHERE, FROM, DISTINCT, UNION, INTERSECT, EXCEPT, JOIN, GROUP BY, fonctions d'agrégation (SUM, AVG, COUNT, MIN, MAX), HAVING, LIMIT, OFFSET, ORDER BY.  
-- Vocabulaire base de données : clé, clé primaire, attribut, enregistrement, entité, relation, association 1-1, 1-*, *-*  
-- Dictionnaire : vocabulaire (clé, valeur), création, ajout d'une association (clé, valeur), modification, parcours d'un dictionnaire.
+- **SQL** : SELECT, WHERE, FROM, DISTINCT, UNION, INTERSECT, EXCEPT, JOIN, GROUP BY, fonctions d'agrégation (SUM, AVG, COUNT, MIN, MAX), HAVING, LIMIT, OFFSET, ORDER BY.  
+- **Vocabulaire base de données** : clé, clé primaire, attribut, enregistrement, entité, relation, association `1-1`, `1-*`, `*-*`.  
+- **Dictionnaire** : vocabulaire (clé, valeur), création, ajout d'une association (clé, valeur), modification, parcours d'un dictionnaire.
 
 <details>
 <summary>Planning MP</summary>
