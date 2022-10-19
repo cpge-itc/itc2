@@ -248,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../2_dict/tp/tp_dict.html">
-   TP dictionnaire
+   TP : Dictionnaire
   </a>
  </li>
 </ul>
@@ -260,12 +260,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../prog_dyn.html">
-   Cours programmation dynamique
+   Cours : Programmation dynamique
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   TP programmation dynamique
+   TP : Programmation dynamique
   </a>
  </li>
 </ul>
@@ -566,7 +566,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tp-programmation-dynamique">
 <h1>TP : Programmation dynamique<a class="headerlink" href="#tp-programmation-dynamique" title="Permalink to this headline">#</a></h1>
-<p><strong>Lire le cours avant de faire le TP.</strong></p>
+<p><strong>Lire le cours de programmation dynamique (au moins début) avant de faire le TP.</strong></p>
 <section id="coefficient-binomial">
 <h2>Coefficient binomial<a class="headerlink" href="#coefficient-binomial" title="Permalink to this headline">#</a></h2>
 <p>On souhaite calculer <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> par programmation dynamique, en utilisant la formule de Pascal :</p>
@@ -581,16 +581,6 @@ title="Print to PDF"
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction récursive <code class="docutils literal notranslate"><span class="pre">binom_rec(n,</span> <span class="pre">k)</span></code> renvoyant <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> à partir de la formule ci-dessus. Expliquer pourquoi la complexité de cette fonction est très mauvaise.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_rec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">binom_rec</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">binom_rec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,19 +615,6 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># cas de base</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">M</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_dp</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -651,8 +628,8 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </section>
 <section id="rendu-de-monnaie">
 <h2>Rendu de monnaie<a class="headerlink" href="#rendu-de-monnaie" title="Permalink to this headline">#</a></h2>
-<p>Étant donné une liste <code class="docutils literal notranslate"><span class="pre">L</span></code> d’entiers <span class="math notranslate nohighlight">\(a_1,\ldots,a_k\)</span> (des pièces), on veut calculer le nombre minimum <span class="math notranslate nohighlight">\(r(n, k)\)</span> de pièces parmi <span class="math notranslate nohighlight">\(a_1, ..., a_k\)</span> dont la somme vaut <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>Par exemple, si <span class="math notranslate nohighlight">\(k = 3\)</span> et <span class="math notranslate nohighlight">\(a_1 = 1, a_2 = 2, a_3 = 5\)</span> alors <span class="math notranslate nohighlight">\(r(7, 3) = 2\)</span> (car <span class="math notranslate nohighlight">\(7 = 2 + 5\)</span> et c’est la façon de rendre <span class="math notranslate nohighlight">\(7€\)</span> qui utilise le moins de pièces).</p>
+<p>Étant donnée une liste <code class="docutils literal notranslate"><span class="pre">L</span></code> d’entiers <span class="math notranslate nohighlight">\(a_1,\ldots,a_k\)</span> (des pièces), on veut calculer le nombre minimum <span class="math notranslate nohighlight">\(r(n, k)\)</span> de pièces parmi <span class="math notranslate nohighlight">\(a_1, ..., a_k\)</span> dont la somme vaut <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Par exemple, si <span class="math notranslate nohighlight">\(k = 3\)</span> et <span class="math notranslate nohighlight">\(a_1 = 1, a_2 = 2, a_3 = 5\)</span> alors <span class="math notranslate nohighlight">\(r(7, 3) = 2\)</span> (car <span class="math notranslate nohighlight">\(7 = 2 + 5\)</span> et c’est la façon de rendre <span class="math notranslate nohighlight">\(7\)</span>€ qui utilise le moins de pièces).</p>
 <p>Remarques :</p>
 <ul class="simple">
 <li><p>On peut utiliser plusieurs fois la même pièce.</p></li>
@@ -661,38 +638,15 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </ul>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<ol class="simple">
-<li><p>Écrire une relation de récurrence sur <span class="math notranslate nohighlight">\(r(n, k)\)</span>. On pourra distinguer deux cas pour rendre <span class="math notranslate nohighlight">\(n\)</span> euros avec les picèes <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_k\)</span> :</p></li>
-</ol>
+<p>Écrire une relation de récurrence sur <span class="math notranslate nohighlight">\(r(n, k)\)</span>. On pourra distinguer deux cas pour rendre <span class="math notranslate nohighlight">\(n\)</span> euros avec les picèes <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_k\)</span> :</p>
 <ul class="simple">
 <li><p>soit la <span class="math notranslate nohighlight">\(n\)</span>ème pièce n’est pas utilisée (et on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>)</p></li>
-<li><p>soit la <span class="math notranslate nohighlight">\(n\)</span>ème pièce est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>)</p></li>
+<li><p>soit la <span class="math notranslate nohighlight">\(n\)</span>ème pièce est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>).</p></li>
 </ul>
-<ol class="simple">
-<li><p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">rendu(L,</span> <span class="pre">n)</span></code> renvoyant le nombre minimum de pièces requises pour rendre <code class="docutils literal notranslate"><span class="pre">n</span></code> euros, où <code class="docutils literal notranslate"><span class="pre">L</span></code> est la liste des pièces.</p></li>
-</ol>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
-<span class="c1"># r(n, k) = min(r(n, k - 1), r(n - ak, k)) si ak &lt;= n</span>
-<span class="c1"># sinon r(n, k) = r(n, k - 1) (on ne peut pas utiliser la pièce ak)</span>
-
-<span class="c1"># 2.</span>
-<span class="k">def</span> <span class="nf">rendu</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># nombre de pièces</span>
-    <span class="n">R</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">j</span><span class="p">])</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">R</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">rendu(L,</span> <span class="pre">n)</span></code> renvoyant le nombre minimum de pièces requises pour rendre <code class="docutils literal notranslate"><span class="pre">n</span></code> euros, où <code class="docutils literal notranslate"><span class="pre">L</span></code> est la liste des pièces.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,45 +670,46 @@ Par exemple, ce nombre est 2 pour la matrice <span class="math notranslate nohig
 On supposera que les indices en arguments des fonctions ne dépassent pas des tableaux ou matrices correspondants.</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">est_carre</span> <span class="pre">m</span> <span class="pre">x</span> <span class="pre">y</span> <span class="pre">k</span></code> détermine si la sous-matrice de <code class="docutils literal notranslate"><span class="pre">m</span></code> de taille <span class="math notranslate nohighlight">\(k \times k\)</span> et dont la case en haut à gauche a pour coordonnées (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) ne possède que des 1.<br />
-Par exemple, <code class="docutils literal notranslate"><span class="pre">est_carre</span> <span class="pre">M</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">2</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">true</span></code> (ce qui correspond au carré en pointillé dans la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus).</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">est_carre(m,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">k)</span></code> détermine si la sous-matrice de <code class="docutils literal notranslate"><span class="pre">m</span></code> de taille <span class="math notranslate nohighlight">\(k \times k\)</span> et dont la case en haut à gauche a pour coordonnées (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) ne possède que des 1.<br />
+Par exemple, <code class="docutils literal notranslate"><span class="pre">est_carre(M,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">true</span></code> (ce qui correspond au carré en pointillé dans la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus).</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">contient_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">contient_carre</span> <span class="pre">m</span> <span class="pre">k</span></code> renvoie <code class="docutils literal notranslate"><span class="pre">true</span></code> si <code class="docutils literal notranslate"><span class="pre">m</span></code> contient un carré de 1 de taille <span class="math notranslate nohighlight">\(k\)</span>, <code class="docutils literal notranslate"><span class="pre">false</span></code> sinon.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">contient_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">contient_carre(m,</span> <span class="pre">k)</span></code> renvoie <code class="docutils literal notranslate"><span class="pre">true</span></code> si <code class="docutils literal notranslate"><span class="pre">m</span></code> contient un carré de 1 de taille <span class="math notranslate nohighlight">\(k\)</span>, <code class="docutils literal notranslate"><span class="pre">false</span></code> sinon.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre1</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre1</span> <span class="pre">m</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre1</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre1</span> <span class="pre">m</span></code> ? Dans la suite, on utilisera une méthode plus efficace par programmation dynamique.</p>
+<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> ? Dans la suite, on utilisera une méthode plus efficace par programmation dynamique.</p>
 </div>
-<p>On va construire une matrice <code class="docutils literal notranslate"><span class="pre">c</span></code> telle que <code class="docutils literal notranslate"><span class="pre">c.(x).(y)</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m.(x).(y)</span></code> (c’est à dire un carré de 1 qui contient <code class="docutils literal notranslate"><span class="pre">m.(x).(y)</span></code> mais aucun <code class="docutils literal notranslate"><span class="pre">m.(i).(j)</span></code> si <span class="math notranslate nohighlight">\(i &gt; x\)</span> ou <span class="math notranslate nohighlight">\(j &gt; y\)</span>).\ Par exemple, <code class="docutils literal notranslate"><span class="pre">c.(1).(2)</span> <span class="pre">=</span> <span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">c.(2).(3)</span> <span class="pre">=</span> <span class="pre">2</span></code> pour la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus.</p>
+<p>On va construire une matrice <code class="docutils literal notranslate"><span class="pre">c</span></code> telle que <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x][y]</span></code> (c’est à dire un carré de 1 qui contient <code class="docutils literal notranslate"><span class="pre">m[x][y]</span></code> mais aucun <code class="docutils literal notranslate"><span class="pre">m[i][j]</span></code> si <span class="math notranslate nohighlight">\(i &gt; x\)</span> ou <span class="math notranslate nohighlight">\(j &gt; y\)</span>).<br />
+Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2]</span> <span class="pre">=</span> <span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">c[2][3]</span> <span class="pre">=</span> <span class="pre">2</span></code> pour la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus.</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">init</span></code> telle que <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">m</span> <span class="pre">c</span></code> remplisse les valeurs de <code class="docutils literal notranslate"><span class="pre">c.(0).(y)</span></code> et <code class="docutils literal notranslate"><span class="pre">c.(x).(0)</span></code>, <span class="math notranslate nohighlight">\(\forall\)</span> <span class="math notranslate nohighlight">\(x, y\)</span>.</p>
-</div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Que vaut <code class="docutils literal notranslate"><span class="pre">c.(x).(y)</span></code> si <code class="docutils literal notranslate"><span class="pre">m.(x).(y)</span> <span class="pre">=</span> <span class="pre">0</span></code> ?</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">init</span></code> telle que <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">m</span> <span class="pre">c</span></code> remplisse les valeurs de <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code>, pour tout <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Montrer que, si <code class="docutils literal notranslate"><span class="pre">m.(x).(y)</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">c.(x).(y)</span></code> est égal à 1 plus le minimum de <code class="docutils literal notranslate"><span class="pre">c.(x-1).(y)</span></code>, <code class="docutils literal notranslate"><span class="pre">c.(x).(y-1)</span></code> et <code class="docutils literal notranslate"><span class="pre">c.(x-1).(y-1)</span></code>.</p>
+<p>Que vaut <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">0</span></code> ?</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">remplir</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code> sont des matrices de même taille, <code class="docutils literal notranslate"><span class="pre">remplir</span> <span class="pre">m</span> <span class="pre">c</span></code> modifie <code class="docutils literal notranslate"><span class="pre">c</span></code> pour qu’elle vérifie: <span class="math notranslate nohighlight">\(\forall\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">c.(x).(y)</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m.(x).(y)</span></code>.</p>
+<p>Montrer que, si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est égal à 1 plus le minimum de <code class="docutils literal notranslate"><span class="pre">c[x-1][y]</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y-1]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x-1][y-1]</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre2</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre2</span> <span class="pre">m</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>, ainsi que les coordonnées de la case en haut à gauche d’un tel carré.</p>
+<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">remplir</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code> sont des matrices de même taille, <code class="docutils literal notranslate"><span class="pre">remplir(m,</span> <span class="pre">c)</span></code> modifie <code class="docutils literal notranslate"><span class="pre">c</span></code> pour qu’elle vérifie: <span class="math notranslate nohighlight">\(\forall\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x}[y]</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre2</span> <span class="pre">m</span></code>, en fonction des dimensions de <code class="docutils literal notranslate"><span class="pre">m</span></code>? Comparer avec <code class="docutils literal notranslate"><span class="pre">max_carre1</span> <span class="pre">m</span></code>.</p>
+<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre2</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>, ainsi que les coordonnées de la case en haut à gauche d’un tel carré.</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code>, en fonction des dimensions de <code class="docutils literal notranslate"><span class="pre">m</span></code>? Comparer avec <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
