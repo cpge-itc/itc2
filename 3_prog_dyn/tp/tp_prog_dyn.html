@@ -571,7 +571,7 @@ title="Print to PDF"
 <h2>Coefficient binomial<a class="headerlink" href="#coefficient-binomial" title="Permalink to this headline">#</a></h2>
 <p>On souhaite calculer <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> par programmation dynamique, en utilisant la formule de Pascal :</p>
 <div class="math notranslate nohighlight">
-\[\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n}{k - 1}\]</div>
+\[\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}\]</div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Quel est le cas de base que l’on peut considérer pour cette récurrence ?</p>
@@ -582,7 +582,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
