@@ -583,9 +583,15 @@ L’intérêt d’une fonction de hachage est de transformer un élément “com
 <p>Une des applications des fonctions de hachage consiste à vérifier l’intégrité d’un fichier après l’avoir téléchargé (pour détecter d’éventuelles erreurs de transmission). Pour cela, on calcule une empreinte (checksum) du fichier téléchargé que l’on compare avec l’empreinte du fichier original.</p>
 <center><img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/2_dict/tp/docker_sha.png width=90%><br>
 Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une image Docker</center><p>Dans la suite, nous implémentons un algorithme de checksum très simple (mot de parité) sur une chaîne de caractères.</p>
-<p><code class="docutils literal notranslate"><span class="pre">ord</span></code> est une fonction qui renvoie le code Unicode d’un caractère.</p>
-<p><strong>Question</strong> :  Quel est le code Unicode de <code class="docutils literal notranslate"><span class="pre">a</span></code> ? de <code class="docutils literal notranslate"><span class="pre">Z</span></code> ?</p>
-<p><strong>Question</strong> : Écrire une fonction <code class="docutils literal notranslate"><span class="pre">code(s)</span></code> renvoyant une liste <code class="docutils literal notranslate"><span class="pre">L</span></code> telle que <code class="docutils literal notranslate"><span class="pre">L[i]</span></code> soit le code Unicode de <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.</p>
+<p>Dans la suite, on utilisera <code class="docutils literal notranslate"><span class="pre">ord(c)</span></code> qui renvoie le code Unicode d’un caractère <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Quel est le code Unicode de <code class="docutils literal notranslate"><span class="pre">a</span></code> ? de <code class="docutils literal notranslate"><span class="pre">Z</span></code> ?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">code(s)</span></code> renvoyant une liste <code class="docutils literal notranslate"><span class="pre">L</span></code> telle que <code class="docutils literal notranslate"><span class="pre">L[i]</span></code> soit le code Unicode de <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -611,7 +617,10 @@ Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une imag
 </div>
 <p>Si <span class="math notranslate nohighlight">\(a\)</span> est un entier, on note <span class="math notranslate nohighlight">\(a_i\)</span> le <span class="math notranslate nohighlight">\(i\)</span>ème bit de <span class="math notranslate nohighlight">\(a\)</span> en base <span class="math notranslate nohighlight">\(2\)</span>. Le XOR de deux entiers <span class="math notranslate nohighlight">\(x\)</span> et <span class="math notranslate nohighlight">\(y\)</span> est un entier <span class="math notranslate nohighlight">\(z\)</span> tel que <span class="math notranslate nohighlight">\(z_i = 1\)</span> si et seulement si <span class="math notranslate nohighlight">\(x_i = 1\)</span> ou <span class="math notranslate nohighlight">\(y_i = 1\)</span>, mais pas les deux. Par exemple, le XOR de <span class="math notranslate nohighlight">\(9 = 1001_2\)</span> et <span class="math notranslate nohighlight">\(5 = 0101_2\)</span> est <span class="math notranslate nohighlight">\(12 = 1100_2\)</span>.<br />
 En Python, le XOR est obtenu par <code class="docutils literal notranslate"><span class="pre">x^y</span></code>.</p>
-<p><strong>Question</strong> : Sans ordinateur, convertir <span class="math notranslate nohighlight">\(11\)</span> et <span class="math notranslate nohighlight">\(6\)</span> en base <span class="math notranslate nohighlight">\(2\)</span> puis calculer leur XOR. Vérifier ensuite avec Python.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Sans ordinateur, convertir <span class="math notranslate nohighlight">\(11\)</span> et <span class="math notranslate nohighlight">\(6\)</span> en base <span class="math notranslate nohighlight">\(2\)</span> puis calculer leur XOR. Vérifier ensuite avec Python.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span><span class="o">^</span><span class="mi">6</span>
@@ -624,7 +633,10 @@ En Python, le XOR est obtenu par <code class="docutils literal notranslate"><spa
 </div>
 </div>
 </div>
-<p><strong>Question</strong> : Écrire une fonction <code class="docutils literal notranslate"><span class="pre">checksum(s)</span></code> renvoyant le XOR des codes des caractères de <code class="docutils literal notranslate"><span class="pre">s</span></code>. Il faut donc renvoyer <code class="docutils literal notranslate"><span class="pre">ord(s[0])^ord(s[1])^...^ord(s[len(s)</span> <span class="pre">-</span> <span class="pre">1])</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">checksum(s)</span></code> renvoyant le XOR des codes des caractères de <code class="docutils literal notranslate"><span class="pre">s</span></code>. Il faut donc renvoyer <code class="docutils literal notranslate"><span class="pre">ord(s[0])^ord(s[1])^...^ord(s[len(s)</span> <span class="pre">-</span> <span class="pre">1])</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">checksum</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -672,8 +684,14 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 </div>
 <p>La valeur renvoyée par <code class="docutils literal notranslate"><span class="pre">md5</span></code> est iciune chaîne de caractères qui doit être interprétée en base 16 (hexadécimal) : par exemple, <span class="math notranslate nohighlight">\(a\)</span> correspond à <span class="math notranslate nohighlight">\(12\)</span>, <span class="math notranslate nohighlight">\(b\)</span> à <span class="math notranslate nohighlight">\(13\)</span>…</p>
 <p>MD5 est une <strong>fonction de hachage cryptographique</strong>, ce qui signifie que le nombre de bits d’une emprunte est une constante, indépendant de l’entrée (la taille de <span class="math notranslate nohighlight">\(h(x)\)</span> est constante, indépendante de <span class="math notranslate nohighlight">\(x\)</span>).</p>
-<p><strong>Question</strong> : Combien y a t-il de bits dans un caractère en hexadécimal ?</p>
-<p><strong>Question</strong> : Combien de bits sont utilisées pour une emprunte MD5 ?</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Combien y a t-il de bits dans un caractère en hexadécimal ?</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Combien de bits sont utilisées pour une emprunte MD5 ?</p>
+</div>
 <p>Pour trouver une collision, on pourra générer des chaînes de caractères aléatoires <code class="docutils literal notranslate"><span class="pre">s</span></code> en stockant dans un dictionnaire la clé <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">s</span></code>. Si l’emprunte existe déjà dans le dictionnaire, c’est qu’on a trouvé une collision.</p>
 <p>On utilisera la fonction suivante génère une chaîne de caractères aléatoire de longueur <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 <div class="cell docutils container">
@@ -693,7 +711,10 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 </div>
 </div>
 </div>
-<p><strong>Question</strong> : Écrire une fonction <code class="docutils literal notranslate"><span class="pre">find_collision(n,</span> <span class="pre">p,</span> <span class="pre">k)</span></code> qui cherche une collision en générant <code class="docutils literal notranslate"><span class="pre">n</span></code> chaînes de caractères aléatoires de tailles <code class="docutils literal notranslate"><span class="pre">p</span></code>. Pour que la recherche ne prenne pas trop de temps, seul les <code class="docutils literal notranslate"><span class="pre">k</span></code> premiers caractères de <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> seront considérés (avec <code class="docutils literal notranslate"><span class="pre">md5(s)[:k]</span></code>). On pourra prendre <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">100000</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">find_collision(n,</span> <span class="pre">p,</span> <span class="pre">k)</span></code> qui cherche une collision en générant <code class="docutils literal notranslate"><span class="pre">n</span></code> chaînes de caractères aléatoires de tailles <code class="docutils literal notranslate"><span class="pre">p</span></code>. Pour que la recherche ne prenne pas trop de temps, seul les <code class="docutils literal notranslate"><span class="pre">k</span></code> premiers caractères de <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> seront considérés (avec <code class="docutils literal notranslate"><span class="pre">md5(s)[:k]</span></code>). On pourra prendre <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">100000</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_collision</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
