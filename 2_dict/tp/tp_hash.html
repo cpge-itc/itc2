@@ -562,20 +562,21 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tp-fonction-de-hachage">
 <h1>TP : Fonction de hachage<a class="headerlink" href="#tp-fonction-de-hachage" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
 <p>De manière informelle, on dit qu’une fonction <span class="math notranslate nohighlight">\(h : X \longrightarrow Y\)</span> est une <strong>fonction de hachage</strong> si <span class="math notranslate nohighlight">\(X\)</span> est un ensemble de grande taille (généralement infini) et <span class="math notranslate nohighlight">\(Y\)</span> est un ensemble fini (souvent un ensemble d’entiers).<br />
 L’intérêt d’une fonction de hachage est de transformer un élément “complexe” <span class="math notranslate nohighlight">\(x \in X\)</span> (par exemple, une image, un film…) en une empreinte <span class="math notranslate nohighlight">\(h(x)\)</span> qui soit plus simple à manipuler et qui utilise moins d’espace mémoire.</p>
 <p>Quelques propriétés souhaitables sur une fonction de hachage :</p>
 <ul class="simple">
-<li><p><strong>Facilement calculable</strong> : pouvoir calculer <span class="math notranslate nohighlight">\(h(x)\)</span> en O(1), par exemple.</p></li>
-<li><p><strong>Difficile à inverser</strong> : étant donné un <span class="math notranslate nohighlight">\(y\)</span>, il doit être impossible en pratique (c’est-à-dire prendre un temps extrêment long - typiquement une complexité exponentielle) de trouver un <span class="math notranslate nohighlight">\(x\)</span> tel que <span class="math notranslate nohighlight">\(h(x) = y\)</span>.</p></li>
-<li><p><strong>Résistance aux collisions</strong> : il doit être impossible en pratique de trouver <span class="math notranslate nohighlight">\(x, x' \in X\)</span> tels que <span class="math notranslate nohighlight">\(h(x) = h(x')\)</span>.</p></li>
+<li><p>Facilement calculable : pouvoir calculer <span class="math notranslate nohighlight">\(h(x)\)</span> en O(1), par exemple.</p></li>
+<li><p>Difficile à inverser : étant donné un <span class="math notranslate nohighlight">\(y\)</span>, il doit être impossible en pratique (c’est-à-dire prendre un temps extrêment long - typiquement une complexité exponentielle) de trouver un <span class="math notranslate nohighlight">\(x\)</span> tel que <span class="math notranslate nohighlight">\(h(x) = y\)</span>.</p></li>
+<li><p>Résistance aux collisions : il doit être impossible en pratique de trouver <span class="math notranslate nohighlight">\(x, x' \in X\)</span> tels que <span class="math notranslate nohighlight">\(h(x) = h(x')\)</span>.</p></li>
 </ul>
 <p>Voici quelques applications possibles des fonctions de hachage :</p>
 <ul class="simple">
-<li><p><strong>Table de hachage</strong> : c’est une implémentation possible de dictionnaire (voir cours).</p></li>
-<li><p><strong>Stockage de mot de passe</strong> : au lieu de mémoriser un mot de passe en clair sur un ordinateur ou une base de donnée (qui peut être compromis), on conserve son emprunte par une fonction de hachage.</p></li>
-<li><p><strong>Signature numérique</strong> : ajout d’une emprunte à un email permettant de garantir l’identité de son expéditeur.</p></li>
-<li><p><strong>Checksum</strong> : vérifier qu’un fichier a été téléchargé sans erreur, en comparant son hash au hash original.</p></li>
+<li><p>Table de hachage : c’est une implémentation possible de dictionnaire (voir cours).</p></li>
+<li><p>Stockage de mot de passe : au lieu de mémoriser un mot de passe en clair sur un ordinateur ou une base de donnée (qui peut être compromis), on conserve son emprunte par une fonction de hachage.</p></li>
+<li><p>Signature numérique : ajout d’une emprunte à un email permettant de garantir l’identité de son expéditeur.</p></li>
+<li><p>Checksum : vérifier qu’un fichier a été téléchargé sans erreur, en comparant son hash au hash original.</p></li>
 </ul>
 <section id="checksum">
 <h2>Checksum<a class="headerlink" href="#checksum" title="Permalink to this headline">#</a></h2>
