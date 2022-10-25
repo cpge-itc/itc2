@@ -581,7 +581,7 @@ L’intérêt d’une fonction de hachage est de transformer un élément “com
 <section id="checksum">
 <h2>Checksum<a class="headerlink" href="#checksum" title="Permalink to this headline">#</a></h2>
 <p>Une des applications des fonctions de hachage consiste à vérifier l’intégrité d’un fichier après l’avoir téléchargé (pour détecter d’éventuelles erreurs de transmission). Pour cela, on calcule une empreinte (checksum) du fichier téléchargé que l’on compare avec l’empreinte du fichier original.</p>
-<center><img src=docker_sha.png width=80%><br>
+<center><img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/2_dict/tp/docker_sha.png width=80%><br>
 Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une image Docker</center><p>Dans la suite, nous implémentons un algorithme de checksum très simple (mot de parité) sur une chaîne de caractères.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ord</span></code> est une fonction qui renvoie le code Unicode d’un caractère.</p>
 <p><strong>Question</strong> :  Quel est le code Unicode de <code class="docutils literal notranslate"><span class="pre">a</span></code> ? de <code class="docutils literal notranslate"><span class="pre">Z</span></code> ?</p>
