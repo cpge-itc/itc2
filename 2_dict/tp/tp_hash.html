@@ -576,11 +576,11 @@ L’intérêt d’une fonction de hachage est de transformer un élément “com
 <li><p>Table de hachage : c’est une implémentation possible de dictionnaire (voir cours).</p></li>
 <li><p>Stockage de mot de passe : au lieu de mémoriser un mot de passe en clair sur un ordinateur ou une base de donnée (qui peut être compromis), on conserve son empreinte par une fonction de hachage.</p></li>
 <li><p>Signature numérique : ajout d’une empreinte à un email permettant de garantir l’identité de son expéditeur.</p></li>
-<li><p>Checksum : vérifier qu’un fichier a été téléchargé sans erreur, en comparant son hash au hash original.</p></li>
+<li><p>Checksum : vérifier qu’un fichier a été téléchargé sans erreur, en comparant son empreinte à l’empreinte originale.</p></li>
 </ul>
 <section id="checksum">
 <h2>Checksum<a class="headerlink" href="#checksum" title="Permalink to this headline">#</a></h2>
-<p>Une des applications des fonctions de hachage consiste à vérifier l’intégrité d’un fichier après l’avoir téléchargé (pour détecter d’éventuelles erreurs de transmission). Pour cela, on calcule une empreinte (checksum) du fichier téléchargé que l’on compare avec l’empreinte du fichier original.</p>
+<p>Une des applications des fonctions de hachage consiste à vérifier l’intégrité d’un fichier après l’avoir téléchargé (pour détecter d’éventuelles erreurs de transmission). Pour cela, on calcule une empreinte (<em>checksum</em>) du fichier téléchargé que l’on compare avec l’empreinte du fichier original.</p>
 <center><img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/2_dict/tp/docker_sha.png width=90%><br>
 Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une image Docker</center><p>Dans la suite, nous implémentons un algorithme de checksum très simple (mot de parité) sur une chaîne de caractères.</p>
 <p>Dans la suite, on utilisera <code class="docutils literal notranslate"><span class="pre">ord(c)</span></code> qui renvoie le code Unicode d’un caractère <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
@@ -690,7 +690,7 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Combien de bits sont utilisées pour une empreinte MD5 ?</p>
+<p>Combien de bits sont utilisés pour une empreinte MD5 ?</p>
 </div>
 <p>Pour trouver une collision, on pourra générer des chaînes de caractères aléatoires <code class="docutils literal notranslate"><span class="pre">s</span></code> en stockant dans un dictionnaire la clé <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">s</span></code>. Si l’empreinte existe déjà dans le dictionnaire, c’est qu’on a trouvé une collision.</p>
 <p>On utilisera la fonction suivante génère une chaîne de caractères aléatoire de longueur <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
