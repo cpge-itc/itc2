@@ -610,7 +610,7 @@ Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une imag
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[109, 97, 114, 116, 105, 110]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[108, 97, 109, 97, 114, 116, 105, 110]
 </pre></div>
 </div>
 </div>
@@ -706,43 +706,14 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;rvlgypnype&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;arehlpntoq&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">find_collision(n,</span> <span class="pre">p,</span> <span class="pre">k)</span></code> qui cherche une collision en générant <code class="docutils literal notranslate"><span class="pre">n</span></code> chaînes de caractères aléatoires de tailles <code class="docutils literal notranslate"><span class="pre">p</span></code>. Pour que la recherche ne prenne pas trop de temps, seul les <code class="docutils literal notranslate"><span class="pre">k</span></code> premiers caractères de <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> seront considérés (avec <code class="docutils literal notranslate"><span class="pre">md5(s)[:k]</span></code>). On pourra prendre <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">100000</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_collision</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="n">seen</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="n">rdm_str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="n">md5</span><span class="p">(</span><span class="n">s</span><span class="p">)[:</span><span class="n">k</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">seen</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
-
-<span class="n">find_collision</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bbbqntyips vcweqrbdij
-yxfmcuuzgl qqjuymazwl
-mlbdmtomlv fyrknjbpot
-ymdmugzivo gnunzfretn
-souymbtkil mkzwgcozqq
-kmkuvgjzem kplpiqqzcw
-tlautrbxmn lgaztheqlo
-gdgxqujelu awfynfkdvz
-ohfswlqkvl qojzvoapvz
-</pre></div>
-</div>
-</div>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">find_collision(n,</span> <span class="pre">p,</span> <span class="pre">k)</span></code> qui cherche une collision en générant <code class="docutils literal notranslate"><span class="pre">n</span></code> chaînes de caractères aléatoires de tailles <code class="docutils literal notranslate"><span class="pre">p</span></code>. Pour que la recherche ne prenne pas trop de temps, seuls les <code class="docutils literal notranslate"><span class="pre">k</span></code> premiers caractères de <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> seront considérés (avec <code class="docutils literal notranslate"><span class="pre">md5(s)[:k]</span></code>). On pourra prendre <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">100000</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
 </div>
 </section>
 </section>
