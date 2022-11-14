@@ -594,17 +594,6 @@ Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une imag
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">L</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">code</span><span class="p">(</span><span class="s2">&quot;lamartin&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -624,15 +613,6 @@ En Python, le XOR est obtenu par <code class="docutils literal notranslate"><spa
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">checksum(s)</span></code> renvoyant le XOR des codes des caractères de <code class="docutils literal notranslate"><span class="pre">s</span></code>. Il faut donc renvoyer <code class="docutils literal notranslate"><span class="pre">ord(s[0])^ord(s[1])^...^ord(s[len(s)</span> <span class="pre">-</span> <span class="pre">1])</span></code>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">checksum</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
-    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
