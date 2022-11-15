@@ -517,6 +517,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappel-sur-les-chaines-de-caracteres">
+   Rappel sur les chaînes de caractères
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checksum">
    Checksum
   </a>
@@ -545,6 +550,11 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappel-sur-les-chaines-de-caracteres">
+   Rappel sur les chaînes de caractères
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checksum">
    Checksum
@@ -583,6 +593,38 @@ L’intérêt d’une fonction de hachage est de transformer un élément “com
 <li><p>Signature numérique : ajout d’une empreinte à un email permettant de garantir l’identité de son expéditeur.</p></li>
 <li><p>Checksum : vérifier qu’un fichier a été téléchargé sans erreur, en comparant son empreinte à l’empreinte originale.</p></li>
 </ul>
+<section id="rappel-sur-les-chaines-de-caracteres">
+<h2>Rappel sur les chaînes de caractères<a class="headerlink" href="#rappel-sur-les-chaines-de-caracteres" title="Permalink to this headline">#</a></h2>
+<p>Pour définir une chaîne de caractères, on utilise les guillemets ou apostrophes :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;bonjour&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;bonjour&#39;</span> <span class="c1"># deux possibilités équivalentes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut accéder à la <span class="math notranslate nohighlight">\(i\)</span>ème lettre d’une chaîne de caractères avec  [i]`, comme pour une liste :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 1er caractère</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut parcourir les lettres d’une chaîne de caractères avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span> <span class="c1"># en parcourant directement les lettres</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span> <span class="c1"># en parcourant les indices</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="checksum">
 <h2>Checksum<a class="headerlink" href="#checksum" title="Permalink to this headline">#</a></h2>
 <p>Une des applications des fonctions de hachage consiste à vérifier l’intégrité d’un fichier après l’avoir téléchargé (pour détecter d’éventuelles erreurs de transmission). Pour cela, on calcule une empreinte (<em>checksum</em>) du fichier téléchargé que l’on compare avec l’empreinte du fichier original.</p>
