@@ -624,6 +624,18 @@ title="Print to PDF"
 </section>
 <section id="anagramme">
 <h2>Anagramme<a class="headerlink" href="#anagramme" title="Permalink to this headline">#</a></h2>
+<p>On rappelle qu’on peut parcourir les lettres d’une chaîne de caractères avec une boucle  for   :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;lamartin&quot;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span> <span class="c1"># en parcourant directement les caractères</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span> <span class="c1"># en parcourant les indices</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">anagramme(m1,</span> <span class="pre">m2)</span></code> qui teste si deux mots (des chaînes de caractères) sont des anagrammes, c’est-à-dire s’ils contiennent les mêmes lettres (avec le même nombre d’occurence de chaque lettre). Par exemple, <code class="docutils literal notranslate"><span class="pre">anagramme(&quot;ordre&quot;,</span> <span class="pre">&quot;dorer&quot;)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code>.<br />
