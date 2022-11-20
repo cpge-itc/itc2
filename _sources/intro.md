@@ -2,15 +2,17 @@
 
 Cours d'informatique commune au lycée La Martinière Monplaisir à Lyon.
 
+<div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
+<center><b>Dernières modifications</b></center>
+<ul>
+<li>Ajout corrigé DS 1</li>
+</ul>
+</div> 
+<br />
+
 - [Programme officiel](https://prepas.org/index.php?document=72)
 - [Un site pour l'informatique de 1ère année](https://cpge-itc.github.io/itc1)
 - [Ajout d'une épreuve d'informatique en PC à CCINP](https://www.concours-commun-inp.fr/fr/actus/evolutions-du-concours-commun-inp-en-2023.html)
-
-**DS 1** :  
-- **SQL** : SELECT, WHERE, FROM, DISTINCT, UNION, INTERSECT, EXCEPT, JOIN, GROUP BY, fonctions d'agrégation (SUM, AVG, COUNT, MIN, MAX), HAVING, LIMIT, OFFSET, ORDER BY.  
-- **Vocabulaire base de données** : clé, clé primaire, attribut, enregistrement, entité, relation, association `1-1`, `1-*`, `*-*`.  
-- **Dictionnaire** : vocabulaire (clé, valeur), création, ajout d'une association (clé, valeur), modification, parcours d'un dictionnaire.  
-- **Programmation dynamique** : principe général, s'entraîner sur des exemples/exercices
 
 <details>
 <summary>Planning MP</summary>
