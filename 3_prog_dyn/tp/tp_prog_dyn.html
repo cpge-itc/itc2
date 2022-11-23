@@ -535,6 +535,11 @@ title="Print to PDF"
    Plus grand carré dans une matrice
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-problemes-du-projet-euler">
+   Bonus : problèmes du projet Euler
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -569,6 +574,11 @@ title="Print to PDF"
    Plus grand carré dans une matrice
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-problemes-du-projet-euler">
+   Bonus : problèmes du projet Euler
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -597,7 +607,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -614,7 +624,7 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="c1"># définir une matrice M de taille (n+1)x(n+1)</span>
     <span class="c1"># M[i][j] contiendra j parmi i</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -628,7 +638,7 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binom</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -663,7 +673,7 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendu</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rendu</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -702,7 +712,7 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">est_ca
 Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2]</span> <span class="pre">=</span> <span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">c[2][3]</span> <span class="pre">=</span> <span class="pre">2</span></code> pour la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus.</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">init</span></code> telle que <code class="docutils literal notranslate"><span class="pre">init</span> <span class="pre">m</span> <span class="pre">c</span></code> remplisse les valeurs de <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code>, pour tout <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">init</span></code> telle que <code class="docutils literal notranslate"><span class="pre">init(m,</span> <span class="pre">c)</span></code> remplisse les valeurs de <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code>, pour tout <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
@@ -710,11 +720,11 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Montrer que, si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est égal à 1 plus le minimum de <code class="docutils literal notranslate"><span class="pre">c[x-1][y]</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y-1]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x-1][y-1]</span></code>.</p>
+<p>Montrer que, si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">min(c[x-1][y],</span> <span class="pre">c[x][y-1],</span> <span class="pre">c[x-1][y-1])</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">remplir</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code> sont des matrices de même taille, <code class="docutils literal notranslate"><span class="pre">remplir(m,</span> <span class="pre">c)</span></code> modifie <code class="docutils literal notranslate"><span class="pre">c</span></code> pour qu’elle vérifie: <span class="math notranslate nohighlight">\(\forall\)</span> <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x}[y]</span></code>.</p>
+<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">remplir</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code> sont des matrices de même taille, <code class="docutils literal notranslate"><span class="pre">remplir(m,</span> <span class="pre">c)</span></code> modifie <code class="docutils literal notranslate"><span class="pre">c</span></code> pour que <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> soit la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x}[y]</span></code>.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
@@ -730,7 +740,15 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>(Google Hash Code) Colorier Alan Turing de la meilleure façon possible sur \href{<a class="reference external" href="https://primers.xyz/0">https://primers.xyz/0</a>}{<a class="reference external" href="https://primers.xyz/0">https://primers.xyz/0</a>}</p>
+<p>(Google Hash Code) Colorier Alan Turing de la meilleure façon possible sur <a class="reference external" href="https://primers.xyz/0">https://primers.xyz/0</a>.</p>
+</div>
+</section>
+<section id="bonus-problemes-du-projet-euler">
+<h2>Bonus : problèmes du projet Euler<a class="headerlink" href="#bonus-problemes-du-projet-euler" title="Permalink to this headline">#</a></h2>
+<p>Le <a class="reference external" href="https://projecteuler.net/">projet Euler</a> propose des problèmes mathématiques à résoudre informatiquement.</p>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>S’inscrire sur <a class="reference external" href="https://projecteuler.net/">https://projecteuler.net/</a> et résoudre <a class="reference external" href="https://projecteuler.net/problem=67">ce problème</a>.</p>
 </div>
 </section>
 </section>
