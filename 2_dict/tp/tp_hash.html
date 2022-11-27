@@ -663,9 +663,30 @@ Exemple d'utilisation d'un checksum (SHA256) lors du téléchargement d'une imag
 <p class="admonition-title">Question</p>
 <p>Quel est le code Unicode de <code class="docutils literal notranslate"><span class="pre">a</span></code> ? de <code class="docutils literal notranslate"><span class="pre">z</span></code> ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># 97</span>
+<span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="c1"># 122</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">122</span>
+
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">code(s)</span></code> renvoyant une liste <code class="docutils literal notranslate"><span class="pre">L</span></code> telle que <code class="docutils literal notranslate"><span class="pre">L[i]</span></code> soit le code Unicode de <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">L</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,9 +706,27 @@ En Python, le XOR est obtenu par <code class="docutils literal notranslate"><spa
 <p class="admonition-title">Question</p>
 <p>Sans ordinateur, convertir <span class="math notranslate nohighlight">\(11\)</span> et <span class="math notranslate nohighlight">\(6\)</span> en base <span class="math notranslate nohighlight">\(2\)</span> puis calculer leur XOR. Vérifier ensuite avec Python.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span><span class="o">^</span><span class="mi">6</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span>
+
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">checksum(s)</span></code> renvoyant le XOR des codes des caractères de <code class="docutils literal notranslate"><span class="pre">s</span></code>. Il faut donc renvoyer <code class="docutils literal notranslate"><span class="pre">ord(s[0])^ord(s[1])^...^ord(s[len(s)</span> <span class="pre">-</span> <span class="pre">1])</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">checksum</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,9 +770,23 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 <p class="admonition-title">Question</p>
 <p>Combien y a t-il de bits dans un caractère en hexadécimal ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Sur <span class="math notranslate nohighlight">\(k\)</span> bits on peut stocker <span class="math notranslate nohighlight">\(2^k\)</span> valeurs différentes. Donc il faut <span class="math notranslate nohighlight">\(4\)</span> bits pour avoir <span class="math notranslate nohighlight">\(2^4 = 16\)</span> valeurs différentes.</p>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Combien de bits sont utilisés pour une empreinte MD5 ?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">md5</span><span class="p">(</span><span class="s2">&quot;lamartin&quot;</span><span class="p">))</span><span class="o">*</span><span class="mi">4</span> <span class="c1"># on trouve 128 bits</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">128</span>
+
+</pre></div>
+</div>
 </div>
 <p>Pour trouver une collision, on pourra générer des chaînes de caractères aléatoires <code class="docutils literal notranslate"><span class="pre">s</span></code> en stockant dans un dictionnaire la clé <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> avec la valeur <code class="docutils literal notranslate"><span class="pre">s</span></code>. Si l’empreinte existe déjà dans le dictionnaire, c’est qu’on a trouvé une collision.</p>
 <p>On utilisera la fonction suivante génère une chaîne de caractères aléatoire de longueur <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
@@ -757,6 +810,21 @@ Dans la suite, nous cherchons des collisions partielles pour MD5.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">find_collision(n,</span> <span class="pre">p,</span> <span class="pre">k)</span></code> qui cherche une collision en générant <code class="docutils literal notranslate"><span class="pre">n</span></code> chaînes de caractères aléatoires de tailles <code class="docutils literal notranslate"><span class="pre">p</span></code>. Pour que la recherche ne prenne pas trop de temps, seuls les <code class="docutils literal notranslate"><span class="pre">k</span></code> premiers caractères de <code class="docutils literal notranslate"><span class="pre">md5(s)</span></code> seront considérés (avec <code class="docutils literal notranslate"><span class="pre">md5(s)[:k]</span></code>). On pourra prendre <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">100000</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">10</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_collision</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">seen</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">rdm_str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">md5</span><span class="p">(</span><span class="n">s</span><span class="p">)[:</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">seen</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">seen</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+
+<span class="n">find_collision</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 </section>
