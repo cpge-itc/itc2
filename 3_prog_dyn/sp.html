@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Programmation dynamique &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Application aux plus courts chemins &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -87,11 +87,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/3_prog_dyn/prog_dyn.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/3_prog_dyn/sp.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Application aux plus courts chemins" href="sp.html" />
-    <link rel="prev" title="TP : Fonction de hachage" href="../2_dict/tp/tp_hash.html" />
+    <link rel="next" title="TP : Programmation dynamique" href="tp/tp_prog_dyn.html" />
+    <link rel="prev" title="Programmation dynamique" href="prog_dyn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -274,13 +274,13 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prog_dyn.html">
    Cours : Programmation dynamique
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="sp.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Cours : Application aux plus courts chemins
   </a>
  </li>
@@ -344,7 +344,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/3_prog_dyn/prog_dyn.ipynb"
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/3_prog_dyn/sp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -362,7 +362,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/prog_dyn.ipynb"
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/sp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -422,7 +422,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F3_prog_dyn/prog_dyn.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F3_prog_dyn/sp.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -439,7 +439,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/3_prog_dyn/prog_dyn.ipynb"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/3_prog_dyn/sp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -467,7 +467,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/3_prog_dyn/prog_dyn.ipynb"
+        <a href="../_sources/3_prog_dyn/sp.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -527,21 +527,24 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plus-courts-chemins">
-   Plus courts chemins
+  <a class="reference internal nav-link" href="#graphe-pondere">
+   Graphe pondéré
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bellman-ford">
-     Bellman-Ford
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#floyd-warshall">
-     Floyd-Warshall
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bellman-ford">
+   Bellman-Ford
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floyd-warshall">
+   Floyd-Warshall
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphe-acyclique">
+   Graphe acyclique
+  </a>
  </li>
 </ul>
 
@@ -552,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Programmation dynamique</h1>
+                <h1>Application aux plus courts chemins</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -563,21 +566,24 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plus-courts-chemins">
-   Plus courts chemins
+  <a class="reference internal nav-link" href="#graphe-pondere">
+   Graphe pondéré
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bellman-ford">
-     Bellman-Ford
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#floyd-warshall">
-     Floyd-Warshall
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bellman-ford">
+   Bellman-Ford
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floyd-warshall">
+   Floyd-Warshall
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphe-acyclique">
+   Graphe acyclique
+  </a>
  </li>
 </ul>
 
@@ -589,133 +595,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="programmation-dynamique">
-<h1>Programmation dynamique<a class="headerlink" href="#programmation-dynamique" title="Permalink to this headline">#</a></h1>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/prog_dyn.pdf?token=GHSAT0AAAAAABX6XFRWYXFHKWW5O7OTWZXYYYJED7Q#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">knapsack</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; </span>
-<span class="sd">    Renvoie la valeur maximum que l&#39;on peut mettre</span>
-<span class="sd">    dans un sac à dos de capacité c.</span>
-<span class="sd">    Le ième objet a pour poids w[i] et valeur v[i].</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># nombre d&#39;objets</span>
-    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
-    <span class="c1"># dp[i][j] = valeur max dans un sac de capacité i</span>
-    <span class="c1"># où j est le nombre d&#39;objets autorisés</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-                <span class="n">x</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="n">n</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
-<span class="n">knapsack</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">knapsack2</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
-    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">dp_</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[:]</span> <span class="c1"># copie de dp</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp_</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp_</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span><span class="p">]])</span>
-    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">knapsack2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">knapsack_memo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="n">dp</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dp</span><span class="p">:</span>
-            <span class="n">dp</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)],</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">dp</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span>
-    <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
-
-<span class="n">knapsack_memo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="k">return</span> <span class="n">dp</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">knapsack_memo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;w&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cache</span>
-
-<span class="k">def</span> <span class="nf">knapsack_memo2</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="nd">@cache</span>
-    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="mi">0</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
-            <span class="n">v</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">v</span>
-    <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
-
-<span class="n">knapsack_memo2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="k">return</span> <span class="n">v</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">knapsack_memo2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;w&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<section id="plus-courts-chemins">
-<h2>Plus courts chemins<a class="headerlink" href="#plus-courts-chemins" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="application-aux-plus-courts-chemins">
+<h1>Application aux plus courts chemins<a class="headerlink" href="#application-aux-plus-courts-chemins" title="Permalink to this headline">#</a></h1>
+<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/sp.pdf?token=GHSAT0AAAAAABX6XFRWYXFHKWW5O7OTWZXYYYJED7Q#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe><section id="graphe-pondere">
+<h2>Graphe pondéré<a class="headerlink" href="#graphe-pondere" title="Permalink to this headline">#</a></h2>
+<p>On utilisera le graphe suivant dans les exemples :</p>
+<center><img src= width=300></center>
 <div class="math notranslate nohighlight">
 \[\begin{split}M = 
 \begin{pmatrix}
@@ -750,8 +635,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
 <section id="bellman-ford">
-<h3>Bellman-Ford<a class="headerlink" href="#bellman-ford" title="Permalink to this headline">#</a></h3>
+<h2>Bellman-Ford<a class="headerlink" href="#bellman-ford" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bellman</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
@@ -782,12 +668,12 @@ title="Print to PDF"
 </div>
 </section>
 <section id="floyd-warshall">
-<h3>Floyd-Warshall<a class="headerlink" href="#floyd-warshall" title="Permalink to this headline">#</a></h3>
+<h2>Floyd-Warshall<a class="headerlink" href="#floyd-warshall" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
 
-<span class="k">def</span> <span class="nf">floydwarshall</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">floyd_warshall</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -796,7 +682,7 @@ title="Print to PDF"
                 <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">dist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">v</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">dist</span>
 
-<span class="n">floydwarshall</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="n">floyd_warshall</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -811,6 +697,80 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+<section id="graphe-acyclique">
+<h2>Graphe acyclique<a class="headerlink" href="#graphe-acyclique" title="Permalink to this headline">#</a></h2>
+<center><img src=https://raw.githubusercontent.com/fortierq/tikz/master/graph/examples/weighted/directed/g1/g1.png width=300></center><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># on utilise une liste d&#39;adjacence ici, pour avoir une complexité linéaire</span>
+<span class="n">G</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span>
+    <span class="p">[],</span>
+    <span class="p">[],</span>
+    <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfs_postfixe</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Renvoie un tri topologique de G, avec un dfs partant de s.&quot;&quot;&quot;</span>
+    <span class="n">seen</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">seen</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+            <span class="n">seen</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+                <span class="n">aux</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">aux</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># inverse la liste</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs_postfixe</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 5, 4, 3, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distances_acyclic</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Renvoie la liste des distances depuis s dans G.&quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span><span class="o">*</span><span class="n">n</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">dfs_postfixe</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances_acyclic</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 2, 1, 4]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -841,17 +801,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../2_dict/tp/tp_hash.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="prog_dyn.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">TP : Fonction de hachage</p>
+            <p class="prev-next-title">Programmation dynamique</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="sp.html" title="next page">
+    <a class='right-next' id="next-link" href="tp/tp_prog_dyn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Application aux plus courts chemins</p>
+        <p class="prev-next-title">TP : Programmation dynamique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
