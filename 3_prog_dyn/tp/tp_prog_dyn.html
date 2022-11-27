@@ -536,8 +536,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus">
-   Bonus
+  <a class="reference internal nav-link" href="#pour-ceux-qui-ont-fini">
+   Pour ceux qui ont fini
   </a>
  </li>
 </ul>
@@ -575,8 +575,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus">
-   Bonus
+  <a class="reference internal nav-link" href="#pour-ceux-qui-ont-fini">
+   Pour ceux qui ont fini
   </a>
  </li>
 </ul>
@@ -591,7 +591,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tp-programmation-dynamique">
 <h1>TP : Programmation dynamique<a class="headerlink" href="#tp-programmation-dynamique" title="Permalink to this headline">#</a></h1>
-<p>Si besoin : lire le cours.</p>
+<p>Ce TP est à rendre au plus tard dimanche 4 décembre.</p>
 <section id="coefficient-binomial">
 <h2>Coefficient binomial<a class="headerlink" href="#coefficient-binomial" title="Permalink to this headline">#</a></h2>
 <p>On souhaite calculer <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> par programmation dynamique, en utilisant la formule de Pascal :</p>
@@ -607,7 +607,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_rec</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -624,7 +624,7 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_dp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="c1"># définir une matrice M de taille (n+1)x(n+1)</span>
     <span class="c1"># M[i][j] contiendra j parmi i</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -638,12 +638,28 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binom</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binom_dp</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4845
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">binom_memo(n,</span> <span class="pre">k)</span></code> renvoyant <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> en utilisant le même principe, mais avec mémoïsation plutôt que programmation dynamique.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">binom_memo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># d[(i, j)] contiendra j parmi i</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span> <span class="c1"># renvoie j parmi i</span>
+        <span class="o">...</span> <span class="c1"># cas de base</span>
+        <span class="o">...</span> <span class="c1"># dans le cas général, regarder si (i, j) est dans d : si oui, renvoyer la valeur associée, sinon la calculer et l&#39;ajouter à d</span>
+    <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -673,7 +689,7 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rendu</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rendu</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -682,6 +698,10 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Réécrire la fonction précédente par mémoïsation plutôt que par programmation dynamique.</p>
 </div>
 </section>
 <section id="plus-grand-carre-dans-une-matrice">
@@ -734,18 +754,10 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2
 <p class="admonition-title">Exercice</p>
 <p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code>, en fonction des dimensions de <code class="docutils literal notranslate"><span class="pre">m</span></code>? Comparer avec <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code>.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Est-il possible de trouver un algorithme avec une meilleur complexité ?</p>
-</div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>(Google Hash Code : optionnel) Colorier Alan Turing de la meilleure façon possible sur <a class="reference external" href="https://primers.xyz/0">https://primers.xyz/0</a>.</p>
-</div>
 </section>
-<section id="bonus">
-<h2>Bonus<a class="headerlink" href="#bonus" title="Permalink to this headline">#</a></h2>
-<p>Le <a class="reference external" href="https://projecteuler.net/">projet Euler</a> propose des problèmes mathématiques à résoudre informatiquement.</p>
+<section id="pour-ceux-qui-ont-fini">
+<h2>Pour ceux qui ont fini<a class="headerlink" href="#pour-ceux-qui-ont-fini" title="Permalink to this headline">#</a></h2>
+<p>Cette partie n’est pas à rendre, sauf si vous en avez le temps.</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>S’inscrire sur <a class="reference external" href="https://projecteuler.net/">https://projecteuler.net/</a> et résoudre <a class="reference external" href="https://projecteuler.net/problem=67">ce problème</a>.<br />
