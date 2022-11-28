@@ -6,43 +6,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>SELECT imbriqués &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Exemple supplémentaire : Plus longue sous-suite croissante &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -78,18 +78,18 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/1_sql/cours/sql_nested.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Modèle entité-relation" href="sql_entity.html" />
-    <link rel="prev" title="Fonctions d’agrégation et GROUP BY" href="sql_groupby.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/3_prog_dyn/lis.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TP : Programmation dynamique" href="tp/tp_prog_dyn.html" />
+    <link rel="prev" title="Application aux plus courts chemins" href="sp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,19 +124,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../../_static/cobra.webp" class="logo" alt="logo">
+      <img src="../_static/cobra.webp" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Informatique commune en 2ème année de CPGE</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -153,12 +153,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../ds/ds1/mp_pc/ds1.html">
+  <a class="reference internal" href="../ds/ds1/mp_pc/ds1.html">
    DS 1
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../0_python/aide_memoire.html">
+  <a class="reference internal" href="../0_python/aide_memoire.html">
    Résumé Python
   </a>
  </li>
@@ -173,51 +173,51 @@ const thebe_selector_output = ".output, .cell_output"
   Base de données
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="cours.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_sql/cours/cours.html">
    Cours
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="sql_select.html">
+    <a class="reference internal" href="../1_sql/cours/sql_select.html">
      Requêtes sur une table avec SELECT, WHERE
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sql_join.html">
+    <a class="reference internal" href="../1_sql/cours/sql_join.html">
      Requêtes sur plusieurs tables avec JOIN
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sql_groupby.html">
+    <a class="reference internal" href="../1_sql/cours/sql_groupby.html">
      Fonctions d’agrégation et GROUP BY
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_sql/cours/sql_nested.html">
      SELECT imbriqués
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sql_entity.html">
+    <a class="reference internal" href="../1_sql/cours/sql_entity.html">
      Modèle entité-relation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../resume/sql_resume.html">
+    <a class="reference internal" href="../1_sql/resume/sql_resume.html">
      Résumé SQL
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../exercices/exercices.html">
+  <a class="reference internal" href="../1_sql/exercices/exercices.html">
    Exercices
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -227,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../exercices/sqlzoo.html">
+    <a class="reference internal" href="../1_sql/exercices/sqlzoo.html">
      TP 1 et 2 : SQLZoo et sql-practice
     </a>
    </li>
@@ -237,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../exercices/concours/concours.html">
+    <a class="reference internal" href="../1_sql/exercices/concours/concours.html">
      Extraits de concours
     </a>
    </li>
@@ -251,17 +251,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../2_dict/dict.html">
+  <a class="reference internal" href="../2_dict/dict.html">
    Dictionnaire
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../2_dict/tp/tp_dict.html">
+  <a class="reference internal" href="../2_dict/tp/tp_dict.html">
    TP : Dictionnaire
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../2_dict/tp/tp_hash.html">
+  <a class="reference internal" href="../2_dict/tp/tp_hash.html">
    TP : Fonction de hachage
   </a>
  </li>
@@ -271,24 +271,24 @@ const thebe_selector_output = ".output, .cell_output"
   Programmation dynamique
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../3_prog_dyn/prog_dyn.html">
+  <a class="reference internal" href="prog_dyn.html">
    Cours : Programmation dynamique
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../3_prog_dyn/sp.html">
+  <a class="reference internal" href="sp.html">
    Cours : Application aux plus courts chemins
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../3_prog_dyn/lis.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exemple supplémentaire : plus longue sous-suite croissante
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../3_prog_dyn/tp/tp_prog_dyn.html">
+  <a class="reference internal" href="tp/tp_prog_dyn.html">
    TP : Programmation dynamique
   </a>
  </li>
@@ -339,6 +339,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/3_prog_dyn/lis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/lis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -378,7 +425,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F1_sql/cours/sql_nested.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F3_prog_dyn/lis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -395,7 +442,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/1_sql/cours/sql_nested.md"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/3_prog_dyn/lis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -423,7 +470,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/1_sql/cours/sql_nested.md"
+        <a href="../_sources/3_prog_dyn/lis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -434,7 +481,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -472,7 +519,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>SELECT imbriqués</h1>
+                <h1>Exemple supplémentaire : Plus longue sous-suite croissante</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -484,21 +531,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="select-imbriques">
-<h1>SELECT imbriqués<a class="headerlink" href="#select-imbriques" title="Permalink to this headline">#</a></h1>
-<iframe
-    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/4_imbrique/sql_imbrique.pdf#zoom=page-fit&pagemode=none"
-    height=500 width=100% allowfullscreen></iframe>
-<script
-   type="text/javascript"
-   src="https://utteranc.es/client.js"
-   async="async"
-   repo="mp-info/mp-info.github.io"
-   issue-term="pathname"
-   theme="github-light"
-   label="💬 comment"
-   crossorigin="anonymous"
-/></section>
+  <section class="tex2jax_ignore mathjax_ignore" id="exemple-supplementaire-plus-longue-sous-suite-croissante">
+<h1>Exemple supplémentaire : Plus longue sous-suite croissante<a class="headerlink" href="#exemple-supplementaire-plus-longue-sous-suite-croissante" title="Permalink to this headline">#</a></h1>
+<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/lis.pdf?token=GHSAT0AAAAAABX6XFRWYXFHKWW5O7OTWZXYYYJED7Q#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe></section>
 
     <script type="text/x-thebe-config">
     {
@@ -513,7 +548,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./1_sql/cours"
+            path: "./3_prog_dyn"
         },
         predefinedOutput: true
     }
@@ -527,17 +562,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="sql_groupby.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="sp.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fonctions d’agrégation et GROUP BY</p>
+            <p class="prev-next-title">Application aux plus courts chemins</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="sql_entity.html" title="next page">
+    <a class='right-next' id="next-link" href="tp/tp_prog_dyn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modèle entité-relation</p>
+        <p class="prev-next-title">TP : Programmation dynamique</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -562,7 +597,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
