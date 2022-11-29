@@ -698,8 +698,8 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 <p class="admonition-title">Exercice</p>
 <p>Écrire une relation de récurrence sur <span class="math notranslate nohighlight">\(r(n, k)\)</span>. On pourra distinguer deux cas pour rendre <span class="math notranslate nohighlight">\(n\)</span> euros avec les picèes <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_k\)</span> :</p>
 <ul class="simple">
-<li><p>soit la <span class="math notranslate nohighlight">\(k\)</span>ème pièce n’est pas utilisée (et on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>)</p></li>
-<li><p>soit la <span class="math notranslate nohighlight">\(k\)</span>ème pièce est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>).</p></li>
+<li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> n’est pas utilisée (et on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>)</p></li>
+<li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>).</p></li>
 </ul>
 </div>
 <div class="admonition-exercice admonition">
@@ -722,6 +722,34 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 <p class="admonition-title">Question</p>
 <p>Réécrire la fonction précédente par mémoïsation plutôt que par programmation dynamique.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rendu_memo</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">j</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="n">aux</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">aux</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">rendu_memo</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="plus-grand-carre-dans-une-matrice">
 <h2>Plus grand carré dans une matrice<a class="headerlink" href="#plus-grand-carre-dans-une-matrice" title="Permalink to this headline">#</a></h2>
@@ -733,7 +761,7 @@ On supposera que les indices en arguments des fonctions ne dépassent pas des ta
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">est_carre(m,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">k)</span></code> détermine si la sous-matrice de <code class="docutils literal notranslate"><span class="pre">m</span></code> de taille <span class="math notranslate nohighlight">\(k \times k\)</span> et dont la case en haut à gauche a pour coordonnées (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) ne possède que des 1.<br />
-Par exemple, <code class="docutils literal notranslate"><span class="pre">est_carre(M,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">true</span></code> (ce qui correspond au carré en pointillé dans la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus).</p>
+Par exemple, <code class="docutils literal notranslate"><span class="pre">est_carre(M,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code> (ce qui correspond au carré en pointillé dans la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus).</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
