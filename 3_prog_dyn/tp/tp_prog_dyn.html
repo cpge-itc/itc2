@@ -578,6 +578,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-naive">
+   Méthode naïve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pour-ceux-qui-ont-fini">
    Pour ceux qui ont fini
   </a>
@@ -617,6 +622,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-naive">
+   Méthode naïve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pour-ceux-qui-ont-fini">
    Pour ceux qui ont fini
   </a>
@@ -648,8 +658,8 @@ Le plus pratique est de répondre à ce TP sur Capytale. Pour cela :</p>
 <p>On souhaite calculer <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> par programmation dynamique, en utilisant la formule de Pascal :</p>
 <div class="math notranslate nohighlight">
 \[\binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}\]</div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Que peut-on prendre comme cas de base ?</p>
 </div>
 <div class="tip dropdown admonition">
@@ -659,8 +669,8 @@ Le plus pratique est de répondre à ce TP sur Capytale. Pour cela :</p>
 <div class="math notranslate nohighlight">
 \[\binom{n}{0} = 1, \text{si } n \neq 0\]</div>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Écrire une fonction récursive <code class="docutils literal notranslate"><span class="pre">binom_rec(n,</span> <span class="pre">k)</span></code> renvoyant <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> à partir de la formule ci-dessus. Expliquer pourquoi la complexité de cette fonction est très mauvaise.</p>
 </div>
 <div class="tip dropdown admonition">
@@ -686,8 +696,8 @@ Le plus pratique est de répondre à ce TP sur Capytale. Pour cela :</p>
 </div>
 </div>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">binom_dp(n,</span> <span class="pre">k)</span></code> renvoyant <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> en utilisant la même formule, mais par programmation dynamique.<br />
 Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> dans une matrice (ou : un dictionnaire) et la remplir par <span class="math notranslate nohighlight">\(n\)</span> croissant et par <span class="math notranslate nohighlight">\(k\)</span> croissant.</p>
 </div>
@@ -758,27 +768,31 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 <li><p><span class="math notranslate nohighlight">\(r(0, k)\)</span> revient à rendre <span class="math notranslate nohighlight">\(0\)</span>€, ce qu’on peut faire avec <span class="math notranslate nohighlight">\(0\)</span> pièce : <span class="math notranslate nohighlight">\(r(0, k) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(r(n, 0)\)</span> revient à n’utiliser aucune pièce, ce qui est impossible si <span class="math notranslate nohighlight">\(n \neq 0\)</span> : on posera <span class="math notranslate nohighlight">\(r(n, 0)\)</span> = <span class="math notranslate nohighlight">\(\infty\)</span> (<code class="docutils literal notranslate"><span class="pre">float(&quot;inf&quot;)</span></code> en Python).</p></li>
 </ul>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Écrire une relation de récurrence sur <span class="math notranslate nohighlight">\(r(n, k)\)</span>. On pourra distinguer deux cas pour rendre <span class="math notranslate nohighlight">\(n\)</span> euros avec les picèes <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_k\)</span> :</p>
 <ul class="simple">
 <li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> n’est pas utilisée (et on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>)</p></li>
 <li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>).</p></li>
 </ul>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Si <span class="math notranslate nohighlight">\(a_k\)</span> est utilisée : il faut encore rendre <span class="math notranslate nohighlight">\(n - a_k\)</span> euros avec les pièces <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_k\)</span> (on a le droit d’utiliser plusieurs fois <span class="math notranslate nohighlight">\(a_k\)</span>), d’où <span class="math notranslate nohighlight">\(r(n, k) = r(n - a_k, k) + 1\)</span>.</p>
+<p>Dans le cas général, on considère les deux possibilités et on conserve le minimum :
+$<span class="math notranslate nohighlight">\(
+    r(n, k) = min(r(n, k - 1), r(n - a_k, k) + 1)
+\)</span>$</p>
+<p>Remarque : on ne peut utiliser <span class="math notranslate nohighlight">\(a_k\)</span> pour rendre <span class="math notranslate nohighlight">\(n\)</span> euros que si <span class="math notranslate nohighlight">\(n \geq a_k\)</span>. Si <span class="math notranslate nohighlight">\(n &lt; a_k\)</span>, on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">rendu(L,</span> <span class="pre">n)</span></code> par programmation dynamique renvoyant le nombre minimum de pièces requises pour rendre <code class="docutils literal notranslate"><span class="pre">n</span></code> euros, où <code class="docutils literal notranslate"><span class="pre">L</span></code> est la liste des pièces.<br />
 On remplira une matrice <code class="docutils literal notranslate"><span class="pre">R</span></code> pour que <code class="docutils literal notranslate"><span class="pre">R[i][j]</span></code> contienne le nombre minimum de pièces pour rendre <code class="docutils literal notranslate"><span class="pre">i</span></code> euros en utilisant les <code class="docutils literal notranslate"><span class="pre">j</span></code> premières pièces de <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
-<span class="c1"># r(n, k) = min(r(n, k - 1), r(n - ak, k)) si ak &lt;= n</span>
-<span class="c1"># sinon r(n, k) = r(n, k - 1) (on ne peut pas utiliser la pièce ak)</span>
-
-<span class="c1"># 2.</span>
-<span class="k">def</span> <span class="nf">rendu</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rendu</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="c1"># nombre de pièces</span>
     <span class="n">R</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -839,58 +853,172 @@ On remplira une matrice <code class="docutils literal notranslate"><span class="
 <h2>Plus grand carré dans une matrice<a class="headerlink" href="#plus-grand-carre-dans-une-matrice" title="Permalink to this headline">#</a></h2>
 <p>Étant donnée une matrice carrée remplie de 0 ou 1, on souhaite connaître la taille du plus gros carré de 1 dans cette matrice.<br />
 Par exemple, ce nombre est 2 pour la matrice <span class="math notranslate nohighlight">\(M\)</span> suivante (correspondant au carré en pointillé) :</p>
-<center><img src=https://raw.githubusercontent.com/fortierq/tikz/master/dyn_prog/matrix_square/matrix_square.png width=200></center>
-<p>La case de coordonnés <span class="math notranslate nohighlight">\((x, y)\)</span> est celle sur la ligne <span class="math notranslate nohighlight">\(x\)</span>, colonne <span class="math notranslate nohighlight">\(y\)</span>. La case de coordonnées (0, 0) est celle en haut à gauche.<br />
+<center><img src=https://raw.githubusercontent.com/fortierq/tikz/master/dyn_prog/matrix_square/matrix_square.png width=200></center><p>La case de coordonnés <span class="math notranslate nohighlight">\((x, y)\)</span> est celle sur la ligne <span class="math notranslate nohighlight">\(x\)</span>, colonne <span class="math notranslate nohighlight">\(y\)</span>. La case de coordonnées (0, 0) est celle en haut à gauche.<br />
 On supposera que les indices en arguments des fonctions ne dépassent pas des tableaux ou matrices correspondants.</p>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">est_carre(m,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">k)</span></code> détermine si la sous-matrice de <code class="docutils literal notranslate"><span class="pre">m</span></code> de taille <span class="math notranslate nohighlight">\(k \times k\)</span> et dont la case en haut à gauche a pour coordonnées (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) ne possède que des 1.<br />
-Par exemple, <code class="docutils literal notranslate"><span class="pre">est_carre(M,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code> (ce qui correspond au carré en pointillé dans la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus).</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Définir <code class="docutils literal notranslate"><span class="pre">M</span></code> en Python.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="methode-naive">
+<h2>Méthode naïve<a class="headerlink" href="#methode-naive" title="Permalink to this headline">#</a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">est_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">est_carre(m,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">k)</span></code> détermine si la sous-matrice de <code class="docutils literal notranslate"><span class="pre">m</span></code> de taille <span class="math notranslate nohighlight">\(k \times k\)</span> et dont la case en haut à gauche a pour coordonnées (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) ne possède que des 1.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">k</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="n">est_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">est_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">contient_carre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">contient_carre(m,</span> <span class="pre">k)</span></code> renvoie <code class="docutils literal notranslate"><span class="pre">true</span></code> si <code class="docutils literal notranslate"><span class="pre">m</span></code> contient un carré de 1 de taille <span class="math notranslate nohighlight">\(k\)</span>, <code class="docutils literal notranslate"><span class="pre">false</span></code> sinon.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contient_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">est_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span><span class="p">(</span><span class="n">contient_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">contient_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre1</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> ? Dans la suite, on utilisera une méthode plus efficace par programmation dynamique.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_carre1</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">contient_carre</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">k</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_carre1</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> dans le pire cas ?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">est_carre(M,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">k)</span></code> est en <span class="math notranslate nohighlight">\(O(k^2)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contient_carre(M,</span> <span class="pre">k)</span></code> appelle O(<span class="math notranslate nohighlight">\(n\)</span>) fois <code class="docutils literal notranslate"><span class="pre">est_carre</span></code>, donc est en <span class="math notranslate nohighlight">\(O(n^2 k^2)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_carre1(M)</span></code> appelle <code class="docutils literal notranslate"><span class="pre">contient_carre</span></code> pour <span class="math notranslate nohighlight">\(k = 1, 2, ..., n\)</span>, donc est de complexité <span class="math notranslate nohighlight">\(\sum_{k=1}^n O(n^2 k^2) = O(n^3 \sum_{k=1}^n k^2)\)</span>. Comme <span class="math notranslate nohighlight">\(\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} = O(n^3)\)</span>, la complexité totale est <span class="math notranslate nohighlight">\(\boxed{O(n^6)}\)</span>.`</p></li>
+</ul>
 </div>
 <p>On va construire une matrice <code class="docutils literal notranslate"><span class="pre">c</span></code> telle que <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> est la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x][y]</span></code> (c’est à dire un carré de 1 qui contient <code class="docutils literal notranslate"><span class="pre">m[x][y]</span></code> mais aucun <code class="docutils literal notranslate"><span class="pre">m[i][j]</span></code> si <span class="math notranslate nohighlight">\(i &gt; x\)</span> ou <span class="math notranslate nohighlight">\(j &gt; y\)</span>).<br />
 Par exemple, <code class="docutils literal notranslate"><span class="pre">c[1][2]</span> <span class="pre">=</span> <span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">c[2][3]</span> <span class="pre">=</span> <span class="pre">2</span></code> pour la matrice <span class="math notranslate nohighlight">\(M\)</span> ci-dessus.</p>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">init</span></code> telle que <code class="docutils literal notranslate"><span class="pre">init(m,</span> <span class="pre">c)</span></code> remplisse les valeurs de <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code>, pour tout <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Que vaut <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code> ?</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">c[0][y]</span> <span class="pre">=</span> <span class="pre">0</span></code> si <code class="docutils literal notranslate"><span class="pre">m[0][y]</span> <span class="pre">=</span> <span class="pre">0</span></code> et <code class="docutils literal notranslate"><span class="pre">c[0][y]</span> <span class="pre">=</span> <span class="pre">1</span></code> sinon.<br />
+De même pour <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code>.<br />
+Remarque : <code class="docutils literal notranslate"><span class="pre">c[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">c[x][0]</span></code> sont donc les mêmes valeurs que <code class="docutils literal notranslate"><span class="pre">m[0][y]</span></code> et <code class="docutils literal notranslate"><span class="pre">m[x][0]</span></code>, on peut donc initialiser <code class="docutils literal notranslate"><span class="pre">c</span></code> comme une copie de <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Que vaut <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">0</span></code> ?</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">c[x][y]</span> <span class="pre">=</span> <span class="pre">0</span></code>.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Montrer que, si <code class="docutils literal notranslate"><span class="pre">m[x][y]</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">c[x][y]</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">min(c[x-1][y],</span> <span class="pre">c[x][y-1],</span> <span class="pre">c[x-1][y-1])</span></code>.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">remplir</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code> sont des matrices de même taille, <code class="docutils literal notranslate"><span class="pre">remplir(m,</span> <span class="pre">c)</span></code> modifie <code class="docutils literal notranslate"><span class="pre">c</span></code> pour que <code class="docutils literal notranslate"><span class="pre">c[x][y]</span></code> soit la taille maximum d’un carré de 1 dans <code class="docutils literal notranslate"><span class="pre">m</span></code> dont la case en bas à droite est <code class="docutils literal notranslate"><span class="pre">m[x}[y]</span></code>.</p>
-</div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">max_carre2</span></code> telle que <code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code> renvoie la taille maximum d’un carré de 1 contenu dans <code class="docutils literal notranslate"><span class="pre">m</span></code>, ainsi que les coordonnées de la case en haut à gauche d’un tel carré.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_carre2</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_carre2</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>Quelle est la complexité de <code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code>, en fonction des dimensions de <code class="docutils literal notranslate"><span class="pre">m</span></code>? Comparer avec <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">max_carre2(m)</span></code> est en <span class="math notranslate nohighlight">\(\boxed{O(n^2)}\)</span> à cause des deux boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> imbriquées.<br />
+C’est donc beaucoup mieux que <code class="docutils literal notranslate"><span class="pre">max_carre1(m)</span></code> qui est en <span class="math notranslate nohighlight">\(O(n^6)\)</span>.</p>
 </div>
 </section>
 <section id="pour-ceux-qui-ont-fini">
 <h2>Pour ceux qui ont fini<a class="headerlink" href="#pour-ceux-qui-ont-fini" title="Permalink to this headline">#</a></h2>
 <p>Cette partie n’est pas à rendre, sauf si vous en avez le temps.</p>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>S’inscrire sur <a class="reference external" href="https://projecteuler.net/">https://projecteuler.net/</a> et résoudre <a class="reference external" href="https://projecteuler.net/problem=67">ce problème</a>.<br />
 On pourra télécharger le fichier triangle.txt demandé avec :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
@@ -899,8 +1027,8 @@ On pourra télécharger le fichier triangle.txt demandé avec :</p>
 </pre></div>
 </div>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p><a class="reference external" href="https://leetcode.com/problems/longest-increasing-subsequence">Résoudre ce problème (en s’inscrivant préalablement)</a></p>
 </div>
 </section>
