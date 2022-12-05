@@ -3,6 +3,7 @@
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
+<li>Ajout corrigé TP programmation dynamique</li>
 <li>Ajout corrigé DS 1</li>
 </ul>
 </div> 
