@@ -653,8 +653,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="tp-2-probleme-du-sac-a-dos">
 <h1>TP 2 : Problème du sac à dos<a class="headerlink" href="#tp-2-probleme-du-sac-a-dos" title="Permalink to this headline">#</a></h1>
 <center><img src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/486px-Knapsack.svg.png width=250></center>
-<p><strong>Le TP est à finir pour dimanche 11 décembre au plus tard sur Capytale.</strong><br />
-<strong><a class="reference external" href="https://capytale2.ac-paris.fr/web/c/9c9f-1071049">Lien Capytale (pour rendre le TP, il suffit de sauvegarder)</a></strong>.</p>
+<p><strong><a class="reference external" href="https://capytale2.ac-paris.fr/web/c/9c9f-1071049">Lien Capytale (pour rendre le TP, il suffit de sauvegarder)</a></strong>. Attention : les exemples ne sont pas affichés sur Capytale.</p>
 <p>On rappelle le problème du sac à dos :</p>
 <ul class="simple">
 <li><p><strong>Entrée</strong> : une capacité <span class="math notranslate nohighlight">\(c\)</span> et des objets de poids <span class="math notranslate nohighlight">\(w_1, ..., w_n\)</span> et valeurs <span class="math notranslate nohighlight">\(v_1\)</span>, …, <span class="math notranslate nohighlight">\(v_n\)</span>.</p></li>
@@ -705,7 +704,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <h2>Tri des objets<a class="headerlink" href="#tri-des-objets" title="Permalink to this headline">#</a></h2>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">combine(L1,</span> <span class="pre">L2)</span></code> qui renvoie la liste des couples <span class="math notranslate nohighlight">\((x, y)\)</span> où <span class="math notranslate nohighlight">\(x\)</span> est un élément de <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <span class="math notranslate nohighlight">\(y\)</span> est un élément de <code class="docutils literal notranslate"><span class="pre">L2</span></code>. On suppose que <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> ont la même longueur.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">combine(L1,</span> <span class="pre">L2)</span></code> qui renvoie la liste des couples <code class="docutils literal notranslate"><span class="pre">(L1[i],</span> <span class="pre">L2[i])</span></code>. On suppose que <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> ont la même longueur.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -738,7 +737,13 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <p>Si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste, <code class="docutils literal notranslate"><span class="pre">L.sort()</span></code> trie <code class="docutils literal notranslate"><span class="pre">L</span></code> par ordre croissant (<code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code> pour trier par ordre décroissant). Si <code class="docutils literal notranslate"><span class="pre">L</span></code> contient des couples, la liste est triée suivant le premier élément de chaque couple (ordre lexicographique).</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w)</span></code> qui renvoie la liste des objets triés par poids croissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">combine()</span></code> et <code class="docutils literal notranslate"><span class="pre">split()</span></code>.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w)</span></code> qui renvoie la liste des objets triés par poids croissant.  On pourra utiliser <code class="docutils literal notranslate"><span class="pre">combine()</span></code> et <code class="docutils literal notranslate"><span class="pre">split()</span></code> :</p>
+<ul class="simple">
+<li><p>Créer la liste <code class="docutils literal notranslate"><span class="pre">L</span></code> des numéros des objets (entiers de 0 à <code class="docutils literal notranslate"><span class="pre">len(w)</span> <span class="pre">-</span> <span class="pre">1</span></code>)</p></li>
+<li><p>Combiner <code class="docutils literal notranslate"><span class="pre">w</span></code> avec <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p></li>
+<li><p>Trier <code class="docutils literal notranslate"><span class="pre">L</span></code> par poids croissant.</p></li>
+<li><p>Renvoyer la liste des seconds éléments de chaque couple de <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
