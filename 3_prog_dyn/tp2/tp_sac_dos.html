@@ -657,7 +657,7 @@ title="Print to PDF"
 <strong><a class="reference external" href="https://capytale2.ac-paris.fr/web/c/9c9f-1071049">Lien Capytale (pour rendre le TP, il suffit de sauvegarder)</a></strong>.</p>
 <p>On rappelle le problème du sac à dos :</p>
 <ul class="simple">
-<li><p><strong>Entrée</strong> : une capacité <span class="math notranslate nohighlight">\(c\)</span>, des objets <span class="math notranslate nohighlight">\(o_1, ..., o_n\)</span> de poids <span class="math notranslate nohighlight">\(w_1, ..., w_n\)</span> et valeurs <span class="math notranslate nohighlight">\(v_1\)</span>, …, <span class="math notranslate nohighlight">\(v_n\)</span>.</p></li>
+<li><p><strong>Entrée</strong> : une capacité <span class="math notranslate nohighlight">\(c\)</span> et des objets de poids <span class="math notranslate nohighlight">\(w_1, ..., w_n\)</span> et valeurs <span class="math notranslate nohighlight">\(v_1\)</span>, …, <span class="math notranslate nohighlight">\(v_n\)</span>.</p></li>
 <li><p><strong>Sortie</strong> : la valeur maximum que l’on peut mettre dans un sac de capacité <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
 </ul>
 <p>Nous allons comparer l’algorithme de programmation dynamique à des algorithmes gloutons.</p>
@@ -808,7 +808,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <h2>Programmation dynamique<a class="headerlink" href="#programmation-dynamique" title="Permalink to this headline">#</a></h2>
 <p>On rappelle le problème du sac à dos :</p>
 <ul class="simple">
-<li><p><strong>Entrée</strong> : une capacité <span class="math notranslate nohighlight">\(c\)</span>, des objets <span class="math notranslate nohighlight">\(o_1, ..., o_n\)</span> de poids <span class="math notranslate nohighlight">\(w_1, ..., w_n\)</span> et valeurs <span class="math notranslate nohighlight">\(v_1\)</span>, …, <span class="math notranslate nohighlight">\(v_n\)</span>.</p></li>
+<li><p><strong>Entrée</strong> : une capacité <span class="math notranslate nohighlight">\(c\)</span> et des objets de poids <span class="math notranslate nohighlight">\(w_1, ..., w_n\)</span> et valeurs <span class="math notranslate nohighlight">\(v_1\)</span>, …, <span class="math notranslate nohighlight">\(v_n\)</span>.</p></li>
 <li><p><strong>Sortie</strong> : la valeur maximum que l’on peut mettre dans un sac de capacité <span class="math notranslate nohighlight">\(c\)</span>.</p></li>
 </ul>
 <p>Soit <span class="math notranslate nohighlight">\(dp[i][j]\)</span> la valeur maximum que l’on peut mettre dans un sac de capacité <span class="math notranslate nohighlight">\(i\)</span>, en ne considérant que les <span class="math notranslate nohighlight">\(j\)</span> premiers objets. On suppose que les poids sont strictement positifs.</p>
