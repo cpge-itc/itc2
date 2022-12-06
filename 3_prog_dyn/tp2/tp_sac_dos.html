@@ -735,7 +735,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
 </div>
 </div>
-<p>Si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste, <code class="docutils literal notranslate"><span class="pre">L.sort()</span></code> trie <code class="docutils literal notranslate"><span class="pre">L</span></code> par ordre croissant (<code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code> par ordre décroissant). Si <code class="docutils literal notranslate"><span class="pre">L</span></code> contient des couples, la liste est triée suivant le premier élément du couple (ordre lexicographique).</p>
+<p>Si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste, <code class="docutils literal notranslate"><span class="pre">L.sort()</span></code> trie <code class="docutils literal notranslate"><span class="pre">L</span></code> par ordre croissant (<code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code> pour trier par ordre décroissant). Si <code class="docutils literal notranslate"><span class="pre">L</span></code> contient des couples, la liste est triée suivant le premier élément de chaque couple (ordre lexicographique).</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w)</span></code> qui renvoie la liste des objets triés par poids croissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">combine()</span></code> et <code class="docutils literal notranslate"><span class="pre">split()</span></code>.</p>
@@ -871,7 +871,8 @@ On peut donc construire la liste des objets choisis en remontant la matrice <cod
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prog_dyn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prog_dyn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> 
+<span class="c1"># la solution optimale consiste à choisir les objets 1 et 0</span>
 </pre></div>
 </div>
 </div>
