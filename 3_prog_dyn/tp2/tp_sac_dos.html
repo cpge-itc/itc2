@@ -666,30 +666,12 @@ title="Print to PDF"
 Suivant l’ordre dans lequel on choisit les objets, on obtient des algorithmes gloutons différents.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton(ordre,</span> <span class="pre">c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre donné par <code class="docutils literal notranslate"><span class="pre">ordre</span></code>.<br />
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre donné par <code class="docutils literal notranslate"><span class="pre">w</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span></code> (on regarde d’abord l’objet de poids <code class="docutils literal notranslate"><span class="pre">w[0]</span></code> et valeur <code class="docutils literal notranslate"><span class="pre">v[0]</span></code>, puis l’objet de poids <code class="docutils literal notranslate"><span class="pre">w[1]</span></code> et valeur <code class="docutils literal notranslate"><span class="pre">v[1]</span></code>…).
 Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">glouton</span><span class="p">(</span><span class="n">ordre</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renvoie la valeur maximum qu&#39;on peut obtenir avec l&#39;algorithme glouton</span>
-<span class="sd">    ordre: ordre des objets</span>
-<span class="sd">    c: capacité du sac</span>
-<span class="sd">    w: poids des objets</span>
-<span class="sd">    v: valeur des objets</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">poids</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># poids des objets sélectionnés</span>
-    <span class="n">valeur</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># valeur des objets sélectionnés</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ordre</span><span class="p">:</span> 
-        <span class="o">...</span> <span class="c1"># essayer d&#39;ajouter l&#39;objet ordre[i], de poids w[i] et de valeur v[i]</span>
-    <span class="k">return</span> <span class="n">valeur</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glouton</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glouton</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -704,7 +686,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <h2>Tri des objets<a class="headerlink" href="#tri-des-objets" title="Permalink to this headline">#</a></h2>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">combine(L1,</span> <span class="pre">L2)</span></code> qui renvoie la liste des couples <span class="math notranslate nohighlight">\((x, y)\)</span> où <span class="math notranslate nohighlight">\(x\)</span> est un élément de <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <span class="math notranslate nohighlight">\(y\)</span> est un élément de <code class="docutils literal notranslate"><span class="pre">L2</span></code>. On suppose que <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> ont la même longueur.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">combine(L1,</span> <span class="pre">L2)</span></code> qui renvoie la liste des couples <code class="docutils literal notranslate"><span class="pre">(L1[i],</span> <span class="pre">L2[i])</span></code>. On suppose que <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> ont la même longueur.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,19 +716,34 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
 </div>
 </div>
-<p>Si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste, <code class="docutils literal notranslate"><span class="pre">L.sort()</span></code> trie <code class="docutils literal notranslate"><span class="pre">L</span></code> par ordre croissant (<code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code> pour trier par ordre décroissant). Si <code class="docutils literal notranslate"><span class="pre">L</span></code> contient des couples, la liste est triée suivant le premier élément de chaque couple (ordre lexicographique).</p>
-<div class="admonition-question admonition">
-<p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w)</span></code> qui renvoie la liste des objets triés par poids croissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">combine()</span></code> et <code class="docutils literal notranslate"><span class="pre">split()</span></code>.</p>
-</div>
+<p>Si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste, <code class="docutils literal notranslate"><span class="pre">L.sort()</span></code> trie <code class="docutils literal notranslate"><span class="pre">L</span></code> par ordre croissant (<code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code> pour trier par ordre décroissant). Si <code class="docutils literal notranslate"><span class="pre">L</span></code> contient des couples, la liste est triée suivant le premier élément de chaque couple (ordre lexicographique).<br />
+Exemple :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tri_poids</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># le plus léger est l&#39;objet 1, suivi de l&#39;objet 0, suivi de l&#39;objet 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">L</span> <span class="c1"># trié suivant le 1er élément de chaque couple</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 2]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 4), (3, 6), (7, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w,</span> <span class="pre">v)</span></code> qui renvoie les listes <code class="docutils literal notranslate"><span class="pre">w2</span></code> et <code class="docutils literal notranslate"><span class="pre">v2</span></code> triées par ordre de poids croissant. On utilisera <code class="docutils literal notranslate"><span class="pre">L.sort</span></code>, <code class="docutils literal notranslate"><span class="pre">combine</span></code> et <code class="docutils literal notranslate"><span class="pre">split</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tri_poids</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># le plus léger est l&#39;objet 1, suivi de l&#39;objet 0, suivi de l&#39;objet 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([3, 5, 6], [0, 42, 2])
 </pre></div>
 </div>
 </div>
@@ -772,7 +769,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire de même des fonctions <code class="docutils literal notranslate"><span class="pre">tri_valeur(w)</span></code> et <code class="docutils literal notranslate"><span class="pre">glouton_valeur(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de valeur décroissante (en utilisant <code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code>). Est-ce que cet algorithme est toujours optimal ?</p>
+<p>Écrire de même des fonctions <code class="docutils literal notranslate"><span class="pre">tri_valeur(w,</span> <span class="pre">v)</span></code> et <code class="docutils literal notranslate"><span class="pre">glouton_valeur(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de valeur décroissante (en utilisant <code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code>). Est-ce que cet algorithme est toujours optimal ?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -788,7 +785,7 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>De même, écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton_ratio(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de ratio valeur/poids décroissant. Est-ce que cet algorithme est toujours optimal ?</p>
+<p>De même, écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton_ratio(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de ratio valeur/poids décroissant. On pourra utiliser deux fois <code class="docutils literal notranslate"><span class="pre">combine</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
