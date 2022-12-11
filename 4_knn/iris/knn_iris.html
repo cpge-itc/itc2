@@ -637,6 +637,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boule-de-voronoi">
+     Boule de Voronoi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kd-tree-et-ball-tree">
      KD Tree et Ball tree
     </a>
@@ -711,6 +716,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#poids-des-voisins">
      Poids des voisins
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boule-de-voronoi">
+     Boule de Voronoi
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -886,8 +896,8 @@ Le code suivant charge les données :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># renvoie les k plus proches voisins de x dans X</span>
-	<span class="n">indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-	<span class="k">return</span> <span class="n">indices</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">indices</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -895,10 +905,10 @@ Le code suivant charge les données :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">maj</span><span class="p">(</span><span class="n">L</span><span class="p">):</span> <span class="c1"># renvoie la classe qui apparaît le plus souvent dans L</span>
-	<span class="n">compte</span> <span class="o">=</span> <span class="p">{}</span>
-	<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
-		<span class="n">compte</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-	<span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">compte</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+    <span class="n">compte</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="n">compte</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">compte</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -906,8 +916,8 @@ Le code suivant charge les données :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">knn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># renvoie la classe prédite pour x par l&#39;algorithme des k plus proches voisins</span>
-	<span class="n">V</span> <span class="o">=</span> <span class="n">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-	<span class="k">return</span> <span class="n">maj</span><span class="p">([</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">V</span><span class="p">])</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">maj</span><span class="p">([</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">V</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -987,14 +997,14 @@ Classe réelle pour X_test[0] : 2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
-	<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-	<span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-		<span class="k">if</span> <span class="n">predict</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="n">Y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-			<span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
-		<span class="c1"># else:</span>
-		<span class="c1"># 	print(f&quot;Erreur pour X_test[{i}] : {iris.target_names[predict(i, k)]} au lieu de {iris.target_names[Y_test[i]]}&quot;)</span>
-	<span class="k">return</span> <span class="n">p</span><span class="o">/</span><span class="n">n</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">predict</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="n">Y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># else:</span>
+        <span class="c1"># 	print(f&quot;Erreur pour X_test[{i}] : {iris.target_names[predict(i, k)]} au lieu de {iris.target_names[Y_test[i]]}&quot;)</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">/</span><span class="n">n</span>
 </pre></div>
 </div>
 </div>
@@ -1016,9 +1026,11 @@ Classe réelle pour X_test[0] : 2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_precision</span><span class="p">(</span><span class="n">kmax</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="p">),</span> <span class="p">[</span><span class="n">precision</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="p">)])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Précision&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1058,6 +1070,23 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <p>On peut afficher la matrice de confusion pour <span class="math notranslate nohighlight">\(k = 9\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)):</span>
+    <span class="n">M</span><span class="p">[</span><span class="n">predict</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">9</span><span class="p">)][</span><span class="n">Y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">M</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[21,  0,  0],
+       [ 0, 29,  1],
+       [ 0,  1, 23]])
+</pre></div>
+</div>
+</div>
+</div>
 <p>Il n’y a que deux erreurs :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">M[1][2]</span></code> vaut 1, ce qui signifie qu’un iris de variété 2 (virginica) a été classé comme étant de variété 1 (versicolor).</p></li>
@@ -1090,7 +1119,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_46_0.png" src="../../_images/knn_iris_46_0.png" />
+<img alt="../../_images/knn_iris_47_0.png" src="../../_images/knn_iris_47_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1100,7 +1129,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_47_0.png" src="../../_images/knn_iris_47_0.png" />
+<img alt="../../_images/knn_iris_48_0.png" src="../../_images/knn_iris_48_0.png" />
 </div>
 </div>
 <p>On peut voir la différence avec une autre distance, par exemple la distance de Manhattan (<span class="math notranslate nohighlight">\(d(x, y) = \sum_{i=1}^d |x_i - y_i|\)</span>) :</p>
@@ -1111,7 +1140,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_49_0.png" src="../../_images/knn_iris_49_0.png" />
+<img alt="../../_images/knn_iris_50_0.png" src="../../_images/knn_iris_50_0.png" />
 </div>
 </div>
 </section>
@@ -1124,9 +1153,13 @@ Classe réelle pour X_test[0] : 2
 <section id="poids-des-voisins">
 <h3>Poids des voisins<a class="headerlink" href="#poids-des-voisins" title="Permalink to this headline">#</a></h3>
 <p>Lorsqu’on considère les <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins d’une nouvelle donnée <span class="math notranslate nohighlight">\(x\)</span>, il serait intéressant d’accorder plus d’importance aux voisins les plus proches. Pour cela, on peut donner un poids à chaque voisin proportionnel à l’inverse de sa distance à <span class="math notranslate nohighlight">\(x\)</span> (plus le voisin est proche, plus il est pertinent pour prédire la classe de <span class="math notranslate nohighlight">\(x\)</span>).</p>
+</section>
+<section id="boule-de-voronoi">
+<h3>Boule de Voronoi<a class="headerlink" href="#boule-de-voronoi" title="Permalink to this headline">#</a></h3>
+<p>Plutôt que considérer les <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins de <span class="math notranslate nohighlight">\(x\)</span>, on peut aussi fixer un rayon <span class="math notranslate nohighlight">\(r\)</span> et considérer toutes les données qui sont à une distance inférieure à <span class="math notranslate nohighlight">\(r\)</span> de <span class="math notranslate nohighlight">\(x\)</span> (dans la boule centrée en <span class="math notranslate nohighlight">\(x\)</span> de rayon <span class="math notranslate nohighlight">\(r\)</span>).</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Adapter l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins pour prendre en compte les poids des voisins. Comparer la frontière de décision et la précision obtenues.</p>
+<p>Adapter l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins en utilisant les deux modifications ci-dessus. Comparer la frontière de décision et la précision obtenues.</p>
 </div>
 </section>
 <section id="kd-tree-et-ball-tree">
