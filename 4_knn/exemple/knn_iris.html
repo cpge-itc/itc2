@@ -642,8 +642,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boule-de-voronoi">
-     Boule de Voronoi
+    <a class="reference internal nav-link" href="#boule-de-rayon-r">
+     Boule de rayon
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -724,8 +727,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boule-de-voronoi">
-     Boule de Voronoi
+    <a class="reference internal nav-link" href="#boule-de-rayon-r">
+     Boule de rayon
+     <span class="math notranslate nohighlight">
+      \(r\)
+     </span>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -758,7 +764,7 @@ Le code suivant charge les données :</p>
 </div>
 </div>
 </div>
-<center><img src=https://raw.githubusercontent.com/cpge-itc/bcpst2/main/files/5_iris/iris.png width=50%></center><section id="description-des-donnees">
+<center><img src=https://raw.githubusercontent.com/cpge-itc/bcpst2/main/files/5_iris/iris.png width=60%></center><section id="description-des-donnees">
 <h2>Description des données<a class="headerlink" href="#description-des-donnees" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iris</span></code> est un dictionnaire tel que :</p>
 <ul class="simple">
@@ -1159,8 +1165,8 @@ Classe réelle pour X_test[0] : 2
 <h3>Poids des voisins<a class="headerlink" href="#poids-des-voisins" title="Permalink to this headline">#</a></h3>
 <p>Lorsqu’on considère les <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins d’une nouvelle donnée <span class="math notranslate nohighlight">\(x\)</span>, il serait intéressant d’accorder plus d’importance aux voisins les plus proches. Pour cela, on peut donner un poids à chaque voisin proportionnel à l’inverse de sa distance à <span class="math notranslate nohighlight">\(x\)</span> (plus le voisin est proche, plus il est pertinent pour prédire la classe de <span class="math notranslate nohighlight">\(x\)</span>).</p>
 </section>
-<section id="boule-de-voronoi">
-<h3>Boule de Voronoi<a class="headerlink" href="#boule-de-voronoi" title="Permalink to this headline">#</a></h3>
+<section id="boule-de-rayon-r">
+<h3>Boule de rayon <span class="math notranslate nohighlight">\(r\)</span><a class="headerlink" href="#boule-de-rayon-r" title="Permalink to this headline">#</a></h3>
 <p>Plutôt que considérer les <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins de <span class="math notranslate nohighlight">\(x\)</span>, on peut aussi fixer un rayon <span class="math notranslate nohighlight">\(r\)</span> et considérer toutes les données qui sont à une distance inférieure à <span class="math notranslate nohighlight">\(r\)</span> de <span class="math notranslate nohighlight">\(x\)</span> (dans la boule centrée en <span class="math notranslate nohighlight">\(x\)</span> de rayon <span class="math notranslate nohighlight">\(r\)</span>).</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
