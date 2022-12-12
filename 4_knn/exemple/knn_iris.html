@@ -87,9 +87,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/4_knn/iris/knn_iris.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/4_knn/exemple/knn_iris.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Algorithme des k plus proches voisins" href="../knn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -329,24 +330,24 @@ const thebe_selector_output = ".output, .cell_output"
   Apprentissage automatique
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../cours.html">
    Cours
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../knn.html">
      Algorithme des k plus proches voisins
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exemple/knn_iris.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Exemple : Classification d’iris
     </a>
    </li>
@@ -407,7 +408,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/4_knn/iris/knn_iris.ipynb"
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/4_knn/exemple/knn_iris.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -425,7 +426,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/4_knn/iris/knn_iris.ipynb"
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/4_knn/exemple/knn_iris.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -485,7 +486,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F4_knn/iris/knn_iris.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F4_knn/exemple/knn_iris.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -502,7 +503,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/4_knn/iris/knn_iris.ipynb"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/4_knn/exemple/knn_iris.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -530,7 +531,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/4_knn/iris/knn_iris.ipynb"
+        <a href="../../_sources/4_knn/exemple/knn_iris.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -834,7 +835,7 @@ Le code suivant charge les données :</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_10_01.png" src="../../_images/knn_iris_10_01.png" />
+<img alt="../../_images/knn_iris_10_0.png" src="../../_images/knn_iris_10_0.png" />
 </div>
 </div>
 </section>
@@ -980,7 +981,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_29_01.png" src="../../_images/knn_iris_29_01.png" />
+<img alt="../../_images/knn_iris_29_0.png" src="../../_images/knn_iris_29_0.png" />
 </div>
 </div>
 <p>Par contre, <code class="docutils literal notranslate"><span class="pre">X_test[37]</span></code> est classé à tord comme étant de la variété virginica alors qu’elle est de la variété versicolor :</p>
@@ -991,7 +992,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_31_01.png" src="../../_images/knn_iris_31_01.png" />
+<img alt="../../_images/knn_iris_31_0.png" src="../../_images/knn_iris_31_0.png" />
 </div>
 </div>
 </section>
@@ -1046,7 +1047,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_37_01.png" src="../../_images/knn_iris_37_01.png" />
+<img alt="../../_images/knn_iris_37_0.png" src="../../_images/knn_iris_37_0.png" />
 </div>
 </div>
 <p>Zoomons sur <span class="math notranslate nohighlight">\(k \in [1, 15]\)</span> :</p>
@@ -1057,7 +1058,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_39_01.png" src="../../_images/knn_iris_39_01.png" />
+<img alt="../../_images/knn_iris_39_0.png" src="../../_images/knn_iris_39_0.png" />
 </div>
 </div>
 <p>Graphiquement, la précision est maximale pour <span class="math notranslate nohighlight">\(k = 9\)</span> :</p>
@@ -1123,7 +1124,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_47_01.png" src="../../_images/knn_iris_47_01.png" />
+<img alt="../../_images/knn_iris_47_0.png" src="../../_images/knn_iris_47_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1133,7 +1134,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_48_01.png" src="../../_images/knn_iris_48_01.png" />
+<img alt="../../_images/knn_iris_48_0.png" src="../../_images/knn_iris_48_0.png" />
 </div>
 </div>
 <p>On peut voir la différence avec une autre distance, par exemple la distance de Manhattan (<span class="math notranslate nohighlight">\(d(x, y) = \sum_{i=1}^d |x_i - y_i|\)</span>) :</p>
@@ -1144,7 +1145,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_50_01.png" src="../../_images/knn_iris_50_01.png" />
+<img alt="../../_images/knn_iris_50_0.png" src="../../_images/knn_iris_50_0.png" />
 </div>
 </div>
 </section>
@@ -1186,7 +1187,7 @@ Classe réelle pour X_test[0] : 2
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./4_knn/iris"
+            path: "./4_knn/exemple"
         },
         predefinedOutput: true
     }
@@ -1200,6 +1201,13 @@ Classe réelle pour X_test[0] : 2
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../knn.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Algorithme des k plus proches voisins</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
