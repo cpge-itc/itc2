@@ -3,6 +3,7 @@
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
+<li><a href="https://cpge-itc.github.io/itc2/3_prog_dyn/tp2/tp_sac_dos.html">Ajout corrigé TP sac à dos</a></li>
 <li>Ajout corrigé TP programmation dynamique</li>
 <li>Ajout corrigé DS 1</li>
 </ul>
