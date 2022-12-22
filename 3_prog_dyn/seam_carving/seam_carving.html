@@ -90,6 +90,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cours" href="../../4_knn/cours.html" />
+    <link rel="prev" title="TP 2 : Problème du sac à dos" href="../tp2/tp_sac_dos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
   Programmation dynamique
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../cours.html">
    Cours
@@ -301,16 +303,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../tp.html">
    TP
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../tp/tp_prog_dyn.html">
      TP : Programmation dynamique
@@ -319,6 +321,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../tp2/tp_sac_dos.html">
      TP : Sac à dos
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     DM : Redimensionnement d'image par Seam Carving
     </a>
    </li>
   </ul>
@@ -665,14 +672,15 @@ title="Print to PDF"
 </div></blockquote>
 <figure>
 <center>
-<img src=tower.png height=250><br>
+<img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/seam_carving/tower.png height=200><br>
     Image que l'on souhaite redimensionner
 </center>
 </figure>
 <center>    
-    <img src=resize.png height=300>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src=path.png height=300><br>
-    À gauche : Redimensionnement classique, l'image est déformée. <br>À droite : redimensionnement par seam carving, un chemin d'énergie minimale étant représenté en rouge.
+    <img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/seam_carving/resize.png height=200><br>
+    Redimensionnement classique, l'image est déformée.<br><br>
+    <img src=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/seam_carving/path.png height=200><br>
+    Redimensionnement par seam carving, un chemin d'énergie minimale étant représenté en rouge.
 </center><section id="chargement-de-l-image">
 <h2>Chargement de l’image<a class="headerlink" href="#chargement-de-l-image" title="Permalink to this headline">#</a></h2>
 <p>Commençons par charger l’image :</p>
@@ -788,7 +796,7 @@ On a donc :</p>
 \[d_{i, j} = \min(d_{i - 1, j - 1}, d_{i - 1, j}, d_{i - 1, j + 1}) + g_{i, j}\]</div>
 <div class="math notranslate nohighlight">
 \[d_{0, j} = g_{0, j}\]</div>
-<p>Remarque : attention à ne pas dépassez les bords de l’image (on ne prend pas en compte le pixel <span class="math notranslate nohighlight">\(i - 1, j - 1\)</span> si <span class="math notranslate nohighlight">\(j = 0\)</span>, par exemple).</p>
+<p>Remarques : attention à ne pas dépassez les bords de l’image (on ne prend pas en compte le pixel <span class="math notranslate nohighlight">\(i - 1, j - 1\)</span> si <span class="math notranslate nohighlight">\(j = 0\)</span>, par exemple).</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">dp_chemin(g)</span></code> qui renvoie une matrice <code class="docutils literal notranslate"><span class="pre">d</span></code> de même dimension que <code class="docutils literal notranslate"><span class="pre">g</span></code> telle que <code class="docutils literal notranslate"><span class="pre">d[i][j]</span></code> est l’énergie minimum d’un chemin depuis le haut de l’image jusqu’à un pixel <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j</span></code>.</p>
@@ -892,6 +900,20 @@ Pour cela, on construit le chemin à l’envers : on commence par chercher le pi
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tp2/tp_sac_dos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">TP 2 : Problème du sac à dos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../4_knn/cours.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cours</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
