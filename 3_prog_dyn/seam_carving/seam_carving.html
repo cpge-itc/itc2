@@ -1,0 +1,920 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Redimensionnement d’image par Seam Carving &#8212; Informatique commune en 2ème année de CPGE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "cpge-itc/itc2");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/cobra.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Informatique commune en 2ème année de CPGE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Généralités
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ressource.html">
+   Ressources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ds/ds1/mp_pc/ds1.html">
+   DS 1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Base de données
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../1_sql/cours/cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_select.html">
+     Requêtes sur une table avec SELECT, WHERE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_join.html">
+     Requêtes sur plusieurs tables avec JOIN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_groupby.html">
+     Fonctions d’agrégation et GROUP BY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_nested.html">
+     SELECT imbriqués
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_entity.html">
+     Modèle entité-relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/resume/sql_resume.html">
+     Résumé SQL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../1_sql/exercices/exercices.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/exercices/sqlzoo.html">
+     TP 1 et 2 : SQLZoo et sql-practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://cpge-exercices.github.io/sql">
+     Exercices en ligne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/exercices/concours/concours.html">
+     Extraits de concours
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dictionnaire
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_dict/dict.html">
+   Cours : Dictionnaire
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2_dict/tp.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2_dict/tp/tp_dict.html">
+     TP : Dictionnaire
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2_dict/tp/tp_hash.html">
+     TP : Fonction de hachage
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation dynamique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../prog_dyn.html">
+     Cours : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sp.html">
+     Cours : Application aux plus courts chemins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lis.html">
+     Exemple supplémentaire : plus longue sous-suite croissante
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tp.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tp/tp_prog_dyn.html">
+     TP : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tp2/tp_sac_dos.html">
+     TP : Sac à dos
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apprentissage automatique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../4_knn/cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../4_knn/knn.html">
+     Algorithme des k plus proches voisins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../4_knn/exemple/knn_iris.html">
+     Exemple : Classification d’iris
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/3_prog_dyn/seam_carving/seam_carving.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/3_prog_dyn/seam_carving/seam_carving.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cpge-itc/itc2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F3_prog_dyn/seam_carving/seam_carving.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/3_prog_dyn/seam_carving/seam_carving.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/3_prog_dyn/seam_carving/seam_carving.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chargement-de-l-image">
+   Chargement de l’image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-gradient">
+   Calcul de gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enlever-un-chemin">
+   Enlever un chemin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-d-un-chemin-d-energie-minimum-par-programmation-dynamique">
+   Calcul d’un chemin d’énergie minimum par programmation dynamique
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Redimensionnement d’image par Seam Carving</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chargement-de-l-image">
+   Chargement de l’image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-de-gradient">
+   Calcul de gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enlever-un-chemin">
+   Enlever un chemin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-d-un-chemin-d-energie-minimum-par-programmation-dynamique">
+   Calcul d’un chemin d’énergie minimum par programmation dynamique
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="redimensionnement-d-image-par-seam-carving">
+<h1>Redimensionnement d’image par <em>Seam Carving</em><a class="headerlink" href="#redimensionnement-d-image-par-seam-carving" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>L’objectif est de redimensionner une image par la méthode de <a class="reference external" href="https://faculty.runi.ac.il/arik/scweb/imret/imret.pdf"><em>Seam Carving</em></a>. Cette technique consiste à supprimer des chemins d’énergie minimale sur l’image, c’est-à-dire utilisant des pixels de couleurs relativement uniformes. Ainsi, on évite de trop modifier l’image.</p>
+</div></blockquote>
+<figure>
+<center>
+<img src=tower.png height=250><br>
+    Image que l'on souhaite redimensionner
+</center>
+</figure>
+<center>    
+    <img src=resize.png height=300>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src=path.png height=300><br>
+    À gauche : Redimensionnement classique, l'image est déformée. <br>À droite : redimensionnement par seam carving, un chemin d'énergie minimale étant représenté en rouge.
+</center><section id="chargement-de-l-image">
+<h2>Chargement de l’image<a class="headerlink" href="#chargement-de-l-image" title="Permalink to this headline">#</a></h2>
+<p>Commençons par charger l’image :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;tower.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span> <span class="c1"># affiche l&#39;image</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/seam_carving_2_0.png" src="../../_images/seam_carving_2_0.png" />
+</div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">m</span></code> que nous venons de définir contient alors une matrice <code class="docutils literal notranslate"><span class="pre">numpy</span></code> qui représente l’image. Comme l’image est en niveau de gris, chaque pixel est représenté par un nombre flottant (<code class="docutils literal notranslate"><span class="pre">float</span></code>) entre 0 (noir) et 1 (blanc).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;valeur du pixel en haut à gauche :&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nombre de lignes :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nombre de colonnes :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dimensions de l&#39;image :&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="c1"># une autre façon possible avec une matrice numpy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>valeur du pixel en haut à gauche : 0.28627452
+nombre de lignes : 484
+nombre de colonnes : 714
+dimensions de l&#39;image : (484, 714)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calcul-de-gradient">
+<h2>Calcul de gradient<a class="headerlink" href="#calcul-de-gradient" title="Permalink to this headline">#</a></h2>
+<p>On définit une matrice <span class="math notranslate nohighlight">\(g = (g_{i, j})\)</span> de même dimension que <span class="math notranslate nohighlight">\(m\)</span> telle que :</p>
+<div class="math notranslate nohighlight">
+\[g_{i, j} = |m_{i + 1, j} - m_{i - 1, j}| + |m_{i, j + 1} - m_{i, j - 1}|\]</div>
+<p>La formule ci-dessus n’étant pas valable pour la première/dernière ligne (<span class="math notranslate nohighlight">\(i = 0\)</span> ou <span class="math notranslate nohighlight">\(i = n - 1\)</span>, où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de lignes de <span class="math notranslate nohighlight">\(m\)</span>), on utilise à la place :</p>
+<div class="math notranslate nohighlight">
+\[g_{0, j} = |m_{1, j} - m_{0, j}| + |m_{i, j + 1} - m_{i, j - 1}|\]</div>
+<div class="math notranslate nohighlight">
+\[g_{n - 1, j} = |m_{n - 1, j} - m_{n - 2, j}| + |m_{i, j + 1} - m_{i, j - 1}|\]</div>
+<p>Et de même sur la première/dernière colonne.</p>
+<p>Intuitivement, <span class="math notranslate nohighlight">\(g_{i, j}\)</span> correspond à l’intensité du gradient de l’image sur le pixel <span class="math notranslate nohighlight">\(i, j\)</span> : plus il est grand, plus il y a de fortes variation de couleur au niveau de ce pixel.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">matrice_gradient(m)</span></code> qui renvoie <code class="docutils literal notranslate"><span class="pre">g</span></code> à partir de <code class="docutils literal notranslate"><span class="pre">m</span></code>. On pourra utiliser, au choix, une liste de listes ou un tableau <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (en utilisant, par exemple, <code class="docutils literal notranslate"><span class="pre">np.zeros((...,</span> <span class="pre">...))</span></code> pour créer <code class="docutils literal notranslate"><span class="pre">g</span></code>). On pourra utiliser <code class="docutils literal notranslate"><span class="pre">abs</span></code> pour la valeur absolue.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">matrice_gradient</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span> <span class="c1"># affichage pour vérifier</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/seam_carving_7_0.png" src="../../_images/seam_carving_7_0.png" />
+</div>
+</div>
+<p>Dans la suite, on pourra utiliser la fonction suivante qui sera plus rapide, <em>a priori</em> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matrice_gradient</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">g</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">g</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">g</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">m</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">g</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="enlever-un-chemin">
+<h2>Enlever un chemin<a class="headerlink" href="#enlever-un-chemin" title="Permalink to this headline">#</a></h2>
+<p>Nous enlèverons seulement des chemins verticaux. Un chemin sera donné par une liste <code class="docutils literal notranslate"><span class="pre">c</span></code> contenant les pixels <code class="docutils literal notranslate"><span class="pre">m[i][c[i]]</span></code>. Par exemple, si <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">[231,</span> <span class="pre">230,</span> <span class="pre">231...]</span></code> alors <code class="docutils literal notranslate"><span class="pre">c</span></code> passe par le pixel <code class="docutils literal notranslate"><span class="pre">m[0][231]</span></code>, puis <code class="docutils literal notranslate"><span class="pre">m[1][230]</span></code>, <code class="docutils literal notranslate"><span class="pre">m[2][231]</span></code>…</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">enlever_chemin</span></code> telle que, si <code class="docutils literal notranslate"><span class="pre">m</span></code> est une image de taille <span class="math notranslate nohighlight">\(n\times p\)</span>, <code class="docutils literal notranslate"><span class="pre">enlever_chemin(m,</span> <span class="pre">c)</span></code> renvoie une matrice <code class="docutils literal notranslate"><span class="pre">m2</span></code> de taille <span class="math notranslate nohighlight">\(n\times (p - 1)\)</span> obtenue à partir de <code class="docutils literal notranslate"><span class="pre">m</span></code> en supprimant chaque pixel du chemin <code class="docutils literal notranslate"><span class="pre">c</span></code>. On pourra compléter le code suivant :</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">enlever_chemin</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">m2</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># définition de m2 comme liste de listes</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># ième ligne de m2</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+            <span class="o">...</span> <span class="c1"># ajouter la ligne m[i] sauf m[i][c[i]]</span>
+        <span class="o">...</span> <span class="c1"># ajouter la ligne l à m2</span>
+    <span class="k">return</span> <span class="n">m2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calcul-d-un-chemin-d-energie-minimum-par-programmation-dynamique">
+<h2>Calcul d’un chemin d’énergie minimum par programmation dynamique<a class="headerlink" href="#calcul-d-un-chemin-d-energie-minimum-par-programmation-dynamique" title="Permalink to this headline">#</a></h2>
+<p>On ne considère que les chemins verticaux.<br />
+L’<strong>énergie d’un chemin</strong> est définie comme la somme des gradients (<span class="math notranslate nohighlight">\(g_{i, j}\)</span>) des pixels du chemin.<br />
+Soit <span class="math notranslate nohighlight">\(d_{i, j}\)</span> l’énergie minimum d’un chemin depuis le haut de l’image jusqu’à un pixel <span class="math notranslate nohighlight">\(i, j\)</span>.<br />
+Pour atteindre le pixel <span class="math notranslate nohighlight">\(i, j\)</span>, on peut soit passer par le pixel <span class="math notranslate nohighlight">\(i - 1, j - 1\)</span>, soit <span class="math notranslate nohighlight">\(i - 1, j\)</span> ou <span class="math notranslate nohighlight">\(i - 1, j + 1\)</span>.<br />
+On a donc :</p>
+<div class="math notranslate nohighlight">
+\[d_{i, j} = \min(d_{i - 1, j - 1}, d_{i - 1, j}, d_{i - 1, j + 1}) + g_{i, j}\]</div>
+<div class="math notranslate nohighlight">
+\[d_{0, j} = g_{0, j}\]</div>
+<p>Remarque : attention à ne pas dépassez les bords de l’image (on ne prend pas en compte le pixel <span class="math notranslate nohighlight">\(i - 1, j - 1\)</span> si <span class="math notranslate nohighlight">\(j = 0\)</span>, par exemple).</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">dp_chemin(g)</span></code> qui renvoie une matrice <code class="docutils literal notranslate"><span class="pre">d</span></code> de même dimension que <code class="docutils literal notranslate"><span class="pre">g</span></code> telle que <code class="docutils literal notranslate"><span class="pre">d[i][j]</span></code> est l’énergie minimum d’un chemin depuis le haut de l’image jusqu’à un pixel <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">dp_chemin</span><span class="p">(</span><span class="n">matrice_gradient</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span> <span class="c1"># affichage de d : plus un pixel est sombre, plus il est facile de le supprimer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/seam_carving_15_0.png" src="../../_images/seam_carving_15_0.png" />
+</div>
+</div>
+<p>On veut maintenant trouver un chemin vertical d’énergie minimum à partir de la matrice <code class="docutils literal notranslate"><span class="pre">d</span></code> de la question précédente.<br />
+Pour cela, on construit le chemin à l’envers : on commence par chercher le pixel de la dernière ligne (tout en bas) d’énergie minimale, puis on remonte.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">min_energie_bas(d)</span></code> qui renvoie le numéro de colonne <code class="docutils literal notranslate"><span class="pre">j</span></code> du pixel de la dernière ligne d’énergie minimale, c’est-à-dire tel que <code class="docutils literal notranslate"><span class="pre">d[n</span> <span class="pre">-</span> <span class="pre">1][j]</span></code> est minimal, où <code class="docutils literal notranslate"><span class="pre">d</span></code> est la matrice renvoyée par la fonction <code class="docutils literal notranslate"><span class="pre">dp_chemin(m)</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> est le nombre de lignes de <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_energie_bas</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>705
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">min_chemin(d)</span></code> qui renvoie un chemin <code class="docutils literal notranslate"><span class="pre">c</span></code> vertical d’énergie minimum à partir de la matrice <code class="docutils literal notranslate"><span class="pre">d</span></code>. Ainsi, <code class="docutils literal notranslate"><span class="pre">c[i]</span></code> est le numéro de colonne du pixel de la ligne <code class="docutils literal notranslate"><span class="pre">i</span></code> du chemin. <code class="docutils literal notranslate"><span class="pre">d</span></code> est la matrice renvoyée par la fonction <code class="docutils literal notranslate"><span class="pre">dp_chemin(m)</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">min_chemin</span><span class="p">(</span><span class="n">matrice_gradient</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span> <span class="c1"># affichage de l&#39;image avec le chemin en rouge</span>
+<span class="n">c</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># affichage des 10 premières valeurs de c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[702, 702, 702, 701, 701, 700, 699, 698, 697, 696]
+</pre></div>
+</div>
+<img alt="../../_images/seam_carving_20_1.png" src="../../_images/seam_carving_20_1.png" />
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire finalement une fonction <code class="docutils literal notranslate"><span class="pre">seam_carving(m,</span> <span class="pre">n)</span></code> qui réalise <span class="math notranslate nohighlight">\(n\)</span> fois les instructions suivantes :</p>
+<ul class="simple">
+<li><p>Calculer la matrice <code class="docutils literal notranslate"><span class="pre">g</span></code> des gradients de <code class="docutils literal notranslate"><span class="pre">m</span></code></p></li>
+<li><p>Calculer un chemin <code class="docutils literal notranslate"><span class="pre">c</span></code> d’énergie minimum dans <code class="docutils literal notranslate"><span class="pre">g</span></code></p></li>
+<li><p>Enlever le chemin <code class="docutils literal notranslate"><span class="pre">c</span></code> de <code class="docutils literal notranslate"><span class="pre">m</span></code></p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seam_carving_im</span> <span class="o">=</span> <span class="n">seam_carving</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># on enlève 200 colonnes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">seam_carving_im</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/seam_carving_22_0.png" src="../../_images/seam_carving_22_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_prog_dyn/seam_carving"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Quentin Fortier<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
