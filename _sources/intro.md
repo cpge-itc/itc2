@@ -11,8 +11,9 @@
 <br />
 
 **Programme DS 2 :**  
-- Programmation dynamique  
-- Plus proches voisins
+- Programmation dynamique : refaire les exercices et bien comprendre la méthode 
+- Plus proches voisins : refaire les fonctions du cours et bien comprendre la méthode 
+
 
 - [Programme officiel](https://prepas.org/index.php?document=72)
 - [Un site pour l'informatique de 1ère année](https://cpge-itc.github.io/itc1)
