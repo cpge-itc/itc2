@@ -1,5 +1,6 @@
 # Ressources
 
+[Exercices de BCPST pour s'entraîner](https://cpge-itc.github.io/bcpst2)  
 [Notes et classement](https://fortierq-itc2-notes-grade-p12o3t.streamlit.app)
 
 [Cours de première année](https://cpge-itc.github.io/itc1)
