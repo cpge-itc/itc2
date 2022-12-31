@@ -943,6 +943,16 @@ Le code suivant charge les données :</p>
 </div>
 </div>
 </div>
+<p><strong>Remarque</strong> : on peut aussi utiliser le fait que la distance euclidienne entre deux vecteurs <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span> est <span class="math notranslate nohighlight">\(\sqrt{(X - Y)^\top (X - Y)}\)</span>, ce qui est plus rapide à calculer. De plus, on ne s’intéresse qu’aux plus proches voisins, et pas à leur distance exacte. On peut donc se passer du calcul de la racine carrée, d’où la fonction ci-dessous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">d2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span> <span class="c1"># renvoie les k plus proches voisins de x dans X</span>
@@ -1026,7 +1036,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_29_0.png" src="../../_images/knn_iris_29_0.png" />
+<img alt="../../_images/knn_iris_31_0.png" src="../../_images/knn_iris_31_0.png" />
 </div>
 </div>
 <p>Par contre, <code class="docutils literal notranslate"><span class="pre">X_test[37]</span></code> est classé à tord comme étant de la variété virginica alors qu’elle est de la variété versicolor :</p>
@@ -1037,7 +1047,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_31_0.png" src="../../_images/knn_iris_31_0.png" />
+<img alt="../../_images/knn_iris_33_0.png" src="../../_images/knn_iris_33_0.png" />
 </div>
 </div>
 </section>
@@ -1050,7 +1060,7 @@ Classe réelle pour X_test[0] : 2
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">predict</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span> <span class="o">==</span> <span class="n">Y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">predict</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="n">Y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="c1"># else:</span>
         <span class="c1"># 	print(f&quot;Erreur pour X_test[{i}] : {iris.target_names[predict(i, k)]} au lieu de {iris.target_names[Y_test[i]]}&quot;)</span>
@@ -1092,7 +1102,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_37_0.png" src="../../_images/knn_iris_37_0.png" />
+<img alt="../../_images/knn_iris_39_0.png" src="../../_images/knn_iris_39_0.png" />
 </div>
 </div>
 <p>Zoomons sur <span class="math notranslate nohighlight">\(k \in [1, 15]\)</span> :</p>
@@ -1103,18 +1113,18 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_39_0.png" src="../../_images/knn_iris_39_0.png" />
+<img alt="../../_images/knn_iris_41_0.png" src="../../_images/knn_iris_41_0.png" />
 </div>
 </div>
 <p>Graphiquement, la précision est maximale pour <span class="math notranslate nohighlight">\(k = 9\)</span> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9466666666666667
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9733333333333334
 </pre></div>
 </div>
 </div>
@@ -1163,7 +1173,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_47_0.png" src="../../_images/knn_iris_47_0.png" />
+<img alt="../../_images/knn_iris_49_0.png" src="../../_images/knn_iris_49_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1173,7 +1183,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9733333333333334
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9466666666666667
 </pre></div>
 </div>
 </div>
@@ -1196,17 +1206,17 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_51_0.png" src="../../_images/knn_iris_51_0.png" />
+<img alt="../../_images/knn_iris_53_0.png" src="../../_images/knn_iris_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9733333333333334
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.96
 </pre></div>
 </div>
 </div>
@@ -1240,7 +1250,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_56_0.png" src="../../_images/knn_iris_56_0.png" />
+<img alt="../../_images/knn_iris_58_0.png" src="../../_images/knn_iris_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1250,7 +1260,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_57_0.png" src="../../_images/knn_iris_57_0.png" />
+<img alt="../../_images/knn_iris_59_0.png" src="../../_images/knn_iris_59_0.png" />
 </div>
 </div>
 <p>On peut voir la différence avec une autre distance, par exemple la distance de Manhattan (<span class="math notranslate nohighlight">\(d(x, y) = \sum_{i=1}^d |x_i - y_i|\)</span>) :</p>
@@ -1261,7 +1271,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_59_0.png" src="../../_images/knn_iris_59_0.png" />
+<img alt="../../_images/knn_iris_61_0.png" src="../../_images/knn_iris_61_0.png" />
 </div>
 </div>
 </section>
@@ -1317,8 +1327,8 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_61_0.png" src="../../_images/knn_iris_61_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9733333333333334
+<img alt="../../_images/knn_iris_63_0.png" src="../../_images/knn_iris_63_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.96
 </pre></div>
 </div>
 </div>
