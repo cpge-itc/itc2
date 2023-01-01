@@ -614,7 +614,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chargement-des-donnees-avec-pandas">
-   Chargement des données avec Pandas
+   Chargement des données avec pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -678,7 +678,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#chargement-des-donnees-avec-pandas">
-   Chargement des données avec Pandas
+   Chargement des données avec pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -745,13 +745,13 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">Fare</span></code> : Tarif du ticket (en dollars)</p></li>
 </ul>
 <section id="chargement-des-donnees-avec-pandas">
-<h2>Chargement des données avec Pandas<a class="headerlink" href="#chargement-des-donnees-avec-pandas" title="Permalink to this headline">#</a></h2>
-<p>Pandas est un module Python qui permet de manipuler des données sous forme de tableau appelé dataframe :</p>
+<h2>Chargement des données avec pandas<a class="headerlink" href="#chargement-des-donnees-avec-pandas" title="Permalink to this headline">#</a></h2>
+<p>pandas est un module Python qui permet de manipuler des données sous forme de tableau appelé DataFrame (qui ressemble à un peu à une table SQL) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic.csv&#39;</span><span class="p">)</span> <span class="c1"># df est un DataFrame</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># pour afficher les 5 premières lignes</span>
 </pre></div>
 </div>
@@ -1026,7 +1026,7 @@ Name: Age, Length: 891, dtype: float64
 <h2>Standardisation<a class="headerlink" href="#standardisation" title="Permalink to this headline">#</a></h2>
 <p>On remarque que les attributs sont sur des échelles très différentes (par exemple, l’âge est entre 0 et 80, alors que la classe du billet est entre 1 et 3).<br />
 Les différences d’âge contribuent alors beaucoup plus dans les calculs de distance, ce qui ferait que l’âge aurait un poids plus important que la classe du billet pour la prédiction.<br />
-Pour éviter cela, on va standardiser les données c’est-à-dire les transformer de manière à ce que chaque attribut ait une moyenne nulle et un écart-type égal à 1.</p>
+Pour éviter cela, on va standardiser les données, c’est-à-dire les transformer de manière à ce que chaque attribut ait une moyenne nulle et un écart-type égal à 1.</p>
 <p>Si un attribut <span class="math notranslate nohighlight">\(x\)</span> a une moyenne <span class="math notranslate nohighlight">\(\bar{x}\)</span> et un écart-type <span class="math notranslate nohighlight">\(\sigma\)</span>, on peut le standardiser en le remplaçant par :</p>
 <div class="math notranslate nohighlight">
 \[\frac{x - \bar{x}}{\sigma}\]</div>
