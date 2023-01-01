@@ -12,9 +12,8 @@
 <br />
 
 **Programme DS 2 :**  
-- Programmation dynamique : refaire les exercices et bien comprendre la méthode 
-- Plus proches voisins : refaire les fonctions du cours et bien comprendre la méthode 
-
+- Programmation dynamique : refaire les exercices et bien comprendre la méthode, mémoïsation.  
+- Plus proches voisins : refaire les fonctions du cours et bien comprendre la méthode, connaître le vocabulaire (précision, erreur, matrice de confusion)
 
 - [Programme officiel](https://prepas.org/index.php?document=72)
 - [Un site pour l'informatique de 1ère année](https://cpge-itc.github.io/itc1)
