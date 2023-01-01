@@ -1024,8 +1024,10 @@ Name: Age, Length: 891, dtype: float64
 </section>
 <section id="standardisation">
 <h2>Standardisation<a class="headerlink" href="#standardisation" title="Permalink to this headline">#</a></h2>
-<p>Nous remarquons que les attributs sont sur des échelles très différentes (par exemple, l’âge est entre 0 et 80, alors que la classe du billet est entre 1 et 3). Les différences d’âge contriburaient alors beaucoup plus dans les calculs de distance, ce qui ferait que l’âge aurait un poids plus important que la classe du billet pour la prédiction. Pour éviter cela, on va standardiser les données, c’est-à-dire les transformer de manière à ce que chaque attribut ait une moyenne nulle et un écart-type égal à 1.<br />
-Si un attribut <span class="math notranslate nohighlight">\(x\)</span> a une moyenne <span class="math notranslate nohighlight">\(\bar{x}\)</span> et un écart-type <span class="math notranslate nohighlight">\(\sigma\)</span>, on peut le standardiser en le remplaçant par :</p>
+<p>On remarque que les attributs sont sur des échelles très différentes (par exemple, l’âge est entre 0 et 80, alors que la classe du billet est entre 1 et 3).<br />
+Les différences d’âge contribuent alors beaucoup plus dans les calculs de distance, ce qui ferait que l’âge aurait un poids plus important que la classe du billet pour la prédiction.<br />
+Pour éviter cela, on va standardiser les données c’est-à-dire les transformer de manière à ce que chaque attribut ait une moyenne nulle et un écart-type égal à 1.</p>
+<p>Si un attribut <span class="math notranslate nohighlight">\(x\)</span> a une moyenne <span class="math notranslate nohighlight">\(\bar{x}\)</span> et un écart-type <span class="math notranslate nohighlight">\(\sigma\)</span>, on peut le standardiser en le remplaçant par :</p>
 <div class="math notranslate nohighlight">
 \[\frac{x - \bar{x}}{\sigma}\]</div>
 <div class="admonition-question admonition">
