@@ -827,7 +827,19 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>Ainsi <code class="docutils literal notranslate"><span class="pre">df</span></code> est un tableau contenant 891 lignes et 5 colonnes, chaque ligne correspondant à un passager du Titanic. On peut obtenir le nombres de lignes avec <code class="docutils literal notranslate"><span class="pre">len(df)</span></code>.</p>
+<p>Ainsi <code class="docutils literal notranslate"><span class="pre">df</span></code> est un tableau contient 5 colonnes (<code class="docutils literal notranslate"><span class="pre">Survived</span></code>, <code class="docutils literal notranslate"><span class="pre">Pclass</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Fare</span></code>) et chaque ligne correspondant à un passager du Titanic. On peut obtenir le nombres de lignes avec <code class="docutils literal notranslate"><span class="pre">len(df)</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>891
+</pre></div>
+</div>
+</div>
+</div>
 <p>Chaque ligne est identifiée par un index, ici <span class="math notranslate nohighlight">\(0, 1, 2, ...\)</span>. On peut accéder à la ligne d’indice <span class="math notranslate nohighlight">\(i\)</span> avec <code class="docutils literal notranslate"><span class="pre">df.loc[i]</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
