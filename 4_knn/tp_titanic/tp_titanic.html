@@ -741,12 +741,12 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">Survived</span></code> : 0 = Non, 1 = Oui</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Pclass</span></code> : Classe de ticket (1 = 1ère classe, 2 = 2ème, 3 = 3ème)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Sex</span></code> : Genre du passager (<code class="docutils literal notranslate"><span class="pre">male</span></code> ou <code class="docutils literal notranslate"><span class="pre">female</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Age</span></code> : Age du passager (en années)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Age</span></code> : Âge du passager (en années)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Fare</span></code> : Tarif du ticket (en dollars)</p></li>
 </ul>
 <section id="chargement-des-donnees-avec-pandas">
 <h2>Chargement des données avec pandas<a class="headerlink" href="#chargement-des-donnees-avec-pandas" title="Permalink to this headline">#</a></h2>
-<p>pandas est un module Python qui permet de manipuler des données sous forme de tableau appelé DataFrame (qui ressemble à un peu à une table SQL) :</p>
+<p>pandas est un module Python qui permet de manipuler des données sous forme de tableau appelé <strong>DataFrame</strong> (qui ressemble à un peu à une table SQL) :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -907,7 +907,7 @@ Name: Age, Length: 891, dtype: float64
 <h2>Statistiques<a class="headerlink" href="#statistiques" title="Permalink to this headline">#</a></h2>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">moyenne(df,</span> <span class="pre">c)</span></code> qui renvoie la moyenne des valeurs de la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. Quelle est l’âge moyen des passagers du Titanic ? Le prix moyen du ticket ?</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">moyenne(df,</span> <span class="pre">c)</span></code> qui renvoie la moyenne des valeurs sur la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. Quelle est l’âge moyen des passagers du Titanic ? Le prix moyen du ticket ?</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
