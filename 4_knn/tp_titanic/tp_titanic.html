@@ -840,7 +840,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Chaque ligne est identifiée par un index, ici <span class="math notranslate nohighlight">\(0, 1, 2, ...\)</span>. On peut accéder à la ligne d’indice <span class="math notranslate nohighlight">\(i\)</span> avec <code class="docutils literal notranslate"><span class="pre">df.loc[i]</span></code> :</p>
+<p>Chaque ligne est identifiée par un index (= nom de la ligne), ici <span class="math notranslate nohighlight">\(0, 1, 2, ...\)</span>. On peut accéder à la ligne d’indice <span class="math notranslate nohighlight">\(i\)</span> avec <code class="docutils literal notranslate"><span class="pre">df.loc[i]</span></code> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -886,7 +886,7 @@ Name: Age, Length: 891, dtype: float64
 <p>On peut combiner ces deux méthodes pour récupérer une valeur précise, par exemple l’âge du 3ème passager :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="c1"># ou df.loc[2][&quot;Age&quot;]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -927,6 +927,7 @@ Name: Age, Length: 891, dtype: float64
 <div class="math notranslate nohighlight">
 \[\sqrt{\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2}\]</div>
 <p>où <span class="math notranslate nohighlight">\(\bar{x}\)</span> est la moyenne des valeurs <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span>.</p>
+<p><strong>Remarque : On évitera de calculer plusieurs fois la même moyenne.</strong></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,7 +948,6 @@ Name: Age, Length: 891, dtype: float64
 <li><p>les hommes</p></li>
 <li><p>les femmes</p></li>
 <li><p>les passagers de 1ère classe</p></li>
-<li><p>les passagers de 2ème classe</p></li>
 <li><p>les passagers de 3ème classe</p></li>
 </ul>
 </div>
@@ -1044,7 +1044,7 @@ Pour éviter cela, on va standardiser les données, c’est-à-dire les transfor
 \[\frac{x - \bar{x}}{\sigma}\]</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">standardiser(df,</span> <span class="pre">c)</span></code> qui standardise la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. L’utiliser pour standardiser les colonnes <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Fare</span></code>, <code class="docutils literal notranslate"><span class="pre">Pclass</span></code> et <code class="docutils literal notranslate"><span class="pre">Sex</span></code>.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">standardiser(df,</span> <span class="pre">c)</span></code> qui standardise la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. L’utiliser pour standardiser les colonnes <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Fare</span></code>, <code class="docutils literal notranslate"><span class="pre">Pclass</span></code> et <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. On rappelle qu’on peut modifier l’élément sur la ligne <code class="docutils literal notranslate"><span class="pre">i</span></code> et la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> avec <code class="docutils literal notranslate"><span class="pre">df.loc[i,</span> <span class="pre">c]</span> <span class="pre">=</span> <span class="pre">...</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
