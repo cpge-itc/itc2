@@ -3,6 +3,7 @@
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
+<li> <a href=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/ds/ds2/ds2_cor.pdf>Corrigé du DS 2</a>
 <li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Corrigé du devoir : Seam carving</a>
 <li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Devoir à faire pendant les vacances de Noël</a>
 <li><a href="https://cpge-itc.github.io/itc2/3_prog_dyn/tp2/tp_sac_dos.html">Ajout corrigé TP sac à dos</a></li>
@@ -11,10 +12,6 @@
 </ul>
 </div> 
 <br />
-
-**Programme DS 2 :**  
-- Programmation dynamique : refaire les exercices et bien comprendre la méthode, mémoïsation.  
-- Plus proches voisins : refaire les fonctions du cours et bien comprendre la méthode, connaître le vocabulaire (précision, erreur, matrice de confusion)
 
 - [Programme officiel](https://prepas.org/index.php?document=72)
 - [Un site pour l'informatique de 1ère année](https://cpge-itc.github.io/itc1)
