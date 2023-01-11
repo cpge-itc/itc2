@@ -715,7 +715,6 @@ title="Print to PDF"
 <span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">float_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:,.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span>
 
 <span class="n">df_ds2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ds2.csv&quot;</span><span class="p">)</span>
-<span class="n">df_ds2</span> <span class="o">=</span> <span class="n">df_ds2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:]</span>
 <span class="n">df_ds2</span><span class="p">[</span><span class="s2">&quot;rang&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ds2</span><span class="p">[</span><span class="s2">&quot;rang&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">df_ds2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -741,6 +740,8 @@ title="Print to PDF"
     <tr style="text-align: right;">
       <th></th>
       <th>classe</th>
+      <th>nom</th>
+      <th>prenom</th>
       <th>1</th>
       <th>2</th>
       <th>3</th>
@@ -748,8 +749,6 @@ title="Print to PDF"
       <th>5</th>
       <th>6</th>
       <th>7</th>
-      <th>8</th>
-      <th>9</th>
       <th>...</th>
       <th>11</th>
       <th>12</th>
@@ -765,8 +764,34 @@ title="Print to PDF"
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>bareme</td>
+      <td>bareme</td>
+      <td>bareme</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+    <tr>
       <th>1</th>
       <td>mp</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>5</td>
       <td>2</td>
       <td>1.0</td>
@@ -774,8 +799,6 @@ title="Print to PDF"
       <td>NaN</td>
       <td>5.0</td>
       <td>0.0</td>
-      <td>4.0</td>
-      <td>NaN</td>
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -791,12 +814,12 @@ title="Print to PDF"
     <tr>
       <th>2</th>
       <td>mpp</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>5</td>
       <td>5</td>
       <td>5.0</td>
       <td>4.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
       <td>5.0</td>
       <td>5.0</td>
       <td>5.0</td>
@@ -815,14 +838,14 @@ title="Print to PDF"
     <tr>
       <th>3</th>
       <td>mpp</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>5</td>
       <td>5</td>
       <td>5.0</td>
       <td>4.0</td>
       <td>5.0</td>
       <td>3.0</td>
-      <td>3.0</td>
-      <td>5.0</td>
       <td>3.0</td>
       <td>...</td>
       <td>5.0</td>
@@ -839,6 +862,8 @@ title="Print to PDF"
     <tr>
       <th>4</th>
       <td>mpp</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>5</td>
       <td>5</td>
       <td>5.0</td>
@@ -846,8 +871,6 @@ title="Print to PDF"
       <td>5.0</td>
       <td>5.0</td>
       <td>2.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
       <td>...</td>
       <td>5.0</td>
       <td>NaN</td>
@@ -860,36 +883,115 @@ title="Print to PDF"
       <td>10.4</td>
       <td>24</td>
     </tr>
-    <tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p>Chaque colonne entre 1 et 17 correspond à une question. La 1ère ligne indique le barème. Les autres lignes correspondent aux élèves, dont l’identifiant <code class="docutils literal notranslate"><span class="pre">id</span></code> est la date d’anniversaire.<br />
+Par exemple, pour avoir les résultats de(s) élève(s) de rang 1 :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ds2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;rang == 1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>classe</th>
+      <th>nom</th>
+      <th>prenom</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
       <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>...</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+      <th>17</th>
+      <th>id</th>
+      <th>note</th>
+      <th>rang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>28</th>
       <td>mpp</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>611</td>
+      <td>18.7</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>pcc</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>4</td>
       <td>5</td>
       <td>5.0</td>
       <td>4.0</td>
       <td>5.0</td>
       <td>5.0</td>
-      <td>0.0</td>
+      <td>3.0</td>
+      <td>...</td>
+      <td>5.0</td>
+      <td>5.0</td>
       <td>3.0</td>
       <td>5.0</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>NaN</td>
-      <td>5.0</td>
-      <td>2.0</td>
+      <td>4.0</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1712</td>
-      <td>8.4</td>
-      <td>30</td>
+      <td>1103</td>
+      <td>16.0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 21 columns</p>
+<p>2 rows × 23 columns</p>
 </div></div></div>
 </div>
-<p>Chaque colonne entre 1 et 17 correspond à une question. Chaque ligne correspond à un élève, dont l’identifiant <code class="docutils literal notranslate"><span class="pre">id</span></code> est la date d’anniversaire (2512 = 25 décembre).</p>
 </section>
 <section id="moyenne-variance">
 <h2>Moyenne, variance<a class="headerlink" href="#moyenne-variance" title="Permalink to this headline">#</a></h2>
@@ -967,8 +1069,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ds2_6_0.png" src="../../_images/ds2_6_0.png" />
-<img alt="../../_images/ds2_6_1.png" src="../../_images/ds2_6_1.png" />
+<img alt="../../_images/ds2_7_0.png" src="../../_images/ds2_7_0.png" />
+<img alt="../../_images/ds2_7_1.png" src="../../_images/ds2_7_1.png" />
 </div>
 </div>
 </section>
@@ -985,7 +1087,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Taux de réussite par question&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ds2_8_1.png" src="../../_images/ds2_8_1.png" />
+<img alt="../../_images/ds2_9_1.png" src="../../_images/ds2_9_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -999,7 +1101,7 @@ title="Print to PDF"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Pourcentage de réponses par question&#39;}&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ds2_9_1.png" src="../../_images/ds2_9_1.png" />
+<img alt="../../_images/ds2_10_1.png" src="../../_images/ds2_10_1.png" />
 </div>
 </div>
 </section>
