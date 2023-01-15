@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/4_knn/exemple/knn_iris.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TP" href="../tp.html" />
+    <link rel="next" title="Algorithme des k-moyennes" href="../../5_kmeans/kmeans.html" />
     <link rel="prev" title="Algorithme des k plus proches voisins" href="../knn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -379,6 +379,11 @@ const thebe_selector_output = ".output, .cell_output"
      Exemple : Classification d’iris
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../5_kmeans/kmeans.html">
+     Algorithme des k-moyennes
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -394,23 +399,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../tp_titanic/tp_titanic.html">
      TP : Classification des survivants du Titanic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../5_kmeans/cours.html">
-   Cours
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../5_kmeans/kmeans.html">
-     Algorithme des k-moyennes
     </a>
    </li>
   </ul>
@@ -860,7 +848,35 @@ Le code suivant charge les données :</p>
 </div>
 </div>
 </div>
-<center><img src=https://raw.githubusercontent.com/cpge-itc/bcpst2/main/files/5_iris/iris.png width=60%></center><section id="description-des-donnees">
+<center><img src=https://raw.githubusercontent.com/cpge-itc/bcpst2/main/files/5_iris/iris.png width=60%></center><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># pour séparer les données en train et test</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_pred</span><span class="p">)</span>
+<span class="n">Y_test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 1 2 1 2 1 0 0 0 2 0 0 0 0 1 0 0 1 1 0 0 1 1 0 1 1 0 0 1 2 0 1 0 2 0 1
+ 0 0 0 2 1 2 1 1 0 2 2 0 2 0 2 0 0 0 0 0 0 0 2 0 1 0 0 0 0 0 2 1 1 2 0 1 1
+ 2]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 0, 2, 0, 2, 0, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0, 2, 1,
+       0, 0, 2, 0, 0, 1, 1, 0, 2, 1, 0, 2, 2, 1, 0, 1, 1, 1, 2, 0, 2, 0,
+       0, 1, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 0, 2, 1, 1, 1,
+       1, 2, 0, 0, 2, 1, 0, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="description-des-donnees">
 <h2>Description des données<a class="headerlink" href="#description-des-donnees" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">iris</span></code> est un dictionnaire tel que :</p>
 <ul class="simple">
@@ -923,21 +939,36 @@ Le code suivant charge les données :</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">])</span>
-<span class="n">norm</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;Espèces de fleurs&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;Classes obtenues par K-means&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">],</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">],</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">2</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
     <span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)]</span>
-    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">handles</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Variété&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">handles</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Variété&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_10_0.png" src="../../_images/knn_iris_10_0.png" />
+<img alt="../../_images/knn_iris_11_0.png" src="../../_images/knn_iris_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># pour séparer les données en train et test</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1093,7 +1124,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_31_0.png" src="../../_images/knn_iris_31_0.png" />
+<img alt="../../_images/knn_iris_33_0.png" src="../../_images/knn_iris_33_0.png" />
 </div>
 </div>
 <p>Par contre, <code class="docutils literal notranslate"><span class="pre">X_test[37]</span></code> est classé à tord comme étant de la variété virginica alors qu’elle est de la variété versicolor :</p>
@@ -1104,7 +1135,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_33_0.png" src="../../_images/knn_iris_33_0.png" />
+<img alt="../../_images/knn_iris_35_0.png" src="../../_images/knn_iris_35_0.png" />
 </div>
 </div>
 </section>
@@ -1159,7 +1190,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_39_0.png" src="../../_images/knn_iris_39_0.png" />
+<img alt="../../_images/knn_iris_41_0.png" src="../../_images/knn_iris_41_0.png" />
 </div>
 </div>
 <p>Zoomons sur <span class="math notranslate nohighlight">\(k \in [1, 15]\)</span> :</p>
@@ -1170,7 +1201,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_41_0.png" src="../../_images/knn_iris_41_0.png" />
+<img alt="../../_images/knn_iris_43_0.png" src="../../_images/knn_iris_43_0.png" />
 </div>
 </div>
 <p>Graphiquement, la précision est maximale pour <span class="math notranslate nohighlight">\(k = 9\)</span> :</p>
@@ -1230,7 +1261,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_49_0.png" src="../../_images/knn_iris_49_0.png" />
+<img alt="../../_images/knn_iris_51_0.png" src="../../_images/knn_iris_51_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1263,7 +1294,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_53_0.png" src="../../_images/knn_iris_53_0.png" />
+<img alt="../../_images/knn_iris_55_0.png" src="../../_images/knn_iris_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1307,7 +1338,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_58_0.png" src="../../_images/knn_iris_58_0.png" />
+<img alt="../../_images/knn_iris_60_0.png" src="../../_images/knn_iris_60_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1317,7 +1348,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_59_0.png" src="../../_images/knn_iris_59_0.png" />
+<img alt="../../_images/knn_iris_61_0.png" src="../../_images/knn_iris_61_0.png" />
 </div>
 </div>
 <p>On peut voir la différence avec une autre distance, par exemple la distance de Manhattan (<span class="math notranslate nohighlight">\(d(x, y) = \sum_{i=1}^d |x_i - y_i|\)</span>) :</p>
@@ -1328,7 +1359,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_61_0.png" src="../../_images/knn_iris_61_0.png" />
+<img alt="../../_images/knn_iris_63_0.png" src="../../_images/knn_iris_63_0.png" />
 </div>
 </div>
 </section>
@@ -1384,7 +1415,7 @@ Classe réelle pour X_test[0] : 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/knn_iris_63_0.png" src="../../_images/knn_iris_63_0.png" />
+<img alt="../../_images/knn_iris_65_0.png" src="../../_images/knn_iris_65_0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.96
 </pre></div>
 </div>
@@ -1440,10 +1471,10 @@ Classe réelle pour X_test[0] : 2
             <p class="prev-next-title">Algorithme des k plus proches voisins</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../tp.html" title="next page">
+    <a class='right-next' id="next-link" href="../../5_kmeans/kmeans.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TP</p>
+        <p class="prev-next-title">Algorithme des k-moyennes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
