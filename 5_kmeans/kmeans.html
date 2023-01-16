@@ -929,7 +929,7 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;compression/parrot2.jpg&#39;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;compression/parrot.jpg&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -952,25 +952,44 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_compressed</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;compression/parrot2_compressed.png&#39;</span><span class="p">,</span> <span class="n">img_compressed</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;compression/parrot_compressed.png&#39;</span><span class="p">,</span> <span class="n">img_compressed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pixels contient 220352 pixels de 3 couleurs chacun
-Centres des 8 clusters de pixels : [[ 69.90876416  83.42269827  46.87120719]
- [216.72771167 221.54693338 220.28510663]
- [ 97.32044199 115.65799374  69.42577639]
- [213.36836596  23.24599602  32.67340103]
- [  8.29088655  92.72089275 183.56763794]
- [152.87127517 168.98486351 158.21963   ]
- [231.14924416 146.36939991  74.7833257 ]
- [ 64.69327346  20.88865469  24.81286657]]
-kmeans.labels_ contient les classes de chaque pixel : [2 2 2 ... 0 2 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pixels contient 496738 pixels de 3 couleurs chacun
+Centres des 8 clusters de pixels : [[  7.66165195  19.76974168  10.35961169]
+ [164.1427278  177.25148203 142.0176766 ]
+ [107.72793283 127.07565615  47.67371984]
+ [207.45478823 170.16388681  32.67841079]
+ [  9.0873963   41.5624455  135.5594808 ]
+ [195.67637004  24.02326738  14.00799751]
+ [223.28612846 234.53746655 225.07193832]
+ [ 13.17134015  99.70298247  39.31646374]]
+kmeans.labels_ contient les classes de chaque pixel : [0 0 0 ... 6 6 6]
 img_compressed est obtenu à partir de pixels en remplaçant chaque pixel par le centre de son cluster
 </pre></div>
 </div>
 <img alt="../_images/kmeans_12_1.png" src="../_images/kmeans_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">r2</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/kmeans_13_0.png" src="../_images/kmeans_13_0.png" />
 </div>
 </div>
 </section>
