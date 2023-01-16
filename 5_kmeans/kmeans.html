@@ -665,6 +665,11 @@ title="Print to PDF"
    Animation
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compression-d-image">
+   Compression d’image
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -709,6 +714,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#animation">
    Animation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compression-d-image">
+   Compression d’image
   </a>
  </li>
 </ul>
@@ -903,6 +913,59 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/kmeans_9_0.png" src="../_images/kmeans_9_0.png" />
+</div>
+</div>
+</section>
+<section id="compression-d-image">
+<h2>Compression d’image<a class="headerlink" href="#compression-d-image" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;compression/parrot2.jpg&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/kmeans_11_0.png" src="../_images/kmeans_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pixels</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pixels contient </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="si">}</span><span class="s2"> pixels de 3 couleurs chacun&quot;</span><span class="p">)</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Centres des 8 clusters de pixels : </span><span class="si">{</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;kmeans.labels_ contient les classes de chaque pixel : </span><span class="si">{</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">img_compressed</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;img_compressed est obtenu à partir de pixels en remplaçant chaque pixel par le centre de son cluster&quot;</span><span class="p">)</span>
+<span class="n">img_compressed</span> <span class="o">=</span> <span class="n">img_compressed</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_compressed</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="s1">&#39;compression/parrot2_compressed.png&#39;</span><span class="p">,</span> <span class="n">img_compressed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pixels contient 220352 pixels de 3 couleurs chacun
+Centres des 8 clusters de pixels : [[ 69.90876416  83.42269827  46.87120719]
+ [216.72771167 221.54693338 220.28510663]
+ [ 97.32044199 115.65799374  69.42577639]
+ [213.36836596  23.24599602  32.67340103]
+ [  8.29088655  92.72089275 183.56763794]
+ [152.87127517 168.98486351 158.21963   ]
+ [231.14924416 146.36939991  74.7833257 ]
+ [ 64.69327346  20.88865469  24.81286657]]
+kmeans.labels_ contient les classes de chaque pixel : [2 2 2 ... 0 2 2]
+img_compressed est obtenu à partir de pixels en remplaçant chaque pixel par le centre de son cluster
+</pre></div>
+</div>
+<img alt="../_images/kmeans_12_1.png" src="../_images/kmeans_12_1.png" />
 </div>
 </div>
 </section>
