@@ -675,6 +675,11 @@ title="Print to PDF"
    Compression d’image
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-de-probleme-non-lineairement-separable">
+   Exemple de problème non linéairement séparable
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -724,6 +729,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compression-d-image">
    Compression d’image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-de-probleme-non-lineairement-separable">
+   Exemple de problème non linéairement séparable
   </a>
  </li>
 </ul>
@@ -778,9 +788,9 @@ title="Print to PDF"
         <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">c</span>
 
-<span class="k">def</span> <span class="nf">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">):</span>
     <span class="n">centres</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">)):</span>
         <span class="n">centres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">centre</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
     <span class="k">return</span> <span class="n">centres</span>
 
@@ -797,23 +807,23 @@ title="Print to PDF"
             <span class="n">imin</span> <span class="o">=</span> <span class="n">i</span>
     <span class="k">return</span> <span class="n">imin</span>
 
-<span class="k">def</span> <span class="nf">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
-    <span class="n">classes</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+<span class="k">def</span> <span class="nf">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centres</span><span class="p">))]</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">:</span>
         <span class="n">classes</span><span class="p">[</span><span class="n">plus_proche</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">classes</span>
 
-<span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
     <span class="n">centres2</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">while</span> <span class="n">centres</span> <span class="o">!=</span> <span class="n">centres2</span><span class="p">:</span>
         <span class="n">centres2</span> <span class="o">=</span> <span class="n">centres</span>
-        <span class="n">classes</span> <span class="o">=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres2</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-        <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres2</span><span class="p">)</span>
+        <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">classes</span>
 
-<span class="k">def</span> <span class="nf">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mf">0.</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centres</span><span class="p">)):</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="n">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
     <span class="k">return</span> <span class="n">s</span>
@@ -826,13 +836,13 @@ title="Print to PDF"
 <h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span> <span class="c1"># test de kmeans</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span> <span class="c1"># test de kmeans</span>
 
 <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">])</span>
-<span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">],</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">plus_proche</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">centres</span><span class="p">],</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">centres</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Inertie = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Inertie = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -850,9 +860,9 @@ title="Print to PDF"
 <span class="n">inertie</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">centres</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span><span class="o">*</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    <span class="n">classes</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span>
-    <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
-    <span class="n">inertie</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span>
+    <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
+    <span class="n">inertie</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inertia</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">inertie</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;inertie&quot;</span><span class="p">)</span>
@@ -973,6 +983,9 @@ img_compressed est obtenu à partir de pixels en remplaçant chaque pixel par le
 <img alt="../_images/kmeans_12_1.png" src="../_images/kmeans_12_1.png" />
 </div>
 </div>
+</section>
+<section id="exemple-de-probleme-non-lineairement-separable">
+<h2>Exemple de problème non linéairement séparable<a class="headerlink" href="#exemple-de-probleme-non-lineairement-separable" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -989,7 +1002,7 @@ img_compressed est obtenu à partir de pixels en remplaçant chaque pixel par le
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/kmeans_13_0.png" src="../_images/kmeans_13_0.png" />
+<img alt="../_images/kmeans_14_0.png" src="../_images/kmeans_14_0.png" />
 </div>
 </div>
 </section>
