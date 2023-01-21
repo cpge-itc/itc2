@@ -788,7 +788,7 @@ Par exemple, affichons l’image correspondant à la matrice ci-dessus :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># c&#39;est manifestement un 8</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># ça ressemble à un 1</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +869,7 @@ $<span class="math notranslate nohighlight">\(
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">centres_aléatoires(X,</span> <span class="pre">k)</span></code> qui prend en argument une liste de vecteurs <code class="docutils literal notranslate"><span class="pre">X</span></code> et un entier <code class="docutils literal notranslate"><span class="pre">k</span></code> et renvoie une liste de <code class="docutils literal notranslate"><span class="pre">k</span></code> vecteurs aléatoires choisis dans <code class="docutils literal notranslate"><span class="pre">X</span></code>.<br />
-On utilisera <code class="docutils literal notranslate"><span class="pre">random.sample</span></code> dont <a class="reference external" href="https://docs.python.org/3/library/random.html">on pourra consulter la documentation ici</a>.</p>
+On utilisera <code class="docutils literal notranslate"><span class="pre">random.sample</span></code> dont <a class="reference external" href="https://docs.python.org/3/library/random.html">on pourra consulter la documentation ici</a>. On pourra préalablement utiliser <code class="docutils literal notranslate"><span class="pre">random.seed(0)</span></code> pour avoir les mêmes résultats que le corrigé du TP.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,23 +953,12 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inertie</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
-        <span class="n">s</span> <span class="o">+=</span> <span class="n">d</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">centres</span><span class="p">[</span><span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">return</span> <span class="n">s</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inertie</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44817.20740339294
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>497072.30362746114
 </pre></div>
 </div>
 </div>
@@ -985,9 +974,6 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/tp_chiffres_35_0.png" src="../../_images/tp_chiffres_35_0.png" />
 </div>
 </div>
 </section>
@@ -1006,9 +992,6 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/tp_chiffres_38_0.png" src="../../_images/tp_chiffres_38_0.png" />
 </div>
 </div>
 <p>Sur l’image ci-dessus, les classes sont représentés dans l’ordre, de gauche à droite et de haut en bas. Par exemple, l’image en haut à gauche correspond à la classe <span class="math notranslate nohighlight">\(0\)</span>, celle juste à droite à la classe <span class="math notranslate nohighlight">\(1\)</span>…</p>
@@ -1045,9 +1028,6 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/tp_chiffres_44_0.png" src="../../_images/tp_chiffres_44_0.png" />
-</div>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
@@ -1060,7 +1040,7 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.694
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.664
 </pre></div>
 </div>
 </div>
