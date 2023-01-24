@@ -837,15 +837,6 @@ $<span class="math notranslate nohighlight">\(
 <p class="admonition-title">Question</p>
 <p>Définir une liste <code class="docutils literal notranslate"><span class="pre">X</span></code> contenant les vecteurs correspondant aux images dans <code class="docutils literal notranslate"><span class="pre">digits_matrix</span></code>. Cette variable <code class="docutils literal notranslate"><span class="pre">X</span></code> sera utilisée dans toute la suite.</p>
 </div>
-<div class="cell tag_coor docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">)):</span>
-    <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_vector</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="algorithmes-des-k-moyennes">
 <h2>Algorithmes des <span class="math notranslate nohighlight">\(k\)</span>-moyennes<a class="headerlink" href="#algorithmes-des-k-moyennes" title="Permalink to this headline">#</a></h2>
@@ -895,7 +886,7 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 </div>
 </div>
 </div>
-<p><strong>Contrairement à ce qui a été fait dans le cours, on utilise une liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> telle que <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> est le numéro de classe de <code class="docutils literal notranslate"><span class="pre">X[i]</span></code> (dans le cours, <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> était la liste des vecteurs de la classe <span class="math notranslate nohighlight">\(i\)</span>).</strong></p>
+<p>Contrairement à ce qui a été fait dans le cours, on utilise dans la suite une liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> telle que <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> est le numéro de classe de <code class="docutils literal notranslate"><span class="pre">X[i]</span></code> (dans le cours, <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> était la liste des vecteurs de la classe <span class="math notranslate nohighlight">\(i\)</span>).</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">calculer_classes(X,</span> <span class="pre">centres)</span></code> qui renvoie la liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> correspondant à <code class="docutils literal notranslate"><span class="pre">X</span></code> et à <code class="docutils literal notranslate"><span class="pre">centres</span></code>.</p>
