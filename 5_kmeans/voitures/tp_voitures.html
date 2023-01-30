@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>TP : Classification de voitures &#8212; Informatique commune en 2ème année de CPGE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "cpge-itc/itc2");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/5_kmeans/voitures/tp_voitures.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="TP : Reconnaissance de chiffres" href="../tp_chiffres/tp_chiffres.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/cobra.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Informatique commune en 2ème année de CPGE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Généralités
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ressource.html">
+   Ressources
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../ds/ds.html">
+   DS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://fortierq-notes-app-ctedub.streamlit.app">
+     Notes et classement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../ds/ds1/mp_pc/ds1.html">
+     DS 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://raw.githubusercontent.com/cpge-itc/itc2/main/files/ds/ds2/ds2_cor.pdf">
+     DS 2 : corrigé
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Base de données
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../1_sql/cours/cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_select.html">
+     Requêtes sur une table avec SELECT, WHERE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_join.html">
+     Requêtes sur plusieurs tables avec JOIN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_groupby.html">
+     Fonctions d’agrégation et GROUP BY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_nested.html">
+     SELECT imbriqués
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/cours/sql_entity.html">
+     Modèle entité-relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/resume/sql_resume.html">
+     Résumé SQL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../1_sql/exercices/exercices.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/exercices/sqlzoo.html">
+     TP 1 et 2 : SQLZoo et sql-practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://cpge-exercices.github.io/sql">
+     Exercices en ligne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../1_sql/exercices/concours/concours.html">
+     Extraits de concours
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dictionnaire
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_dict/dict.html">
+   Cours : Dictionnaire
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2_dict/tp.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2_dict/tp/tp_dict.html">
+     TP : Dictionnaire
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2_dict/tp/tp_hash.html">
+     TP : Fonction de hachage
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation dynamique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../3_prog_dyn/cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/prog_dyn.html">
+     Cours : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/sp.html">
+     Cours : Application aux plus courts chemins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/lis.html">
+     Exemple supplémentaire : plus longue sous-suite croissante
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../3_prog_dyn/tp.html">
+   TP
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/tp/tp_prog_dyn.html">
+     TP : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/tp2/tp_sac_dos.html">
+     TP : Sac à dos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../3_prog_dyn/seam_carving/seam_carving.html">
+     DM : Redimensionnement d'image par Seam Carving
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apprentissage automatique
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../4_knn/cours.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../4_knn/knn.html">
+     Algorithme des k plus proches voisins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../4_knn/exemple/knn_iris.html">
+     Exemple : Classification d’iris
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kmeans.html">
+     Algorithme des k-moyennes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../4_knn/tp.html">
+   TP
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../4_knn/tp_titanic/tp_titanic.html">
+     TP : Classification des survivants du Titanic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tp_chiffres/tp_chiffres.html">
+     TP : Reconnaissance de chiffres
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     TP : Classification de voitures
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/5_kmeans/voitures/tp_voitures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/5_kmeans/voitures/tp_voitures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cpge-itc/itc2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F5_kmeans/voitures/tp_voitures.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/5_kmeans/voitures/tp_voitures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/5_kmeans/voitures/tp_voitures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chargement-des-donnees">
+   Chargement des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standardisation-des-donnees">
+   Standardisation des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithme-des-k-moyennes">
+   Algorithme des k-moyennes
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>TP : Classification de voitures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chargement-des-donnees">
+   Chargement des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standardisation-des-donnees">
+   Standardisation des données
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithme-des-k-moyennes">
+   Algorithme des k-moyennes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tp-classification-de-voitures">
+<h1>TP : Classification de voitures<a class="headerlink" href="#tp-classification-de-voitures" title="Permalink to this headline">#</a></h1>
+<section id="chargement-des-donnees">
+<h2>Chargement des données<a class="headerlink" href="#chargement-des-donnees" title="Permalink to this headline">#</a></h2>
+<p>Dans ce TP, nous voulons classifier des voitures, selon leur type (sportive, citadine, familiale…). Commençons par importer les données :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">voitures</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;voitures.csv&quot;</span><span class="p">)</span>
+<span class="n">voitures</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nom</th>
+      <th>marque</th>
+      <th>cylindrée</th>
+      <th>chevaux</th>
+      <th>longueur</th>
+      <th>largeur</th>
+      <th>hauteur</th>
+      <th>poids</th>
+      <th>vitesse_max</th>
+      <th>0_100</th>
+      <th>consommation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>panda</td>
+      <td>fiat</td>
+      <td>1242</td>
+      <td>69</td>
+      <td>365</td>
+      <td>164</td>
+      <td>155</td>
+      <td>1030</td>
+      <td>164</td>
+      <td>15.0</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>tt</td>
+      <td>audi</td>
+      <td>2000</td>
+      <td>200</td>
+      <td>404</td>
+      <td>176</td>
+      <td>135</td>
+      <td>1400</td>
+      <td>235</td>
+      <td>7.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>208</td>
+      <td>peugeot</td>
+      <td>1200</td>
+      <td>100</td>
+      <td>398</td>
+      <td>174</td>
+      <td>146</td>
+      <td>1050</td>
+      <td>163</td>
+      <td>14.0</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>c3</td>
+      <td>citroën</td>
+      <td>1124</td>
+      <td>61</td>
+      <td>385</td>
+      <td>167</td>
+      <td>152</td>
+      <td>998</td>
+      <td>157</td>
+      <td>16.0</td>
+      <td>5.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>berlingo</td>
+      <td>citroën</td>
+      <td>1360</td>
+      <td>75</td>
+      <td>411</td>
+      <td>172</td>
+      <td>180</td>
+      <td>1378</td>
+      <td>149</td>
+      <td>16.0</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>clio 4</td>
+      <td>renault</td>
+      <td>1149</td>
+      <td>75</td>
+      <td>406</td>
+      <td>173</td>
+      <td>145</td>
+      <td>1105</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>mégane 1</td>
+      <td>renault</td>
+      <td>1998</td>
+      <td>115</td>
+      <td>413</td>
+      <td>170</td>
+      <td>142</td>
+      <td>1085</td>
+      <td>197</td>
+      <td>9.7</td>
+      <td>7.3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>espace</td>
+      <td>renault</td>
+      <td>1870</td>
+      <td>117</td>
+      <td>466</td>
+      <td>186</td>
+      <td>173</td>
+      <td>1897</td>
+      <td>176</td>
+      <td>14.0</td>
+      <td>9.7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2008</td>
+      <td>peugeot</td>
+      <td>1398</td>
+      <td>68</td>
+      <td>416</td>
+      <td>174</td>
+      <td>156</td>
+      <td>1200</td>
+      <td>190</td>
+      <td>9.5</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>captur</td>
+      <td>renault</td>
+      <td>1333</td>
+      <td>90</td>
+      <td>422</td>
+      <td>190</td>
+      <td>158</td>
+      <td>1352</td>
+      <td>180</td>
+      <td>10.0</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>carrera gt</td>
+      <td>porsche</td>
+      <td>5733</td>
+      <td>612</td>
+      <td>461</td>
+      <td>192</td>
+      <td>117</td>
+      <td>1385</td>
+      <td>330</td>
+      <td>4.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>f40</td>
+      <td>ferrari</td>
+      <td>2936</td>
+      <td>478</td>
+      <td>443</td>
+      <td>198</td>
+      <td>113</td>
+      <td>1100</td>
+      <td>324</td>
+      <td>4.6</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>scénic</td>
+      <td>renault</td>
+      <td>1461</td>
+      <td>105</td>
+      <td>449</td>
+      <td>181</td>
+      <td>164</td>
+      <td>1700</td>
+      <td>190</td>
+      <td>11.0</td>
+      <td>7.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Pour éviter d’utiliser des dataframe pandas, nous allons utiliser des listes <code class="docutils literal notranslate"><span class="pre">attributs</span></code> et <code class="docutils literal notranslate"><span class="pre">noms</span></code> tels que <code class="docutils literal notranslate"><span class="pre">attributs[i]</span></code> contienne les caractéristiques (cyindrée, chevaux, longueur…) et <code class="docutils literal notranslate"><span class="pre">noms[i]</span></code> le nom de la voiture <span class="math notranslate nohighlight">\(i\)</span> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noms</span> <span class="o">=</span> <span class="n">voitures</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">noms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># affiche le nom de la première voiture</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;panda&#39;, &#39;fiat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attributs</span> <span class="o">=</span> <span class="n">voitures</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">attributs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># affiche les valeurs des attributs de la première voiture</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1242.0, 69.0, 365.0, 164.0, 155.0, 1030.0, 164.0, 15.0, 5.7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour obtenir la signification des attributs :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attributs_noms</span> <span class="o">=</span> <span class="n">voitures</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">attributs_noms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cylindrée&#39;,
+ &#39;chevaux&#39;,
+ &#39;longueur&#39;,
+ &#39;largeur&#39;,
+ &#39;hauteur&#39;,
+ &#39;poids&#39;,
+ &#39;vitesse_max&#39;,
+ &#39;0_100&#39;,
+ &#39;consommation&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="standardisation-des-donnees">
+<h2>Standardisation des données<a class="headerlink" href="#standardisation-des-donnees" title="Permalink to this headline">#</a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">moyenne(j)</span></code> qui renvoie la moyenne de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> (c’est-à-dire la moyenne de <code class="docutils literal notranslate"><span class="pre">attributs[i][j]</span></code>, pour tous les <code class="docutils literal notranslate"><span class="pre">i</span></code> possibles).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moyenne</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># moyenne de cylindrée</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1908.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">ecart_type(j)</span></code> qui renvoie l’écart-type de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> (c’est-à-dire <span class="math notranslate nohighlight">\(\sigma = \sqrt{\sum_i (x_i - \mu)^2}\)</span> où les <span class="math notranslate nohighlight">\(x_i\)</span> sont les valeurs pour l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> et <span class="math notranslate nohighlight">\(\mu\)</span> est la moyenne de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecart_type</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1206.7697505196386
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si des données <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> ont une moyenne <span class="math notranslate nohighlight">\(\mu\)</span> et un écart-type <span class="math notranslate nohighlight">\(\sigma\)</span>, on peut standardiser ces données, c’est-à-dire se ramener à une moyenne à <span class="math notranslate nohighlight">\(0\)</span> et un écart-type à <span class="math notranslate nohighlight">\(1\)</span>, en remplaçant chaque <span class="math notranslate nohighlight">\(x_i\)</span> par :</p>
+<div class="math notranslate nohighlight">
+\[\frac{x_i - \mu}{\sigma}\]</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Définir une variable <code class="docutils literal notranslate"><span class="pre">X</span></code> qui contient les caractéristiques standardisées des voitures.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.5518865547576234,
+ -0.5838129204459943,
+ -1.881194060479367,
+ -1.4284117337371103,
+ 0.3256520809467957,
+ -0.9620792816591849,
+ -0.6746501884297091,
+ 1.034391681977312,
+ -0.5737524192504039]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>On aura aussi besoin de réaliser l’opération inverse de la précédente. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inverse_standardisation(y)</span></code> qui renvoie une liste <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que <span class="math notranslate nohighlight">\(x_i = y_i \sigma + \mu\)</span> pour chaque <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inverse_standardisation</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># égal à attributs[0]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1242.0, 69.0, 365.0, 164.0, 155.0, 1030.0, 164.0, 15.0, 5.7]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="algorithme-des-k-moyennes">
+<h2>Algorithme des k-moyennes<a class="headerlink" href="#algorithme-des-k-moyennes" title="Permalink to this headline">#</a></h2>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">d(x,</span> <span class="pre">y)</span></code> qui calcule la distance euclidienne entre deux attributs de voitures.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6573045403567335
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">centre(indices)</span></code> qui renvoie le centre des <code class="docutils literal notranslate"><span class="pre">X[i]</span></code> pour <code class="docutils literal notranslate"><span class="pre">i</span></code> dans la liste <code class="docutils literal notranslate"><span class="pre">indices</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centre</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span> <span class="c1"># centre des voitures 0, 2 et 7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.3900219295884706,
+ -0.42619570979982285,
+ -0.30720748345964605,
+ -0.35774636214316785,
+ 0.48641703230027744,
+ 0.16190614861559313,
+ -0.6103335371327435,
+ 0.8626535994012577,
+ -0.4020041621721581]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dans la suite, on utilisera une liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> telle que <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> est la liste des indices <code class="docutils literal notranslate"><span class="pre">j</span></code> tels que <code class="docutils literal notranslate"><span class="pre">X|j]</span></code> est dans la classe <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">calculer_centres(classes)</span></code> qui renvoie une liste contenant les centres de chaque classe. Il faut donc que <code class="docutils literal notranslate"><span class="pre">centres[i]</span></code> soit le centre de la classe <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calculer_centres</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.04088048553760174,
+  0.2302101421317011,
+  -0.36593832588575514,
+  0.04375315220456059,
+  -0.4067215863301765,
+  -0.6579569555419957,
+  0.4128859153189823,
+  -0.3309260745023202,
+  0.2686318892762309],
+ [-0.30908961700389415,
+  -0.34738710447673715,
+  0.47978580505021445,
+  0.1775863236538034,
+  0.5667995079770183,
+  0.7238988637529822,
+  -0.5781752114842607,
+  0.7767845581132305,
+  -0.31613003363303516]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>On initialisera l’algorithme des k-moyennes avec des centres aléatoires en utilisant la fonction suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">centres_aléatoires</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">centres_aléatoires</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># exemple de 2 centres aléatoires</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.417022004702574,
+  0.7203244934421581,
+  0.00011437481734488664,
+  0.30233257263183977,
+  0.14675589081711304,
+  0.0923385947687978,
+  0.1862602113776709,
+  0.34556072704304774,
+  0.39676747423066994],
+ [0.538816734003357,
+  0.4191945144032948,
+  0.6852195003967595,
+  0.20445224973151743,
+  0.8781174363909454,
+  0.027387593197926163,
+  0.6704675101784022,
+  0.41730480236712697,
+  0.5586898284457517]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">plus_proche(i,</span> <span class="pre">centres)</span></code> qui renvoie l’indice du centre le plus proche de la voiture <code class="docutils literal notranslate"><span class="pre">X[i]</span></code>. Il faut donc renvoyer <code class="docutils literal notranslate"><span class="pre">j</span></code> tel que <code class="docutils literal notranslate"><span class="pre">d(X[i],</span> <span class="pre">centres[j])</span></code> est minimum.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plus_proche</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">centres_aléatoires</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">calculer_classes(centres)</span></code> qui renvoie une liste contenant les classes correspondantes aux centres donnés. Il faut donc renvoyer une liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> telle que <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> est la liste des indices <code class="docutils literal notranslate"><span class="pre">j</span></code> tels que <code class="docutils literal notranslate"><span class="pre">X[j]</span></code> est dans la classe <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calculer_classes</span><span class="p">(</span><span class="n">centres_aléatoires</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 1, 2, 3, 5, 6, 8, 9, 10, 11], [4], [7, 12]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">k_moyennes(k)</span></code> qui renvoie les classes obtenues par l’algorithme des k-moyennes appliqué aux données <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span> <span class="o">=</span> <span class="n">k_moyennes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">centres</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2.010739827506566,
+  2.2652677985759393,
+  1.1845559141635222,
+  1.683209502457785,
+  -1.8178806037662938,
+  -0.15425435291040127,
+  2.1845173101353987,
+  -1.7220045433683606,
+  2.198755159298423],
+ [-0.39288770686855584,
+  -0.42594631547918027,
+  -0.6566559958949947,
+  -0.7006938639818525,
+  0.13139443139467197,
+  -0.4840370002937282,
+  -0.41153661494212246,
+  0.36461315993070004,
+  -0.5216145554945079],
+ [-0.29279266668822856,
+  -0.3743216911061462,
+  0.9613787129443082,
+  0.7463773023130854,
+  0.861535252125068,
+  1.393601569390209,
+  -0.3589139002446052,
+  0.1757012690970402,
+  -0.07486462488026106]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inertie(classes,</span> <span class="pre">centres)</span></code> qui renvoie la somme des carrés des distances des voitures aux centres de leurs classes.</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Exécuter le code suivant pour afficher l’inertie en fonction du nombre de classes <span class="math notranslate nohighlight">\(k\)</span>. Quel <span class="math notranslate nohighlight">\(k\)</span> vous semble optimal ?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmax</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">classes</span><span class="p">,</span><span class="n">centres</span> <span class="o">=</span> <span class="n">k_moyennes</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">I</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inertie</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">centres</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">I</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;inertie&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/tp_voitures_35_0.png" src="../../_images/tp_voitures_35_0.png" />
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>On prend la valeur de <span class="math notranslate nohighlight">\(k\)</span> obtenue à la question précédente. Pour chaque classe, afficher les voitures de cette classe ainsi que le centre (en appliquant <code class="docutils literal notranslate"><span class="pre">inverse_standardisation</span></code> dessus).</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Pour savoir ce qui différencie deux classes, on peut regarder les coordonnées du vecteur dont les extrémités sont les centres des deux classes. Quelles sont les caractéristiques qui différencient les voitures familiale des voitures citadines ? Les voitures sportives des voitures citadines ?</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./5_kmeans/voitures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tp_chiffres/tp_chiffres.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">TP : Reconnaissance de chiffres</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Quentin Fortier<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
