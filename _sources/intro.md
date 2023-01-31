@@ -1,5 +1,7 @@
 # Cours d'informatique commune en 2ème année de CPGE au lycée La Martinière
 
+**A faire pendant les vacances : terminer les TP classification de voitures et de chiffres manuscrits**
+
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
