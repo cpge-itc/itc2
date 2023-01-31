@@ -1015,7 +1015,7 @@ title="Print to PDF"
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">ecart_type(j)</span></code> qui renvoie l’écart-type de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> (c’est-à-dire <span class="math notranslate nohighlight">\(\sigma = \sqrt{\sum_i (x_i - \mu)^2}\)</span> où les <span class="math notranslate nohighlight">\(x_i\)</span> sont les valeurs pour l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> et <span class="math notranslate nohighlight">\(\mu\)</span> est la moyenne de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code>).</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">ecart_type(j)</span></code> qui renvoie l’écart-type de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> (c’est-à-dire <span class="math notranslate nohighlight">\(\sigma = \sqrt{\sum_i \frac{(x_i - \mu)^2}{n}}\)</span> où les <span class="math notranslate nohighlight">\(x_i\)</span> sont les valeurs pour l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code> et <span class="math notranslate nohighlight">\(\mu\)</span> est la moyenne de l’attribut <code class="docutils literal notranslate"><span class="pre">j</span></code>).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1058,7 +1058,7 @@ title="Print to PDF"
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>On aura aussi besoin de réaliser l’opération inverse de la précédente. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inverse_standardisation(y)</span></code> qui renvoie une liste <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que <span class="math notranslate nohighlight">\(x_i = y_i \sigma + \mu\)</span> pour chaque <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>On aura aussi besoin de réaliser l’opération inverse de la précédente. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inverse_standardisation(y)</span></code> qui renvoie une liste <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que <span class="math notranslate nohighlight">\(x_i = y_i \sigma_i + \mu_i\)</span>, où <span class="math notranslate nohighlight">\(\mu_i\)</span> et <span class="math notranslate nohighlight">\(\sigma_i\)</span> sont la moyenne et l’écart-type de l’attribut <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
