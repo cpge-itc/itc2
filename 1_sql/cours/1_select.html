@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Modèle entité-relation &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Requêtes sur une table avec SELECT, WHERE &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -85,9 +85,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/1_sql/cours/sql_entity.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/1_sql/cours/1_select.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Requêtes sur plusieurs tables avec JOIN" href="2_join.html" />
+    <link rel="prev" title="Cours" href="cours.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -183,17 +185,42 @@ const thebe_selector_output = ".output, .cell_output"
   Base de données
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="cours.html">
    Cours
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Requêtes sur une table avec SELECT, WHERE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_join.html">
+     Requêtes sur plusieurs tables avec JOIN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3_groupby.html">
+     Fonctions d’agrégation et GROUP BY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4_imbrique.html">
+     SELECT imbriqués
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5_er.html">
+     Modèle entité-association
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../resume/sql_resume.html">
      Résumé SQL
@@ -431,6 +458,53 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/1_sql/cours/1_select.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/1_sql/cours/1_select.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -470,7 +544,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F1_sql/cours/sql_entity.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2F1_sql/cours/1_select.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -487,7 +561,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/1_sql/cours/sql_entity.md"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/1_sql/cours/1_select.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -515,7 +589,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/1_sql/cours/sql_entity.md"
+        <a href="../../_sources/1_sql/cours/1_select.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -526,7 +600,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -564,7 +638,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Modèle entité-relation</h1>
+                <h1>Requêtes sur une table avec SELECT, WHERE</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -576,21 +650,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="modele-entite-relation">
-<h1>Modèle entité-relation<a class="headerlink" href="#modele-entite-relation" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="requetes-sur-une-table-avec-select-where">
+<h1>Requêtes sur une table avec SELECT, WHERE<a class="headerlink" href="#requetes-sur-une-table-avec-select-where" title="Permalink to this headline">#</a></h1>
 <iframe
-    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/mp2i-info/mp2i-info.github.io/main/files/A_sql/5_er/er.pdf#zoom=page-fit&pagemode=none"
-    height=500 width=100% allowfullscreen></iframe>
-<script
-   type="text/javascript"
-   src="https://utteranc.es/client.js"
-   async="async"
-   repo="mp-info/mp-info.github.io"
-   issue-term="pathname"
-   theme="github-light"
-   label="💬 comment"
-   crossorigin="anonymous"
-/></section>
+    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/sql/cours/1_select/sql_select.pdf#zoom=page-fit&pagemode=none"
+    height=500 width=100% allowfullscreen></iframe></section>
 
     <script type="text/x-thebe-config">
     {
@@ -619,6 +683,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="cours.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Cours</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2_join.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Requêtes sur plusieurs tables avec JOIN</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
