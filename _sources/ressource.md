@@ -12,5 +12,5 @@
 
 <details>
 <summary>Programme officiel</summary>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/programme_itc.pdf?token=GHSAT0AAAAAABX6XFRWYXFHKWW5O7OTWZXYYYJED7Q#zoom=page-width&pagemode=none height=1000 width=100% allowfullscreen></iframe>
+<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/programme_itc.pdf#zoom=page-width&pagemode=none height=1000 width=100% allowfullscreen></iframe>
 </details>
