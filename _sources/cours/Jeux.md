@@ -1,1 +1,1 @@
-# Cours : Jeux
+# Cours
