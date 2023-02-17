@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Jeux à deux joueurs &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Jeu à deux joueurs&lt;iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/jeux/deux_joueurs/jeux_deux_joueurs.pdf#zoom=page-fit&amp;pagemode=none height=500 width=100% allowfullscreen&gt; &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -88,8 +88,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/jeux/deux_joueurs/jeux_deux_joueurs.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Exercices" href="../../../exercices/Jeux.html" />
-    <link rel="prev" title="Cours" href="../../../cours/Jeux.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -417,20 +415,20 @@ const thebe_selector_output = ".output, .cell_output"
   Jeux
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../cours/Jeux.html">
    Cours
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Jeux à deux joueurs
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../slides/jeux/deux_joueurs/jeux_deux_joueurs.html">
+     Slides
     </a>
    </li>
   </ul>
@@ -667,70 +665,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attracteurs">
-   Attracteurs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jeu-de-nim">
-   Jeu de Nim
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Jeux à deux joueurs</h1>
+                <h1>Jeu à deux joueurs<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/jeux/deux_joueurs/jeux_deux_joueurs.pdf#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attracteurs">
-   Attracteurs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jeu-de-nim">
-   Jeu de Nim
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -738,31 +689,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="jeux-a-deux-joueurs">
-<h1>Jeux à deux joueurs<a class="headerlink" href="#jeux-a-deux-joueurs" title="Permalink to this headline">#</a></h1>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/jeux/deux_joueurs/jeux_deux_joueurs.pdf#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe><section id="attracteurs">
-<h2>Attracteurs<a class="headerlink" href="#attracteurs" title="Permalink to this headline">#</a></h2>
-<p>Calcul des attracteurs avec la fonction du cours :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">attracteurs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">fA</span><span class="p">):</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># d[v] = True si v est un attracteur</span>
-    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-            <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
-                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">if</span> <span class="n">aux</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Autre version possible :</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="jeu-a-deux-joueurs-iframe-src-https-mozilla-github-io-pdf-js-web-viewer-html-file-https-raw-githubusercontent-com-fortierq-cours-main-jeux-deux-joueurs-jeux-deux-joueurs-pdf-zoom-page-fit-pagemode-none-height-500-width-100-allowfullscreen-iframe">
+<h1>Jeu à deux joueurs&lt;iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/jeux/deux_joueurs/jeux_deux_joueurs.pdf#zoom=page-fit&amp;pagemode=none height=500 width=100% allowfullscreen&gt;</iframe><a class="headerlink" href="#jeu-a-deux-joueurs-iframe-src-https-mozilla-github-io-pdf-js-web-viewer-html-file-https-raw-githubusercontent-com-fortierq-cours-main-jeux-deux-joueurs-jeux-deux-joueurs-pdf-zoom-page-fit-pagemode-none-height-500-width-100-allowfullscreen-iframe" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cache</span>
@@ -783,11 +711,42 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">attracteurs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">fA</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># d[v] = True si v est un attracteur</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">if</span> <span class="n">aux</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="p">{</span>
-<span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[],</span>
-<span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">7</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="p">[]</span>
 <span class="p">}</span>
-<span class="n">attracteurs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># exemple</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attracteurs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -797,70 +756,135 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="jeu-de-nim">
-<h2>Jeu de Nim<a class="headerlink" href="#jeu-de-nim" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nim</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">G</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-                <span class="n">G</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+                        <span class="n">G</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
                     <span class="n">G</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span> <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span> <span class="k">else</span> <span class="s1">&#39;B&#39;</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">G</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">nim</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
-<span class="n">G</span>
+
+<span class="n">attracteurs</span><span class="p">(</span><span class="n">nim</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(1, &#39;A&#39;): [(2, &#39;B&#39;), (3, &#39;B&#39;), (4, &#39;B&#39;)],
- (1, &#39;B&#39;): [(2, &#39;A&#39;), (3, &#39;A&#39;), (4, &#39;A&#39;)],
- (2, &#39;A&#39;): [(3, &#39;B&#39;), (4, &#39;B&#39;), (5, &#39;B&#39;)],
- (2, &#39;B&#39;): [(3, &#39;A&#39;), (4, &#39;A&#39;), (5, &#39;A&#39;)],
- (3, &#39;A&#39;): [(4, &#39;B&#39;), (5, &#39;B&#39;), (6, &#39;B&#39;)],
- (3, &#39;B&#39;): [(4, &#39;A&#39;), (5, &#39;A&#39;), (6, &#39;A&#39;)],
- (4, &#39;A&#39;): [(5, &#39;B&#39;), (6, &#39;B&#39;), (7, &#39;B&#39;)],
- (4, &#39;B&#39;): [(5, &#39;A&#39;), (6, &#39;A&#39;), (7, &#39;A&#39;)],
- (5, &#39;A&#39;): [(6, &#39;B&#39;), (7, &#39;B&#39;), (8, &#39;B&#39;)],
- (5, &#39;B&#39;): [(6, &#39;A&#39;), (7, &#39;A&#39;), (8, &#39;A&#39;)],
- (6, &#39;A&#39;): [(7, &#39;B&#39;), (8, &#39;B&#39;), (9, &#39;B&#39;)],
- (6, &#39;B&#39;): [(7, &#39;A&#39;), (8, &#39;A&#39;), (9, &#39;A&#39;)],
- (7, &#39;A&#39;): [(8, &#39;B&#39;), (9, &#39;B&#39;)],
- (7, &#39;B&#39;): [(8, &#39;A&#39;), (9, &#39;A&#39;)],
- (8, &#39;A&#39;): [(9, &#39;B&#39;)],
- (8, &#39;B&#39;): [(9, &#39;A&#39;)],
- (9, &#39;A&#39;): [],
- (9, &#39;B&#39;): []}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                     <span class="n">G</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span> <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="s1">&#39;B&#39;</span> <span class="k">else</span> <span class="s1">&#39;B&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">return</span> <span class="n">G</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">attracteurs</span><span class="p">(</span><span class="n">nim</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+
+<span class="nn">Cell In [1], line 13,</span> in <span class="ni">attracteurs</span><span class="nt">(G, fA)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">if</span> <span class="n">aux</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+
+<span class="nn">Cell In [1], line 13,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">succ</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="k">return</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span> <span class="k">if</span> <span class="n">aux</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">attracteurs.&lt;locals&gt;.aux</span><span class="nt">(v)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">attracteurs.&lt;locals&gt;.aux</span><span class="nt">(v)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">similar</span> <span class="n">frames</span><span class="p">:</span> <span class="n">attracteurs</span><span class="o">.&lt;</span><span class="nb">locals</span><span class="o">&gt;.</span><span class="n">aux</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">5</span> <span class="p">(</span><span class="mi">6</span> <span class="n">times</span><span class="p">),</span> <span class="o">&lt;</span><span class="n">listcomp</span><span class="o">&gt;</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">5</span> <span class="p">(</span><span class="mi">5</span> <span class="n">times</span><span class="p">)]</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nn">Cell In [1], line 5,</span> in <span class="ni">attracteurs.&lt;locals&gt;.aux</span><span class="nt">(v)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># détermine si v est un attracteur</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">succ</span> <span class="o">=</span> <span class="p">[</span><span class="n">aux</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>             <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: (9, &#39;A&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attracteurs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">dessine</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">fA</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;blue&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">dessine</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">fA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, &#39;B&#39;),
- (2, &#39;A&#39;),
- (3, &#39;A&#39;),
- (4, &#39;A&#39;),
- (5, &#39;B&#39;),
- (6, &#39;A&#39;),
- (7, &#39;A&#39;),
- (8, &#39;A&#39;),
- (9, &#39;B&#39;)]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">fA</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;blue&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">dessine</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">fA</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;fA&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -890,20 +914,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../../cours/Jeux.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cours</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../../exercices/Jeux.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercices</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

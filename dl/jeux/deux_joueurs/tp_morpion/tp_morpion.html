@@ -430,8 +430,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../jeux_deux_joueurs.html">
-     Jeux à deux joueurs
+    <a class="reference internal" href="../../../../slides/jeux/deux_joueurs/jeux_deux_joueurs.html">
+     Slides
     </a>
    </li>
   </ul>
@@ -1014,7 +1014,7 @@ X| |
     <span class="k">while</span> <span class="n">gagnant</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">joueur</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
             <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez les coordonnées de votre coup : &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="se">\n</span><span class="s2">Entrez les coordonnées de votre coup : &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
             <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">g</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
@@ -1032,16 +1032,26 @@ X| |
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X|O| 
  | | 
 X| | 
-X|O| 
-O| | 
-X| |X
-X|O| 
-O| | 
-X| |X
-Le joueur 1 a gagné !
-X|O| 
-O|O| 
-X|X|X
+[1, 2, 0]
+[0, 0, 0]
+[1, 0, 0]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">65</span><span class="p">],</span> <span class="n">line</span> <span class="mi">22</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le joueur&quot;</span><span class="p">,</span> <span class="n">gagnant</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="s2">&quot;a gagné !&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+
+<span class="nn">Cell In[65], line 12,</span> in <span class="ni">jeu</span><span class="nt">(g)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">if</span> <span class="n">joueur</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_str</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: not enough values to unpack (expected 2, got 0)
 </pre></div>
 </div>
 </div>
