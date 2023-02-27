@@ -1,10 +1,9 @@
 # Cours d'informatique commune en 2ème année de CPGE au lycée La Martinière
 
-**A faire pendant les vacances : terminer les TP classification de voitures et de chiffres manuscrits**
-
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
+<li>Ajout corrigé TP chiffres et voitures</li>
 <li>Ajout corrigé TP titanic</li>
 <li> <a href=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/ds/ds2/ds2_cor.pdf>Corrigé du DS 2</a>
 <li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Corrigé du devoir : Seam carving</a>
