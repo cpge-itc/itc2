@@ -6,7 +6,7 @@ Programme du dernier DS (apprentissage automatique et jeux) :
 - **Jeux à 2 joueurs** : connaître le principe général, savoir dessiner le graphe des configurations à partir de la description du jeu, savoir calculer à la main les attracteurs, s'entraîner à réécrire les fonctions à votre façon
 - **Algorithme min-max** : avoir compris le principe général, la notion d'heuristique, savoir dessiner l'arbre des coups possibles, savoir calculer la valeur associée à chaque position étant donnée une heuristique, s'entraîner à réécrire la fonction minmax
 
-Et le plus important : **s'entraîner à programmer en Python** (refaire TP, exercice de cours, [exercices de 1ère année](https://cpge-itc.github.io/itc1), [de BCPST](https://cpge-itc.github.io/bcpst2)...).
+Et le plus important : **s'entraîner à programmer en Python** (refaire TP, DS, exercice de cours, [exercices de 1ère année](https://cpge-itc.github.io/itc1), [de BCPST](https://cpge-itc.github.io/bcpst2)...).
 
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
