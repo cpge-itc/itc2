@@ -4,7 +4,7 @@ Programme du dernier DS (apprentissage automatique et jeux) :
 - **Algorithme des k plus proches voisins** : connaître le principe général et les définitions (précision, matrice de confusion), s'entraîner à réécrire les fonctions à votre façon
 - **Algorithme des k moyennes** : connaître le principe général, s'entraîner à réécrire les fonctions à votre façon
 - **Jeux à 2 joueurs** : connaître le principe général, savoir dessiner le graphe des configurations à partir de la description du jeu, savoir calculer à la main les attracteurs, s'entraîner à réécrire les fonctions à votre façon
-- **Algorithme min-max** : avoir compris le principe général, la notion d'heuristique, savoir dessiner l'arbre des coups possibles, savoir calculer la valeur associée à chaque position étant donnée une heuristique, s'entraîner à réécrire la fonction minmax
+- **Algorithme min-max** (sauf MP) : avoir compris le principe général, la notion d'heuristique, savoir dessiner l'arbre des coups possibles, savoir calculer la valeur associée à chaque position étant donnée une heuristique, s'entraîner à réécrire la fonction minmax
 
 Et le plus important : **s'entraîner à programmer en Python** (refaire TP, DS, exercice de cours, [exercices de 1ère année](https://cpge-itc.github.io/itc1), [de BCPST](https://cpge-itc.github.io/bcpst2)...).
 
