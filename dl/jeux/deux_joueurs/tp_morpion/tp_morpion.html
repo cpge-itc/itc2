@@ -769,8 +769,8 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">:</span> <span class="mi">4</span> <span class="p">}</span> <span class="c1"># on ne peut pas utiliser une liste comme clé d&#39;un dictionnaire</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">qfortier</span><span class="o">/</span><span class="n">repo</span><span class="o">/</span><span class="n">cours</span><span class="o">/</span><span class="n">cours</span><span class="o">/</span><span class="n">jeux</span><span class="o">/</span><span class="n">deux_joueurs</span><span class="o">/</span><span class="n">tp_morpion</span><span class="o">/</span><span class="n">tp_morpion</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">2</span> <span class="ow">in</span> <span class="mi">1</span>
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell://wsl%2Bdebian/home/qfortier/repo/cours/cours/jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb#W1sdnNjb2RlLXJlbW90ZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">:</span> <span class="mi">4</span> <span class="p">}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
 </pre></div>
@@ -817,10 +817,24 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="admonition-question admonition">
-<p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">afficher(g)</span></code> affichant une grille <code class="docutils literal notranslate"><span class="pre">g</span></code>.<br />
-On pourra utiliser <code class="docutils literal notranslate"><span class="pre">print(&quot;X&quot;,</span> <span class="pre">end=&quot;&quot;)</span></code> pour afficher X sans retour à la ligne, et <code class="docutils literal notranslate"><span class="pre">print()</span></code> pour effectuer un retour à la ligne.</p>
+<p>Pour afficher une grille, on pourra utiliser la fonction suivante.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -870,15 +884,17 @@ On pourra utiliser <code class="docutils literal notranslate"><span class="pre">
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">gagnant(g)</span></code> renvoyant 1 si le joueur 1 est gagnant sur la grille <code class="docutils literal notranslate"><span class="pre">g</span></code> (c’est-à-dire si trois 1 sont alignés sur la grille), 2 si le joueur 2 est gagnant et 0 s’il n’y a pas encore de gagnant.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">gagnant(g)</span></code> renvoyant 1 si le joueur 1 est gagnant sur la grille <code class="docutils literal notranslate"><span class="pre">g</span></code> (c’est-à-dire si trois 1 sont alignés sur la grille), 2 si le joueur 2 est gagnant et 0 s’il n’y a pas encore de gagnant.<br />
+On pourra utiliser <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">==</span> <span class="pre">...</span> <span class="pre">==</span> <span class="pre">...:</span></code> pour tester si trois valeurs sont égales.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">afficher</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gagnant</span><span class="p">(</span><span class="n">g1</span><span class="p">))</span>
+
 <span class="n">g2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <span class="n">afficher</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
-
-<span class="k">assert</span> <span class="n">gagnant</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">gagnant</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gagnant</span><span class="p">(</span><span class="n">g2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -886,16 +902,19 @@ On pourra utiliser <code class="docutils literal notranslate"><span class="pre">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X|O| 
  | | 
  | | 
+0
 X|O|O
  |X| 
  | |X
+1
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">successeurs(g)</span></code> renvoyant la liste <code class="docutils literal notranslate"><span class="pre">L</span></code> des grilles que l’on peut obtenir à partir de <code class="docutils literal notranslate"><span class="pre">g</span></code> en jouant un coup. On utilisera la fonction <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code> du module <code class="docutils literal notranslate"><span class="pre">copy</span></code> pour ajouter une grille à <code class="docutils literal notranslate"><span class="pre">L</span></code> (<code class="docutils literal notranslate"><span class="pre">L.append(copy.deepcopy(...))</span></code>).</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">successeurs(g)</span></code> renvoyant la liste <code class="docutils literal notranslate"><span class="pre">L</span></code> des grilles que l’on peut obtenir à partir de <code class="docutils literal notranslate"><span class="pre">g</span></code> en jouant un coup.<br />
+Pour chaque coup possible, plutôt que modifier <code class="docutils literal notranslate"><span class="pre">g</span></code>, on en fera une copie (<code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">copy.deepcopy(g)</span></code> après avoir importé avec <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">copy</span></code>) que l’on modifiera pour jouer un coup et que l’on ajoutera à la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -929,13 +948,14 @@ X|O|O
 <li><p>c’est au joueur 1 de jouer et il existe un successeur de <code class="docutils literal notranslate"><span class="pre">v</span></code> qui soit un attracteur pour le joueur 1</p></li>
 <li><p>c’est au joueur 2 de jouer et tous les successeurs de <code class="docutils literal notranslate"><span class="pre">v</span></code> sont des attracteurs pour le joueur 1</p></li>
 </ul>
+<p>Sinon (si c’est le joueur 2 qui gagne, ou qu’il y a match nul, par exemple), <code class="docutils literal notranslate"><span class="pre">v</span></code> n’est pas un attracteur (<code class="docutils literal notranslate"><span class="pre">d[v]</span> <span class="pre">=</span> <span class="pre">False</span></code> dans le code ci-dessous).</p>
 <p>On pourra compléter la fonction suivante, par mémoïsation :</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">attracteurs</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
     <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># d[v] = True si la grille v est attracteur pour le joueur 1</span>
-    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="c1"># renvoie True si v est attracteur pour le joueur 1</span>
         <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
             <span class="o">...</span> <span class="c1"># calculer d[v] en utilisant la récurrence ci-dessus</span>
         <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
@@ -982,7 +1002,7 @@ X| |
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">strategie(g)</span></code> renvoyant un dictionnaire <code class="docutils literal notranslate"><span class="pre">d</span></code> contenant une stratégie gagnante pour le joueur 1 à partir de la grille <code class="docutils literal notranslate"><span class="pre">g</span></code>. Si <code class="docutils literal notranslate"><span class="pre">v</span></code> est une grille accessible depuis <code class="docutils literal notranslate"><span class="pre">g</span></code> :</p>
+<p>Modifier <code class="docutils literal notranslate"><span class="pre">attracteurs(g)</span></code> en une fonction <code class="docutils literal notranslate"><span class="pre">strategie(g)</span></code> renvoyant un dictionnaire <code class="docutils literal notranslate"><span class="pre">d</span></code> contenant une stratégie gagnante pour le joueur 1 à partir de la grille <code class="docutils literal notranslate"><span class="pre">g</span></code>. Si <code class="docutils literal notranslate"><span class="pre">v</span></code> est une grille accessible depuis <code class="docutils literal notranslate"><span class="pre">g</span></code> :</p>
 <ul class="simple">
 <li><p>Si le joueur 1 a gagné sur la grille <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">d[v]</span></code> vaudra <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p>S’il n’y a pas de stratégie gagnante depuis <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">d[v]</span></code> vaudra <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
@@ -1030,33 +1050,6 @@ X| |
     <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 
 <span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X|O| 
- | | 
-X| | 
-[1, 2, 0]
-[0, 0, 0]
-[1, 0, 0]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">65</span><span class="p">],</span> <span class="n">line</span> <span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le joueur&quot;</span><span class="p">,</span> <span class="n">gagnant</span><span class="p">(</span><span class="n">g</span><span class="p">),</span> <span class="s2">&quot;a gagné !&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
-
-<span class="nn">Cell In[65], line 12,</span> in <span class="ni">jeu</span><span class="nt">(g)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">if</span> <span class="n">joueur</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">afficher</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">to_str</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: not enough values to unpack (expected 2, got 0)
 </pre></div>
 </div>
 </div>
