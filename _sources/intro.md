@@ -7,7 +7,7 @@ Programme du dernier DS (apprentissage automatique et jeux) :
 - **Algorithme min-max** (sauf MP) : avoir compris le principe général, la notion d'heuristique, savoir dessiner l'arbre des coups possibles, savoir calculer la valeur associée à chaque position étant donnée une heuristique, s'entraîner à réécrire la fonction minmax
 
 [Exercices et cours au lycée Marcelin Berthelot](https://pc-etoile.schola.fr/travaux-pratiques-dinformatique)
-Exercices corrigés 
+
 Et le plus important : **s'entraîner à programmer en Python** (refaire TP, DS, exercice de cours, [exercices de 1ère année](https://cpge-itc.github.io/itc1), [de BCPST](https://cpge-itc.github.io/bcpst2)...).
 
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
