@@ -730,12 +730,14 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">grille_vide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">grille_vide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">grille_vide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 0), (0, 1), (0, 2), (0, 3), (1, 0), (1, 1), (1, 2), (1, 3)]
+[(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
 </pre></div>
 </div>
 </div>
@@ -814,16 +816,14 @@ Tester avec différentes tailles initiales de la grille.</p>
 </div>
 </div>
 </div>
-<p>L’algorithme min-max consiste à regarder, depuis la position en cours, toutes les positions atteignables après <span class="math notranslate nohighlight">\(p\)</span> coups et conserver celle ayant la meilleure heuristique.</p>
-<p>Puis on donne une valeur à chaque sommet de l’arbre de proche en proche :</p>
+<p>L’<strong>algorithme min-max</strong> considère, depuis la position en cours, toutes les positions atteignables après <span class="math notranslate nohighlight">\(p\)</span> coups et conserver celle ayant la meilleure heuristique.</p>
+<p>Puis on donne récursivement une valeur à chaque sommet <code class="docutils literal notranslate"><span class="pre">v</span></code> de l’arbre :</p>
 <ul class="simple">
-<li><p>Calcul de l’heuristique des sommets à profondeur <span class="math notranslate nohighlight">\(p\)</span> et ceux sans successeurs.</p></li>
-<li><p>Calcul de la valeur des sommets à profondeur <span class="math notranslate nohighlight">\(p-1\)</span> en prenant le maximum (pour Alice) ou le minimum (pour Bob) des valeurs des successeurs.</p></li>
-<li><p>…</p></li>
-<li><p>Calcul de la valeur de la racine.</p></li>
+<li><p>si <code class="docutils literal notranslate"><span class="pre">v</span></code> est à profondeur <span class="math notranslate nohighlight">\(0\)</span>, on renvoie l’heuristique de <code class="docutils literal notranslate"><span class="pre">v</span></code></p></li>
+<li><p>sinon, si le joueur <span class="math notranslate nohighlight">\(0\)</span> doit jouer, on renvoie la valeur maximum des successeurs de <code class="docutils literal notranslate"><span class="pre">v</span></code> (le joueur <span class="math notranslate nohighlight">\(0\)</span> veut maximiser sa valeur)</p></li>
+<li><p>sinon, si le joueur <span class="math notranslate nohighlight">\(1\)</span> doit jouer, on renvoie la valeur minimum des successeurs de <code class="docutils literal notranslate"><span class="pre">v</span></code> (le joueur <span class="math notranslate nohighlight">\(1\)</span> veut minimiser la valeur de son adversaire)</p></li>
 </ul>
-<p>Ceci peut être effectué récursivement.</p>
-<p>On choisit ensuite le coup qui donne la meilleure valeur parmi les coups possibles.</p>
+<p>On choisit le coup qui donne la meilleure valeur parmi les coups possibles.</p>
 <center><img src=https://raw.githubusercontent.com/fortierq/tikz-pdf/main/jeux/domineering/arbre/arbre3.png width=100%></center><div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">minmax(v,</span> <span class="pre">joueur,</span> <span class="pre">profondeur,</span> <span class="pre">h)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code>, un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code>, une profondeur <code class="docutils literal notranslate"><span class="pre">profondeur</span></code> et une fonction heuristique <code class="docutils literal notranslate"><span class="pre">h</span></code> et qui renvoie un couple <code class="docutils literal notranslate"><span class="pre">(valeur,</span> <span class="pre">coup)</span></code> où <code class="docutils literal notranslate"><span class="pre">coup</span></code> est le meilleur coup à jouer et <code class="docutils literal notranslate"><span class="pre">valeur</span></code> est sa valeur.</p>
@@ -832,12 +832,12 @@ Tester avec différentes tailles initiales de la grille.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">,</span> <span class="n">profondeur</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span> <span class="c1"># renvoie (valeur, coup)</span>
     <span class="n">coups</span> <span class="o">=</span> <span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">)</span>
-    <span class="c1"># si la profondeur est 0 ou s&#39;il n&#39;y a pas de coup possible, renvoyer (j(h(v)), None)</span>
+    <span class="c1"># si la profondeur est 0 ou s&#39;il n&#39;y a pas de coup possible, renvoyer (h(v), None)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="c1"># stocker la meilleure valeur et le meilleur coup</span>
+            <span class="c1"># stocker la meilleure valeur et le meilleur coup dans des variables</span>
             <span class="k">for</span> <span class="n">coup</span> <span class="ow">in</span> <span class="n">coups</span><span class="p">:</span>
-                <span class="c1"># jouer en coup</span>
+                <span class="c1"># jouer un coup (avec la fonction placer)</span>
                 <span class="c1"># appel récursif pour obtenir la valeur du coup</span>
                 <span class="c1"># retirer le coup</span>
                 <span class="c1"># si la valeur du coup est meilleure que la meilleure valeur, mettre à jour la meilleure valeur et le meilleur coup</span>
