@@ -726,7 +726,7 @@ title="Print to PDF"
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">coups_possibles(v,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code> et qui renvoie la liste des positions <span class="math notranslate nohighlight">\((i, j)\)</span> où le joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> peut placer son domino.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">coups_possibles(v,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code> et qui renvoie la liste des positions <span class="math notranslate nohighlight">\((i, j)\)</span> où le joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> peut placer son domino, oùe joueur <span class="math notranslate nohighlight">\(0\)</span> place un domino en position <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i+1, j)\)</span> et le joueur <span class="math notranslate nohighlight">\(1\)</span> en position <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i, j+1)\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -761,7 +761,8 @@ On pourra utiliser la fonction <code class="docutils literal notranslate"><span 
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">placer(v,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code>, une position <span class="math notranslate nohighlight">\((i, j)\)</span> et un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> et qui modifie <code class="docutils literal notranslate"><span class="pre">v</span></code> en plaçant le domino du joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> à la position <span class="math notranslate nohighlight">\((i, j)\)</span>.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">placer(v,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code>, une position <span class="math notranslate nohighlight">\((i, j)\)</span> et un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> et qui modifie <code class="docutils literal notranslate"><span class="pre">v</span></code> en plaçant le domino du joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> à la position <span class="math notranslate nohighlight">\((i, j)\)</span>.<br />
+Plus précisément, si <code class="docutils literal notranslate"><span class="pre">joueur</span> <span class="pre">==</span> <span class="pre">0</span></code>, alors on place un domino sur les cases <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i + 1, j)\)</span>, et si <code class="docutils literal notranslate"><span class="pre">joueur</span> <span class="pre">==</span> <span class="pre">1</span></code>, alors on place un domino sur les cases <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i, j + 1)\)</span>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
@@ -769,7 +770,9 @@ On pourra utiliser la fonction <code class="docutils literal notranslate"><span 
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">jeu(strategie1,</span> <span class="pre">strategie2,</span> <span class="pre">n,</span> <span class="pre">p)</span></code> qui prend en entrée deux stratégies et qui renvoie le joueur qui gagne.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">jeu(strategie0,</span> <span class="pre">strategie1,</span> <span class="pre">n,</span> <span class="pre">p)</span></code> qui prend en entrée deux stratégies et qui renvoie le joueur qui gagne.<br />
+<code class="docutils literal notranslate"><span class="pre">strategie0(v,</span> <span class="pre">0)</span></code> renvoie un couple <span class="math notranslate nohighlight">\((i, j)\)</span> correspondant au coup du joueur 0, et <code class="docutils literal notranslate"><span class="pre">strategie1(v,</span> <span class="pre">1)</span></code> renvoie le coup du joueur 1.<br />
+Il faut donc partir d’une grille de taille <span class="math notranslate nohighlight">\(n\times p\)</span> et faire jouer les joueurs chacun son tour avec leur stratégie, jusqu’à ce qu’un joueur ne puisse plus jouer (qui est donc le perdant).</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -785,7 +788,7 @@ On pourra utiliser la fonction <code class="docutils literal notranslate"><span 
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">statistiques(strategie1,</span> <span class="pre">strategie2,</span> <span class="pre">n,</span> <span class="pre">p,</span> <span class="pre">nb_parties)</span></code> qui prend en entrée deux stratégies et qui renvoie le nombre de parties gagnées par chaque joueur.
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">statistiques(strategie0,</span> <span class="pre">strategie1,</span> <span class="pre">n,</span> <span class="pre">p,</span> <span class="pre">nb_parties)</span></code> qui prend en entrée deux stratégies, qui appelle <code class="docutils literal notranslate"><span class="pre">nb_parties</span></code> fois la fonction <code class="docutils literal notranslate"><span class="pre">jeu</span></code> et qui renvoie le nombre de parties gagnées par chaque joueur.<br />
 Tester avec différentes tailles initiales de la grille.</p>
 </div>
 <div class="cell docutils container">
