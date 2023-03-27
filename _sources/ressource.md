@@ -1,11 +1,8 @@
 # Ressources
 
-[Exercices de BCPST pour s'entraîner](https://cpge-itc.github.io/bcpst2)  
-[Notes et classement](https://fortierq-itc2-notes-grade-p12o3t.streamlit.app)
-
-[Cours de première année](https://cpge-itc.github.io/itc1)
-
-[Cours de M. Becirspahic](https://pc-etoile.schola.fr/cours)
+- [Exercices de BCPST pour s'entraîner](https://cpge-itc.github.io/bcpst2)  
+- [Cours de première année](https://cpge-itc.github.io/itc1)
+- [Cours de M. Becirspahic](https://pc-etoile.schola.fr/cours)
 
 <details>
 <summary>Résumé Python</summary>
