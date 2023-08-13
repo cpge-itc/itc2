@@ -16,8 +16,7 @@
 <br /> -->
 
 - [Programme officiel](https://prepas.org/index.php?document=72)
-- [Un site pour l'informatique de 1ère année](https://cpge-itc.github.io/itc1)
-- [Ajout d'une épreuve d'informatique en PC à CCINP](https://www.concours-commun-inp.fr/fr/actus/evolutions-du-concours-commun-inp-en-2023.html)
+- [Informatique de 1ère année](https://cpge-itc.github.io/itc1)
 
 <!-- <details>
 <summary>Planning MP</summary>
