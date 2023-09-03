@@ -85,9 +85,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TP 1 : Révisions de 1ère année" href="0_python/1_revisions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,7 +142,19 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Révisions Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_python/1_revisions.html">
+   TP 1 : Révisions de 1ère année
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav></div>
         <div class="bd-sidebar__bottom">
@@ -335,21 +350,58 @@ title="Print to PDF"
 <!-- <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
-<li>Ajout corrigé TP chiffres et voitures</li>
-<li>Ajout corrigé TP titanic</li>
-<li> <a href=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/ds/ds2/ds2_cor.pdf>Corrigé du DS 2</a>
-<li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Corrigé du devoir : Seam carving</a>
-<li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Devoir à faire pendant les vacances de Noël</a>
-<li><a href="https://cpge-itc.github.io/itc2/3_prog_dyn/tp2/tp_sac_dos.html">Ajout corrigé TP sac à dos</a></li>
-<li>Ajout corrigé TP programmation dynamique</li>
 <li>Ajout corrigé DS 1</li>
 </ul>
 </div> 
 <br /> -->
 <ul class="simple">
 <li><p><a class="reference external" href="https://prepas.org/index.php?document=72">Programme officiel</a></p></li>
-<li><p><a class="reference external" href="https://cpge-itc.github.io/itc1">Informatique de 1ère année</a></p></li>
+<li><p><a class="reference external" href="https://cpge-itc.github.io/itc1">Site d’informatique de 1ère année</a></p></li>
 </ul>
+<details>
+<summary>Informatique commune aux concours</summary>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Concours</p></th>
+<th class="text-align:center head"><p>Durée</p></th>
+<th class="text-align:center head"><p>Coefficient (% écrit)</p></th>
+<th class="text-align:center head"><p>Autres</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><a class="reference external" href="https://www.concours-commun-inp.fr/fr/epreuves/annales/annales-pc.html">CCINP PC/PSI</a></p></td>
+<td class="text-align:center"><p>3h</p></td>
+<td class="text-align:center"><p>10%</p></td>
+<td class="text-align:center"><p>modélisation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><a class="reference external" href="https://www.concours-commun-inp.fr/fr/epreuves/annales/annales-mp.html">CCINP MP</a></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\approx\)</span> 10%</p></td>
+<td class="text-align:center"><p>épreuve d’option + math 1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><a class="reference external" href="https://www.concoursminesponts.fr">Mines-Ponts</a></p></td>
+<td class="text-align:center"><p>2h</p></td>
+<td class="text-align:center"><p>7%</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><a class="reference external" href="https://www.concours-centrale-supelec.fr">Centrale-Supélec PC/PSI (à confirmer)</a></p></td>
+<td class="text-align:center"><p>2h QCM</p></td>
+<td class="text-align:center"><p>8%</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><a class="reference external" href="https://www.concours-centrale-supelec.fr">Centrale-Supélec MP (à confirmer)</a></p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0%</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><a class="reference external" href="https://banques-ecoles.fr/cms/wp-content/uploads/2023/01/Version-complete-combinee.pdf">X-ENS</a></p></td>
+<td class="text-align:center"><p>2h</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\approx\)</span> 13%</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</details>
 <!-- <details>
 <summary>Planning MP</summary>
 Groupes par ordre alphabétique du nom de famille <br>
@@ -410,6 +462,13 @@ Groupes par ordre alphabétique du nom de famille  <br>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="0_python/1_revisions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TP 1 : Révisions de 1ère année</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

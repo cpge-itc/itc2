@@ -3,20 +3,26 @@
 <!-- <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
-<li>Ajout corrigé TP chiffres et voitures</li>
-<li>Ajout corrigé TP titanic</li>
-<li> <a href=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/ds/ds2/ds2_cor.pdf>Corrigé du DS 2</a>
-<li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Corrigé du devoir : Seam carving</a>
-<li> <a href=https://cpge-itc.github.io/itc2/3_prog_dyn/seam_carving/seam_carving.html>Devoir à faire pendant les vacances de Noël</a>
-<li><a href="https://cpge-itc.github.io/itc2/3_prog_dyn/tp2/tp_sac_dos.html">Ajout corrigé TP sac à dos</a></li>
-<li>Ajout corrigé TP programmation dynamique</li>
 <li>Ajout corrigé DS 1</li>
 </ul>
 </div> 
 <br /> -->
 
 - [Programme officiel](https://prepas.org/index.php?document=72)
-- [Informatique de 1ère année](https://cpge-itc.github.io/itc1)
+- [Site d'informatique de 1ère année](https://cpge-itc.github.io/itc1)
+
+<details>
+<summary>Informatique commune aux concours</summary>
+
+Concours | Durée | Coefficient (% écrit) | Autres
+:---: | :---: | :---: | :---:
+[CCINP PC/PSI](https://www.concours-commun-inp.fr/fr/epreuves/annales/annales-pc.html) | 3h | 10% | modélisation
+[CCINP MP](https://www.concours-commun-inp.fr/fr/epreuves/annales/annales-mp.html) | | $\approx$ 10% | épreuve d'option + math 1
+[Mines-Ponts](https://www.concoursminesponts.fr) | 2h | 7% |
+[Centrale-Supélec PC/PSI (à confirmer)](https://www.concours-centrale-supelec.fr) | 2h QCM | 8% |
+[Centrale-Supélec MP (à confirmer)](https://www.concours-centrale-supelec.fr) | 0 | 0% |
+[X-ENS](https://banques-ecoles.fr/cms/wp-content/uploads/2023/01/Version-complete-combinee.pdf) | 2h | $\approx$ 13% | 
+</details>
 
 <!-- <details>
 <summary>Planning MP</summary>
