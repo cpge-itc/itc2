@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>TP 1 : Révisions de 1ère année &#8212; Informatique commune en 2ème année de CPGE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "cpge-itc/itc2");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/python/revision/revisions.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/cobra.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Informatique commune en 2ème année de CPGE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Révisions Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../0_python/1_revisions.html">
+   TP 1 : Révisions de 1ère année
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/dl/python/revision/revisions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/dl/python/revision/revisions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cpge-itc/itc2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2Fdl/python/revision/revisions.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/dl/python/revision/revisions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/dl/python/revision/revisions.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-python">
+   Bases de Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dichotomie">
+   Dichotomie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphes">
+   Graphes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-par-matrice-d-adjacence">
+     Représentation par matrice d’adjacence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parcours-en-profondeur">
+     Parcours en profondeur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parcours-en-largeur">
+     Parcours en largeur
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>TP 1 : Révisions de 1ère année</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-python">
+   Bases de Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dichotomie">
+   Dichotomie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphes">
+   Graphes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-par-matrice-d-adjacence">
+     Représentation par matrice d’adjacence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parcours-en-profondeur">
+     Parcours en profondeur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parcours-en-largeur">
+     Parcours en largeur
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tp-1-revisions-de-1ere-annee">
+<h1>TP 1 : Révisions de 1ère année<a class="headerlink" href="#tp-1-revisions-de-1ere-annee" title="Permalink to this headline">#</a></h1>
+<p>Pour programmer, vous pouvez soit utiliser Pyzo, soit <a class="reference external" href="https://notebook.basthon.fr">Basthon</a> en cliquant sur la “fusée” en haut à droite de chaque TP.</p>
+<p>Commandes Basthon :</p>
+<ul class="simple">
+<li><p>Ctrl + Entrée : exécuter la cellule</p></li>
+<li><p>Shift + Entrée : exécuter la cellule puis passer à la suivante</p></li>
+<li><p>Entrée : passer en mode édition</p></li>
+<li><p>Échap : sortir du mode édition</p></li>
+</ul>
+<p>Les commandes suivantes sont valables uniquement hors du mode édition :</p>
+<ul class="simple">
+<li><p>A : créer une nouvelle cellule (en haut)</p></li>
+<li><p>B : créer une nouvelle cellule (en bas)</p></li>
+<li><p>D D : supprimer la cellule</p></li>
+</ul>
+<section id="bases-de-python">
+<h2>Bases de Python<a class="headerlink" href="#bases-de-python" title="Permalink to this headline">#</a></h2>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Calculer <span class="math notranslate nohighlight">\(u_{10}\)</span>, où <span class="math notranslate nohighlight">\(u_n\)</span> est définie par <span class="math notranslate nohighlight">\(u_0 = 42\)</span> et <span class="math notranslate nohighlight">\(u_{n+1} = \sqrt{u_n} + 3u_n\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">u</span>
+<span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2787204.895558157
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">appartient</span></code> telle que <code class="docutils literal notranslate"><span class="pre">appartient(x,</span> <span class="pre">L)</span></code> renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">x</span></code> appartient à la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<ol class="simple">
+<li><p>Écrire une fonction pour déterminer si une liste est triée par ordre croissant.</p></li>
+<li><p>En déduire une fonction pour savoir si la liste est triée par ordre décroissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">not</span></code> pour la négation.</p></li>
+</ol>
+</div>
+</section>
+<section id="dichotomie">
+<h2>Dichotomie<a class="headerlink" href="#dichotomie" title="Permalink to this headline">#</a></h2>
+<p>La méthode par dichotomie consiste à divise à chaque étape la taille du problème par 2.<br />
+L’exemple le plus classique est la recherche par dichotomie dans une liste <strong>triée</strong> : on souhaite savoir si un élément <span class="math notranslate nohighlight">\(e\)</span> appartient à une liste <strong>triée</strong> <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
+<p>Considérons par exemple <code class="docutils literal notranslate"><span class="pre">L</span></code> = <span class="math notranslate nohighlight">\([-2, 1, 2, 4, 6, 7, 8, 9, 11, 12, 14, 15, 18, 22, 54]\)</span> et <span class="math notranslate nohighlight">\(e\)</span> = <span class="math notranslate nohighlight">\(14\)</span>.</p>
+<p>Au lieu de commencer par regarder le 1er élément de <code class="docutils literal notranslate"><span class="pre">L</span></code>, on va regarder l’élément du milieu (ici <span class="math notranslate nohighlight">\(9\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, \underline{\mathbf{9}}, 11, 12, 14, 15, 18, 22, 54]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(9 &lt; 14\)</span> et que la liste est triée par ordre croissant, on en déduit que <span class="math notranslate nohighlight">\(e\)</span>, s’il est dans <code class="docutils literal notranslate"><span class="pre">L</span></code>, est forcément dans la partie droite :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, {15}, 18, 22, 54}]
+\]</div>
+<p>On se restreint donc par la suite à la partie de <code class="docutils literal notranslate"><span class="pre">L</span></code> qui est encadrée. On compare <span class="math notranslate nohighlight">\(e\)</span> au milieu de cette partie, c’est-à-dire <span class="math notranslate nohighlight">\(15\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, 12, 14, \underline{\textbf{15}}, 18, 22, 54}]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(e &lt; 15\)</span>, on peut cette fois se restreinte à la partie gauche. On cherche donc maintenant <span class="math notranslate nohighlight">\(e\)</span> dans la zone suivante :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, {12}, 14}, {15}, 18, 22, 54]
+\]</div>
+<p>On compare encore une fois <span class="math notranslate nohighlight">\(e\)</span> au milieu :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, \boxed{11, \underline{\textbf{12}}, 14}, {15}, 18, 22, 54]
+\]</div>
+<p>Comme <span class="math notranslate nohighlight">\(e &gt; 12\)</span>, on regarde à droite :</p>
+<div class="math notranslate nohighlight">
+\[
+    [-2, 1, 2, 4, 6, 7, 8, {9}, 11, {12}, \boxed{\underline{\textbf{14}}}, {15}, 18, 22, 54]
+\]</div>
+<p>On a trouvé <span class="math notranslate nohighlight">\(e\)</span> !</p>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Compléter le code suivant permettant de rechercher un élément dans une liste triée, par dichotomie.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dichotomie</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># i et j sont les indices de L entre lesquels on cherche e</span>
+    <span class="k">while</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># tant qu&#39;il reste au moins 1 élément entre les indices i et j</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># milieu de i et j</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
+            <span class="o">...</span> <span class="c1"># regarder dans la partie gauche</span>
+        <span class="k">elif</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
+            <span class="o">...</span> <span class="c1"># regarder dans la partie droite</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="o">...</span> <span class="c1"># on a trouvé e</span>
+    <span class="o">...</span> <span class="c1"># e n&#39;a pas été trouvé</span>
+</pre></div>
+</div>
+<p>Puis tester votre fonction avec le jeu de tests suivant (<code class="docutils literal notranslate"><span class="pre">assert</span></code> déclenche une erreur si son argument est <code class="docutils literal notranslate"><span class="pre">False</span></code>) :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="n">L3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">54</span><span class="p">]</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">dichotomie</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L1</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dichotomie</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">L1</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">dichotomie</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">L2</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dichotomie</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">L2</span><span class="p">))</span>
+<span class="k">assert</span> <span class="p">(</span><span class="n">dichotomie</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">L3</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dichotomie</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="n">L3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="graphes">
+<h2>Graphes<a class="headerlink" href="#graphes" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://cpge-itc.github.io/itc1/5_graph/1_definition/1_graph/">Si besoin, vous pouvez revoir ce cours (Graphe : Définitions et Parcours de graphe)</a>.</p>
+<section id="representation-par-matrice-d-adjacence">
+<h3>Représentation par matrice d’adjacence<a class="headerlink" href="#representation-par-matrice-d-adjacence" title="Permalink to this headline">#</a></h3>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">make_matrix</span></code> telle que <code class="docutils literal notranslate"><span class="pre">make_matrix(n,</span> <span class="pre">p)</span></code> renvoie une matrice <span class="math notranslate nohighlight">\(n\times p\)</span> remplie de <span class="math notranslate nohighlight">\(0\)</span>, sous forme de liste de listes.</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Définir dans une variable <code class="docutils literal notranslate"><span class="pre">G</span></code> la matrice d’adjacence du graphe suivant (on pourra éventuellement utiliser les fonctions précédentes) :</p>
+<center><img src=https://github.com/cpge-itc/itc1/raw/4be1ee8d9679ffae521c506ad54acb9e6099c614/files/5_graph/tp/tp2/g.png width=200></center>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">voisins</span></code> telle que <code class="docutils literal notranslate"><span class="pre">voisins(G,</span> <span class="pre">v)</span></code> renvoie la liste des voisins du sommet <code class="docutils literal notranslate"><span class="pre">v</span></code>.<br />
+Vérifier que les voisins du sommet <span class="math notranslate nohighlight">\(2\)</span> dans le graphe ci-dessus sont les sommets <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>.</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">deg</span></code> telle que <code class="docutils literal notranslate"><span class="pre">deg(G,</span> <span class="pre">v)</span></code> renvoie le degré du sommet <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">n_aretes</span></code> pour calculer le nombre d’arêtes d’un graphe donné par matrice d’adjacence. Tester avec le graphe <code class="docutils literal notranslate"><span class="pre">G</span></code> précédent. On pourra soit réutiliser <code class="docutils literal notranslate"><span class="pre">deg</span></code>, soit deux boucles <code class="docutils literal notranslate"><span class="pre">for</span></code> pour parcourir les éléments de la matrice.</p>
+</div>
+</section>
+<section id="parcours-en-profondeur">
+<h3>Parcours en profondeur<a class="headerlink" href="#parcours-en-profondeur" title="Permalink to this headline">#</a></h3>
+<p>On pourra utiliser la fonction suivante pour afficher un graphe représenté par liste d’adjacence.<br />
+<strong>Remarque</strong> : Pour cela, il faut installer networkx en exécutant <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code> dans la console de Pyzo ou <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">networkx</span></code> dans Jupyter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+    <span class="n">G_</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    <span class="n">G_</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Définir le graphe <code class="docutils literal notranslate"><span class="pre">G_ex</span></code> ci-dessous par liste d’adjacence. Vérifier avec <code class="docutils literal notranslate"><span class="pre">draw(G_ex)</span></code>.</p>
+<center><img src=https://github.com/cpge-itc/itc1/raw/4be1ee8d9679ffae521c506ad54acb9e6099c614/files/5_graph/tp/tp2/g.png width=200></center>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">dfs(G,</span> <span class="pre">s)</span></code> renvoyant la liste des sommets de <code class="docutils literal notranslate"><span class="pre">G</span></code> suivant un parcours en profondeur depuis le sommet <code class="docutils literal notranslate"><span class="pre">s</span></code>. Vérifier sur le graphe <code class="docutils literal notranslate"><span class="pre">G_ex</span></code> précédent.<br />
+On essaierai de compléter le code ci-dessous. Ne regarder le cours que si cela est vraiment nécessaire.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="c1"># définir une liste de booléens pour savoir si un sommet a été visité</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">u</span><span class="p">):</span> <span class="c1"># fonction récursive</span>
+        <span class="c1"># si u n&#39;a pas été visité :</span>
+            <span class="c1"># afficher u</span>
+            <span class="c1"># marquer u comme visité</span>
+            <span class="c1"># pour chaque voisin v de u</span>
+                <span class="c1"># appeler aux(v)</span>
+    <span class="n">aux</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>En utilisant un parcours en profondeur, écrire une fonction <code class="docutils literal notranslate"><span class="pre">connexe(G)</span></code> qui renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> si le graphe <code class="docutils literal notranslate"><span class="pre">G</span></code> est connexe, <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.<br />
+Vérifier sur <code class="docutils literal notranslate"><span class="pre">G_ex</span></code> (non connexe) et sur un graphe connexe de votre choix.</p>
+</div>
+</section>
+<section id="parcours-en-largeur">
+<h3>Parcours en largeur<a class="headerlink" href="#parcours-en-largeur" title="Permalink to this headline">#</a></h3>
+<p>On rappelle l’utilisation d’une file en Python, avec la classe <code class="docutils literal notranslate"><span class="pre">deque</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span> <span class="c1"># file vide</span>
+<span class="n">q</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># ajoute 4 au début</span>
+<span class="n">q</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># supprime et renvoie le dernier élément (4)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># supprime et renvoie le dernier élément (7)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">bfs(G,</span> <span class="pre">s)</span></code> affichant les sommets du graphe <code class="docutils literal notranslate"><span class="pre">G</span></code> lors d’un parcours en largeur depuis le sommet <code class="docutils literal notranslate"><span class="pre">s</span></code>. Vérifier sur le graphe <code class="docutils literal notranslate"><span class="pre">G_ex</span></code> précédent.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="c1"># définir une file q contenant s</span>
+    <span class="c1"># définir une liste visited contenant n False, où n est le nombre de sommets</span>
+    <span class="c1"># tant que q est non vide</span>
+        <span class="c1"># extraire le dernier élément de q dans une variable u</span>
+        <span class="c1"># si u n&#39;a pas été visité:</span>
+            <span class="c1"># afficher u</span>
+            <span class="c1"># mettre True dans visited[u]</span>
+            <span class="c1"># pour chaque voisin v de u</span>
+                <span class="c1"># ajouter v au début de q </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">distances(G,</span> <span class="pre">s)</span></code> qui renvoie une liste <code class="docutils literal notranslate"><span class="pre">dist</span></code> telle que <code class="docutils literal notranslate"><span class="pre">dist[v]</span></code> soit la distance (en nombre d’arêtes) du sommet <code class="docutils literal notranslate"><span class="pre">s</span></code> au sommet <code class="docutils literal notranslate"><span class="pre">v</span></code>. Vérifier sur le graphe <code class="docutils literal notranslate"><span class="pre">G_ex</span></code> précédent.<br />
+<em>Indice</em> : Définir une liste <code class="docutils literal notranslate"><span class="pre">dist</span></code> avec que des <code class="docutils literal notranslate"><span class="pre">-1</span></code> initialement. Stocker des couples (sommet, distance) dans la file <code class="docutils literal notranslate"><span class="pre">q</span></code>. À chaque fois qu’un couple <code class="docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">d)</span></code> est retiré, mettre <code class="docutils literal notranslate"><span class="pre">d</span></code> dans <code class="docutils literal notranslate"><span class="pre">dist[u]</span></code> et ajouter <code class="docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">d</span> <span class="pre">+</span> <span class="pre">1)</span></code> à la file <code class="docutils literal notranslate"><span class="pre">q</span></code>, pour tout voisin <code class="docutils literal notranslate"><span class="pre">v</span></code> de <code class="docutils literal notranslate"><span class="pre">u</span></code>.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./dl/python/revision"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Quentin Fortier<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
