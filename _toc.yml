@@ -1,0 +1,15 @@
+format: jb-book
+parts:
+- caption: Révisions Python
+  chapters:
+  - file: files/0_python/aide_memoire.ipynb
+  - tp: python/revision/revisions.ipynb
+# - caption: Dictionnaire
+#   chapters:
+#   - file: 2_dict/dict.ipynb
+#     title: 'Cours : Dictionnaire'
+#   - file: 2_dict/tp.md
+#     sections:
+#     - file: 2_dict/tp/tp_dict.ipynb
+#     - file: 2_dict/tp/tp_hash.ipynb
+root: intro

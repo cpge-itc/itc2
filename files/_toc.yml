@@ -1,0 +1,6 @@
+format: jb-book
+parts:
+- caption: "R\xE9visions Python"
+  chapters:
+  - file: dl/python/revision/revisions.ipynb
+root: intro

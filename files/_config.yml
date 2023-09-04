@@ -1,0 +1,30 @@
+title: Informatique commune en 2ème année de CPGE
+author: Quentin Fortier
+logo: cobra.webp
+
+execute:
+  execute_notebooks: 'off'
+
+latex:
+  latex_documents:
+    targetname: itc2.tex
+
+html:
+  home_page_in_navbar: false
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://cpge-itc.github.io/itc2
+  extra_navbar: ""
+  comments:
+    utterances:
+      repo: "cpge-itc/itc2"
+
+
+repository:
+  url: https://github.com/cpge-itc/itc2 
+  path_to_book: files
+  branch: main
+
+launch_buttons:
+  basthon_url: "https://notebook.basthon.fr"
