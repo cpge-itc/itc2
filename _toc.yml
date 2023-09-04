@@ -2,7 +2,7 @@ format: jb-book
 parts:
 - caption: Révisions Python
   chapters:
-  - file: files/0_python/aide_memoire.ipynb
+  - file: 0_python/aide_memoire.ipynb
   - tp: python/revision/revisions.ipynb
 # - caption: Dictionnaire
 #   chapters:
