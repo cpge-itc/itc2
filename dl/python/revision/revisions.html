@@ -503,33 +503,44 @@ title="Print to PDF"
 <h2>Bases de Python<a class="headerlink" href="#bases-de-python" title="Permalink to this headline">#</a></h2>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Calculer <span class="math notranslate nohighlight">\(u_{10}\)</span>, où <span class="math notranslate nohighlight">\(u_n\)</span> est définie par <span class="math notranslate nohighlight">\(u_0 = 42\)</span> et <span class="math notranslate nohighlight">\(u_{n+1} = \sqrt{u_n} + 3u_n\)</span>.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">u</span>
-<span class="n">u</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2787204.895558157
-</pre></div>
-</div>
-</div>
+<p>Calculer <span class="math notranslate nohighlight">\(u_{10}\)</span>, où <span class="math notranslate nohighlight">\(u_n\)</span> est définie par <span class="math notranslate nohighlight">\(u_0 = 42\)</span> et <span class="math notranslate nohighlight">\(u_{n+1} = \sqrt{u_n} + 3u_n\)</span>.<br />
+Il faut trouver 2787204.895558157.</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">appartient</span></code> telle que <code class="docutils literal notranslate"><span class="pre">appartient(x,</span> <span class="pre">L)</span></code> renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">x</span></code> appartient à la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">appartient</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">appartient</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<ol class="simple">
-<li><p>Écrire une fonction pour déterminer si une liste est triée par ordre croissant.</p></li>
-<li><p>En déduire une fonction pour savoir si la liste est triée par ordre décroissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">not</span></code> pour la négation.</p></li>
-</ol>
+<p>Écrire une fonction pour déterminer si une liste est triée par ordre croissant.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">croissant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">croissant</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="dichotomie">
