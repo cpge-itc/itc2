@@ -7,9 +7,13 @@
 </ul>
 </div> 
 <br /> -->
-
-- [Programme officiel](https://prepas.org/index.php?document=72)
-- [Site d'informatique de 1ère année](https://cpge-itc.github.io/itc1)
+<div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
+<center><b>Dernières modifications</b></center>
+<ul>
+<li>Rentrée 2023-2024</li>
+</ul>
+</div> 
+<br />
 
 <details>
 <summary>Informatique commune aux concours</summary>
@@ -23,6 +27,9 @@ Concours | Durée | Coefficient (% écrit) | Autres
 [Centrale-Supélec MP (à confirmer)](https://www.concours-centrale-supelec.fr) | 0 | 0% |
 [X-ENS](https://banques-ecoles.fr/cms/wp-content/uploads/2023/01/Version-complete-combinee.pdf) | 2h | $\approx$ 13% | 
 </details>
+
+- [Programme officiel](https://prepas.org/index.php?document=72)
+- [Site d'informatique de 1ère année](https://cpge-itc.github.io/itc1)
 
 <details>
 <summary>Planning MP</summary>
