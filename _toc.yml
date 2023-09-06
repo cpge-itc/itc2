@@ -6,7 +6,7 @@ parts:
   - tp: python/revision/revisions.ipynb
 - caption: Dictionnaire
   chapters:
-  - cours: 'Cours : Dictionnaire'
+  - slides: 'Cours : Dictionnaire'
     file: python/dict/cours/dict.pdf
   # - file: 2_dict/tp.md
   #   sections:
