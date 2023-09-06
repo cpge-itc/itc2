@@ -8,6 +8,8 @@ parts:
   chapters:
   - slides: 'Cours : Dictionnaire'
     file: python/dict/cours/dict.pdf
+  - td: 'Exercice : Polynômes'
+    file: ds/itc/ds_polynome_matrice/ds_polynome_matrice.pdf
   # - file: 2_dict/tp.md
   #   sections:
   #   - file: 2_dict/tp/tp_dict.ipynb
