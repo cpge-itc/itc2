@@ -1,7 +1,0 @@
-format: jb-book
-parts:
-- caption: "R\xE9visions Python"
-  chapters:
-  - file: 0_python/aide_memoire.ipynb
-  - file: dl/python/revision/revisions.ipynb
-root: intro
