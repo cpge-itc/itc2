@@ -1,4 +1,4 @@
-# Cours d'informatique commune en 2ème année de CPGE au lycée La Martinière
+# Cours d'informatique commune en 2ème année de CPGE au lycée La Martinière Monplaisir
 
 <!-- <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
