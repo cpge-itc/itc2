@@ -6,12 +6,14 @@ parts:
   - tp: python/revision/revisions.ipynb
 - caption: Dictionnaire
   chapters:
-  - slides: 'Cours : Dictionnaire'
-    file: python/dict/cours/dict.pdf
-  - td: 'Exercice : Polynômes'
-    file: ds/itc/ds_polynome_matrice/ds_polynome_matrice.pdf
-  # - file: 2_dict/tp.md
-  #   sections:
-  #   - file: 2_dict/tp/tp_dict.ipynb
-  #   - file: 2_dict/tp/tp_hash.ipynb
+  - menu: Cours
+    sections:
+    - slides: 'Cours : Dictionnaire'
+      file: python/dict/cours/dict.pdf
+  - menu: Exercices
+    sections:
+    - td: 'Exercice : Polynômes'
+      file: ds/itc/ds_polynome_matrice/ds_polynome_matrice.pdf
+    - tp: 'TP 2 : Dictionnaire'
+      file: python/dict/tp/tp_dict.ipynb
 root: intro
