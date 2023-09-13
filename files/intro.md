@@ -38,18 +38,17 @@ Concours | Durée | Coefficient (% écrit) | Autres
 
 <details>
 <summary>Planning MP*</summary>
-Groupes par ordre alphabétique du nom de famille  <br>
 <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showPrint=0&showTz=0&src=cDM3MWkxaWNqZWswam02bHQ1aTQ5ZDlqdHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M2hha3JjZmVkMGswNTI2YXYzNzIwaWdqdW9nYTVsODFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZnIuZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&color=%23E4C441&color=%230B8043" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </details>
 
 <details>
 <summary>Planning PC*</summary>
-<iframe src="https://calendar.google.com/calendar/embed?src=7mtgvudkmi2gh3hlcsp2tsf2qk%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showPrint=0&showCalendars=0&showTz=0&src=N210Z3Z1ZGttaTJnaDNobGNzcDJ0c2YycWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=M2hha3JjZmVkMGswNTI2YXYzNzIwaWdqdW9nYTVsODFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237986CB&color=%23E4C441" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </details>
 
 <details>
 <summary>Planning PSI*</summary>
-<iframe src="https://calendar.google.com/calendar/embed?src=3299a7c146fb1bfd92922f25544bbc0f3c64514ac95b3f34de640941c045cce2%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showNav=1&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=MzI5OWE3YzE0NmZiMWJmZDkyOTIyZjI1NTQ0YmJjMGYzYzY0NTE0YWM5NWIzZjM0ZGU2NDA5NDFjMDQ1Y2NlMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2hha3JjZmVkMGswNTI2YXYzNzIwaWdqdW9nYTVsODFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%23E4C441" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </details>
 
 ```{raw} html
