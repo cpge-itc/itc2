@@ -4,7 +4,7 @@
     $(function() {
         document.getElementById("main-content").style.maxWidth = "90%";
         button_1 = button_cor(
-            'https://raw.githubusercontent.com/fortierq/cours/main/ds/itc/ds_polynome_matrice/ds_polynome_matrice.pdf',
+            'https://raw.githubusercontent.com/fortierq/cours/main/python/dict/td/dict_polynome.pdf',
             '1',
             'button_1'
         );
