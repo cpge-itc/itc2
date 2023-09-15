@@ -13,6 +13,6 @@ parts:
   - menu: Exercices
     sections:
     - td: 'Exercice : Polynômes'
-      file: ds/itc/ds_polynome_matrice/ds_polynome_matrice.pdf
+      file: python/dict/td/dict_polynome.pdf
     - tp: python/dict/tp/tp_dict.ipynb
 root: intro
