@@ -48,7 +48,7 @@ Concours | Durée | Coefficient (% écrit) | Autres
 
 <details>
 <summary>Planning PSI*</summary>
-<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showNav=1&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=MzI5OWE3YzE0NmZiMWJmZDkyOTIyZjI1NTQ0YmJjMGYzYzY0NTE0YWM5NWIzZjM0ZGU2NDA5NDFjMDQ1Y2NlMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2hha3JjZmVkMGswNTI2YXYzNzIwaWdqdW9nYTVsODFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%23E4C441" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showPrint=0&showTz=0&src=MzI5OWE3YzE0NmZiMWJmZDkyOTIyZjI1NTQ0YmJjMGYzYzY0NTE0YWM5NWIzZjM0ZGU2NDA5NDFjMDQ1Y2NlMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=M2hha3JjZmVkMGswNTI2YXYzNzIwaWdqdW9nYTVsODFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%23E4C441" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </details>
 
 ```{raw} html
