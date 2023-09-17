@@ -454,6 +454,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrices">
+   Matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphes">
    Graphes
   </a>
@@ -507,6 +512,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dichotomie">
    Dichotomie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrices">
+   Matrices
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -667,15 +677,64 @@ L’exemple le plus classique est la recherche par dichotomie dans une liste <st
 </div>
 </div>
 </section>
+<section id="matrices">
+<h2>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h2>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">make_matrix</span></code> telle que <code class="docutils literal notranslate"><span class="pre">make_matrix(n,</span> <span class="pre">p)</span></code> renvoie une matrice <span class="math notranslate nohighlight">\(n\times p\)</span> remplie de <span class="math notranslate nohighlight">\(0\)</span>, sous forme de liste de listes.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">transposee(M)</span></code> qui renvoie la transposée de la matrice <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">transposee</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">symetrique(M)</span></code> qui renvoie <code class="docutils literal notranslate"><span class="pre">True</span></code> si la matrice <code class="docutils literal notranslate"><span class="pre">M</span></code> est symétrique, <code class="docutils literal notranslate"><span class="pre">False</span></code> sinon.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">symetrique</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]))</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">symetrique</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]))</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="graphes">
 <h2>Graphes<a class="headerlink" href="#graphes" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://cpge-itc.github.io/itc1/5_graph/1_definition/1_graph/">Si besoin, vous pouvez revoir ce cours (Graphe : Définitions et Parcours de graphe)</a>.</p>
 <section id="representation-par-matrice-d-adjacence">
 <h3>Représentation par matrice d’adjacence<a class="headerlink" href="#representation-par-matrice-d-adjacence" title="Permalink to this headline">#</a></h3>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Définir une fonction <code class="docutils literal notranslate"><span class="pre">make_matrix</span></code> telle que <code class="docutils literal notranslate"><span class="pre">make_matrix(n,</span> <span class="pre">p)</span></code> renvoie une matrice <span class="math notranslate nohighlight">\(n\times p\)</span> remplie de <span class="math notranslate nohighlight">\(0\)</span>, sous forme de liste de listes.</p>
-</div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Définir dans une variable <code class="docutils literal notranslate"><span class="pre">G</span></code> la matrice d’adjacence du graphe suivant (on pourra éventuellement utiliser les fonctions précédentes) :</p>
