@@ -91,6 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/python/dict/tp/tp_dict.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Cours" href="../../../menu/2.html" />
     <link rel="prev" title="Exercice : Polynômes" href="../../../td/dict_polynome.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -201,6 +202,30 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      TP : Dictionnaire
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation dynamique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/2.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/cours/prog_dyn.html">
+     Programmation dynamique
     </a>
    </li>
   </ul>
@@ -453,6 +478,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#element-majoritaire">
+   Élément majoritaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trie-arbre-prefixe">
    Trie (arbre préfixe)
   </a>
@@ -501,6 +531,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#anagramme">
    Anagramme
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#element-majoritaire">
+   Élément majoritaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -567,6 +602,17 @@ title="Print to PDF"
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">anagramme(m1,</span> <span class="pre">m2)</span></code> qui teste si deux mots (des chaînes de caractères) sont des anagrammes, c’est-à-dire s’ils contiennent les mêmes lettres (avec le même nombre d’occurence de chaque lettre). Par exemple, <code class="docutils literal notranslate"><span class="pre">anagramme(&quot;ordre&quot;,</span> <span class="pre">&quot;dorer&quot;)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code>.<br />
 Cette fonction doit être en O(<span class="math notranslate nohighlight">\(n_1 + n_2\)</span>), où <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> sont les tailles de <code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>.<br />
 <strong>Aide</strong> : On pourra utiliser deux dictionnaires pour compter le nombre d’apparitions de chaque lettre dans <code class="docutils literal notranslate"><span class="pre">m1</span></code> et <code class="docutils literal notranslate"><span class="pre">m2</span></code>, puis vérifier que ces deux dictionnaires contiennent les mêmes associations (clé, valeur).</p>
+</div>
+</section>
+<section id="element-majoritaire">
+<h2>Élément majoritaire<a class="headerlink" href="#element-majoritaire" title="Permalink to this headline">#</a></h2>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, sans utiliser de dictionnaire. Quelle est sa complexité ?</p>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire2(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, en utilisant un dictionnaire pour avoir une meilleure complexité que la fonction précédente.</p>
 </div>
 </section>
 <section id="trie-arbre-prefixe">
@@ -697,6 +743,13 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Exercice : Polynômes</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../../menu/2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cours</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
