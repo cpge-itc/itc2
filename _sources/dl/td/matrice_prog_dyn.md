@@ -4,7 +4,7 @@
     $(function() {
         document.getElementById("main-content").style.maxWidth = "90%";
         button_2 = button_cor(
-            'https://raw.githubusercontent.com/fortierq/cours/main/matrice_prog_dyn.pdf',
+            'https://raw.githubusercontent.com/fortierq/cours/main/algo/prog_dyn/td/matrice_prog_dyn.pdf',
             '2',
             'button_2'
         );
