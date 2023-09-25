@@ -230,6 +230,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/3.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../td/matrice_prog_dyn.html">
+     Exercice : Chemin dans une matrice
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -473,13 +490,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anagramme">
-   Anagramme
+  <a class="reference internal nav-link" href="#element-majoritaire">
+   Élément majoritaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#element-majoritaire">
-   Élément majoritaire
+  <a class="reference internal nav-link" href="#anagramme">
+   Anagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -498,11 +515,6 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithme-d-eratosthene">
-   Algorithme d’Ératosthène
-  </a>
  </li>
 </ul>
 
@@ -529,13 +541,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anagramme">
-   Anagramme
+  <a class="reference internal nav-link" href="#element-majoritaire">
+   Élément majoritaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#element-majoritaire">
-   Élément majoritaire
+  <a class="reference internal nav-link" href="#anagramme">
+   Anagramme
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -554,11 +566,6 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithme-d-eratosthene">
-   Algorithme d’Ératosthène
-  </a>
  </li>
 </ul>
 
@@ -582,6 +589,53 @@ title="Print to PDF"
 <li><p>Ajouter les mois avec leurs traductions.</p></li>
 </ol>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fr_to_en</span><span class="p">[</span><span class="s2">&quot;janvier&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;January&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="element-majoritaire">
+<h2>Élément majoritaire<a class="headerlink" href="#element-majoritaire" title="Permalink to this headline">#</a></h2>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, sans utiliser de dictionnaire. Quelle est sa complexité ?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">majoritaire</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire2(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, en utilisant un dictionnaire pour avoir une meilleure complexité que la fonction précédente.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">majoritaire2</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="anagramme">
 <h2>Anagramme<a class="headerlink" href="#anagramme" title="Permalink to this headline">#</a></h2>
@@ -599,20 +653,22 @@ title="Print to PDF"
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">anagramme(m1,</span> <span class="pre">m2)</span></code> qui teste si deux mots (des chaînes de caractères) sont des anagrammes, c’est-à-dire s’ils contiennent les mêmes lettres (avec le même nombre d’occurence de chaque lettre). Par exemple, <code class="docutils literal notranslate"><span class="pre">anagramme(&quot;ordre&quot;,</span> <span class="pre">&quot;dorer&quot;)</span></code> doit renvoyer <code class="docutils literal notranslate"><span class="pre">True</span></code>.<br />
-Cette fonction doit être en O(<span class="math notranslate nohighlight">\(n_1 + n_2\)</span>), où <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> sont les tailles de <code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>.<br />
-<strong>Aide</strong> : On pourra utiliser deux dictionnaires pour compter le nombre d’apparitions de chaque lettre dans <code class="docutils literal notranslate"><span class="pre">m1</span></code> et <code class="docutils literal notranslate"><span class="pre">m2</span></code>, puis vérifier que ces deux dictionnaires contiennent les mêmes associations (clé, valeur).</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">anagramme(m1,</span> <span class="pre">m2)</span></code> qui teste si deux mots (des chaînes de caractères) sont des anagrammes, c’est-à-dire s’ils contiennent les mêmes lettres (avec le même nombre d’occurence de chaque lettre).<br />
+Cette fonction doit être en O(<span class="math notranslate nohighlight">\(n_1 + n_2\)</span>), où <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> sont les tailles de <code class="docutils literal notranslate"><span class="pre">m1</span></code>, <code class="docutils literal notranslate"><span class="pre">m2</span></code>.</p>
 </div>
-</section>
-<section id="element-majoritaire">
-<h2>Élément majoritaire<a class="headerlink" href="#element-majoritaire" title="Permalink to this headline">#</a></h2>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, sans utiliser de dictionnaire. Quelle est sa complexité ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">anagramme</span><span class="p">(</span><span class="s2">&quot;ordre&quot;</span><span class="p">,</span> <span class="s2">&quot;dorer&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">anagramme</span><span class="p">(</span><span class="s2">&quot;ordre&quot;</span><span class="p">,</span> <span class="s2">&quot;oreo&quot;</span><span class="p">))</span>
+</pre></div>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">majoritaire2(L)</span></code> renvoyant l’élément apparaissant le plus souvent dans la liste <code class="docutils literal notranslate"><span class="pre">L</span></code>, en utilisant un dictionnaire pour avoir une meilleure complexité que la fonction précédente.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="trie-arbre-prefixe">
@@ -640,7 +696,7 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
 <p>Par exemple, le trie contenant l’ensemble de mots <span class="math notranslate nohighlight">\(\{\)</span> car, cat, cd, ok <span class="math notranslate nohighlight">\(\}\)</span> est représenté par :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie_ex</span> <span class="o">=</span> <span class="p">{</span> 
     <span class="s2">&quot;c&quot;</span> <span class="p">:</span> <span class="p">{</span> 
         <span class="s2">&quot;a&quot;</span> <span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;r&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;$&quot;</span> <span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
@@ -652,6 +708,13 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
         <span class="s2">&quot;k&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;$&quot;</span> <span class="p">:</span> <span class="p">{}</span> <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+<span class="n">trie_ex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;: {&#39;a&#39;: {&#39;r&#39;: {&#39;$&#39;: {}}, &#39;t&#39;: {&#39;$&#39;: {}}}, &#39;d&#39;: {&#39;$&#39;: {}}},
+ &#39;o&#39;: {&#39;k&#39;: {&#39;$&#39;: {}}}}
 </pre></div>
 </div>
 </div>
@@ -662,6 +725,22 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
 <li><p>Dessiner le trie contenant les mots art, axe, set.</p></li>
 <li><p>Définir ce trie sous forme d’un dictionnaire.</p></li>
 </ol>
+</div>
+<div class="admonition-exercice admonition">
+<p class="admonition-title">Exercice</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">trie_size(trie)</span></code> pour afficher le nombre de mots appartenant à un trie. Pour cela, on parcourt récursivement le trie en comptant le nombre de $.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie_size</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
@@ -679,34 +758,64 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
 </div>
 </div>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>En utilisant <code class="docutils literal notranslate"><span class="pre">trie_add</span></code>, définir un trie contenant les mots <code class="docutils literal notranslate"><span class="pre">&quot;arbre&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;arete&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;graphe&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">trie_add</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="s2">&quot;arbre&quot;</span><span class="p">)</span>
+<span class="n">trie_add</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="s2">&quot;arete&quot;</span><span class="p">)</span>
+<span class="n">trie</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: {&#39;r&#39;: {&#39;b&#39;: {&#39;r&#39;: {&#39;e&#39;: {&#39;$&#39;: {}}}}, &#39;e&#39;: {&#39;t&#39;: {&#39;e&#39;: {&#39;$&#39;: {}}}}}}}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">trie_print(trie)</span></code> pour afficher les mots <code class="docutils literal notranslate"><span class="pre">m</span></code> appartenant à un trie. Vérifier avec l’exemple précédent.</p>
+<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">trie_print(trie)</span></code> pour afficher les mots <code class="docutils literal notranslate"><span class="pre">m</span></code> appartenant à un trie. Vérifier avec l’exemple précédent.<br />
+On pourra utiliser une fonction auxiliaire récursive <code class="docutils literal notranslate"><span class="pre">aux(t,</span> <span class="pre">m)</span></code> qui s’appelle récursivement sur chaque noeud <code class="docutils literal notranslate"><span class="pre">t</span></code> du trie, en conservant les lettres déjà parcourues dans la chaîne de caractères <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">trie_size(trie)</span></code> pour afficher le nombre de mots appartenant à un trie.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie_print</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car
+cat
+cd
+ok
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">trie_has(trie,</span> <span class="pre">m)</span></code> pour tester si <code class="docutils literal notranslate"><span class="pre">m</span></code> appartient à un trie.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">trie_has</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">,</span> <span class="s2">&quot;carte&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">trie_has</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>(MP/MP* Option info seulement) Quelles sont les autres possibilités pour implémenter un ensemble de mots ? Pourquoi un trie est-il intéressant ? On pourra supposer que les lettres sont entre a et z.</p>
 </div>
 </section>
-</section>
-<section id="algorithme-d-eratosthene">
-<h2>Algorithme d’Ératosthène<a class="headerlink" href="#algorithme-d-eratosthene" title="Permalink to this headline">#</a></h2>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">eratosthene(n)</span></code> renvoyant un ensemble (<code class="docutils literal notranslate"><span class="pre">set</span></code>) contenant les nombres premiers inférieurs à <code class="docutils literal notranslate"><span class="pre">n</span></code>, en utilisant le <a class="reference external" href="https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne">crible d’Ératosthène</a>.</p>
-</div>
 </section>
 </section>
 
