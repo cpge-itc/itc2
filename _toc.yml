@@ -23,5 +23,5 @@ parts:
   - menu: Exercices
     sections:
     - td: 'Exercice : Chemin dans une matrice'
-      file: matrice_prog_dyn.pdf
+      file: algo/prog_dyn/td/matrice_prog_dyn.pdf
 root: intro
