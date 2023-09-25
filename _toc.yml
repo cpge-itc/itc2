@@ -20,4 +20,8 @@ parts:
   - menu: Cours
     sections:
       - slides_ipynb: algo/prog_dyn/cours/prog_dyn.ipynb
+  - menu: Exercices
+    sections:
+    - td: 'Exercice : Chemin dans une matrice'
+      file: matrice_prog_dyn.pdf
 root: intro
