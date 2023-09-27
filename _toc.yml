@@ -24,4 +24,5 @@ parts:
     sections:
     - td: 'Exercice : Chemin dans une matrice'
       file: algo/prog_dyn/td/matrice_prog_dyn.pdf
+    - tp: algo/prog_dyn/tp/tp1/tp_prog_dyn.ipynb
 root: intro
