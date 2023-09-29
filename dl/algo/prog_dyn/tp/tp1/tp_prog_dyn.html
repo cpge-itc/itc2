@@ -659,11 +659,12 @@ Pour cela, on pourra stocker <span class="math notranslate nohighlight">\(\binom
 <li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> n’est pas utilisée (et on a donc <span class="math notranslate nohighlight">\(r(n, k) = r(n, k - 1)\)</span>)</p></li>
 <li><p>soit <span class="math notranslate nohighlight">\(a_k\)</span> est utilisée (et on a <span class="math notranslate nohighlight">\(r(n, k) = ...\)</span>).</p></li>
 </ul>
+<p>Comme on ne sait pas si <span class="math notranslate nohighlight">\(a_k\)</span> est utilisée ou non, on a dans le cas général : <span class="math notranslate nohighlight">\(r(n, k) = \min(..., ...)\)</span>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">rendu(L,</span> <span class="pre">n)</span></code> par programmation dynamique renvoyant le nombre minimum de pièces requises pour rendre <code class="docutils literal notranslate"><span class="pre">n</span></code> euros, où <code class="docutils literal notranslate"><span class="pre">L</span></code> est la liste des pièces.<br />
-On remplira une matrice <code class="docutils literal notranslate"><span class="pre">R</span></code> pour que <code class="docutils literal notranslate"><span class="pre">R[i][j]</span></code> contienne le nombre minimum de pièces pour rendre <code class="docutils literal notranslate"><span class="pre">i</span></code> euros en utilisant les <code class="docutils literal notranslate"><span class="pre">j</span></code> premières pièces de <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
+On remplira une matrice <code class="docutils literal notranslate"><span class="pre">M</span></code> pour que <code class="docutils literal notranslate"><span class="pre">M[i][j]</span></code> contienne le nombre minimum de pièces pour rendre <code class="docutils literal notranslate"><span class="pre">i</span></code> euros en utilisant les <code class="docutils literal notranslate"><span class="pre">j</span></code> premières pièces de <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -686,7 +687,7 @@ On remplira une matrice <code class="docutils literal notranslate"><span class="
 <h2>Plus grand carré dans une matrice<a class="headerlink" href="#plus-grand-carre-dans-une-matrice" title="Permalink to this headline">#</a></h2>
 <p>Étant donnée une matrice carrée remplie de 0 ou 1, on souhaite connaître la taille du plus gros carré de 1 dans cette matrice.<br />
 Par exemple, ce nombre est 2 pour la matrice <span class="math notranslate nohighlight">\(M\)</span> suivante (correspondant au carré en pointillé) :</p>
-<center><img src=https://raw.githubusercontent.com/fortierq/tikz/master/dyn_prog/matrix_square/matrix_square.png width=200></center><p>La case de coordonnés <span class="math notranslate nohighlight">\((x, y)\)</span> est celle sur la ligne <span class="math notranslate nohighlight">\(x\)</span>, colonne <span class="math notranslate nohighlight">\(y\)</span>. La case de coordonnées (0, 0) est celle en haut à gauche.<br />
+<center><img src=https://raw.githubusercontent.com/fortierq/tikz-pdf/master/dyn_prog/matrix_square/matrix_square.png width=200></center><p>La case de coordonnés <span class="math notranslate nohighlight">\((x, y)\)</span> est celle sur la ligne <span class="math notranslate nohighlight">\(x\)</span>, colonne <span class="math notranslate nohighlight">\(y\)</span>. La case de coordonnées (0, 0) est celle en haut à gauche.<br />
 On supposera que les indices en arguments des fonctions ne dépassent pas des tableaux ou matrices correspondants.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
