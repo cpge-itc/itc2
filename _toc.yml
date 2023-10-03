@@ -20,8 +20,10 @@ parts:
   - menu: Cours
     sections:
       - slides_ipynb: algo/prog_dyn/cours/prog_dyn.ipynb
-      - slides: algo/prog_dyn/cours/lis.pdf
-      - slides: algo/prog_dyn/cours/sp.pdf
+      - slides: "Exemple : Plus longue sous-suite croissante"
+        file: algo/prog_dyn/cours/lis.pdf
+      - slides: "Exemple : Algorithmes de plus court chemin"
+        file: algo/prog_dyn/cours/sp.pdf
   - menu: Exercices
     sections:
     - td: 'Exercice : Chemin dans une matrice'
