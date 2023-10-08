@@ -257,7 +257,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../algo/prog_dyn/tp/tp1/tp_prog_dyn.html">
-     TP : Programmation dynamique
+     TP 1 : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/tp/tp2/tp_sac_dos.html">
+     TP 2 : Problème du sac à dos
     </a>
    </li>
   </ul>
@@ -747,6 +752,17 @@ Par exemple, l’arbre suivant contient les mots cap, copie, copier, copies, cor
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trie_size</span><span class="p">(</span><span class="n">trie</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># compte le nombre de $</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">trie</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="k">return</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie_size</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -795,6 +811,16 @@ On pourra utiliser une fonction auxiliaire récursive <code class="docutils lite
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trie_print</span><span class="p">(</span><span class="n">trie</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">aux</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+        <span class="o">...</span>
+    <span class="n">aux</span><span class="p">(</span><span class="n">trie</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trie_print</span><span class="p">(</span><span class="n">trie_ex</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -825,10 +851,6 @@ True
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition-exercice admonition">
-<p class="admonition-title">Exercice</p>
-<p>(MP/MP* Option info seulement) Quelles sont les autres possibilités pour implémenter un ensemble de mots ? Pourquoi un trie est-il intéressant ? On pourra supposer que les lettres sont entre a et z.</p>
 </div>
 </section>
 </section>
