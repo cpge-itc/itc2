@@ -14,7 +14,7 @@ parts:
     sections:
     - td: 'Exercice : Polynômes'
       file: python/dict/td/dict_polynome.pdf
-    - tp: python/dict/tp/tp_dict.ipynb
+    - cor: python/dict/tp/tp_dict.ipynb
 - caption: Programmation dynamique
   chapters:
   - menu: Cours
