@@ -620,6 +620,24 @@ Suivant l’ordre dans lequel on choisit les objets, on obtient des algorithmes 
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre donné par <code class="docutils literal notranslate"><span class="pre">w</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span></code> (on regarde d’abord l’objet de poids <code class="docutils literal notranslate"><span class="pre">w[0]</span></code> et valeur <code class="docutils literal notranslate"><span class="pre">v[0]</span></code>, puis l’objet de poids <code class="docutils literal notranslate"><span class="pre">w[1]</span></code> et valeur <code class="docutils literal notranslate"><span class="pre">v[1]</span></code>…).<br />
 Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">glouton</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Renvoie la valeur maximum qu&#39;on peut obtenir avec les objets</span>
+<span class="sd">    c: capacité du sac</span>
+<span class="sd">    w: poids des objets</span>
+<span class="sd">    v: valeur des objets</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">poids</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">valeur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">poids</span> <span class="o">+</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">poids</span> <span class="o">+=</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">valeur</span> <span class="o">+=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">valeur</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glouton</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -639,6 +657,16 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">combine(L1,</span> <span class="pre">L2)</span></code> qui renvoie la liste des couples <code class="docutils literal notranslate"><span class="pre">(L1[i],</span> <span class="pre">L2[i])</span></code>. On suppose que <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> ont la même longueur.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combine</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L1</span><span class="p">)):</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">L1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">L2</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">L</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combine</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -654,6 +682,18 @@ Tester avec l’exemple ci-dessous. Le résultat est-il optimal ?</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">split(L)</span></code> telle que si <code class="docutils literal notranslate"><span class="pre">L</span></code> est une liste de couples, <code class="docutils literal notranslate"><span class="pre">split(L)</span></code> renvoie deux listes <code class="docutils literal notranslate"><span class="pre">L1</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> où <code class="docutils literal notranslate"><span class="pre">L1</span></code> contient les premiers éléments des couples de <code class="docutils literal notranslate"><span class="pre">L</span></code> et <code class="docutils literal notranslate"><span class="pre">L2</span></code> les seconds éléments des couples de <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">L1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">L2</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+        <span class="n">L1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">L2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,6 +727,15 @@ Exemple :</p>
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">tri_poids(w,</span> <span class="pre">v)</span></code> qui renvoie les listes <code class="docutils literal notranslate"><span class="pre">w2</span></code> et <code class="docutils literal notranslate"><span class="pre">v2</span></code> obtenues à partir de <code class="docutils literal notranslate"><span class="pre">w</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span></code> en triant les poids par ordre croissant. On pourra utiliser <code class="docutils literal notranslate"><span class="pre">L.sort</span></code>, <code class="docutils literal notranslate"><span class="pre">combine</span></code> et <code class="docutils literal notranslate"><span class="pre">split</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tri_poids</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">combine</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">split</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tri_poids</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
@@ -707,6 +756,14 @@ Exemple :</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">glouton_poids(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de poids croissant. On pourra réutiliser <code class="docutils literal notranslate"><span class="pre">glouton</span></code>.<br />
 Est-ce que cet algorithme est toujours optimal ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">glouton_poids</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">tri_poids</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">glouton</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glouton_poids</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -723,6 +780,20 @@ Est-ce que cet algorithme est toujours optimal ?</p>
 <p class="admonition-title">Question</p>
 <p>Écrire de même des fonctions <code class="docutils literal notranslate"><span class="pre">tri_valeur(w,</span> <span class="pre">v)</span></code> et <code class="docutils literal notranslate"><span class="pre">glouton_valeur(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de valeur décroissante (en utilisant <code class="docutils literal notranslate"><span class="pre">L.sort(reverse=True)</span></code>). Est-ce que cet algorithme est toujours optimal ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tri_valeur</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">combine</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">L1</span><span class="p">,</span> <span class="n">L2</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L2</span><span class="p">,</span> <span class="n">L1</span>
+
+<span class="k">def</span> <span class="nf">glouton_valeur</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">tri_valeur</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">glouton</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glouton_valeur</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
@@ -738,6 +809,21 @@ Est-ce que cet algorithme est toujours optimal ?</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>De même, écrire une fonction <code class="docutils literal notranslate"><span class="pre">glouton_ratio(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur totale des objets choisis par l’algorithme glouton, en considérant les objets dans l’ordre de ratio valeur/poids décroissant. On pourra utiliser deux fois <code class="docutils literal notranslate"><span class="pre">combine</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tri_ratio</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">combine</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">combine</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))],</span> <span class="n">L</span><span class="p">)</span>
+
+    <span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">split</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="n">L</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">glouton_ratio</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">tri_ratio</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">glouton</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,17 +850,45 @@ Est-ce que cet algorithme est toujours optimal ?</p>
 <p class="admonition-title">Question</p>
 <p>Que vaut <span class="math notranslate nohighlight">\(dp[i][0]\)</span> ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><span class="math notranslate nohighlight">\(dp[i][0] = 0\)</span> : on ne peut pas mettre d’objet dans un sac de capacité <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Exprimer <span class="math notranslate nohighlight">\(dp[i][j]\)</span> en fonction de <span class="math notranslate nohighlight">\(dp[i][j-1]\)</span> dans le cas où <span class="math notranslate nohighlight">\(w_j &gt; i\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><span class="math notranslate nohighlight">\(dp[i][j] = dp[i][j-1]\)</span> : on ne peut pas mettre l’objet <span class="math notranslate nohighlight">\(j\)</span> dans le sac de capacité <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Supposons <span class="math notranslate nohighlight">\(w_j \leq i\)</span>. Donner une formule de récurrence sur <span class="math notranslate nohighlight">\(dp[i][j]\)</span>, en distinguant le cas où l’objet <span class="math notranslate nohighlight">\(j\)</span> est choisi et le cas où il ne l’est pas.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="math notranslate nohighlight">
+\[dp[i][j] = \max(\underbrace{dp[i][j - 1]}_{\text{sans prendre } o_j}, \underbrace{dp[i - w_j][j - 1] + v_j}_{\substack{\text{en prenant } o_j}, \text{si }i - w_j \geq 0})\]</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">prog_dyn(c,</span> <span class="pre">w,</span> <span class="pre">v)</span></code> qui renvoie la valeur maximum que l’on peut mettre dans un sac de capacité <span class="math notranslate nohighlight">\(c\)</span>, en ne considérant que les <span class="math notranslate nohighlight">\(j\)</span> premiers objets, en remplissant une matrice <code class="docutils literal notranslate"><span class="pre">dp</span></code> de taille <span class="math notranslate nohighlight">\((c+1) \times (n+1)\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prog_dyn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">c</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -796,14 +910,59 @@ Est-ce que cet algorithme est toujours optimal ?</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">genere_instance()</span></code> qui renvoie un triplet <span class="math notranslate nohighlight">\((c, w, v)\)</span>, où <span class="math notranslate nohighlight">\(c\)</span> est un entier aléatoire entre 1 et 1000 et <span class="math notranslate nohighlight">\(w\)</span>, <span class="math notranslate nohighlight">\(v\)</span> sont des listes de 100 entiers aléatoires entre 1 et 100.<br />
 On importera <code class="docutils literal notranslate"><span class="pre">random</span></code> pour utiliser <code class="docutils literal notranslate"><span class="pre">random.randint(a,</span> <span class="pre">b)</span></code> qui génère un entier aléatoire entre <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> inclus.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">genere_instance</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Afficher, pour chaque stratégie gloutonne (ordre de poids, ordre de valeur, ordre de ratio), l’erreur commise par rapport à la solution optimale, en moyennant sur 100 instances générées par <code class="docutils literal notranslate"><span class="pre">genere_instance()</span></code>.<br />
 Quelle stratégie gloutonne est la plus efficace ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gp</span><span class="p">,</span> <span class="n">gv</span><span class="p">,</span> <span class="n">gr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">genere_instance</span><span class="p">()</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">prog_dyn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">gp</span> <span class="o">+=</span> <span class="n">glouton_poids</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">sol</span>
+    <span class="n">gv</span> <span class="o">+=</span> <span class="n">glouton_valeur</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">sol</span>
+    <span class="n">gr</span> <span class="o">+=</span> <span class="n">glouton_ratio</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">sol</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Glouton poids : </span><span class="si">{</span><span class="n">gp</span><span class="o">/</span><span class="mi">100</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Glouton valeur : </span><span class="si">{</span><span class="n">gv</span><span class="o">/</span><span class="mi">100</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Glouton ratio : </span><span class="si">{</span><span class="n">gr</span><span class="o">/</span><span class="mi">100</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Comparer le temps total d’exécution de la stratégie gloutonne par ratio et de la programmation dynamique, sur 100 instances générées par <code class="docutils literal notranslate"><span class="pre">genere_instance()</span></code>. On pourra importer <code class="docutils literal notranslate"><span class="pre">time</span></code> et utiliser <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> pour obtenir le temps actuel en secondes.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">genere_instance</span><span class="p">()</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">glouton_poids</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">+=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">prog_dyn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">+=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Glouton poids : </span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Programmation dynamique : </span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="obtenir-la-liste-des-objets-choisis">
@@ -816,6 +975,32 @@ Quelle stratégie gloutonne est la plus efficace ?</p>
 <li><p>si <span class="math notranslate nohighlight">\(dp[i][j] = dp[i - w_j][j - 1] + v_j\)</span>, alors l’objet <span class="math notranslate nohighlight">\(j\)</span> est choisi.<br />
 On peut donc construire la liste des objets choisis en remontant la matrice <code class="docutils literal notranslate"><span class="pre">dp</span></code> à partir de la case <span class="math notranslate nohighlight">\((c, n)\)</span>.</p></li>
 </ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prog_dyn</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># reconstruction de la solution</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">c</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sol</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">sol</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
