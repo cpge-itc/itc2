@@ -6,8 +6,7 @@ parts:
   - cor: python/revision/revisions.ipynb
 - caption: DS
   chapters:
-    - file: ds/itc/ds_x23_differentiel/x23.ipynb
-      title: DS1 corrigé MP*
+    - tp: ds/itc/ds_x23_differentiel/x23.ipynb
 - caption: Dictionnaire
   chapters:
   - menu: Cours
