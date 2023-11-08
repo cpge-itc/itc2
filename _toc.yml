@@ -4,6 +4,10 @@ parts:
   chapters:
   - file: 0_python/aide_memoire.ipynb
   - cor: python/revision/revisions.ipynb
+- caption: DS
+  chapters:
+    - file: ds/itc/ds_x23_differentiel/x23.ipynb
+      title: DS1 corrigé MP*
 - caption: Dictionnaire
   chapters:
   - menu: Cours
