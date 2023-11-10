@@ -10,6 +10,7 @@
 <div id="" style="border-style:dotted; border-width:1px; overflow:scroll; height:100px;">
 <center><b>Dernières modifications</b></center>
 <ul>
+<li>Ajout corrigé TP 1 et Exercice : Chemin dans une matrice</li> 
 <li>Rentrée 2023-2024</li>
 </ul>
 </div> 
