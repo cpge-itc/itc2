@@ -6,6 +6,8 @@ parts:
   - cor: python/revision/revisions.ipynb
 - caption: DS
   chapters:
+    - title: Détail des notes
+      url: https://fortierq-notes-app-ctedub.streamlit.app
     - tp: ds/itc/ds_x23_differentiel/x23.ipynb
 - caption: Dictionnaire
   chapters:
