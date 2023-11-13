@@ -4,6 +4,8 @@ parts:
   chapters:
   - file: 0_python/aide_memoire.ipynb
   - cor: python/revision/revisions.ipynb
+  - title: TP BCPST
+    url: https://cpge-itc.github.io/bcpst2/dl/bcpst/5_dessin/tp5_dessin.html
 - caption: DS
   chapters:
     - title: Détail des notes
