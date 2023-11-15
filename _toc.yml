@@ -38,11 +38,11 @@ parts:
     - cor: algo/prog_dyn/tp/tp1/tp_prog_dyn.ipynb
     - cor: algo/prog_dyn/tp/tp2/tp_sac_dos.ipynb
     - cor: algo/prog_dyn/seam_carving/seam_carving.ipynb
-  - caption: Apprentissage automatique
-    chapters:
-    - menu: Cours
-      sections:
-      - slides: "Cours : Science des données"
-        file: apprentissage/cours/science_donnees/science_donnees.pdf
-      - slides_ipynb: apprentissage/cours/knn/knn.ipynb
+- caption: Apprentissage automatique
+  chapters:
+  - menu: Cours
+    sections:
+    - slides: "Cours : Science des données"
+      file: apprentissage/cours/science_donnees/science_donnees.pdf
+    - slides_ipynb: apprentissage/cours/knn/knn.ipynb
 root: intro
