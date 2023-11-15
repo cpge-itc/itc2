@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Algorithme des k plus proches voisins &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>Cours : Algorithme des k plus proches voisins &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -91,6 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/apprentissage/cours/knn/knn.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Exemple : Classification d’iris" href="exemple/knn_iris.html" />
     <link rel="prev" title="Cours : Science des données" href="../../../slides/science_donnees.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -320,7 +321,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Algorithme des k plus proches voisins
+     Cours : Algorithme des k plus proches voisins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exemple/knn_iris.html">
+     Exemple : Classification d’iris
     </a>
    </li>
   </ul>
@@ -563,7 +569,7 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#algorithme-des-k-plus-proches-voisins">
    Algorithme des
    <span class="math notranslate nohighlight">
     \(k\)
@@ -585,7 +591,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Algorithme des k plus proches voisins</h1>
+                <h1>Cours : Algorithme des k plus proches voisins</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -596,7 +602,7 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#algorithme-des-k-plus-proches-voisins">
    Algorithme des
    <span class="math notranslate nohighlight">
     \(k\)
@@ -619,12 +625,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="algorithme-des-k-plus-proches-voisins">
-<h1>Algorithme des k plus proches voisins<a class="headerlink" href="#algorithme-des-k-plus-proches-voisins" title="Permalink to this headline">#</a></h1>
-<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/apprentissage/cours/knn/knn.pdf#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe>
-<iframe
-    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/4_knn/knn.pdf#zoom=page-fit&pagemode=none"
-    height=500 width=100% allowfullscreen></iframe><p>Nous allons classifier deux ensembles de points (rouge et bleu) issus de deux distributions gaussiennes (de paramètres différents), avec la méthode des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins :</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cours-algorithme-des-k-plus-proches-voisins">
+<h1>Cours : Algorithme des k plus proches voisins<a class="headerlink" href="#cours-algorithme-des-k-plus-proches-voisins" title="Permalink to this headline">#</a></h1>
+<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/apprentissage/cours/knn/knn.pdf#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe><p>Nous allons classifier deux ensembles de points (rouge et bleu) issus de deux distributions gaussiennes (de paramètres différents), avec la méthode des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -646,8 +649,8 @@ title="Print to PDF"
 <img alt="../../../../_images/knn_2_0.png" src="../../../../_images/knn_2_0.png" />
 </div>
 </div>
-<section id="id1">
-<h2>Algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="algorithme-des-k-plus-proches-voisins">
+<h2>Algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins<a class="headerlink" href="#algorithme-des-k-plus-proches-voisins" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -785,6 +788,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Cours : Science des données</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="exemple/knn_iris.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exemple : Classification d’iris</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
