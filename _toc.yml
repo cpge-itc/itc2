@@ -44,6 +44,6 @@ parts:
     sections:
     - slides: "Cours : Science des données"
       file: apprentissage/cours/science_donnees/science_donnees.pdf
-    - slides_ipynb: apprentissage/cours/knn/knn.ipynb
+    - tp: apprentissage/cours/knn/knn.ipynb
     - tp: apprentissage/cours/knn/exemple/knn_iris.ipynb
 root: intro
