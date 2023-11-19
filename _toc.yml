@@ -11,6 +11,7 @@ parts:
     - title: Détail des notes
       url: https://fortierq-notes-app-ctedub.streamlit.app
     - td: ds/itc/ds_partition/ds_partition_cor.pdf
+      title: "DS 1 corrigé : Partition"
     - tp: ds/itc/ds_x23_differentiel/x23.ipynb
 - caption: Dictionnaire
   chapters:
