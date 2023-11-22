@@ -28,7 +28,7 @@ parts:
   chapters:
   - menu: Cours
     sections:
-#      - slides_ipynb: algo/prog_dyn/cours/prog_dyn.ipynb
+      - slides_ipynb: algo/prog_dyn/cours/prog_dyn.ipynb
       - slides: "Exemple : Algorithmes de plus court chemin"
         file: algo/prog_dyn/cours/sp.pdf
       - slides: "Exemple : Plus longue sous-suite croissante"
@@ -46,6 +46,7 @@ parts:
     sections:
     - slides: "Cours : Science des données"
       file: apprentissage/cours/science_donnees/science_donnees.pdf
+    - slides_ipynb: apprentissage/cours/knn/knn.ipynb
   - menu: Exercices
     sections:
     - file: tp_titanic.ipynb
