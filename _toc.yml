@@ -48,4 +48,7 @@ parts:
       file: apprentissage/cours/science_donnees/science_donnees.pdf
     - slides_ipynb: apprentissage/cours/knn/knn.ipynb
     - tp: apprentissage/cours/knn/exemple/knn_iris.ipynb
+  - menu: Exercices
+    sections:
+    - tp: apprentissage/tp/tp_titanic/tp_titanic.ipynb
 root: intro
