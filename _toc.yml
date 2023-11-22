@@ -48,5 +48,5 @@ parts:
       file: apprentissage/cours/science_donnees/science_donnees.pdf
   - menu: Exercices
     sections:
-    - tp: tp_titanic.ipynb
+    - file: tp_titanic.ipynb
 root: intro
