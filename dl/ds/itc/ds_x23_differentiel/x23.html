@@ -1,0 +1,1414 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>DS 1 MP* Corrigé (X-ENS 2023) &#8212; Informatique commune en 2ème année de CPGE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=532d1baf3f03eb73f2f50828f8c27430120b156d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "cpge-itc/itc2");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../../../_static/button_cor.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/ds/itc/ds_x23_differentiel/x23.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Cours" href="../../../menu/0.html" />
+    <link rel="prev" title="DS 1 corrigé : Partition" href="../../../td/ds_partition.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../_static/cobra.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Informatique commune en 2ème année de CPGE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Révisions Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../0_python/aide_memoire.html">
+   Résumé Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../python/revision/revisions.html">
+   TP : Révisions de 1ère année
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://cpge-itc.github.io/bcpst2/dl/bcpst/5_dessin/tp5_dessin.html">
+   TP BCPST pour réviser
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  DS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://fortierq-notes-app-ctedub.streamlit.app">
+   Détail des notes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/ds_partition.html">
+   DS 1 corrigé : Partition
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   DS 1 MP* Corrigé (X-ENS 2023)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dictionnaire
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/0.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../slides/dict.html">
+     Cours : Dictionnaire
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/1.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../td/dict_polynome.html">
+     Exercice : Polynômes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../python/dict/tp/tp_dict.html">
+     TP : Dictionnaire
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation dynamique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/2.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/cours/prog_dyn.html">
+     Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../slides/sp.html">
+     Exemple : Algorithmes de plus court chemin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../slides/lis.html">
+     Exemple : Plus longue sous-suite croissante
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/3.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../td/matrice_prog_dyn.html">
+     Exercice : Chemin dans une matrice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/tp/tp1/tp_prog_dyn.html">
+     TP 1 : Programmation dynamique
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/tp/tp2/tp_sac_dos.html">
+     TP 2 : Problème du sac à dos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../algo/prog_dyn/seam_carving/seam_carving.html">
+     DM : Redimensionnement d’image par
+     <em>
+      Seam Carving
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apprentissage automatique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/4.html">
+   Cours
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../slides/science_donnees.html">
+     Cours : Science des données
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../apprentissage/cours/knn/knn.html">
+     Cours : Algorithme des k plus proches voisins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../apprentissage/cours/knn/exemple/knn_iris.html">
+     Exemple : Classification d’iris
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../menu/5.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../apprentissage/tp/tp_titanic/tp_titanic.html">
+     TP plus proches voisins : Classification des survivants du Titanic
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/cpge-itc/itc2/main?urlpath=tree/files/dl/ds/itc/ds_x23_differentiel/x23.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://notebook.basthon.fr/?from=https://raw.githubusercontent.com/cpge-itc/itc2/main/files/dl/ds/itc/ds_x23_differentiel/x23.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Basthon"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../../_static/images/logo_basthon.svg">
+  </span>
+<span class="headerbtn__text-container">Basthon</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/cpge-itc/itc2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2Fdl/ds/itc/ds_x23_differentiel/x23.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/dl/ds/itc/ds_x23_differentiel/x23.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/dl/ds/itc/ds_x23_differentiel/x23.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partie-i-differentiels-par-positions-fixes">
+   Partie I : Diﬀérentiels par positions ﬁxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4">
+     Question 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-5">
+     Question 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-6">
+     Question 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-7">
+     Question 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partie-ii-differentiels-sur-des-positions-variables">
+   Partie II : Diﬀérentiels sur des positions variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-8">
+     Question 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-9">
+     Question 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-10">
+     Question 10
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-11">
+     Question 11
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-12">
+     Question 12
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-13">
+     Question 13
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-14">
+     Question 14
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-15">
+     Question 15
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-16">
+     Question 16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-17">
+     Question 17
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DS 1 MP* Corrigé (X-ENS 2023)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partie-i-differentiels-par-positions-fixes">
+   Partie I : Diﬀérentiels par positions ﬁxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4">
+     Question 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-5">
+     Question 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-6">
+     Question 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-7">
+     Question 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partie-ii-differentiels-sur-des-positions-variables">
+   Partie II : Diﬀérentiels sur des positions variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-8">
+     Question 8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-9">
+     Question 9
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-10">
+     Question 10
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-11">
+     Question 11
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-12">
+     Question 12
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-13">
+     Question 13
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-14">
+     Question 14
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-15">
+     Question 15
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-16">
+     Question 16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-17">
+     Question 17
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ds-1-mp-corrige-x-ens-2023">
+<h1>DS 1 MP* Corrigé (X-ENS 2023)<a class="headerlink" href="#ds-1-mp-corrige-x-ens-2023" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://banques-ecoles.fr/cms/wp-content/uploads/2023/08/23_mppc_sujet_InfoB.pdf">Sujet</a></p>
+<section id="partie-i-differentiels-par-positions-fixes">
+<h2>Partie I : Diﬀérentiels par positions ﬁxes<a class="headerlink" href="#partie-i-differentiels-par-positions-fixes" title="Permalink to this headline">#</a></h2>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">#</a></h3>
+<p>La complexité est en O(<span class="math notranslate nohighlight">\(n\)</span>) où <span class="math notranslate nohighlight">\(n\)</span> est la taille de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> (égal à la taille de <code class="docutils literal notranslate"><span class="pre">texte2</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">textes_égaux</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">texte2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">#</a></h3>
+<p>La complexité est clairement O(<span class="math notranslate nohighlight">\(n\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">texte2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">d</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">#</a></h3>
+<p>On note <span class="math notranslate nohighlight">\(n_1\)</span> et <span class="math notranslate nohighlight">\(n_2\)</span> les tailles de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> et <code class="docutils literal notranslate"><span class="pre">texte2</span></code>. La complexité est en O(<span class="math notranslate nohighlight">\(n_1+n_2\)</span>) d’après les annotations ci-dessous.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">aucun_caractère_commun</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">texte1</span><span class="p">:</span> <span class="c1"># O(n1)</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">texte2</span><span class="p">:</span> <span class="c1"># O(n2)</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="c1"># O(1)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tranche</span><span class="p">(</span><span class="n">arg_début</span><span class="p">,</span> <span class="n">arg_avant</span><span class="p">,</span> <span class="n">arg_après</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;début&#39;</span><span class="p">:</span> <span class="n">arg_début</span><span class="p">,</span> <span class="s1">&#39;avant&#39;</span><span class="p">:</span> <span class="n">arg_avant</span><span class="p">,</span> <span class="s1">&#39;après&#39;</span><span class="p">:</span> <span class="n">arg_après</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">début</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;début&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">après</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;après&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">avant</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;avant&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">fin</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">début</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">(</span><span class="n">tr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h3>
+<p>La complexité totale de la fonction ci-dessous correspond à la somme des longueurs des tranches, car <code class="docutils literal notranslate"><span class="pre">texte1[i:j]</span></code> est en O(<span class="math notranslate nohighlight">\(j-i\)</span>). La complexité est donc bien O(<span class="math notranslate nohighlight">\(n\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">différentiel</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">):</span>
+    <span class="n">L</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="p">[],</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">L</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">texte2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tranche</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">],</span> <span class="n">texte2</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="k">return</span> <span class="n">L</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texte1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Le grand château fort&quot;</span><span class="p">)</span>
+<span class="n">texte2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Le petit chien a soif&quot;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">différentiel</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;début&#39;: 3,
+  &#39;avant&#39;: [&#39;g&#39;, &#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;d&#39;],
+  &#39;après&#39;: [&#39;p&#39;, &#39;e&#39;, &#39;t&#39;, &#39;i&#39;, &#39;t&#39;]},
+ {&#39;début&#39;: 11,
+  &#39;avant&#39;: [&#39;â&#39;, &#39;t&#39;, &#39;e&#39;, &#39;a&#39;, &#39;u&#39;],
+  &#39;après&#39;: [&#39;i&#39;, &#39;e&#39;, &#39;n&#39;, &#39; &#39;, &#39;a&#39;]},
+ {&#39;début&#39;: 17, &#39;avant&#39;: [&#39;f&#39;], &#39;après&#39;: [&#39;s&#39;]},
+ {&#39;début&#39;: 19, &#39;avant&#39;: [&#39;r&#39;, &#39;t&#39;], &#39;après&#39;: [&#39;i&#39;, &#39;f&#39;]}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">#</a></h3>
+<p>La concaténation ci-dessous est en O(<span class="math notranslate nohighlight">\(n\)</span>) (car il faut recopier la chaîne de caractères en totalité, de taille <span class="math notranslate nohighlight">\(n\)</span>).<br />
+Si <code class="docutils literal notranslate"><span class="pre">diff</span></code> est de taille <span class="math notranslate nohighlight">\(k\)</span>, la complexité totale est donc O(<span class="math notranslate nohighlight">\(nk\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">applique</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">diff</span><span class="p">):</span>
+    <span class="n">texte2</span> <span class="o">=</span> <span class="n">texte1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
+        <span class="n">texte2</span><span class="p">[</span><span class="n">début</span><span class="p">(</span><span class="n">d</span><span class="p">):</span><span class="n">début</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">(</span><span class="n">d</span><span class="p">))]</span> <span class="o">=</span> <span class="n">après</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">texte2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">applique</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;L&#39;,
+ &#39;e&#39;,
+ &#39; &#39;,
+ &#39;p&#39;,
+ &#39;e&#39;,
+ &#39;t&#39;,
+ &#39;i&#39;,
+ &#39;t&#39;,
+ &#39; &#39;,
+ &#39;c&#39;,
+ &#39;h&#39;,
+ &#39;i&#39;,
+ &#39;e&#39;,
+ &#39;n&#39;,
+ &#39; &#39;,
+ &#39;a&#39;,
+ &#39; &#39;,
+ &#39;s&#39;,
+ &#39;o&#39;,
+ &#39;i&#39;,
+ &#39;f&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">#</a></h3>
+<p>La fonction suivante est clairement en O(<span class="math notranslate nohighlight">\(k\)</span>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">diff</span><span class="p">):</span>
+    <span class="n">diff2</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
+        <span class="n">diff2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tranche</span><span class="p">(</span><span class="n">début</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">après</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="n">avant</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">diff2</span>
+
+<span class="n">inverse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;début&#39;: 3,
+  &#39;avant&#39;: [&#39;p&#39;, &#39;e&#39;, &#39;t&#39;, &#39;i&#39;, &#39;t&#39;],
+  &#39;après&#39;: [&#39;g&#39;, &#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;d&#39;]},
+ {&#39;début&#39;: 11,
+  &#39;avant&#39;: [&#39;i&#39;, &#39;e&#39;, &#39;n&#39;, &#39; &#39;, &#39;a&#39;],
+  &#39;après&#39;: [&#39;â&#39;, &#39;t&#39;, &#39;e&#39;, &#39;a&#39;, &#39;u&#39;]},
+ {&#39;début&#39;: 17, &#39;avant&#39;: [&#39;s&#39;], &#39;après&#39;: [&#39;f&#39;]},
+ {&#39;début&#39;: 19, &#39;avant&#39;: [&#39;i&#39;, &#39;f&#39;], &#39;après&#39;: [&#39;r&#39;, &#39;t&#39;]}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">versionne</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;courant&#39;</span> <span class="p">:</span> <span class="n">texte</span><span class="p">,</span> <span class="s1">&#39;historique&#39;</span> <span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
+<span class="k">def</span> <span class="nf">courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">texte_versionné</span><span class="p">[</span><span class="s1">&#39;courant&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">remplace_courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="n">texte</span><span class="p">):</span>
+    <span class="n">texte_versionné</span><span class="p">[</span><span class="s1">&#39;courant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">texte</span>
+<span class="k">def</span> <span class="nf">historique</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">texte_versionné</span><span class="p">[</span><span class="s1">&#39;historique&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-7">
+<h3>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">modifie(texte_versionné,</span> <span class="pre">texte)</span></code> utilise <code class="docutils literal notranslate"><span class="pre">différentiel</span></code> en O(<span class="math notranslate nohighlight">\(n\)</span>) et des opérations en O(<span class="math notranslate nohighlight">\(1\)</span>) donc est en O(<span class="math notranslate nohighlight">\(n\)</span>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">annule(texte_versionné)</span></code> utilise <code class="docutils literal notranslate"><span class="pre">inverse</span></code> en O(<span class="math notranslate nohighlight">\(k\)</span>), applique en O(<span class="math notranslate nohighlight">\(nk\)</span>), modifie en O(<span class="math notranslate nohighlight">\(n\)</span>) et des opérations en O(<span class="math notranslate nohighlight">\(1\)</span>). Donc la complexité de <code class="docutils literal notranslate"><span class="pre">annule(texte_versionné)</span></code> est en O(<span class="math notranslate nohighlight">\(nk\)</span>).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modifie</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="n">texte</span><span class="p">):</span>
+    <span class="n">historique</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">)</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">différentiel</span><span class="p">(</span><span class="n">courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">),</span> <span class="n">texte</span><span class="p">))</span>
+    <span class="n">remplace_courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="n">texte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">annule</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">historique</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">texte</span> <span class="o">=</span> <span class="n">applique</span><span class="p">(</span><span class="n">courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">),</span> <span class="n">inverse</span><span class="p">(</span><span class="n">historique</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">()))</span>
+    <span class="n">remplace_courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="n">texte</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">texte</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texte_versionné</span> <span class="o">=</span> <span class="n">versionne</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">])</span>
+<span class="n">modifie</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">modifie</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="n">modifie</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="k">assert</span> <span class="n">courant</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">historique</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span>
+<span class="n">différentiel</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]),</span>
+<span class="n">différentiel</span><span class="p">([</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]),</span>
+<span class="n">différentiel</span><span class="p">([</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annule</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annule</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">annule</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texte_versionné</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;v&#39;, &#39;i&#39;, &#39;t&#39;, &#39;a&#39;]
+[&#39;v&#39;, &#39;i&#39;, &#39;s&#39;, &#39;a&#39;]
+[&#39;a&#39;, &#39;v&#39;, &#39;i&#39;, &#39;s&#39;]
+{&#39;courant&#39;: [&#39;a&#39;, &#39;v&#39;, &#39;i&#39;, &#39;s&#39;], &#39;historique&#39;: []}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="partie-ii-differentiels-sur-des-positions-variables">
+<h2>Partie II : Diﬀérentiels sur des positions variables<a class="headerlink" href="#partie-ii-differentiels-sur-des-positions-variables" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tranche</span><span class="p">(</span><span class="n">arg_début_avant</span><span class="p">,</span> <span class="n">arg_avant</span><span class="p">,</span> <span class="n">arg_début_après</span><span class="p">,</span> <span class="n">arg_après</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;début_avant&#39;</span><span class="p">:</span> <span class="n">arg_début_avant</span><span class="p">,</span>
+    <span class="s1">&#39;avant&#39;</span><span class="p">:</span> <span class="n">arg_avant</span><span class="p">,</span>
+    <span class="s1">&#39;début_après&#39;</span><span class="p">:</span> <span class="n">arg_début_après</span><span class="p">,</span>
+    <span class="s1">&#39;après&#39;</span><span class="p">:</span> <span class="n">arg_après</span><span class="p">}</span>
+<span class="k">def</span> <span class="nf">début_avant</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;début_avant&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">début_après</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;début_après&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">après</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;après&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">avant</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;avant&#39;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">fin_avant</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">début_avant</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">(</span><span class="n">tr</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">fin_après</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">début_après</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">(</span><span class="n">tr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-8">
+<h3>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">#</a></h3>
+<p>La complexité est clairement O(<span class="math notranslate nohighlight">\(n\)</span>) avec <span class="math notranslate nohighlight">\(n\)</span> le nombre de tranches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">poids</span><span class="p">(</span><span class="n">diff</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-9">
+<h3>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}M[i + 1][j + 1] = \left\{
+\begin{array}{ll}
+M[i][j] &amp; \text{si } texte1[i] = texte2[j] \\
+1 + \min(M[i][j + 1], M[i + 1][j])
+ &amp; \text{sinon}
+\end{array}
+\right.\end{split}\]</div>
+<p>Si <span class="math notranslate nohighlight">\(texte1[i] = texte2[j]\)</span>, il suffit de faire correspondre les <span class="math notranslate nohighlight">\(i\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> avec les <span class="math notranslate nohighlight">\(j\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte2</span></code>.<br />
+Sinon, il y a deux possibilités :</p>
+<ul class="simple">
+<li><p>faire correspondre les <span class="math notranslate nohighlight">\(i\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> avec les <span class="math notranslate nohighlight">\(j + 1\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte2</span></code> et ajouter <span class="math notranslate nohighlight">\(texte2[j]\)</span> à la fin <span class="math notranslate nohighlight">\(texte1\)</span> ;</p></li>
+<li><p>ou faire correspondre les <span class="math notranslate nohighlight">\(i + 1\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> avec les <span class="math notranslate nohighlight">\(j\)</span> premiers caractères de <code class="docutils literal notranslate"><span class="pre">texte2</span></code> et supprimer <span class="math notranslate nohighlight">\(texte1[i]\)</span>.</p></li>
+</ul>
+</section>
+<section id="question-10">
+<h3>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">#</a></h3>
+<p>On utilise le cas de base <span class="math notranslate nohighlight">\(M[0][j] = j\)</span> et <span class="math notranslate nohighlight">\(M[i][0] = i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">levenshtein</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">):</span>
+    <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte2</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">M</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">M</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">min</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">M</span>
+
+<span class="n">levenshtein</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">],</span>  <span class="p">[</span><span class="s1">&#39;U&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 1, 2, 3, 4, 5, 6, 7, 8],
+ [1, 2, 1, 2, 3, 4, 5, 6, 7],
+ [2, 3, 2, 1, 2, 3, 4, 5, 6],
+ [3, 4, 3, 2, 1, 2, 3, 4, 5],
+ [4, 5, 4, 3, 2, 3, 4, 5, 6],
+ [5, 6, 5, 4, 3, 2, 3, 4, 5],
+ [6, 7, 6, 5, 4, 3, 4, 5, 6],
+ [7, 8, 7, 6, 5, 4, 5, 6, 7]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-11">
+<h3>Question 11<a class="headerlink" href="#question-11" title="Permalink to this headline">#</a></h3>
+<p>On parcourt la matrice comme sur la figure 3, en commencant par la case en bas à droite. À chaque fois que l’on va en haut, une lettre est supprimée de <span class="math notranslate nohighlight">\(texte1\)</span> donc il faut la rajouter à <code class="docutils literal notranslate"><span class="pre">avant</span></code>. De même à chaque fois que l’on va à gauche, une lettre est insérée dans <span class="math notranslate nohighlight">\(texte2\)</span> donc il faut la rajouter à <code class="docutils literal notranslate"><span class="pre">après</span></code>. Quand deux lettres sont égales, on ajoute la tranche trouvée et on calcule la tranche suivante.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">différentiel</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+    <span class="n">L</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="p">[],</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte2</span><span class="p">)</span>
+    <span class="n">avant</span><span class="p">,</span> <span class="n">après</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">texte1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">texte2</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tranche</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">avant</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">après</span><span class="p">))</span>
+                <span class="n">avant</span><span class="p">,</span> <span class="n">après</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]):</span>
+                <span class="n">avant</span> <span class="o">=</span> <span class="p">[</span><span class="n">texte1</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">avant</span>
+                <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">après</span> <span class="o">=</span> <span class="p">[</span><span class="n">texte2</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">après</span>
+                <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tranche</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">avant</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">après</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">L</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-12">
+<h3>Question 12<a class="headerlink" href="#question-12" title="Permalink to this headline">#</a></h3>
+<p>On parcourt <code class="docutils literal notranslate"><span class="pre">diff1</span></code> et <code class="docutils literal notranslate"><span class="pre">diff2</span></code> en passant à chaque itération la tranche qui se termine en premier. On parcourt donc les tranches par ordre croissant de leur indice de fin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">conflit</span><span class="p">(</span><span class="n">diff1</span><span class="p">,</span> <span class="n">diff2</span><span class="p">):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fin_avant</span><span class="p">(</span><span class="n">diff1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">début_avant</span><span class="p">(</span><span class="n">diff2</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">fin_avant</span><span class="p">(</span><span class="n">diff2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">début_avant</span><span class="p">(</span><span class="n">diff1</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texte</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+<span class="n">texte1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;è&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>
+<span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+<span class="n">texte2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+<span class="n">diff1</span> <span class="o">=</span> <span class="n">différentiel</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">texte1</span><span class="p">,</span> <span class="n">levenshtein</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">texte1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diff1</span><span class="p">)</span>
+<span class="n">diff2</span> <span class="o">=</span> <span class="n">différentiel</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">texte2</span><span class="p">,</span> <span class="n">levenshtein</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">texte2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diff2</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">diff2</span> <span class="o">==</span> <span class="p">[</span><span class="n">tranche</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">])]</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">conflit</span><span class="p">(</span><span class="n">diff1</span><span class="p">,</span> <span class="n">diff2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;début_avant&#39;: 9, &#39;avant&#39;: [], &#39;début_après&#39;: 9, &#39;après&#39;: [&#39; &#39;, &#39;t&#39;, &#39;r&#39;, &#39;è&#39;, &#39;s&#39;]}]
+[{&#39;début_avant&#39;: 5, &#39;avant&#39;: [&#39;a&#39;, &#39;t&#39;], &#39;début_après&#39;: 5, &#39;après&#39;: [&#39;i&#39;, &#39;e&#39;, &#39;n&#39;]}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-13">
+<h3>Question 13<a class="headerlink" href="#question-13" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fusionne</span><span class="p">(</span><span class="n">diff1</span><span class="p">,</span> <span class="n">diff2</span><span class="p">):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fin_avant</span><span class="p">(</span><span class="n">diff1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">début_avant</span><span class="p">(</span><span class="n">diff2</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+            <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff1</span><span class="p">)):</span>
+        <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff1</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff2</span><span class="p">)):</span>
+        <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff2</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">diff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">applique</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">diff</span><span class="p">):</span>
+    <span class="n">texte2</span> <span class="o">=</span> <span class="n">texte1</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">diff</span><span class="p">:</span>
+        <span class="n">texte2</span> <span class="o">=</span> <span class="n">texte2</span><span class="p">[:</span><span class="n">début_avant</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span><span class="p">]</span> <span class="o">+</span> <span class="n">après</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">texte2</span><span class="p">[</span><span class="n">fin_avant</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span><span class="p">:]</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">après</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">avant</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">texte2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">applique</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">fusionne</span><span class="p">(</span><span class="n">diff1</span><span class="p">,</span> <span class="n">diff2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;l&#39;, &#39;e&#39;, &#39; &#39;, &#39;c&#39;, &#39;h&#39;, &#39;i&#39;, &#39;e&#39;, &#39;n&#39;, &#39; &#39;, &#39;a&#39;, &#39; &#39;, &#39;t&#39;, &#39;r&#39;, &#39;è&#39;, &#39;s&#39;, &#39; &#39;, &#39;s&#39;, &#39;o&#39;, &#39;i&#39;, &#39;f&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-14">
+<h3>Question 14<a class="headerlink" href="#question-14" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">successeurs</span><span class="p">(</span><span class="n">texte1</span><span class="p">,</span> <span class="n">texte2</span><span class="p">,</span> <span class="n">sommet</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sommet</span>
+    <span class="n">succ</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">sommet</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="n">texte2</span><span class="p">[</span><span class="n">sommet</span><span class="p">[</span><span class="mi">1</span><span class="p">]]:</span>
+        <span class="n">succ</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">succ</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-15">
+<h3>Question 15<a class="headerlink" href="#question-15" title="Permalink to this headline">#</a></h3>
+<p>Propriété de l’algorithme de Dijkstra : à chaque fois qu’un sommet <code class="docutils literal notranslate"><span class="pre">v</span></code> est extrait de la file, <code class="docutils literal notranslate"><span class="pre">dist[v]</span></code> contient la distance entre <code class="docutils literal notranslate"><span class="pre">entrée</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span></code> dans le graphe.<br />
+<code class="docutils literal notranslate"><span class="pre">dist_final</span></code> contient la distance de <code class="docutils literal notranslate"><span class="pre">entrée</span></code> à chaque sommet du graphe (<code class="docutils literal notranslate"><span class="pre">dist_final[v]</span></code> contient la distance de <code class="docutils literal notranslate"><span class="pre">entrée</span></code> à <code class="docutils literal notranslate"><span class="pre">v</span></code>). L’ensemble des clés de <code class="docutils literal notranslate"><span class="pre">dist_final</span></code> est l’ensemble des sommets visités du graphe.</p>
+</section>
+<section id="question-16">
+<h3>Question 16<a class="headerlink" href="#question-16" title="Permalink to this headline">#</a></h3>
+<p>Soient <span class="math notranslate nohighlight">\(n_1\)</span> et <span class="math notranslate nohighlight">\(n_2\)</span> les tailles de <code class="docutils literal notranslate"><span class="pre">texte1</span></code> et <code class="docutils literal notranslate"><span class="pre">texte2</span></code>.<br />
+Chaque sommet est extrait au plus une fois de la file, donc il y a <span class="math notranslate nohighlight">\(n_1 n_2\)</span> itérations du <code class="docutils literal notranslate"><span class="pre">while</span></code>.<br />
+Chacune de ces itérations est en O(<span class="math notranslate nohighlight">\(\log(n_1 n_2)\)</span>) car il y a au plus <span class="math notranslate nohighlight">\(3n_1 n_2\)</span> arcs donc au plus <span class="math notranslate nohighlight">\(3n_1 n_2\)</span> éléments dans la file et que les fonctions <code class="docutils literal notranslate"><span class="pre">extraire_min</span></code> et <code class="docutils literal notranslate"><span class="pre">ajoute</span></code> sont en complexité logarithmique.<br />
+Donc la complexité de l’algorithme de Dijkstra est O(<span class="math notranslate nohighlight">\(n_1 n_2 \log(n_1 n_2)\)</span>).</p>
+<p>La complexité est donc moins intéressante que celle de l’algorithme de programmation dynamique (en O(<span class="math notranslate nohighlight">\(n_1 n_2\)</span>)). Cependant, si le sommet <code class="docutils literal notranslate"><span class="pre">sortie</span></code> peut être visité avant la fin de l’algorithme de Dijkstra, ce qui peut diminuer sa complexité.</p>
+</section>
+<section id="question-17">
+<h3>Question 17<a class="headerlink" href="#question-17" title="Permalink to this headline">#</a></h3>
+<p>On peut utiliser <span class="math notranslate nohighlight">\(h((i, j)) = |i - j|\)</span> comme heuristique. <span class="math notranslate nohighlight">\(h\)</span> est admissible car s’il y a une différence de taille entre les deux textes alors il faut au moins <span class="math notranslate nohighlight">\(|i - j|\)</span> opérations pour les rendre identiques.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levenshtein</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 1, 2], [1, 2, 3], [2, 1, 2], [3, 2, 3]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./dl/ds/itc/ds_x23_differentiel"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../../td/ds_partition.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">DS 1 corrigé : Partition</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../../menu/0.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cours</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Quentin Fortier<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
