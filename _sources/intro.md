@@ -16,14 +16,6 @@
 </div> 
 <br />
 
----
-
-DS 1 :  
-- Dictionnaire : savoir modifier un dictionnaire, parcourir (les clés), s'entraîner à programmer en refaisant les exercices.  
-- Programmation dynamique : connaître le principe (avec boucle et matrice) ainsi que la mémoïsation (avec fonction récursive et dictionnaire). S'entraîner à programmer en refaisant les exercices.
-
----
-
 <details>
 <summary>Informatique commune aux concours</summary>
 
