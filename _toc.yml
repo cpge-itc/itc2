@@ -48,8 +48,8 @@ parts:
       file: apprentissage/cours/science_donnees/science_donnees.pdf
     - slides_ipynb: apprentissage/cours/knn/knn.ipynb
     - tp: apprentissage/cours/knn/exemple/knn_iris.ipynb
-    - slides: "Cours : Algorithme des k-moyennes
-      file: apprentissage/cours/kmeans/kmeans.pdf
+    - slides_ipynb: apprentissage/cours/kmeans/kmeans.ipynb
+    - tp: apprentissage/cours/kmeans/kmeans_mnist.ipynb
   - menu: Exercices
     sections:
     - tp: apprentissage/tp/tp_titanic/tp_titanic.ipynb
