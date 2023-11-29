@@ -53,4 +53,5 @@ parts:
   - menu: Exercices
     sections:
     - tp: apprentissage/tp/tp_titanic/tp_titanic.ipynb
+    - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
 root: intro
