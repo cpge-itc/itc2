@@ -91,6 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/apprentissage/tp/tp_titanic/tp_titanic.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="TP : Reconnaissance de chiffres" href="../tp_chiffres/tp_chiffres.html" />
     <link rel="prev" title="Exercices" href="../../../menu/5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -353,6 +354,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      TP plus proches voisins : Classification des survivants du Titanic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tp_chiffres/tp_chiffres.html">
+     TP : Reconnaissance de chiffres
     </a>
    </li>
   </ul>
@@ -955,20 +961,6 @@ Prix moyen du billet : 32.2042079685746
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">survivants</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-    <span class="n">n_survivants</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-            <span class="n">n_survivants</span> <span class="o">+=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
-            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">n_survivants</span><span class="o">/</span><span class="n">n</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taux de survie pour&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">survivants</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
 </pre></div>
@@ -1349,6 +1341,13 @@ Avec KNN, j’obtiens un score de <span class="math notranslate nohighlight">\(\
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Exercices</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../tp_chiffres/tp_chiffres.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TP : Reconnaissance de chiffres</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
