@@ -49,9 +49,9 @@ parts:
     - slides_ipynb: apprentissage/cours/knn/knn.ipynb
     - tp: apprentissage/cours/knn/exemple/knn_iris.ipynb
     - slides_ipynb: apprentissage/cours/kmeans/kmeans.ipynb
-    - tp: apprentissage/cours/kmeans/kmeans_mnist.ipynb
   - menu: Exercices
     sections:
     - tp: apprentissage/tp/tp_titanic/tp_titanic.ipynb
+    - tp: apprentissage/tp/tp_voitures/tp_voitures.ipynb
     - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
 root: intro
