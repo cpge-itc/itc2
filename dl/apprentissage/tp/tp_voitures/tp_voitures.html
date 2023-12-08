@@ -962,12 +962,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moyenne</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># moyenne de cylindrée</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moyenne</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># nombre moyen de secondes pour aller de 0 à 100 km/h</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1908.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.984615384615385
 </pre></div>
 </div>
 </div>
@@ -993,7 +993,7 @@ title="Print to PDF"
 \[\frac{x_i - \mu}{\sigma}\]</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Définir une variable <code class="docutils literal notranslate"><span class="pre">X</span></code> qui contient les caractéristiques standardisées des voitures.</p>
+<p>Définir une matrice <code class="docutils literal notranslate"><span class="pre">X</span></code> qui contient les caractéristiques standardisées des voitures.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1017,11 +1017,11 @@ title="Print to PDF"
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>On aura aussi besoin de réaliser l’opération inverse de la précédente. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inverse_standardisation(y)</span></code> qui renvoie une liste <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que <span class="math notranslate nohighlight">\(x_i = y_i \sigma_i + \mu_i\)</span>, où <span class="math notranslate nohighlight">\(\mu_i\)</span> et <span class="math notranslate nohighlight">\(\sigma_i\)</span> sont la moyenne et l’écart-type de l’attribut <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>On aura aussi besoin de réaliser l’opération inverse de la précédente. Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inverse_standardisation(y)</span></code> qui, pour une voiture <code class="docutils literal notranslate"><span class="pre">y</span></code> (c’est-à-dire la liste de ses attributs), renvoie une liste <code class="docutils literal notranslate"><span class="pre">x</span></code> telle que <span class="math notranslate nohighlight">\(x_i = y_i \sigma_i + \mu_i\)</span>, où <span class="math notranslate nohighlight">\(\mu_i\)</span> et <span class="math notranslate nohighlight">\(\sigma_i\)</span> sont la moyenne et l’écart-type de l’attribut <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inverse_standardisation</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># égal à attributs[0]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inverse_standardisation</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># doit être égal à attributs[0]</span>
 </pre></div>
 </div>
 </div>
