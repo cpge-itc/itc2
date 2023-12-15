@@ -55,7 +55,7 @@ parts:
     - tp: apprentissage/tp/tp_voitures/tp_voitures.ipynb
     - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
     - title: CCP 2023 PC/PSI
-      file: files/ccp23.pdf
+      file: ccp23.pdf
     - title: CCP 2023 PC/PSI corrigé
-      file: files/ccp23_cor.pdf
+      file: ccp23_cor.pdf
 root: intro
