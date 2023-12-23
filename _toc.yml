@@ -38,7 +38,7 @@ parts:
     - td: 'Exercice : Chemin dans une matrice'
       file: algo/prog_dyn/td/matrice_prog_dyn.pdf
     - cor: algo/prog_dyn/tp/tp1/tp_prog_dyn.ipynb
-    - tp: algo/prog_dyn/tp/tp2/tp_sac_dos.ipynb
+    - cor: algo/prog_dyn/tp/tp2/tp_sac_dos.ipynb
     - cor: algo/prog_dyn/seam_carving/seam_carving.ipynb
 - caption: Apprentissage automatique
   chapters:
@@ -47,13 +47,13 @@ parts:
     - slides: "Cours : Science des données"
       file: apprentissage/cours/science_donnees/science_donnees.pdf
     - slides_ipynb: apprentissage/cours/knn/knn.ipynb
-    - tp: apprentissage/cours/knn/exemple/knn_iris.ipynb
+    - cor: apprentissage/cours/knn/exemple/knn_iris.ipynb
     - slides_ipynb: apprentissage/cours/kmeans/kmeans.ipynb
   - menu: Exercices
     sections:
-    - tp: apprentissage/tp/tp_titanic/tp_titanic.ipynb
-    - tp: apprentissage/tp/tp_voitures/tp_voitures.ipynb
-    - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
+    - cor: apprentissage/tp/tp_titanic/tp_titanic.ipynb
+    - cor: apprentissage/tp/tp_voitures/tp_voitures.ipynb
+    - cor: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
     - td: CCP 2023 PC/PSI
       file: ccp23.pdf
 root: intro
