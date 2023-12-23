@@ -925,6 +925,16 @@ Name: Age, Length: 891, dtype: float64
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">moyenne(df,</span> <span class="pre">c)</span></code> qui renvoie la moyenne des valeurs sur la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. Quelle est l’âge moyen des passagers du Titanic ? Le prix moyen du ticket ?</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">+=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">m</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Âge moyen :&quot;</span><span class="p">,</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">))</span>
@@ -947,6 +957,17 @@ Prix moyen du billet : 32.2042079685746
 <p>où <span class="math notranslate nohighlight">\(\bar{x}\)</span> est la moyenne des valeurs <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span>.</p>
 <p><strong>Remarque : On évitera de calculer plusieurs fois la même moyenne.</strong></p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ecart_type</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">s</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ecart_type</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">)</span>
@@ -968,6 +989,19 @@ Prix moyen du billet : 32.2042079685746
 <li><p>les passagers de 1ère classe</p></li>
 <li><p>les passagers de 3ème classe</p></li>
 </ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">survivants</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="n">n_survivants</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+            <span class="n">n_survivants</span> <span class="o">+=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n_survivants</span><span class="o">/</span><span class="n">n</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,6 +1114,16 @@ Pour éviter cela, on va standardiser les données, c’est-à-dire les transfor
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">standardiser(df,</span> <span class="pre">c)</span></code> qui standardise la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> du dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code>. L’utiliser pour standardiser les colonnes <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Fare</span></code>, <code class="docutils literal notranslate"><span class="pre">Pclass</span></code> et <code class="docutils literal notranslate"><span class="pre">Sex</span></code>. On rappelle qu’on peut modifier l’élément sur la ligne <code class="docutils literal notranslate"><span class="pre">i</span></code> et la colonne <code class="docutils literal notranslate"><span class="pre">c</span></code> avec <code class="docutils literal notranslate"><span class="pre">df.loc[i,</span> <span class="pre">c]</span> <span class="pre">=</span> <span class="pre">...</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">standardiser</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">ecart_type</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Fare&quot;</span><span class="p">,</span> <span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="s2">&quot;Sex&quot;</span><span class="p">]:</span>
@@ -1183,6 +1227,16 @@ Pour éviter cela, on va standardiser les données, c’est-à-dire les transfor
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">distance(p1,</span> <span class="pre">p2)</span></code> qui calcule la distance euclidienne entre les passagers <code class="docutils literal notranslate"><span class="pre">p1</span></code> et <code class="docutils literal notranslate"><span class="pre">p2</span></code>. On prendra en compte tous les attributs sauf <code class="docutils literal notranslate"><span class="pre">Survived</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Fare&quot;</span><span class="p">]:</span>
+        <span class="n">d</span> <span class="o">+=</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="n">c</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">d</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># distance entre les deux premiers passagers</span>
@@ -1222,6 +1276,14 @@ nombre de données dans test : 89
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">voisins(x,</span> <span class="pre">k)</span></code> qui renvoie les indices des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins de <code class="docutils literal notranslate"><span class="pre">x</span></code> dans <code class="docutils literal notranslate"><span class="pre">train</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">distance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">indices</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voisins</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
@@ -1238,6 +1300,16 @@ nombre de données dans test : 89
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">plus_frequent(L)</span></code> qui renvoie l’élément le plus fréquent d’une liste <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_frequent</span><span class="p">(</span><span class="n">L</span><span class="p">):</span> <span class="c1"># renvoie la classe qui apparaît le plus souvent dans L</span>
+    <span class="n">compte</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="n">compte</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">compte</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">compte</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plus_frequent</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -1253,6 +1325,13 @@ nombre de données dans test : 89
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">knn(x,</span> <span class="pre">k)</span></code> qui renvoie la prédiction de survie de <code class="docutils literal notranslate"><span class="pre">x</span></code> en utilisant l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">knn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">plus_frequent</span><span class="p">([</span><span class="n">train</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">voisins</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">)])</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1274,6 +1353,17 @@ nombre de données dans test : 89
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">precision(k)</span></code> qui renvoie la précision de l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins en utilisant <code class="docutils literal notranslate"><span class="pre">k</span></code> voisins.<br />
 Remarque : cela peut prendre quelques secondes.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">knn</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]:</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1289,6 +1379,26 @@ Remarque : cela peut prendre quelques secondes.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">plot_precision(kmax)</span></code> qui trace la précision pour <span class="math notranslate nohighlight">\(k\)</span> variant de <span class="math notranslate nohighlight">\(1\)</span> à <code class="docutils literal notranslate"><span class="pre">kmax</span></code>. Quelle est la meilleure précision obtenue pour k entre 1 et 5 (cela prend environ 1 minute) ? Quelle est le nombre de voisins optimal ?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_precision</span><span class="p">(</span><span class="n">kmax</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kmax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="p">[</span><span class="n">precision</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">R</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_precision</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Figure</span> <span class="n">size</span> <span class="mi">640</span><span class="n">x480</span> <span class="k">with</span> <span class="mi">1</span> <span class="n">Axes</span><span class="o">&gt;</span>
+
+</pre></div>
+</div>
 </div>
 </section>
 <section id="kaggle">
