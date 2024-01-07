@@ -52,8 +52,8 @@ parts:
   - menu: Exercices
     sections:
     - cor: apprentissage/tp/tp_titanic/tp_titanic.ipynb
-    - cor: apprentissage/tp/tp_voitures/tp_voitures.ipynb
-    - cor: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
+    - tp: apprentissage/tp/tp_voitures/tp_voitures.ipynb
+    - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
     - td: CCP 2023 PC/PSI
       file: ccp23.pdf
 root: intro
