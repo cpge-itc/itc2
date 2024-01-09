@@ -781,6 +781,17 @@ $<span class="math notranslate nohighlight">\(
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">to_vector(m)</span></code> qui prend en argument une matrice <code class="docutils literal notranslate"><span class="pre">m</span></code> et renvoie le vecteur correspondant, sous forme de liste.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_vector</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_vector</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">64</span> <span class="c1"># les images 8*8 sont transformées en vecteur 64</span>
@@ -791,6 +802,17 @@ $<span class="math notranslate nohighlight">\(
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">to_matrix(v)</span></code> qui prend en argument un vecteur <code class="docutils literal notranslate"><span class="pre">v</span></code> et renvoie la matrice correspondante, sous forme de liste de listes. On suppose que la matrice est carrée.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="n">vector</span><span class="p">):</span>
+    <span class="n">mat</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">vector</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">8</span><span class="o">+</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mat</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -804,12 +826,30 @@ $<span class="math notranslate nohighlight">\(
 <p class="admonition-title">Question</p>
 <p>Définir une liste <code class="docutils literal notranslate"><span class="pre">X</span></code> contenant les vecteurs correspondant aux images dans <code class="docutils literal notranslate"><span class="pre">digits_matrix</span></code>. Cette variable <code class="docutils literal notranslate"><span class="pre">X</span></code> sera utilisée dans toute la suite.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">)):</span>
+    <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">to_vector</span><span class="p">(</span><span class="n">digits_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="algorithmes-des-k-moyennes">
 <h2>Algorithmes des <span class="math notranslate nohighlight">\(k\)</span>-moyennes<a class="headerlink" href="#algorithmes-des-k-moyennes" title="Permalink to this headline">#</a></h2>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">d(u,</span> <span class="pre">v)</span></code> qui prend en argument deux vecteurs <code class="docutils literal notranslate"><span class="pre">u</span></code> et <code class="docutils literal notranslate"><span class="pre">v</span></code> et renvoie la distance euclidienne entre ces deux vecteurs.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">**</span><span class="mf">.5</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -829,6 +869,16 @@ $<span class="math notranslate nohighlight">\(
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">centres_aléatoires(X,</span> <span class="pre">k)</span></code> qui prend en argument une liste de vecteurs <code class="docutils literal notranslate"><span class="pre">X</span></code> et un entier <code class="docutils literal notranslate"><span class="pre">k</span></code> et renvoie une liste de <code class="docutils literal notranslate"><span class="pre">k</span></code> vecteurs aléatoires choisis dans <code class="docutils literal notranslate"><span class="pre">X</span></code>.<br />
 On utilisera <code class="docutils literal notranslate"><span class="pre">random.sample</span></code> dont <a class="reference external" href="https://docs.python.org/3/library/random.html">on pourra consulter la documentation ici</a>. On pourra préalablement utiliser <code class="docutils literal notranslate"><span class="pre">random.seed(0)</span></code> pour avoir les mêmes résultats que le corrigé du TP.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pour avoir toujours les mêmes résultats</span>
+<span class="k">def</span> <span class="nf">centres_aléatoires</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centres</span> <span class="o">=</span> <span class="n">centres_aléatoires</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -840,6 +890,13 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">plus_proche(x,</span> <span class="pre">centres)</span></code> qui prend en argument un vecteur <code class="docutils literal notranslate"><span class="pre">x</span></code> et une liste de vecteurs <code class="docutils literal notranslate"><span class="pre">centres</span></code> et renvoie l’indice du centre le plus proche de <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_proche</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centres</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -858,6 +915,16 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">calculer_classes(X,</span> <span class="pre">centres)</span></code> qui renvoie la liste <code class="docutils literal notranslate"><span class="pre">classes</span></code> correspondant à <code class="docutils literal notranslate"><span class="pre">X</span></code> et à <code class="docutils literal notranslate"><span class="pre">centres</span></code>. Il faut donc que <code class="docutils literal notranslate"><span class="pre">classes[i]</span></code> soit l’indice du centre (dans <code class="docutils literal notranslate"><span class="pre">centres</span></code>) le plus proche de <code class="docutils literal notranslate"><span class="pre">X[i]</span></code>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">:</span>
+        <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plus_proche</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">classes</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classes</span> <span class="o">=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres_aléatoires</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -870,6 +937,23 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">centre(X,</span> <span class="pre">classes,</span> <span class="pre">i)</span></code> qui renvoie le centre de la classe <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">centre</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">p</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">classes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+                <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">/=</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">centre</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">==</span> <span class="mi">64</span>
@@ -880,6 +964,16 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">calculer_centres(X,</span> <span class="pre">classes,</span> <span class="pre">k)</span></code> qui renvoie la liste <code class="docutils literal notranslate"><span class="pre">centres</span></code> correspondant à <code class="docutils literal notranslate"><span class="pre">X</span></code> et à <code class="docutils literal notranslate"><span class="pre">classes</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculer_centres</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">centres</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="n">centres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">centre</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">centres</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -892,6 +986,17 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">kmeans(X,</span> <span class="pre">centres,</span> <span class="pre">k)</span></code> qui, à partir de centres initiaux donnés en argument, applique l’algorithme des <span class="math notranslate nohighlight">\(k\)</span>-moyennes et renvoie un couple correspondant à la liste <code class="docutils literal notranslate"><span class="pre">(centres,</span> <span class="pre">classes)</span></code> obtenue à la fin de l’algorithme.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">)</span>
+    <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">classes</span> <span class="o">!=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -914,6 +1019,16 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">inertie(X,</span> <span class="pre">centres,</span> <span class="pre">classes)</span></code> qui renvoie l’inertie de la partition définie par <code class="docutils literal notranslate"><span class="pre">classes</span></code>. On rappelle que l’inertie d’une partition est la somme des distances au carré des points à leur centre de classe.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inertie</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">d</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">centres</span><span class="p">[</span><span class="n">classes</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inertie</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
@@ -929,6 +1044,20 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Réécrire la fonction <code class="docutils literal notranslate"><span class="pre">kmeans</span></code> précédente de façon à ce qu’elle renvoie aussi la liste des inerties obtenues à chaque itération de l’algorithme. Utiliser le code ci-dessous pour afficher aussi l’évolution de l’inertie au cours des itérations. Commenter.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">inerties</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">centres2</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="n">centres</span> <span class="o">!=</span> <span class="n">centres2</span><span class="p">:</span>
+        <span class="n">centres2</span> <span class="o">=</span> <span class="n">centres</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">calculer_classes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres2</span><span class="p">)</span>
+        <span class="n">centres</span> <span class="o">=</span> <span class="n">calculer_centres</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="n">inerties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inertie</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classes</span><span class="p">,</span> <span class="n">inerties</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,6 +1091,12 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <p class="admonition-title">Question</p>
 <p>Définir une liste <code class="docutils literal notranslate"><span class="pre">classe_to_chiffre</span></code> telle que <code class="docutils literal notranslate"><span class="pre">classe_to_chiffre[i]</span></code> est le chiffre que vous pouvez lire pour le centre de la classe <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">classe_to_chiffre</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Exécuter le code suivant pour stocker dans <code class="docutils literal notranslate"><span class="pre">X_test</span></code> les vecteurs correspondant aux images que l’on va essayer de classifier, en utilisant le résultat de <code class="docutils literal notranslate"><span class="pre">kmeans</span></code>.</p>
@@ -980,6 +1115,13 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <li><p>Exécuter le code suivant pour afficher des images de <code class="docutils literal notranslate"><span class="pre">X_test</span></code> et les chiffres prédits.</p></li>
 </ol>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classe_to_chiffre</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">classe_to_chiffre</span><span class="p">[</span><span class="n">plus_proche</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">centres</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -995,6 +1137,17 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">precision(centres)</span></code> qui renvoie la précision de cet algorithme de classification, sur les données de <code class="docutils literal notranslate"><span class="pre">X_test</span></code>. Pour cela, on compte la proportion de classe prédite pour <code class="docutils literal notranslate"><span class="pre">X_test[i]</span></code> égale à <code class="docutils literal notranslate"><span class="pre">digits.target[i]</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="n">centres</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">centres</span><span class="p">,</span> <span class="n">classe_to_chiffre</span><span class="p">)</span> <span class="o">==</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1013,7 +1166,7 @@ On utilisera <code class="docutils literal notranslate"><span class="pre">random
 <h2>Avec les <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins<a class="headerlink" href="#avec-les-k-plus-proches-voisins" title="Permalink to this headline">#</a></h2>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
-<p>Implémenter l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins et comparer la précision obtenue avec celle des <span class="math notranslate nohighlight">\(k\)</span>-moyennes`. Quel algorithme de classification semble le plus adapté ici ?</p>
+<p>Implémenter l’algorithme des <span class="math notranslate nohighlight">\(k\)</span> plus proches voisins et comparer la précision obtenue avec celle des <span class="math notranslate nohighlight">\(k\)</span>-moyennes. Quel algorithme de classification semble le plus adapté ici ?</p>
 </div>
 </section>
 </section>
