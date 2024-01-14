@@ -4,8 +4,8 @@ parts:
   chapters:
   - file: 0_python/aide_memoire.ipynb
   - cor: python/revision/revisions.ipynb
-  - title: TP BCPST pour réviser
-    url: https://cpge-itc.github.io/bcpst2/dl/bcpst/5_dessin/tp5_dessin.html
+  - title: TP BCPST
+    url: https://cpge-itc.github.io/bcpst2/
 - caption: DS
   chapters:
     - title: Détail des notes
@@ -56,4 +56,23 @@ parts:
     - tp: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
     - td: CCP 2023 PC/PSI
       file: ccp23.pdf
+- caption: TPs d'entraînement
+  - menu: Exercices
+    sections:
+    - url: https://cpge-itc.github.io/bcpst2/dl/bcpst/basket.html
+      title: "TP : Basket"
+    - url: https://cpge-itc.github.io/bcpst2/dl/bcpst/9_automate_cellulaire/automate_cellulaire.html
+      title: "TP : Automate cellulaire"
+# - caption: SQL
+#   chapters:
+#   - menu: Cours
+#     sections:
+    
+#     - slides: "Cours : SQL"
+#       file: sql/cours/sql.pdf
+#   - menu: Exercices
+#     sections:
+#     - td: 'Exercice : SQL'
+#       file: sql/td/sql.pdf
+#     - cor: sql/tp/tp_sql.ipynb
 root: intro
