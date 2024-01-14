@@ -58,6 +58,7 @@ parts:
     - td: CCP 2023 PC/PSI
       file: ccp23.pdf
 - caption: "TPs d'entraînement"
+  chapters:
   - menu: Exercices
     sections:
     - url: https://cpge-itc.github.io/bcpst2/dl/bcpst/basket.html
