@@ -57,7 +57,7 @@ parts:
     - cor: apprentissage/tp/tp_chiffres/tp_chiffres.ipynb
     - td: CCP 2023 PC/PSI
       file: ccp23.pdf
-- caption: TPs d'entraînement
+- caption: "TPs d'entraînement"
   - menu: Exercices
     sections:
     - url: https://cpge-itc.github.io/bcpst2/dl/bcpst/basket.html
