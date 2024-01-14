@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>DS 1 corrigé : Partition &#8212; Informatique commune en 2ème année de CPGE</title>
+    <title>SELECT et WHERE &#8212; Informatique commune en 2ème année de CPGE</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -86,11 +86,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/td/ds_partition.html" />
+    <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/slides/select.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="DS 1 MP* Corrigé (X-ENS 2023)" href="../ds/itc/ds_x23_differentiel/x23.html" />
-    <link rel="prev" title="TP : Révisions de 1ère année" href="../python/revision/revisions.html" />
+    <link rel="next" title="JOIN" href="join.html" />
+    <link rel="prev" title="Cours" href="../menu/7.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -149,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="resume_itc2.html">
+  <a class="reference internal" href="../td/resume_itc2.html">
    Résumé de cours
   </a>
  </li>
@@ -169,14 +169,14 @@ const thebe_selector_output = ".output, .cell_output"
   DS
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference external" href="https://fortierq-notes-app-ctedub.streamlit.app">
    Détail des notes
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/ds_partition.html">
    DS 1 corrigé : Partition
   </a>
  </li>
@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../slides/dict.html">
+    <a class="reference internal" href="dict.html">
      Cours : Dictionnaire
     </a>
    </li>
@@ -220,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="dict_polynome.html">
+    <a class="reference internal" href="../td/dict_polynome.html">
      Exercice : Polynômes
     </a>
    </li>
@@ -254,12 +254,12 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../slides/sp.html">
+    <a class="reference internal" href="sp.html">
      Exemple : Algorithmes de plus court chemin
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../slides/lis.html">
+    <a class="reference internal" href="lis.html">
      Exemple : Plus longue sous-suite croissante
     </a>
    </li>
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="matrice_prog_dyn.html">
+    <a class="reference internal" href="../td/matrice_prog_dyn.html">
      Exercice : Chemin dans une matrice
     </a>
    </li>
@@ -318,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../slides/science_donnees.html">
+    <a class="reference internal" href="science_donnees.html">
      Cours : Science des données
     </a>
    </li>
@@ -365,7 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ccp23.html">
+    <a class="reference internal" href="../td/ccp23.html">
      CCP 2023 PC/PSI
     </a>
    </li>
@@ -406,29 +406,29 @@ const thebe_selector_output = ".output, .cell_output"
   SQL
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../menu/7.html">
    Cours
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference external" href="https://sql-exercices.github.io">
      Site d'exercices
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../slides/select.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      SELECT et WHERE
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../slides/join.html">
+    <a class="reference internal" href="join.html">
      JOIN
     </a>
    </li>
@@ -520,7 +520,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2Fdl/td/ds_partition.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/cpge-itc/itc2/issues/new?title=Issue%20on%20page%20%2Fdl/slides/select.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -537,7 +537,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/cpge-itc/itc2/edit/main/files/dl/td/ds_partition.md"
+        <a href="https://github.com/cpge-itc/itc2/edit/main/files/dl/slides/select.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -565,7 +565,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/dl/td/ds_partition.md"
+        <a href="../../_sources/dl/slides/select.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -614,7 +614,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>DS 1 corrigé : Partition</h1>
+                <h1>SELECT et WHERE</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -626,24 +626,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ds-1-corrige-partition">
-<h1>DS 1 corrigé : Partition<a class="headerlink" href="#ds-1-corrige-partition" title="Permalink to this headline">#</a></h1>
-<script>
-    $(function() {
-        document.getElementById("main-content").style.maxWidth = "90%";
-        button_2 = button_cor(
-            'https://raw.githubusercontent.com/fortierq/cours/main/ds_partition.pdf',
-            '2',
-            'button_2'
-        );
-    });
-</script>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<input type="button" id="button_2" onclick="button_2.switch()" />
-</aside>
-<iframe id="2" height=1100 width=100% allowfullscreen></iframe>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="select-et-where">
+<h1>SELECT et WHERE<a class="headerlink" href="#select-et-where" title="Permalink to this headline">#</a></h1>
+<iframe src=https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/fortierq/cours/main/sql/cours/1_select/select.pdf#zoom=page-fit&pagemode=none height=500 width=100% allowfullscreen></iframe></section>
 
     <script type="text/x-thebe-config">
     {
@@ -658,7 +643,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./dl/td"
+            path: "./dl/slides"
         },
         predefinedOutput: true
     }
@@ -672,17 +657,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../python/revision/revisions.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../menu/7.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">TP : Révisions de 1ère année</p>
+            <p class="prev-next-title">Cours</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../ds/itc/ds_x23_differentiel/x23.html" title="next page">
+    <a class='right-next' id="next-link" href="join.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DS 1 MP* Corrigé (X-ENS 2023)</p>
+        <p class="prev-next-title">JOIN</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
