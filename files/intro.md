@@ -18,10 +18,6 @@
 
 --- 
 
-Programme du DS 2 : tout sur l'apprentissage automatique.
-
----
-
 <details>
 <summary>Informatique commune aux concours</summary>
 
