@@ -69,12 +69,13 @@ parts:
   chapters:
   - menu: Cours
     sections:
-    - url: https://sql-exercices.github.io
-      title: "Site d'exercices"
     - slides: SELECT et WHERE
       file: sql/cours/1_select/select.pdf
     - slides: JOIN
       file: sql/cours/2_join/join.pdf
+    - tp: sql/cours/pokemon.ipynb
+    - url: https://sql-exercices.github.io
+      title: "Site d'exercices"
 #     - slides: "Cours : SQL"
 #       file: sql/cours/sql.pdf
 #   - menu: Exercices
