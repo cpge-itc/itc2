@@ -78,9 +78,7 @@ parts:
       title: "Site d'exercices"
 #     - slides: "Cours : SQL"
 #       file: sql/cours/sql.pdf
-#   - menu: Exercices
-#     sections:
-#     - td: 'Exercice : SQL'
-#       file: sql/td/sql.pdf
-#     - cor: sql/tp/tp_sql.ipynb
+  - menu: Exercices
+    sections:
+    - file: sql_select_join.md
 root: intro
