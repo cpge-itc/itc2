@@ -14,6 +14,10 @@ parts:
     - td: "DS 1 corrigé : Partition"
       file: ds_partition.pdf
     - tp: ds/itc/ds_x23_differentiel/x23.ipynb
+    - td: "DS 2 corrigé (PSI* + PC*)"
+      file: ds/itc/ds_apprentissage/ds_apprentissage.pdf
+    - td: "DS 2 corrigé (X-ENS MP/MP*)"
+      file: ds/itc/ds_apprentissage/Banque_X-ÉNS_2022_MP-PC-PSI_Informatique_B_ca (2).pdf
 - caption: Dictionnaire
   chapters:
   - menu: Cours
