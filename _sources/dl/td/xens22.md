@@ -4,7 +4,7 @@
     $(function() {
         document.getElementById("main-content").style.maxWidth = "90%";
         button_4 = button_cor(
-            'https://raw.githubusercontent.com/fortierq/cours/main/ds_apprentissage/Banque_X-ÉNS_2022_MP-PC-PSI_Informatique_B_ca (2).pdf',
+            'https://raw.githubusercontent.com/fortierq/cours/main/ds_apprentissage/xens22.pdf',
             '4',
             'button_4'
         );
