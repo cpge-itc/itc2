@@ -4,7 +4,7 @@
     $(function() {
         document.getElementById("main-content").style.maxWidth = "90%";
         button_4 = button_cor(
-            'https://raw.githubusercontent.com/fortierq/cours/main/ds_apprentissage/xens22.pdf',
+            'https://raw.githubusercontent.com/fortierq/cours/main/xens22.pdf',
             '4',
             'button_4'
         );
