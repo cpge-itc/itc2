@@ -17,7 +17,7 @@ parts:
     - td: "DS 2 corrigé (PSI* + PC*)"
       file: ds_apprentissage/ds_apprentissage.pdf
     - td: "DS 2 corrigé (X-ENS MP/MP*)"
-      file: ds_apprentissage/Banque_X-ÉNS_2022_MP-PC-PSI_Informatique_B_ca (2).pdf
+      file: ds_apprentissage/xens22.pdf
 - caption: Dictionnaire
   chapters:
   - menu: Cours
