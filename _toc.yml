@@ -77,6 +77,8 @@ parts:
       file: sql/cours/1_select/select.pdf
     - slides: JOIN
       file: sql/cours/2_join/join.pdf
+    - slides: GROUP BY
+      file: sql/cours/3_groupby/groupby.pdf
     - tp: sql/cours/pokemon.ipynb
     - url: https://sql-exercices.github.io
       title: "Site d'exercices"
