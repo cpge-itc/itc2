@@ -81,7 +81,8 @@ parts:
       file: sql/cours/3_groupby/groupby.pdf
     - slides: Requêtes imbriquées
       file: sql/cours/4_imbrique/imbrique.pdf
-    - slides: sql/cours/5_er/er.pdf
+    - slides: Diagramme entité-relation
+      file: sql/cours/5_er/er.pdf
     - tp: sql/cours/pokemon.ipynb
     - url: https://sql-exercices.github.io
       title: "Site d'exercices"
