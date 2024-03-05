@@ -98,7 +98,7 @@ parts:
     sections:
     - slides: "Stratégie et attracteur"
       file: jeux/deux_joueurs/jeux_deux_joueurs.pdf
-    - slides: "Algorithme MinMax"
+    - slides: "Algorithme min-max"
       file: jeux/minmax/minmax.pdf
   - menu: Exercices
     sections:
