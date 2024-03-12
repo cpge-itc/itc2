@@ -103,4 +103,5 @@ parts:
   - menu: Exercices
     sections:
       - tp: jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb
+      - tp: jeux/minmax/minmax.ipynb
 root: intro
