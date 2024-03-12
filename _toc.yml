@@ -98,10 +98,9 @@ parts:
     sections:
     - slides: "Stratégie et attracteur"
       file: jeux/deux_joueurs/jeux_deux_joueurs.pdf
-    - slides: "Algorithme min-max"
-      file: jeux/minmax/minmax.pdf
+    - slides_ipynb: jeux/minmax/minmax.ipynb
   - menu: Exercices
     sections:
       - tp: jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb
-      - tp: jeux/minmax/minmax.ipynb
+      - tp: jeux/tp/domineering.ipynb
 root: intro
