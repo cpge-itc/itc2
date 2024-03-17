@@ -101,6 +101,6 @@ parts:
     - slides_ipynb: jeux/minmax/minmax.ipynb
   - menu: Exercices
     sections:
-      - tp: jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb
+      - cor: jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb
       - tp: jeux/tp/domineering.ipynb
 root: intro
