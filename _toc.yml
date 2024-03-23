@@ -18,6 +18,8 @@ parts:
       file: ds_apprentissage.pdf
     - td: "DS 2 corrigé (X-ENS MP/MP*)"
       file: xens22.pdf
+    - td: "DS 3 corrigé (MP*/PC*)"
+      file: ds_snort.pdf
 - caption: Dictionnaire
   chapters:
   - menu: Cours
