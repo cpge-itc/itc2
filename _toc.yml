@@ -20,6 +20,8 @@ parts:
       file: xens22.pdf
     - td: "DS 3 corrigé (MP*/PC*)"
       file: ds_snort.pdf
+    - td: "DS 3 5/2 corrigé (MP*)"
+      file: capes_21_cor.pdf
 - caption: Dictionnaire
   chapters:
   - menu: Cours
