@@ -22,6 +22,8 @@ parts:
       file: ds_snort.pdf
     - td: "DS 3 5/2 corrigé (MP*)"
       file: capes_21_cor.pdf
+    - td: "DS 3 corrigé (PSI*/MP)"
+      file: ds_chomp_marche_cor.pdf
 - caption: Dictionnaire
   chapters:
   - menu: Cours
