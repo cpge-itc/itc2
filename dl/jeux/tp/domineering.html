@@ -91,6 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://cpge-itc.github.io/itc2/dl/jeux/tp/domineering.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Exercices" href="../../menu/11.html" />
     <link rel="prev" title="TP : Jeu du tic-tac-toe" href="../deux_joueurs/tp_morpion/tp_morpion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -554,6 +555,30 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Révisions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../menu/11.html">
+   Exercices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../revisions/resume_itc2/revisions_itc1.html">
+     TP : révisions d’informatique commune 1ère année
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -802,6 +827,13 @@ title="Print to PDF"
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">grille_vide(n,</span> <span class="pre">p)</span></code> qui renvoie une grille de taille <span class="math notranslate nohighlight">\(n \times p\)</span> vide (remplie de <span class="math notranslate nohighlight">\(-1\)</span>).</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grille_vide</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grille_vide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -817,6 +849,20 @@ title="Print to PDF"
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">coups_possibles(v,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code> et qui renvoie la liste des positions <span class="math notranslate nohighlight">\((i, j)\)</span> où le joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> peut placer son domino (le joueur <span class="math notranslate nohighlight">\(0\)</span> place un domino en position <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i+1, j)\)</span> et le joueur <span class="math notranslate nohighlight">\(1\)</span> en position <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i, j+1)\)</span>).</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">):</span>
+    <span class="n">coups</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">coups</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>        
+            <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">coups</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">coups</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -837,6 +883,16 @@ title="Print to PDF"
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">strategie_aleatoire(v,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code> et qui renvoie un coup choisi au hasard parmi les coups possibles.<br />
 On pourra utiliser la fonction <code class="docutils literal notranslate"><span class="pre">random.choice(L)</span></code> qui renvoie un élément au hasard dans <code class="docutils literal notranslate"><span class="pre">L</span></code> (en n’oubliant pas <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>).</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">strategie_aleatoire</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">):</span>
+    <span class="n">coups</span> <span class="o">=</span> <span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">coups</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strategie_aleatoire</span><span class="p">(</span><span class="n">grille_vide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># coup aléatoire</span>
@@ -854,15 +910,53 @@ On pourra utiliser la fonction <code class="docutils literal notranslate"><span 
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">placer(v,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code>, une position <span class="math notranslate nohighlight">\((i, j)\)</span> et un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> et qui modifie <code class="docutils literal notranslate"><span class="pre">v</span></code> en plaçant le domino du joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> à la position <span class="math notranslate nohighlight">\((i, j)\)</span>.<br />
 Plus précisément, si <code class="docutils literal notranslate"><span class="pre">joueur</span> <span class="pre">==</span> <span class="pre">0</span></code>, alors on place un domino sur les cases <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i + 1, j)\)</span>, et si <code class="docutils literal notranslate"><span class="pre">joueur</span> <span class="pre">==</span> <span class="pre">1</span></code>, alors on place un domino sur les cases <span class="math notranslate nohighlight">\((i, j)\)</span> et <span class="math notranslate nohighlight">\((i, j + 1)\)</span>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">placer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">joueur</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">joueur</span>
+    <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">joueur</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">joueur</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">retirer(v,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code>, une position <span class="math notranslate nohighlight">\((i, j)\)</span> et un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> et qui modifie <code class="docutils literal notranslate"><span class="pre">v</span></code> en retirant le domino du joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> à la position <span class="math notranslate nohighlight">\((i, j)\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">retirer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">joueur</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
 </div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">jeu(strategie0,</span> <span class="pre">strategie1,</span> <span class="pre">n,</span> <span class="pre">p)</span></code> qui prend en entrée deux stratégies et qui renvoie le joueur qui gagne.<br />
 <code class="docutils literal notranslate"><span class="pre">strategie0(v,</span> <span class="pre">0)</span></code> renvoie un couple <span class="math notranslate nohighlight">\((i, j)\)</span> correspondant au coup du joueur 0, et <code class="docutils literal notranslate"><span class="pre">strategie1(v,</span> <span class="pre">1)</span></code> renvoie le coup du joueur 1.<br />
 Il faut donc partir d’une grille de taille <span class="math notranslate nohighlight">\(n\times p\)</span> et faire jouer les joueurs chacun son tour avec leur stratégie, jusqu’à ce qu’un joueur ne puisse plus jouer (qui est donc le perdant).</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">jeu</span><span class="p">(</span><span class="n">strategie0</span><span class="p">,</span> <span class="n">strategie1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">grille_vide</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">joueur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[]:</span>
+        <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">strategie0</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">strategie1</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">placer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">joueur</span><span class="p">)</span>
+        <span class="n">joueur</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">joueur</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">joueur</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -881,6 +975,17 @@ Il faut donc partir d’une grille de taille <span class="math notranslate nohig
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">statistiques(strategie0,</span> <span class="pre">strategie1,</span> <span class="pre">n,</span> <span class="pre">p,</span> <span class="pre">nb_parties)</span></code> qui prend en entrée deux stratégies, qui appelle <code class="docutils literal notranslate"><span class="pre">nb_parties</span></code> fois la fonction <code class="docutils literal notranslate"><span class="pre">jeu</span></code> et qui renvoie le nombre de parties gagnées par chaque joueur.<br />
 Tester avec différentes tailles initiales de la grille.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">statistiques</span><span class="p">(</span><span class="n">strategie1</span><span class="p">,</span> <span class="n">strategie2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">nb_parties</span><span class="p">):</span>
+    <span class="n">victoires</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_parties</span><span class="p">):</span>
+        <span class="n">gagnant</span> <span class="o">=</span> <span class="n">jeu</span><span class="p">(</span><span class="n">strategie1</span><span class="p">,</span> <span class="n">strategie2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="n">victoires</span><span class="p">[</span><span class="n">gagnant</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">victoires</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistiques</span><span class="p">(</span><span class="n">strategie_aleatoire</span><span class="p">,</span> <span class="n">strategie_aleatoire</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
@@ -896,6 +1001,17 @@ Tester avec différentes tailles initiales de la grille.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>Écrire une fonction <code class="docutils literal notranslate"><span class="pre">h1(v)</span></code> renvoyant la différence entre le nombre de cases libres pour le joueur 0 et le nombre de cases libres pour le joueur 1. On renverra <span class="math notranslate nohighlight">\(\infty\)</span> (<code class="docutils literal notranslate"><span class="pre">float('inf')</span></code>) si le joueur 0 a gagné et <span class="math notranslate nohighlight">\(-\infty\)</span> (<code class="docutils literal notranslate"><span class="pre">float('-inf')</span></code>) si le joueur 1 a gagné.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h1</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -941,10 +1057,50 @@ Tester avec différentes tailles initiales de la grille.</p>
 </div>
 </div>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">,</span> <span class="n">profondeur</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="n">coups</span> <span class="o">=</span> <span class="n">coups_possibles</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">coups</span> <span class="o">==</span> <span class="p">[]</span> <span class="ow">or</span> <span class="n">profondeur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">h</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">joueur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">meilleur_coup</span> <span class="o">=</span> <span class="n">coups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">meilleur_score</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">coup</span> <span class="ow">in</span> <span class="n">coups</span><span class="p">:</span>
+                <span class="n">placer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">coup</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coup</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">joueur</span><span class="p">)</span>
+                <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">joueur</span><span class="p">,</span> <span class="n">profondeur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+                <span class="n">retirer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">coup</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coup</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">joueur</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">meilleur_score</span><span class="p">:</span>
+                    <span class="n">meilleur_score</span> <span class="o">=</span> <span class="n">score</span>
+                    <span class="n">meilleur_coup</span> <span class="o">=</span> <span class="n">coup</span>
+            <span class="k">return</span> <span class="n">meilleur_score</span><span class="p">,</span> <span class="n">meilleur_coup</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">meilleur_coup</span> <span class="o">=</span> <span class="n">coups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">meilleur_score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">coup</span> <span class="ow">in</span> <span class="n">coups</span><span class="p">:</span>
+                <span class="n">placer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">coup</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coup</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">joueur</span><span class="p">)</span>
+                <span class="n">score</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">joueur</span><span class="p">,</span> <span class="n">profondeur</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+                <span class="n">retirer</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">coup</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coup</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">joueur</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="n">meilleur_score</span><span class="p">:</span>
+                    <span class="n">meilleur_score</span> <span class="o">=</span> <span class="n">score</span>
+                    <span class="n">meilleur_coup</span> <span class="o">=</span> <span class="n">coup</span>
+            <span class="k">return</span> <span class="n">meilleur_score</span><span class="p">,</span> <span class="n">meilleur_coup</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>En déduire une fonction <code class="docutils literal notranslate"><span class="pre">strategie_minmax(v,</span> <span class="pre">joueur)</span></code> qui prend en entrée une configuration <code class="docutils literal notranslate"><span class="pre">v</span></code> et un joueur <code class="docutils literal notranslate"><span class="pre">joueur</span></code> et qui renvoie le meilleur coup à jouer selon l’algorithme min-max avec l’heuristique <code class="docutils literal notranslate"><span class="pre">h1</span></code> et, par exemple, une profondeur de 2.<br />
 Tester avec la fonction ci-dessous pour vérifier que la stratégie min-max est meilleure que la stratégie aléatoire.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strategie_minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">coup</span> <span class="o">=</span> <span class="n">minmax</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">joueur</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">h1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">coup</span>
+</pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -993,6 +1149,13 @@ Tester avec la fonction ci-dessous pour vérifier que la stratégie min-max est 
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">TP : Jeu du tic-tac-toe</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../menu/11.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
