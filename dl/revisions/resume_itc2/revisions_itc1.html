@@ -949,16 +949,15 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dichotomie</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
         <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># i et j sont les indices de L entre lesquels on cherche e</span>
-            <span class="k">while</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># tant qu&#39;il reste au moins 1 élément entre les indices i et j</span>
-                    <span class="n">m</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># milieu de i et j</span>
-                            <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
-                                        <span class="o">...</span> <span class="c1"># regarder dans la partie gauche</span>
-                                                <span class="k">elif</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
-                                                            <span class="o">...</span> <span class="c1"># regarder dans la partie droite</span>
-                                                                    <span class="k">else</span><span class="p">:</span>
-                                                                                <span class="o">...</span> <span class="c1"># on a trouvé e</span>
-                                                                                    <span class="o">...</span> <span class="c1"># e n&#39;a pas été trouvé</span>
-                                                                            
+        <span class="k">while</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># tant qu&#39;il reste au moins 1 élément entre les indices i et j</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># milieu de i et j</span>
+                <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
+                        <span class="o">...</span> <span class="c1"># regarder dans la partie gauche</span>
+                <span class="k">elif</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">[</span><span class="n">m</span><span class="p">]:</span>
+                        <span class="o">...</span> <span class="c1"># regarder dans la partie droite</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="o">...</span> <span class="c1"># on a trouvé e</span>
+        <span class="o">...</span> <span class="c1"># e n&#39;a pas été trouvé</span>
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1092,8 @@ On définit le type suivant de file de priorité :</p>
 </div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
-<p>Compléter la fonction suivante pour implémenter l’algorithme de Dijkstra permettant de trouver les distances de <span class="math notranslate nohighlight">\(s\)</span> aux autres sommets de <span class="math notranslate nohighlight">\(G\)</span>. <span class="math notranslate nohighlight">\(G\)</span> est représenté par une matrice d’adjacence pondérée (<code class="docutils literal notranslate"><span class="pre">G[i][j]</span></code> est le poids de l’arête entre <span class="math notranslate nohighlight">\(i\)</span> et <span class="math notranslate nohighlight">\(j\)</span>, <code class="docutils literal notranslate"><span class="pre">float('inf')</span></code> s’il n’y a pas d’arête).</p>
+<p>Compléter la fonction suivante pour implémenter l’algorithme de Dijkstra permettant de trouver les distances de <span class="math notranslate nohighlight">\(s\)</span> aux autres sommets de <span class="math notranslate nohighlight">\(G\)</span>. <span class="math notranslate nohighlight">\(G\)</span> est représenté par une matrice d’adjacence pondérée (<code class="docutils literal notranslate"><span class="pre">G[i][j]</span></code> est le poids de l’arête entre <span class="math notranslate nohighlight">\(i\)</span> et <span class="math notranslate nohighlight">\(j\)</span>, <code class="docutils literal notranslate"><span class="pre">float('inf')</span></code> s’il n’y a pas d’arête).<br />
+Tester sur un graphe de votre choix.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1110,23 +1110,6 @@ On définit le type suivant de file de priorité :</p>
             <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">q</span> <span class="ow">and</span> <span class="o">...</span><span class="p">:</span> <span class="c1"># si d &lt; dist[v]</span>
                 <span class="o">...</span> <span class="c1"># mettre à jour dist[v] et la priorité de v</span>
     <span class="k">return</span> <span class="n">dist</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Exemple sur ce graphe :</p>
-<center><img src=https://raw.githubusercontent.com/fortierq/tikz-pdf/main/graph/examples/weighted/directed/g1/g1.png width=300></center><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)]</span><span class="o">*</span><span class="mi">6</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)]:</span>
-    <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
-
-<span class="n">dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0, 1, 4, 3, 4]
 </pre></div>
 </div>
 </div>
