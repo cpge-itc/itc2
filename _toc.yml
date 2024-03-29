@@ -108,5 +108,10 @@ parts:
   - menu: Exercices
     sections:
       - cor: jeux/deux_joueurs/tp_morpion/tp_morpion.ipynb
-      - tp: jeux/tp/domineering.ipynb
+      - cor: jeux/tp/domineering.ipynb
+- caption: Révisions
+  chapters:
+  - menu: Exercices
+    sections:
+      - tp: revisions/resume_itc2/revisions_itc1.ipynb
 root: intro
