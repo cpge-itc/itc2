@@ -113,5 +113,5 @@ parts:
   chapters:
   - menu: Exercices
     sections:
-      - tp: revisions/resume_itc2/revisions_itc1.ipynb
+      - cor: revisions/resume_itc2/revisions_itc1.ipynb
 root: intro
