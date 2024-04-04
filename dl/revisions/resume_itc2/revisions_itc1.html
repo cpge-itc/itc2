@@ -906,7 +906,10 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_base10</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">))])</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="o">**</span><span class="n">i</span>
+    <span class="k">return</span> <span class="n">s</span>
 </pre></div>
 </div>
 </div>
@@ -953,9 +956,37 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 <p class="admonition-title">Exercice</p>
 <p>Quelle valeur donne <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.1</span></code> ? Expliquer pourquoi.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.30000000000000004</span>
+
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">0.1</span></code> est converti en base <span class="math notranslate nohighlight">\(2\)</span> (en notation scientifique) ce qui donne un développement binaire infini. Un <code class="docutils literal notranslate"><span class="pre">float</span></code> étant stocké avec <span class="math notranslate nohighlight">\(52\)</span> chiffres significatifs (il est impossible de stocker une infinité de chiffres après la virgule), on ne peut pas stocker exactement <span class="math notranslate nohighlight">\(0.1\)</span> en binaire. Il y a donc une troncature qui induit une erreur d’arrondi.</p>
+</div>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Quelle valeur donne <code class="docutils literal notranslate"><span class="pre">2.0**53</span> <span class="pre">+</span> <span class="pre">1.0</span> <span class="pre">-</span> <span class="pre">2.0**53</span></code> ? <code class="docutils literal notranslate"><span class="pre">2.0**52</span> <span class="pre">+</span> <span class="pre">1.0</span> <span class="pre">-</span> <span class="pre">2.0**52</span></code> ? Expliquer.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span><span class="o">**</span><span class="mi">53</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">2.0</span><span class="o">**</span><span class="mi">53</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0</span>
+
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">2.0**53</span> <span class="pre">+</span> <span class="pre">1.0</span></code> demanderait de stocker le <span class="math notranslate nohighlight">\(1\)</span> en tant que <span class="math notranslate nohighlight">\(53\)</span>ème chiffre après la virgule et est donc tronqué.</p>
 </div>
 </section>
 <section id="dichotomie">
@@ -997,6 +1028,10 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 </pre></div>
 </div>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>À chaque passage du <code class="docutils literal notranslate"><span class="pre">while</span></code>, on divise la taille de la liste par <span class="math notranslate nohighlight">\(2\)</span>. Si <span class="math notranslate nohighlight">\(L\)</span> est de taille <span class="math notranslate nohighlight">\(n\)</span>, le <code class="docutils literal notranslate"><span class="pre">while</span></code> s’arrête, dans le pire cas, quand <span class="math notranslate nohighlight">\(\frac{n}{2^k}\leq 1\)</span>, c’est-à-dire à partir de <span class="math notranslate nohighlight">\(k = \lceil \log_2 n \rceil\)</span>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dichotomie</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dichotomie</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
@@ -1012,6 +1047,10 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Donner un invariant de boucle permettant de prouver la correction de la fonction <code class="docutils literal notranslate"><span class="pre">dichotomie</span></code>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Invariant de boucle : si <code class="docutils literal notranslate"><span class="pre">e</span></code> appartient à <code class="docutils literal notranslate"><span class="pre">L</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code> appartient à <code class="docutils literal notranslate"><span class="pre">L[a:b]</span></code>.</p>
 </div>
 </section>
 <section id="graphes">
@@ -1093,6 +1132,10 @@ Par exemple, <code class="docutils literal notranslate"><span class="pre">to_bas
 <p class="admonition-title">Exercice</p>
 <p>Expliquer l’intérêt et le fonctionnement d’un parcours en largeur.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Il permet de trouver les distances depuis un sommet <span class="math notranslate nohighlight">\(s\)</span> vers les autres sommets, dans un graphe non pondéré. On visite <span class="math notranslate nohighlight">\(s\)</span> puis tous les voisins de <span class="math notranslate nohighlight">\(s\)</span>, puis tous les voisins des voisins de <span class="math notranslate nohighlight">\(s\)</span>, etc.</p>
+</div>
 </section>
 <section id="dijkstra">
 <h2>Dijkstra<a class="headerlink" href="#dijkstra" title="Permalink to this headline">#</a></h2>
@@ -1151,6 +1194,10 @@ On définit le type suivant de file de priorité :</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Rappeler à quoi sert l’algorithme de Dijkstra et quelle condition le graphe doit vérifier pour que l’algorithme fonctionne.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>Il permet de trouver les plus courts chemins depuis un sommet <span class="math notranslate nohighlight">\(s\)</span> vers les autres sommets, dans un graphe pondéré. Les poids des arêtes doivent être positifs.</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solution</p>
@@ -1241,6 +1288,10 @@ Tester sur un graphe de votre choix.</p>
 <div class="admonition-exercice admonition">
 <p class="admonition-title">Exercice</p>
 <p>Si les sommets du graphes sont des points du plan <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, quelle heuristique <span class="math notranslate nohighlight">\(h\)</span> serait-il raisonnable d’utiliser pour trouver le plus court chemin entre deux points ? Plusieurs réponses sont possibles.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solution</p>
+<p>On peut utiliser la distance euclidienne, la distance de Manhattan (norme infinie)…</p>
 </div>
 </section>
 </section>
