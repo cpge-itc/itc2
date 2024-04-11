@@ -113,7 +113,7 @@ parts:
   chapters:
   - menu: Cours
     sections:
-      - slides: "Résumé de deuxième année"
+      - slides: "Révisions"
         file: revisions/resume_itc2/resume_cours_itc2/resume_cours_itc2.pdf
   - menu: Exercices
     sections:
