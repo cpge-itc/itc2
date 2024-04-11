@@ -111,6 +111,10 @@ parts:
       - cor: jeux/tp/domineering.ipynb
 - caption: Révisions
   chapters:
+  - menu: Cours
+    sections:
+      - slides: "Résumé de deuxième année"
+        file: revisions/resume_itc2/resume_cours_itc2/resume_cours_itc2.pdf
   - menu: Exercices
     sections:
       - cor: revisions/resume_itc2/revisions_itc1.ipynb
