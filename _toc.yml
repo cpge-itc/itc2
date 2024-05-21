@@ -122,6 +122,6 @@ parts:
     chapters:
     - menu: Exercices
       sections:
-      - td: Exercice d'oral 
+      - td: "Exercice d'oral" 
         file: exos-src/concours/centrale_math_info/centrale_oral_pcc_23.pdf
 root: intro
