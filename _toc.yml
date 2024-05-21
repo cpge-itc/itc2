@@ -118,10 +118,10 @@ parts:
   - menu: Exercices
     sections:
       - cor: revisions/resume_itc2/revisions_itc1.ipynb
-  - caption: Oral Centrale
-    chapters:
-    - menu: Exercices
-      sections:
-      - td: "Exercice d'oral" 
-        file: exos-src/concours/centrale_math_info/centrale_oral_pcc_23.pdf
+- caption: Oral Centrale
+  chapters:
+  - menu: Exercices
+    sections:
+    - td: "Exercice d'oral" 
+      file: exos-src/concours/centrale_math_info/centrale_oral_pcc_23.pdf
 root: intro
