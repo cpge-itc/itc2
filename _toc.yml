@@ -123,5 +123,5 @@ parts:
   - menu: Exercices
     sections:
     - td: "Exercice d'oral" 
-      file: exos-src/concours/centrale_math_info/centrale_oral_pcc_23.pdf
+      file: centrale_oral_pcc_23.pdf
 root: intro
