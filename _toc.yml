@@ -120,6 +120,10 @@ parts:
       - cor: revisions/resume_itc2/revisions_itc1.ipynb
 - caption: Oral Centrale
   chapters:
+  - menu: Cours
+    sections:
+    - title: "Formulaires"
+      url: https://www.concours-centrale-supelec.fr/CentraleSupelec/SujetsOral/PC
   - menu: Exercices
     sections:
     - td: "Exercice d'oral" 
