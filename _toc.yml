@@ -123,7 +123,7 @@ parts:
   - menu: Cours
     sections:
     - title: "Formulaires"
-      url: https://www.concours-centrale-supelec.fr/CentraleSupelec/SujetsOral/PC
+      url: https://www.concours-centrale-supelec.fr/CentraleSupelec/SujetsOral/MP
   - menu: Exercices
     sections:
     - td: "Exercice d'oral" 
