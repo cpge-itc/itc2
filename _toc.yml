@@ -120,12 +120,14 @@ parts:
       - cor: revisions/resume_itc2/revisions_itc1.ipynb
 - caption: Oral Centrale
   chapters:
-  - menu: Cours
+  - menu: "Formulaires et rapport"
     sections:
     - title: "Formulaires"
       url: https://www.concours-centrale-supelec.fr/CentraleSupelec/SujetsOral/MP
   - menu: Exercices
     sections:
-    - td: "Exercice d'oral" 
+    - td: "Séance 1" 
       file: centrale_oral_pcc_23.pdf
+    - td: "Séance 2" 
+      file: centrale_oral_pcc_23_2.pdf
 root: intro
