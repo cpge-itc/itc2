@@ -1,4 +1,4 @@
-# Exercice d'oral
+# Séance 1
 
 <script>
     $(function() {
