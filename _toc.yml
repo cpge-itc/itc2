@@ -1,5 +1,8 @@
 format: jb-book
 parts:
+- caption: 'Centrale PC*'
+  chapters:
+  - url: https://raw.githubusercontent.com/cpge-itc/itc2/main/files/centrale.py
 - caption: Révisions
   chapters:
   - td: "Résumé de cours"
