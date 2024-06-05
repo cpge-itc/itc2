@@ -1,3 +1,14 @@
+# Écrire from centrale import * dans votre fichier pour importer toutes les fonctions
+
+# Exercice 1
+import scipy.integrate as integr
+import numpy as np
+
+def I(x):
+    def f(t):
+        return t**x/(1 + np.exp(t))
+    return integr.quad(f, 0, np.inf)[0]
+
 # Exercice 2
 import numpy.random as rd
 def X(k, n):
