@@ -3,6 +3,7 @@ parts:
 - caption: 'Centrale PC*'
   chapters:
   - url: https://raw.githubusercontent.com/cpge-itc/itc2/main/files/centrale.py
+  title: 'centrale.py'
 - caption: Révisions
   chapters:
   - td: "Résumé de cours"
